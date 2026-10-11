@@ -31,5 +31,6 @@ grow_vertical = 2
 
 [node name="start" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=529104064]
 layout_mode = 2
+text = "Start"
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start" to="." method="_on_start_pressed"]

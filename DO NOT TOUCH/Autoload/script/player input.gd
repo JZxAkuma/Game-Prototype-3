@@ -31,7 +31,8 @@ func _is_slot_registered(slot: int) -> bool:
 func _slot_of_device(device: int) -> int:
 	return slot_device.find(device)
 
-func _register_joypad(device:int) -> int:
+# player_input.gd
+func _register_joypad(device: int) -> int:
 	if _slot_of_device(device) != -1:
 		return -1
 	var slot := slot_device.find(unassigned)
@@ -50,6 +51,11 @@ func _unregister_joypad(device: int) -> void:
 func _register_keyboard_for_all() -> void:
 	for slot in max_player:
 		slot_device[slot] = keyboard
+	registration_changed.emit()
+
+func _reset() -> void:
+	for slot in max_player:
+		slot_device[slot] = unassigned
 	registration_changed.emit()
 
 func _build_action() -> void:

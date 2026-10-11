@@ -1,3 +1,54 @@
 [gd_scene format=3 uid="uid://dlgptrxmlft8m"]
 
+[ext_resource type="Script" uid="uid://6o8xwearwinm" path="res://DO NOT TOUCH/Scene/lobby.gd" id="1_mnsp2"]
+[ext_resource type="PackedScene" uid="uid://bn88jmy5chlhb" path="res://DO NOT TOUCH/Scene/player_card.tscn" id="2_scrqp"]
+[ext_resource type="Script" uid="uid://b723n0ibvg2gm" path="res://DO NOT TOUCH/Script/characterdata.gd" id="3_xo7ek"]
+[ext_resource type="Resource" uid="uid://cppg23tfwx7j4" path="res://DO NOT TOUCH/Resources/character1.tres" id="4_o3tnd"]
+[ext_resource type="Resource" uid="uid://embd41dfxtg2" path="res://DO NOT TOUCH/Resources/character2.tres" id="5_073hx"]
+[ext_resource type="Resource" uid="uid://vuxxvlh7frr2" path="res://DO NOT TOUCH/Resources/character3.tres" id="6_pw40n"]
+[ext_resource type="Resource" uid="uid://blbq6tper0v40" path="res://DO NOT TOUCH/Resources/character4.tres" id="7_nvl8b"]
+
 [node name="Lobby" type="Node3D" unique_id=1832407849]
+script = ExtResource("1_mnsp2")
+card_scene = ExtResource("2_scrqp")
+characters = Array[ExtResource("3_xo7ek")]([ExtResource("4_o3tnd"), ExtResource("5_073hx"), ExtResource("6_pw40n"), ExtResource("7_nvl8b")])
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=467866184]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=284382601]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="cards_box" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=229813048]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="prompt" type="Label" parent="CanvasLayer/Control" unique_id=5449062]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -11.5
+offset_right = 59.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press 'A' to join"

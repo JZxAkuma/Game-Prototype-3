@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://blbq6tper0v40"]
+
+[ext_resource type="PackedScene" uid="uid://cov13unm4qnax" path="res://DO NOT TOUCH/player card scene/character_4_card_scene.tscn" id="1_3t04j"]
+[ext_resource type="Script" uid="uid://b723n0ibvg2gm" path="res://DO NOT TOUCH/Script/characterdata.gd" id="1_qoqtl"]
+
+[resource]
+script = ExtResource("1_qoqtl")
+display_name = "character4"
+model_scene = ExtResource("1_3t04j")
+metadata/_custom_type_script = "uid://b723n0ibvg2gm"
