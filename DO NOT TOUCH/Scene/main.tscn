@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dlwv3jmol813m"]
 
 [ext_resource type="Script" uid="uid://8vy22ecm8c0c" path="res://DO NOT TOUCH/Script/main.gd" id="1_bihqw"]
-[ext_resource type="PackedScene" uid="uid://bvux3mae0xd2m" path="res://DO NOT TOUCH/Scene/board.tscn" id="1_vskfj"]
+[ext_resource type="PackedScene" uid="uid://db7y5rdlff667" path="res://DO NOT TOUCH/Scene/team_logo_splash_screen.tscn" id="2_bihqw"]
 
 [node name="Main" type="Node3D" unique_id=2013049566]
 script = ExtResource("1_bihqw")
 
-[node name="Board" parent="." unique_id=2115529111 instance=ExtResource("1_vskfj")]
+[node name="team logo splash screen" parent="." unique_id=511898329 instance=ExtResource("2_bihqw")]

@@ -8,7 +8,6 @@ var current : Node
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	SceneManager.register_container(self)
-	SceneManager.goto_scene(main_menu)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

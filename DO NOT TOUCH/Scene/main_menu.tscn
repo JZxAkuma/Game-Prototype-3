@@ -1,3 +1,35 @@
 [gd_scene format=3 uid="uid://c1fc32x3xifg5"]
 
+[ext_resource type="Script" uid="uid://bub8c38w2knfa" path="res://DO NOT TOUCH/Script/main_menu.gd" id="1_fd3gs"]
+
 [node name="main menu" type="Node3D" unique_id=817745143]
+script = ExtResource("1_fd3gs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1326478878]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=896585414]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control" unique_id=1846005404]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="start" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=529104064]
+layout_mode = 2
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start" to="." method="_on_start_pressed"]
