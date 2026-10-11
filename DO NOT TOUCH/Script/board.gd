@@ -17,7 +17,7 @@ func _ready() -> void:
 		BoardSpace.Type.MINIGAME: 1.0,
 		BoardSpace.Type.SHOP: 1.0,
 	})
-	
+
 func _collect_spaces() -> void:
 	spaces.clear()
 	for child in spaces_root.get_children():
@@ -57,7 +57,6 @@ func randomize_types(rng_seed: int, weights: Dictionary) -> void:
 		free[i] = free[j]
 		free[j] = tmp
 
-	
 	var guaranteed: Array = weights.keys()
 	var idx := 0
 	for t in guaranteed:
@@ -97,6 +96,7 @@ func move_token(token: Node3D, from: BoardSpace, steps: int) -> BoardSpace:
 		, 0.0, 1.0, 0.3)
 		await tw.finished
 	return current
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass
