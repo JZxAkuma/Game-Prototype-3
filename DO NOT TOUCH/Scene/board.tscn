@@ -1,3 +1,38 @@
 [gd_scene format=3 uid="uid://bvux3mae0xd2m"]
 
+[ext_resource type="Script" uid="uid://copldvyw0hglm" path="res://DO NOT TOUCH/Script/board.gd" id="1_2tmgi"]
+[ext_resource type="PackedScene" uid="uid://84fw0vhv4sm3" path="res://DO NOT TOUCH/Scene/board_space.tscn" id="2_bw800"]
+
+[sub_resource type="Environment" id="Environment_n5003"]
+background_mode = 1
+background_color = Color(0.60643816, 0.7359453, 1, 1)
+
 [node name="Board" type="Node3D" unique_id=2115529111]
+script = ExtResource("1_2tmgi")
+
+[node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
+
+[node name="BoardSpace" parent="Spaces" unique_id=1970094472 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4285283, 0, 0)
+locked = null
+
+[node name="BoardSpace2" parent="Spaces" unique_id=1183317858 instance=ExtResource("2_bw800")]
+locked = null
+
+[node name="BoardSpace3" parent="Spaces" unique_id=1118659147 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2412527, 0, 0)
+locked = null
+
+[node name="BoardSpace4" parent="Spaces" unique_id=1141837413 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.518043)
+locked = null
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=442427399]
+transform = Transform3D(1, 0, 0, 0, 0.9516222, 0.30727062, 0, -0.30727062, 0.9516222, 0, 0.8540487, 2.8680434)
+current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
+environment = SubResource("Environment_n5003")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=963444360]
+transform = Transform3D(1, 0, 0, 0, 0.6448396, 0.7643179, 0, -0.7643179, 0.6448396, 0, 0, 0)

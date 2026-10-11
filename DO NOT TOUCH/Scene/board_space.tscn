@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://84fw0vhv4sm3"]
+
+[ext_resource type="Script" uid="uid://b4u5nn5p66bwi" path="res://DO NOT TOUCH/Script/board_space.gd" id="1_3ckbg"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_aygv5"]
+
+[node name="BoardSpace" type="Node3D" unique_id=1970094472 groups=["BSpace"]]
+script = ExtResource("1_3ckbg")
+
+[node name="mesh" type="MeshInstance3D" parent="." unique_id=754769959]
+transform = Transform3D(1.9360453, 0, 0, 0, 0.38232827, 0, 0, 0, 1.9360453, 0, -0.3843726, 0)
+mesh = SubResource("CylinderMesh_aygv5")
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1376721243]
