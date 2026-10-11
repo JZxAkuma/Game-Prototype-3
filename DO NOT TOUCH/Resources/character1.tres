@@ -1,10 +1,10 @@
 [gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://cppg23tfwx7j4"]
 
-[ext_resource type="PackedScene" uid="uid://c76rs3fvuabod" path="res://DO NOT TOUCH/player card scene/character_1_card_scene.tscn" id="1_4aajc"]
+[ext_resource type="PackedScene" uid="uid://dskdy3yjm0eah" path="res://DO NOT TOUCH/character/character_1.tscn" id="1_4aajc"]
 [ext_resource type="Script" uid="uid://b723n0ibvg2gm" path="res://DO NOT TOUCH/Script/characterdata.gd" id="1_c37ga"]
 
 [resource]
 script = ExtResource("1_c37ga")
 display_name = "Character1"
-model_scene = ExtResource("1_4aajc")
+scene = ExtResource("1_4aajc")
 metadata/_custom_type_script = "uid://b723n0ibvg2gm"

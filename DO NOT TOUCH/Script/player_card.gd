@@ -7,4 +7,8 @@ extends PanelContainer
 func _setup(slot: int, data: CharacterData) -> void:
 	slot_label.text = "P%d" % (slot + 1)
 	name_label.text = data.display_name
-	model_holder.add_child(data.model_scene.instantiate())
+
+	var c = data.scene.instantiate()
+	model_holder.add_child(c)
+	c.setup(slot)
+	c.set_mode(c.Mode.LOCKED)

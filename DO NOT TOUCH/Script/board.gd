@@ -2,22 +2,38 @@ extends Node3D
 class_name Board
 
 @onready var spaces_root: Node3D = $Spaces
+@onready var tokens_root: Node3D = $Tokens
+@onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var camera: Camera3D = $Camera3D
+
+
 
 var spaces: Array[BoardSpace] = []
+var tokens := {}
+
+const WEIGHTS := {
+	BoardSpace.Type.BLANK: 4.0,
+	BoardSpace.Type.GAIN: 3.0,
+	BoardSpace.Type.LOSE: 2.0,
+	BoardSpace.Type.EVENT: 1.0,
+	BoardSpace.Type.MINIGAME: 1.0,
+	BoardSpace.Type.SHOP: 1.0,
+}
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_collect_spaces()
 	_link_spaces()
-	randomize_types(12345, {
-		BoardSpace.Type.BLANK: 4.0,
-		BoardSpace.Type.GAIN: 3.0,
-		BoardSpace.Type.LOSE: 2.0,
-		BoardSpace.Type.EVENT: 1.0,
-		BoardSpace.Type.MINIGAME: 1.0,
-		BoardSpace.Type.SHOP: 1.0,
-	})
-
+	randomize_types(GameState.board_seed,WEIGHTS)
+	
+	_spawn_characters()
+	
+	if SceneManager.busy:
+		await SceneManager.scene_changed
+	
+	_run_game()
+	
 func _collect_spaces() -> void:
 	spaces.clear()
 	for child in spaces_root.get_children():
@@ -82,12 +98,24 @@ func _weighted_pick(rng: RandomNumberGenerator,weights:Dictionary) -> BoardSpace
 	
 	return BoardSpace.Type.BLANK
 
-func move_token(token: Node3D, from: BoardSpace, steps: int) -> BoardSpace:
+func _spawn_characters() -> void:
+	for p in GameState.players:
+		var c : PlayerCharacter = GameState.character_scenes[p.character].instantiate()
+		tokens_root.add_child(c)
+		c.setup(p.slot)
+		c.set_mode(PlayerCharacter.Mode.LOCKED)
+		c.global_position = spaces[p.space_index].get_anchor_position()
+		tokens[p.slot] = c
+
+func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
 	var current := from
 	for i in steps:
 		current = current.next[0]
 		var start := token.global_position
 		var end := current.get_anchor_position()
+		var flat := Vector3(end.x, start.y, end.z)
+		if not flat.is_equal_approx(start):
+			token.look_at(flat, Vector3.UP)
 		var tw := create_tween()
 		tw.tween_method(func(t: float) -> void:
 			var p := start.lerp(end, t)
@@ -95,8 +123,45 @@ func move_token(token: Node3D, from: BoardSpace, steps: int) -> BoardSpace:
 			token.global_position = p
 		, 0.0, 1.0, 0.3)
 		await tw.finished
+		if not is_inside_tree():
+			return current
 	return current
 
+func _run_game() -> void:
+	if not anim.has_animation("intro"):
+		return
+	anim.play("intro")
+	await anim.animation_finished
+	
+	while is_inside_tree():
+		await _play_turn(GameState.current_player)
+		if not is_inside_tree():
+			return
+		GameState._next_player()
+	
+func _play_turn(player_index: int) -> void:
+	var p := GameState.players[player_index]
+	
+	var a := PlayerInput._act(p.slot, &"a")
+	while not Input.is_action_just_pressed(a):
+		await get_tree().process_frame
+		if not is_inside_tree():
+			return
+	var roll := randi_range(1,6)
+	print("P%d rolled %d" % [p.slot + 1, roll])
+	
+	var landed := await _move_token(tokens[p.slot],spaces[p.space_index],roll)
+	if not is_inside_tree():
+		return
+	p.space_index = landed.index
+	
+	match landed.type:
+		BoardSpace.Type.GAIN:
+			p.coins += 3
+		BoardSpace.Type.LOSE:
+			p.coins = max(0, p.coins - 3)
+		_:
+			pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass

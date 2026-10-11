@@ -14,6 +14,13 @@ var turn := 0
 
 var current_player := 0
 
+const character_scenes : Array[PackedScene] = [
+	preload("res://DO NOT TOUCH/character/character_1.tscn"),
+	preload("res://DO NOT TOUCH/character/character_2.tscn"),
+	preload("res://DO NOT TOUCH/character/character_3.tscn"),
+	preload("res://DO NOT TOUCH/character/character_4.tscn")
+]
+
 func _new_game(slots:Array[int]) -> void:
 	players.clear()
 	for slot in slots:

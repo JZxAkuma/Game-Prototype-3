@@ -10,5 +10,3 @@ func _ready() -> void:
 	SceneManager.register_container(self)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

@@ -17,15 +17,34 @@ func _ready() -> void:
 	_refresh()
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed(&"a"):
-		var s = PlayerInput._register_joypad(event.device)
 	if SceneManager.busy:
 		return
-	
+
+	# Debug: any key press = keyboard plays all 4 slots
 	if event is InputEventKey and event.pressed and not event.echo:
 		PlayerInput._register_keyboard_for_all()
 		_finish()
 		return
+
+	# Everything below is controller-only
+	if not (event is InputEventJoypadButton and event.pressed):
+		return
+
+	if event.is_action_pressed(&"a"):
+		PlayerInput._register_joypad(event.device)
+	elif event.is_action_pressed(&"b"):
+		PlayerInput._unregister_joypad(event.device)
+	elif event.is_action_pressed(&"start"):
+		if _registered_count() >= min_players:
+			_finish()
+
+
+func _registered_count() -> int:
+	var n := 0
+	for s in PlayerInput.max_player:
+		if PlayerInput._is_slot_registered(s):
+			n += 1
+	return n
 
 func _refresh() -> void:
 	for slot in PlayerInput.max_player:
