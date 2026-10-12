@@ -10,11 +10,88 @@ background_color = Color(0.60643816, 0.7359453, 1, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_aygv5"]
 size = Vector3(129.30646, 1, 121.27396)
 
+[sub_resource type="Animation" id="Animation_2adw1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("droneshot pivot/intro_camera:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("play_camera:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("droneshot pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("droneshot pivot/intro_camera:current")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("play_camera:current")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("droneshot pivot:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
 _data = {
+&"RESET": SubResource("Animation_2adw1"),
 &"intro": SubResource("Animation_bw800")
 }
 
@@ -39,10 +116,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9349594, 0, -1.8681893)
 [node name="BoardSpace5" parent="Spaces" unique_id=2110703701 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.016563, 0, -4.45407)
 
-[node name="intro_camera" type="Camera3D" parent="." unique_id=442427399]
-transform = Transform3D(1, 0, 0, 0, 0.9516222, 0.30727062, 0, -0.30727062, 0.9516222, 0, 4.1020727, 4.910519)
-current = true
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
 environment = SubResource("Environment_n5003")
 
@@ -57,3 +130,10 @@ mesh = SubResource("BoxMesh_aygv5")
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="play_camera" type="Camera3D" parent="." unique_id=563864645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
+
+[node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
+
+[node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
+transform = Transform3D(1, 0, 0, 0, 0.7844815, 0.62015224, 0, -0.62015224, 0.7844815, 0, 12.724283, 9.036865)
+current = true
