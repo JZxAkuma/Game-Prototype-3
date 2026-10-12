@@ -4,7 +4,6 @@ class_name Board
 @onready var spaces_root: Node3D = $Spaces
 @onready var tokens_root: Node3D = $Tokens
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var camera: Camera3D = $Camera3D
 
 
 
@@ -138,7 +137,7 @@ func _run_game() -> void:
 		if not is_inside_tree():
 			return
 		GameState._next_player()
-	
+
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
 	

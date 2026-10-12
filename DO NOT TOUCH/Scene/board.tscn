@@ -39,7 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9349594, 0, -1.8681893)
 [node name="BoardSpace5" parent="Spaces" unique_id=2110703701 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.016563, 0, -4.45407)
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=442427399]
+[node name="intro_camera" type="Camera3D" parent="." unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9516222, 0.30727062, 0, -0.30727062, 0.9516222, 0, 4.1020727, 4.910519)
 current = true
 
@@ -55,3 +55,5 @@ mesh = SubResource("BoxMesh_aygv5")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1659957502]
 libraries/ = SubResource("AnimationLibrary_2adw1")
+
+[node name="play_camera" type="Camera3D" parent="." unique_id=563864645]
