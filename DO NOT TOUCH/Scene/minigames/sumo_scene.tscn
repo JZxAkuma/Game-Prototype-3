@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://0egxmhr38hwu"]
+
+[ext_resource type="Script" uid="uid://b8ucfxk352iff" path="res://DO NOT TOUCH/Script/minigame/sumo_scene.gd" id="1_uf4g4"]
+
+[node name="sumo_scene" type="Node3D" unique_id=99076843]
+script = ExtResource("1_uf4g4")
