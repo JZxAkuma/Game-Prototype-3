@@ -108,6 +108,7 @@ func _spawn_characters() -> void:
 func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
 	var current := from
 	for i in steps:
+		
 		current = current.next[0]
 		var start := token.global_position
 		var end := current.get_anchor_position()
