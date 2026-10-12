@@ -4,8 +4,7 @@ class_name Board
 @onready var spaces_root: Node3D = $Spaces
 @onready var tokens_root: Node3D = $Tokens
 @onready var anim: AnimationPlayer = $AnimationPlayer
-
-
+@onready var play_camera_pivot: Node3D = $"play camera pivot"
 
 var spaces: Array[BoardSpace] = []
 var tokens := {}
@@ -30,9 +29,9 @@ func _ready() -> void:
 	
 	if SceneManager.busy:
 		await SceneManager.scene_changed
-	
+
 	_run_game()
-	
+
 func _collect_spaces() -> void:
 	spaces.clear()
 	for child in spaces_root.get_children():
@@ -131,7 +130,7 @@ func _run_game() -> void:
 		return
 	anim.play("intro")
 	await anim.animation_finished
-	
+
 	while is_inside_tree():
 		await _play_turn(GameState.current_player)
 		if not is_inside_tree():
@@ -140,7 +139,6 @@ func _run_game() -> void:
 
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
-	
 	var a := PlayerInput._act(p.slot, &"a")
 	while not Input.is_action_just_pressed(a):
 		await get_tree().process_frame
@@ -153,7 +151,7 @@ func _play_turn(player_index: int) -> void:
 	if not is_inside_tree():
 		return
 	p.space_index = landed.index
-	
+
 	match landed.type:
 		BoardSpace.Type.GAIN:
 			p.coins += 3
@@ -161,6 +159,7 @@ func _play_turn(player_index: int) -> void:
 			p.coins = max(0, p.coins - 3)
 		_:
 			pass
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
 	#pass

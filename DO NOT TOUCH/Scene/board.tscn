@@ -27,7 +27,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("play_camera:current")
+tracks/1/path = NodePath("play camera pivot/play_camera:current")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -48,6 +48,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tokens:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
@@ -67,7 +79,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("play_camera:current")
+tracks/1/path = NodePath("play camera pivot/play_camera:current")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -88,6 +100,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Tokens:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
 _data = {
@@ -99,6 +123,7 @@ _data = {
 script = ExtResource("1_2tmgi")
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
+visible = false
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
 
@@ -129,11 +154,13 @@ mesh = SubResource("BoxMesh_aygv5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1659957502]
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
-[node name="play_camera" type="Camera3D" parent="." unique_id=563864645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
-
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.7844815, 0.62015224, 0, -0.62015224, 0.7844815, 0, 12.724283, 9.036865)
 current = true
+
+[node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
+
+[node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
