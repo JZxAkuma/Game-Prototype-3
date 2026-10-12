@@ -1,6 +1,6 @@
 extends PanelContainer
 
-@onready var model_holder: Node3D = $VBoxContainer/SubViewportContainer/SubViewport/ModelHolder
+@onready var model_holder: Node3D = $VBoxContainer/PanelContainer/SubViewportContainer/SubViewport/ModelHolder
 @onready var name_label: Label = $VBoxContainer/NameLabel
 @onready var slot_label: Label = $VBoxContainer/SlotLabel
 
