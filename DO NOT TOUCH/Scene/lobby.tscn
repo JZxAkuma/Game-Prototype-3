@@ -7,6 +7,14 @@
 [ext_resource type="Resource" uid="uid://embd41dfxtg2" path="res://DO NOT TOUCH/Resources/character2.tres" id="5_073hx"]
 [ext_resource type="Resource" uid="uid://vuxxvlh7frr2" path="res://DO NOT TOUCH/Resources/character3.tres" id="6_pw40n"]
 [ext_resource type="Resource" uid="uid://blbq6tper0v40" path="res://DO NOT TOUCH/Resources/character4.tres" id="7_nvl8b"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="8_o3tnd"]
+[ext_resource type="Shader" uid="uid://dberejqb5uhhs" path="res://DO NOT TOUCH/shader/2dCanvasItemScroller.gdshader" id="8_pw40n"]
+[ext_resource type="Texture2D" uid="uid://5biy7d7yi7c1" path="res://DO NOT TOUCH/2D/UI Assets/BackdropPurple.png" id="9_nvl8b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vd01d"]
+shader = ExtResource("8_pw40n")
+shader_parameter/scroll_speed = Vector2(0, 0.5)
+shader_parameter/scroll_texture = ExtResource("9_nvl8b")
 
 [node name="Lobby" type="Node3D" unique_id=1832407849]
 script = ExtResource("1_mnsp2")
@@ -23,6 +31,16 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=536095642]
+material = SubResource("ShaderMaterial_vd01d")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_nvl8b")
 
 [node name="cards_box" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=229813048]
 layout_mode = 1
@@ -51,4 +69,6 @@ offset_right = 59.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("8_o3tnd")
+theme_override_font_sizes/font_size = 32
 text = "Press 'A' to join"

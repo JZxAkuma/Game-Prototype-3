@@ -37,7 +37,7 @@ stretch_mode = 2
 modulate = Color(0.3202367, 7.087253e-06, 0.23835516, 0.40784314)
 layout_mode = 2
 texture = ExtResource("2_yg51k")
-expand_mode = 1
+expand_mode = 4
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="VBoxContainer/PanelContainer" unique_id=1323938491]
 layout_mode = 2
