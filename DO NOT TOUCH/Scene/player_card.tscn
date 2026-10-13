@@ -1,7 +1,15 @@
 [gd_scene format=3 uid="uid://bn88jmy5chlhb"]
 
 [ext_resource type="Script" uid="uid://dwi4yqex8agf2" path="res://DO NOT TOUCH/Script/player_card.gd" id="1_853hf"]
+[ext_resource type="Texture2D" uid="uid://5biy7d7yi7c1" path="res://DO NOT TOUCH/2D/UI Assets/BackdropPurple.png" id="2_2g0rw"]
+[ext_resource type="Shader" uid="uid://dberejqb5uhhs" path="res://DO NOT TOUCH/shader/2dCanvasItemScroller.gdshader" id="2_7l12h"]
 [ext_resource type="Texture2D" uid="uid://diaixtt72bqo7" path="res://DO NOT TOUCH/2D/UI Assets/CheckerScroller.png" id="2_yg51k"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="5_2he8c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_phqq8"]
+shader = ExtResource("2_7l12h")
+shader_parameter/scroll_speed = Vector2(0.3, 0.3)
+shader_parameter/scroll_texture = ExtResource("2_2g0rw")
 
 [sub_resource type="BoxMesh" id="BoxMesh_aygv5"]
 size = Vector3(4.694336, 1, 5.2717285)
@@ -19,6 +27,14 @@ custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
 
 [node name="here is the bg" type="TextureRect" parent="VBoxContainer/PanelContainer" unique_id=107831667]
+material = SubResource("ShaderMaterial_phqq8")
+layout_mode = 2
+texture = ExtResource("2_2g0rw")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="here is the bg2" type="TextureRect" parent="VBoxContainer/PanelContainer" unique_id=938077013]
+modulate = Color(0.3202367, 7.087253e-06, 0.23835516, 0.40784314)
 layout_mode = 2
 texture = ExtResource("2_yg51k")
 expand_mode = 1
@@ -48,6 +64,8 @@ current = true
 
 [node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1785106722]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_2he8c")
 
 [node name="SlotLabel" type="Label" parent="VBoxContainer" unique_id=2112894070]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_2he8c")
