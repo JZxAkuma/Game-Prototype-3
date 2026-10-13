@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ceevxio3iuub1"]
+
+[ext_resource type="Script" uid="uid://dmlougxbyftpj" path="res://Playground/character_body_3d.gd" id="1_sa1mh"]
+
+[sub_resource type="Environment" id="Environment_aygv5"]
+
+[node name="World" type="Node3D" unique_id=1180877065]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=1569324943]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+script = ExtResource("1_sa1mh")
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D" unique_id=242430587]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D" unique_id=1681115508]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1252869142]
+environment = SubResource("Environment_aygv5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2086162005]
+transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.25881907, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1304918559]
+size = Vector3(100, 1, 100)
