@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cxxi2ufdru7t5" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountains.tscn" id="6_mb2rj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aygv5"]
-top_radius = 1.0
-bottom_radius = 1.0
+top_radius = 0.52490234
+bottom_radius = 0.52490234
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ogtmr"]
 shader = ExtResource("3_kvsk5")
