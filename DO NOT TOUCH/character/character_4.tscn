@@ -10,6 +10,12 @@ material = SubResource("StandardMaterial3D_be5t1")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2w1j"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_85yqc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ssb5l"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h7vri"]
+
 [node name="character4" type="CharacterBody3D" unique_id=1051749168]
 script = ExtResource("1_85yqc")
 
@@ -22,3 +28,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_f2w1j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2081693308]
+
+[node name="hurtbox" type="Area3D" parent="." unique_id=2017165137]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox" unique_id=1915791162]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_85yqc")
+
+[node name="hitbox" type="Area3D" parent="." unique_id=716596556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=220824113]
+shape = SubResource("SphereShape3D_ssb5l")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1788496089]
+transform = Transform3D(-1.7954214e-08, 0.41074455, 0, -0.41074455, -1.7954214e-08, 0, 0, 0, 0.41074455, 0, 1.496873, -0.36455894)
+mesh = SubResource("CapsuleMesh_h7vri")
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
