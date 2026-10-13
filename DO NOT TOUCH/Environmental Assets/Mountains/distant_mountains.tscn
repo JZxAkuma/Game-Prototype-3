@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cxxi2ufdru7t5"]
+
+[ext_resource type="PackedScene" uid="uid://bn7eaco5lopb5" path="res://DO NOT TOUCH/Environmental Assets/Mountains/DistantMountains.fbx" id="1_c07u7"]
+[ext_resource type="Texture2D" uid="uid://dlsludhhqej2r" path="res://DO NOT TOUCH/Environmental Assets/Mountains/DistantMountains_standardSurface1_BaseColor.png" id="2_xhh5f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g11rf"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_xhh5f")
+
+[node name="DistantMountains" unique_id=211699623 instance=ExtResource("1_c07u7")]
+
+[node name="pCylinder1" parent="." index="0" unique_id=102367757]
+transform = Transform3D(100, 0, 0, 0, 23.205, 0, 0, 0, 100, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_g11rf")

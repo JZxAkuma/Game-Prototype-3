@@ -2,14 +2,26 @@
 
 [ext_resource type="Script" uid="uid://b8cxdm0l6f1ab" path="res://DO NOT TOUCH/Script/minigame/minigamebase.gd" id="1_uf4g4"]
 [ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_xvggm"]
+[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_kvsk5"]
+[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="4_g11rf"]
+[ext_resource type="PackedScene" uid="uid://bkhaw55tjgsej" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountainsDark.tscn" id="5_g11rf"]
+[ext_resource type="PackedScene" uid="uid://cxxi2ufdru7t5" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountains.tscn" id="6_mb2rj"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_aygv5"]
 top_radius = 1.0
 bottom_radius = 1.0
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ogtmr"]
+shader = ExtResource("3_kvsk5")
+shader_parameter/sky_texture = ExtResource("4_g11rf")
+
+[sub_resource type="Sky" id="Sky_8i1bb"]
+sky_material = SubResource("ShaderMaterial_ogtmr")
+
 [sub_resource type="Environment" id="Environment_aygv5"]
-background_mode = 1
+background_mode = 2
 background_color = Color(0.60643685, 0.73594505, 1, 1)
+sky = SubResource("Sky_8i1bb")
 
 [node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns")]
 script = ExtResource("1_uf4g4")
@@ -104,9 +116,16 @@ mesh = SubResource("CylinderMesh_aygv5")
 
 [node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=1333039741]
 transform = Transform3D(1, 0, 0, 0, 0.70710677, 0.70710677, 0, -0.70710677, 0.70710677, 0, 22, 26)
+fov = 64.1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Game scene" unique_id=1936528512]
 environment = SubResource("Environment_aygv5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=1776562918]
 transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
+
+[node name="DistantMountains2" parent="Game scene" unique_id=211699623 instance=ExtResource("5_g11rf")]
+transform = Transform3D(5, 0, 0, 0, 17.135826, 0, 0, 0, 5, 0, 6.3551264, 0)
+
+[node name="DistantMountains" parent="Game scene" unique_id=1920771075 instance=ExtResource("6_mb2rj")]
+transform = Transform3D(0.548343, 0, -0.8362535, 0, 1.7501113, 0, 0.8362535, 0, 0.548343, 0, 3.2667646, 0)
