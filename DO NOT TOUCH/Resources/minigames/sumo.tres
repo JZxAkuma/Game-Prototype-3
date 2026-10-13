@@ -7,4 +7,7 @@
 script = ExtResource("1_gd70j")
 mini_game_scene = ExtResource("1_i004l")
 mini_game_name = "Sumo"
+goal = "Be the last one on the platform"
+controls = "dpad = move
+A = Dash"
 metadata/_custom_type_script = "uid://bb4ov3h640ub1"

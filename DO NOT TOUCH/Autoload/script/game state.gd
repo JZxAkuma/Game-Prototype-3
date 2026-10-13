@@ -21,6 +21,24 @@ const character_scenes : Array[PackedScene] = [
 	preload("res://DO NOT TOUCH/character/character_4.tscn")
 ]
 
+#var current_minigame: MINI_GAME
+#
+#const minigames := [
+	#preload("res://DO NOT TOUCH/Resources/minigames/sumo.tres")
+#]
+
+# game_state.gd
+var current_minigame: MINI_GAME
+
+const MINIGAME_PATHS: Array[String] = [
+	"res://DO NOT TOUCH/Resources/minigames/sumo.tres",
+]
+
+func pick_minigame() -> MINI_GAME:
+	var path: String = MINIGAME_PATHS.pick_random()
+	current_minigame = load(path) as MINI_GAME
+	return current_minigame
+
 func _new_game(slots:Array[int]) -> void:
 	players.clear()
 	for slot in slots:

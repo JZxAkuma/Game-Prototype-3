@@ -137,6 +137,13 @@ func _run_game() -> void:
 		if not is_inside_tree():
 			return
 		GameState._next_player()
+		
+		if GameState.current_player == 0:
+			#GameState.current_minigame = GameState.minigames.pick_random()
+			#SceneManager.goto_scene(GameState.current_minigame.mini_game_scene)
+			var mg := GameState.pick_minigame()
+			SceneManager.goto_scene(mg.mini_game_scene)
+			return
 
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
