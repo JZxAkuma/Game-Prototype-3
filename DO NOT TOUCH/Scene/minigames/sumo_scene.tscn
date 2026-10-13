@@ -43,10 +43,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="ColorRect" type="ColorRect" parent="Tutorial layer/Control" unique_id=1727269567]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
 [node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control" unique_id=1526179489]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1658354808]
 layout_mode = 2
@@ -64,6 +76,7 @@ transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.70710
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=698594156]
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="title label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1612084044]
 layout_mode = 2
@@ -79,6 +92,8 @@ text = "Pla"
 
 [node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1154320618]
 layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
 
 [node name="Game scene" type="Node3D" parent="." unique_id=228173283]
 
