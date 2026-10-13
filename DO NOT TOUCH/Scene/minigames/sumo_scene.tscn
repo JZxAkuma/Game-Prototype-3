@@ -88,7 +88,8 @@ text = "TEST"
 
 [node name="controls label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=129989538]
 layout_mode = 2
-text = "Pla"
+text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
+autowrap_mode = 3
 
 [node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1154320618]
 layout_mode = 2
