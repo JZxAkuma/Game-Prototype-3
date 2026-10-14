@@ -59,6 +59,28 @@ func _link_spaces() -> void:
 			#continue
 		#s.type = _weighted_pick(rng, weights)
 
+func _play_intro() -> void:
+	if not anim.has_animation(&"intro"):
+		return
+	anim.play(&"intro")
+
+	var skipping := false
+	while anim.is_playing() and anim.current_animation == &"intro":
+		if not skipping and _any_a_pressed():
+			skipping = true
+			anim.speed_scale = 50.0  
+		await get_tree().process_frame
+		if not is_inside_tree():
+			return
+
+	anim.speed_scale = 1.0
+
+func _any_a_pressed() -> bool:
+	for p in GameState.players:
+		if Input.is_action_just_pressed(PlayerInput._act(p.slot, &"a")):
+			return true
+	return false
+
 func randomize_types(rng_seed: int, weights: Dictionary) -> void:
 	var rng := RandomNumberGenerator.new()
 	rng.seed = rng_seed
@@ -132,11 +154,9 @@ func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardS
 func _run_game() -> void:
 	if not GameState.intro_played:
 		GameState.intro_played = true
-		if anim.has_animation(&"intro"):
-			anim.play(&"intro")
-			await anim.animation_finished
-			if not is_inside_tree():
-				return
+		await _play_intro()
+		if not is_inside_tree():
+			return
 
 	while is_inside_tree():
 		await _play_turn(GameState.current_player)
@@ -148,6 +168,7 @@ func _run_game() -> void:
 			var mg := GameState.pick_minigame()
 			SceneManager.goto_scene(mg.mini_game_scene)
 			return
+
 
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
