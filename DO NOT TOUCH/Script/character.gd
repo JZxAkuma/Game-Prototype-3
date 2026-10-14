@@ -63,3 +63,6 @@ func _take_hit(attacker: PlayerCharacter, force := 12.0) -> void:
 	play_anim(&"hit")
 	if state:
 		state._on_hit_received(attacker)
+
+func _on_hurtbox_area_entered(area: Area3D) -> void:
+	pass

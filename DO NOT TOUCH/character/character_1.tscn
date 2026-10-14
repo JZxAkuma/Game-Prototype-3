@@ -49,4 +49,5 @@ shape = SubResource("SphereShape3D_aygv5")
 transform = Transform3D(-1.7954214e-08, 0.41074455, 0, -0.41074455, -1.7954214e-08, 0, 0, 0, 0.41074455, 0, 1.496873, -0.36455894)
 mesh = SubResource("CapsuleMesh_aygv5")
 
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
