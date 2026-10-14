@@ -1,16 +1,20 @@
 [gd_scene format=3 uid="uid://0egxmhr38hwu"]
 
-[ext_resource type="Script" uid="uid://b8cxdm0l6f1ab" path="res://DO NOT TOUCH/Script/minigame/minigamebase.gd" id="1_uf4g4"]
+[ext_resource type="Script" uid="uid://60kke3ncck1y" path="res://DO NOT TOUCH/Scene/minigames/minigame_sumo.gd" id="1_qmvo0"]
 [ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_xvggm"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_kvsk5"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="4_g11rf"]
 [ext_resource type="PackedScene" uid="uid://bkhaw55tjgsej" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountainsDark.tscn" id="5_g11rf"]
 [ext_resource type="PackedScene" uid="uid://cxxi2ufdru7t5" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountains.tscn" id="6_mb2rj"]
+[ext_resource type="PackedScene" uid="uid://cywisxck4cdmi" path="res://DO NOT TOUCH/Scene/map_limit.tscn" id="7_qmvo0"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_i3qtk"]
 top_radius = 10.0
 bottom_radius = 10.0
 height = 152.53955
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_qmvo0"]
+points = PackedVector3Array(-10, -76.269775, 0, -9.953015, -76.269775, -0.980814, -9.953015, -76.269775, 0.97885704, -10, 76.269775, 0, -9.808144, -76.269775, -1.9518404, -9.953015, 76.269775, -0.980814, -9.808144, -76.269775, 1.9498825, -9.953015, 76.269775, 0.97885704, -9.57126, -76.269775, -2.9032888, -9.808144, 76.269775, -1.9518404, -9.57126, -76.269775, 2.901331, -9.808144, 76.269775, 1.9498825, -9.240407, -76.269775, -3.8273296, -9.57126, 76.269775, -2.9032888, -9.240407, -76.269775, 3.8253717, -9.57126, 76.269775, 2.901331, -8.819499, -76.269775, -4.714174, -9.240407, 76.269775, -3.8273296, -8.819499, -76.269775, 4.7122164, -9.240407, 76.269775, 3.8253717, -8.316366, -76.269775, -5.5559907, -8.819499, 76.269775, -4.714174, -8.316366, -76.269775, 5.5540333, -8.819499, 76.269775, 4.7122164, -7.7310104, -76.269775, -6.344949, -8.316366, 76.269775, -5.5559907, -7.7310104, -76.269775, 6.342991, -8.316366, 76.269775, 5.5540333, -7.0712605, -76.269775, -7.0712605, -7.7310104, 76.269775, -6.344949, -7.0712605, -76.269775, 7.0693035, -7.7310104, 76.269775, 6.342991, -6.344949, -76.269775, -7.7310104, -7.0712605, 76.269775, -7.0712605, -6.344949, -76.269775, 7.7290516, -7.0712605, 76.269775, 7.0693035, -5.5559907, -76.269775, -8.316366, -6.344949, 76.269775, -7.7310104, -5.5559907, -76.269775, 8.314409, -6.344949, 76.269775, 7.7290516, -4.714174, -76.269775, -8.819499, -5.5559907, 76.269775, -8.316366, -4.714174, -76.269775, 8.817541, -5.5559907, 76.269775, 8.314409, -3.8273296, -76.269775, -9.240407, -4.714174, 76.269775, -8.819499, -3.8273296, -76.269775, 9.238449, -4.714174, 76.269775, 8.817541, -2.9032888, -76.269775, -9.57126, -3.8273296, 76.269775, -9.240407, -2.9032888, -76.269775, 9.5693035, -3.8273296, 76.269775, 9.238449, -1.9518404, -76.269775, -9.808144, -2.9032888, 76.269775, -9.57126, -1.9518404, -76.269775, 9.806187, -2.9032888, 76.269775, 9.5693035, -0.980814, -76.269775, -9.953015, -1.9518404, 76.269775, -9.808144, -0.980814, -76.269775, 9.951057, -1.9518404, 76.269775, 9.806187, 0, -76.269775, -10, -0.980814, 76.269775, -9.953015, 0, -76.269775, 10, -0.980814, 76.269775, 9.951057, 0.97885704, -76.269775, -9.953015, 0, 76.269775, -10, 0.97885704, -76.269775, 9.951057, 0, 76.269775, 10, 1.9498825, -76.269775, -9.808144, 0.97885704, 76.269775, -9.953015, 1.9498825, -76.269775, 9.806187, 0.97885704, 76.269775, 9.951057, 2.901331, -76.269775, -9.57126, 1.9498825, 76.269775, -9.808144, 2.901331, -76.269775, 9.5693035, 1.9498825, 76.269775, 9.806187, 3.8253717, -76.269775, -9.240407, 2.901331, 76.269775, -9.57126, 3.8253717, -76.269775, 9.238449, 2.901331, 76.269775, 9.5693035, 4.7122164, -76.269775, -8.819499, 3.8253717, 76.269775, -9.240407, 4.7122164, -76.269775, 8.817541, 3.8253717, 76.269775, 9.238449, 5.5540333, -76.269775, -8.316366, 4.7122164, 76.269775, -8.819499, 5.5540333, -76.269775, 8.314409, 4.7122164, 76.269775, 8.817541, 6.342991, -76.269775, -7.7310104, 5.5540333, 76.269775, -8.316366, 6.342991, -76.269775, 7.7290516, 5.5540333, 76.269775, 8.314409, 7.0693035, -76.269775, -7.0712605, 6.342991, 76.269775, -7.7310104, 7.0693035, -76.269775, 7.0693035, 6.342991, 76.269775, 7.7290516, 7.7290516, -76.269775, -6.344949, 7.0693035, 76.269775, -7.0712605, 7.7290516, -76.269775, 6.342991, 7.0693035, 76.269775, 7.0693035, 8.314409, -76.269775, -5.5559907, 7.7290516, 76.269775, -6.344949, 8.314409, -76.269775, 5.5540333, 7.7290516, 76.269775, 6.342991, 8.817541, -76.269775, -4.714174, 8.314409, 76.269775, -5.5559907, 8.817541, -76.269775, 4.7122164, 8.314409, 76.269775, 5.5540333, 9.238449, -76.269775, -3.8273296, 8.817541, 76.269775, -4.714174, 9.238449, -76.269775, 3.8253717, 8.817541, 76.269775, 4.7122164, 9.5693035, -76.269775, -2.9032888, 9.238449, 76.269775, -3.8273296, 9.5693035, -76.269775, 2.901331, 9.238449, 76.269775, 3.8253717, 9.806187, -76.269775, -1.9518404, 9.5693035, 76.269775, -2.9032888, 9.806187, -76.269775, 1.9498825, 9.5693035, 76.269775, 2.901331, 9.951057, -76.269775, -0.980814, 9.806187, 76.269775, -1.9518404, 9.951057, -76.269775, 0.97885704, 9.806187, 76.269775, 1.9498825, 10, -76.269775, 0, 9.951057, 76.269775, -0.980814, 9.951057, 76.269775, 0.97885704, 10, 76.269775, 0)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ogtmr"]
 shader = ExtResource("3_kvsk5")
@@ -24,26 +28,27 @@ background_mode = 2
 background_color = Color(0.60643685, 0.73594505, 1, 1)
 sky = SubResource("Sky_8i1bb")
 
-[node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns")]
-script = ExtResource("1_uf4g4")
+[node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui")]
+script = ExtResource("1_qmvo0")
 players_root = NodePath("players")
 spawns = NodePath("spawns")
+tutorial_ui = NodePath("Tutorial layer")
 
 [node name="players" type="Node3D" parent="." unique_id=528210095]
 
 [node name="spawns" type="Node3D" parent="." unique_id=1171670973]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1129438426]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 14)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1638181900]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -14)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=672791851]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -14, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=2145981091]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 14, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 0)
 
 [node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=565674303]
 script = ExtResource("2_xvggm")
@@ -85,7 +90,7 @@ size = Vector2i(640, 360)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1386673813]
-transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 17.208, 15.22102)
+transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=698594156]
 layout_mode = 2
@@ -115,8 +120,13 @@ alignment = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -76.269775, 0)
 mesh = SubResource("CylinderMesh_i3qtk")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Game scene/MeshInstance3D" unique_id=1804310558]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game scene/MeshInstance3D/StaticBody3D" unique_id=1644359475]
+shape = SubResource("ConvexPolygonShape3D_qmvo0")
+
 [node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=1333039741]
-transform = Transform3D(1, 0, 0, 0, 0.46342763, 0.8861347, 0, -0.8861347, 0.46342763, 0, 17.208, 15.22102)
+transform = Transform3D(1, 0, 0, 0, 0.46342763, 0.8861347, 0, -0.8861347, 0.46342763, 0, 11.208, 9.22102)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Game scene" unique_id=1936528512]
 environment = SubResource("Environment_aygv5")
@@ -129,3 +139,6 @@ transform = Transform3D(5, 0, 0, 0, 17.135826, 0, 0, 0, 5, 0, 6.3551264, 0)
 
 [node name="DistantMountains" parent="Game scene" unique_id=1920771075 instance=ExtResource("6_mb2rj")]
 transform = Transform3D(0.548343, 0, -0.8362535, 0, 1.7501113, 0, 0.8362535, 0, 0.548343, 0, 3.2667646, 0)
+
+[node name="Map_limit" parent="." unique_id=1918000921 instance=ExtResource("7_qmvo0")]
+transform = Transform3D(120, 0, 0, 0, 1, 0, 0, 0, 120, 0, -8, 0)

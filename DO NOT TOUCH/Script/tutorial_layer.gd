@@ -11,6 +11,9 @@ var ready_slots := {}
 var labels := {}
 var total := 0
 
+func _ready() -> void:
+	set_process(false) 
+
 func _setup(data:MINI_GAME, players:Array) -> void:
 	title_label.text = data.mini_game_name
 	goal_label.text = data.goal
@@ -27,7 +30,7 @@ func _setup(data:MINI_GAME, players:Array) -> void:
 		labels[p.slot] = l
 
 func _is_everyone_ready() -> bool:
-	return ready_slots.size() >= total
+	return total > 0 and ready_slots.size() >= total
 
 func _process(delta: float) -> void:
 	for slot in labels:
@@ -41,3 +44,7 @@ func _process(delta: float) -> void:
 		self.hide()
 		set_process(false)
 		all_ready.emit()
+
+
+func _begin() -> void:
+	set_process(true)
