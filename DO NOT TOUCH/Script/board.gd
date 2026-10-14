@@ -6,6 +6,9 @@ class_name Board
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var play_camera_pivot: Node3D = $"play camera pivot"
 
+@onready var announcer_actor: Node3D = $"commentator set/Announcer"
+
+
 var spaces: Array[BoardSpace] = []
 var tokens := {}
 
@@ -169,6 +172,17 @@ func _play_turn(player_index: int) -> void:
 		_:
 			pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _transition_fade_in() -> void:
+	Transition.fade_in()
+
+func _transition_fade_out() -> void:
+	Transition.fade_out()
+
+func _cam_transition() -> void:
+	Transition.cam_trans()
+
+func _announcer_idle() -> void:
+	announcer_actor._play_idle()
+
+func _announcer_stop() -> void:
+	announcer_actor._anim_stop()

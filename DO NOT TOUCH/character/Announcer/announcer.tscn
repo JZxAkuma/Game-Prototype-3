@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpd6lt6jxwpo2"]
 
 [ext_resource type="PackedScene" uid="uid://hoktxyyooh45" path="res://DO NOT TOUCH/character/Announcer/Announcer.fbx" id="1_vquj3"]
+[ext_resource type="Script" uid="uid://ctoas8hg7vbje" path="res://DO NOT TOUCH/character/Announcer/announcer.gd" id="2_eayrd"]
 [ext_resource type="Texture2D" uid="uid://djryjjieh2f3g" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert2_BaseColor.png" id="2_flf1h"]
 [ext_resource type="Texture2D" uid="uid://cpb6a3ecs8f8s" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert2_Metallic.png" id="3_kq4ao"]
 [ext_resource type="Texture2D" uid="uid://ck8kllx1bsb3" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert2_Roughness.png" id="4_eayrd"]
@@ -83,10 +84,10 @@ _data = {
 }
 
 [node name="Announcer" unique_id=2109309627 instance=ExtResource("1_vquj3")]
+script = ExtResource("2_eayrd")
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1503536730]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55594057, 0)
-bones/0/rotation = Quaternion(0.5176049, 0.5139169, 0.4817522, 0.48568454)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013621688, 0)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/rotation = Quaternion(-1.1713007e-26, 0.0038120935, 2.382991e-26, 0.9999927)
 bones/1/scale = Vector3(0.9999998, 0.99999994, 0.9999999)
