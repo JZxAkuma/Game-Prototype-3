@@ -58,6 +58,20 @@ tracks/4/loop_wrap = true
 tracks/4/keys = PackedFloat32Array(0, 1, 0.65830904, -0.65830904, -0.25812635, -0.25812635, 0.5, 1, -0.51017785, 0.70699894, 0.48961067, -0.012349445, 1.5, 1, -0.70574546, 0.4878429, -0.04385639, 0.5118685, 2, 1, 0.66390073, -0.6523901, -0.24338424, -0.27274007)
 
 [sub_resource type="Animation" id="Animation_eayrd"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.013621688, 0), Vector3(0, 0.8614583, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_xliaa"]
 
@@ -71,19 +85,23 @@ _data = {
 [node name="Announcer" unique_id=2109309627 instance=ExtResource("1_vquj3")]
 
 [node name="Skeleton3D" parent="." index="0" unique_id=1538772355]
-bones/0/rotation = Quaternion(0.56607157, 0.5628244, 0.4237487, 0.42805216)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013621688, 0)
+bones/0/rotation = Quaternion(0.5176049, 0.5139169, 0.4817522, 0.48568454)
 bones/0/scale = Vector3(1, 0.99999994, 1)
-bones/1/rotation = Quaternion(0.17440906, 0.0037536952, -0.00066484936, 0.984666)
-bones/1/scale = Vector3(0.9999998, 1.0000001, 1)
-bones/4/rotation = Quaternion(0.7060358, -0.49142197, 0.038904104, -0.5084334)
+bones/1/rotation = Quaternion(-1.1713007e-26, 0.0038120935, 2.382991e-26, 0.9999927)
+bones/1/scale = Vector3(0.9999998, 0.99999994, 0.9999999)
+bones/4/rotation = Quaternion(0.6842568, -0.6230861, -0.17830496, -0.33431092)
 bones/4/scale = Vector3(1.0000001, 1.0000001, 1)
-bones/5/rotation = Quaternion(2.0679513e-25, -0.081810296, -9.082766e-18, 0.99664795)
-bones/6/rotation = Quaternion(0.994445, -6.4449426e-18, 0.10525738, 6.0890194e-17)
-bones/7/rotation = Quaternion(0.98063546, 3.6971486e-17, -0.19584197, 6.5033357e-17)
+bones/5/rotation = Quaternion(4.1359026e-25, -0.081810296, -9.082766e-18, 0.99664795)
+bones/6/position = Vector3(0.4258987, -7.710743e-18, 4.718448e-16)
+bones/6/rotation = Quaternion(0.994445, -6.444945e-18, 0.10525738, 6.089023e-17)
+bones/7/position = Vector3(0.4116483, 0, 1.8041124e-16)
+bones/7/rotation = Quaternion(0.98063546, 3.6971493e-17, -0.19584197, 6.503334e-17)
 bones/8/rotation = Quaternion(1.323489e-23, -0.32251891, -9.56425e-17, 0.946563)
 bones/9/rotation = Quaternion(-6.617445e-24, -0.39775518, -1.3022283e-16, 0.9174916)
-bones/10/rotation = Quaternion(1.654361e-24, -0.10525638, -1.1492855e-16, 0.99444515)
-bones/11/rotation = Quaternion(2.0679515e-25, -0.022170644, -1.1257053e-16, 0.9997542)
+bones/10/rotation = Quaternion(2.4815414e-24, -0.10525638, -1.1492855e-16, 0.99444515)
+bones/11/rotation = Quaternion(2.0679515e-25, -0.022170644, -1.1257047e-16, 0.9997542)
+bones/12/position = Vector3(0.26244277, -5.907213e-17, 3.7296555e-16)
 bones/12/rotation = Quaternion(0.99971455, -1.1305173e-16, -0.02389581, 5.847564e-17)
 
 [node name="Foot" parent="Skeleton3D" index="0" unique_id=1040581166]
@@ -142,3 +160,4 @@ settings/0/exclude_collision_count = 0
 
 [node name="AnimationPlayer" parent="." index="1" unique_id=395880922]
 libraries/AnnouncerAnimations = SubResource("AnimationLibrary_37plv")
+autoplay = &"AnnouncerAnimations/Idle"
