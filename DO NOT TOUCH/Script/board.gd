@@ -127,20 +127,21 @@ func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardS
 	return current
 
 func _run_game() -> void:
-	if not anim.has_animation("intro"):
-		return
-	anim.play("intro")
-	await anim.animation_finished
+	if not GameState.intro_played:
+		GameState.intro_played = true
+		if anim.has_animation(&"intro"):
+			anim.play(&"intro")
+			await anim.animation_finished
+			if not is_inside_tree():
+				return
 
 	while is_inside_tree():
 		await _play_turn(GameState.current_player)
 		if not is_inside_tree():
 			return
 		GameState._next_player()
-		
+
 		if GameState.current_player == 0:
-			#GameState.current_minigame = GameState.minigames.pick_random()
-			#SceneManager.goto_scene(GameState.current_minigame.mini_game_scene)
 			var mg := GameState.pick_minigame()
 			SceneManager.goto_scene(mg.mini_game_scene)
 			return

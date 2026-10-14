@@ -14,6 +14,8 @@ var turn := 0
 
 var current_player := 0
 
+var intro_played := false
+
 const character_scenes : Array[PackedScene] = [
 	preload("res://DO NOT TOUCH/character/character_1.tscn"),
 	preload("res://DO NOT TOUCH/character/character_2.tscn"),
@@ -39,13 +41,19 @@ func pick_minigame() -> MINI_GAME:
 	current_minigame = load(path) as MINI_GAME
 	return current_minigame
 
-func _new_game(slots:Array[int]) -> void:
+func _new_game(slots: Array[int]) -> void:
 	players.clear()
 	for slot in slots:
 		var p := PlayerData.new()
 		p.slot = slot
 		p.character = slot
 		players.append(p)
+
+	board_seed = randi()
+	space_types.clear()
+	turn = 0
+	current_player = 0
+	intro_played = false
 
 func _next_player() -> void:
 	current_player += 1

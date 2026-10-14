@@ -10,7 +10,6 @@ func _spawn_characters() -> void:
 
 
 func _on_state_changed(_c: PlayerCharacter, s: CharacterState) -> void:
-	# Only sumo states have this signal
 	if s.has_signal(&"fell_off"):
 		s.connect(&"fell_off", _on_fell, CONNECT_DEFERRED)
 

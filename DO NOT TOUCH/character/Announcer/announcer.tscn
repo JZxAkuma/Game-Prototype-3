@@ -84,13 +84,12 @@ _data = {
 
 [node name="Announcer" unique_id=2109309627 instance=ExtResource("1_vquj3")]
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1538772355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013621688, 0)
+[node name="Skeleton3D" parent="." index="0" unique_id=1503536730]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55594057, 0)
 bones/0/rotation = Quaternion(0.5176049, 0.5139169, 0.4817522, 0.48568454)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/rotation = Quaternion(-1.1713007e-26, 0.0038120935, 2.382991e-26, 0.9999927)
 bones/1/scale = Vector3(0.9999998, 0.99999994, 0.9999999)
-bones/4/rotation = Quaternion(0.6842568, -0.6230861, -0.17830496, -0.33431092)
 bones/4/scale = Vector3(1.0000001, 1.0000001, 1)
 bones/5/rotation = Quaternion(4.1359026e-25, -0.081810296, -9.082766e-18, 0.99664795)
 bones/6/position = Vector3(0.4258987, -7.710743e-18, 4.718448e-16)
@@ -104,16 +103,16 @@ bones/11/rotation = Quaternion(2.0679515e-25, -0.022170644, -1.1257047e-16, 0.99
 bones/12/position = Vector3(0.26244277, -5.907213e-17, 3.7296555e-16)
 bones/12/rotation = Quaternion(0.99971455, -1.1305173e-16, -0.02389581, 5.847564e-17)
 
-[node name="Foot" parent="Skeleton3D" index="0" unique_id=1040581166]
+[node name="Foot" parent="Skeleton3D" index="0" unique_id=1274328315]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
-[node name="Face" parent="Skeleton3D" index="1" unique_id=361974447]
+[node name="Face" parent="Skeleton3D" index="1" unique_id=387636299]
 surface_material_override/0 = SubResource("StandardMaterial3D_xliaa")
 
-[node name="Body" parent="Skeleton3D" index="2" unique_id=769309801]
+[node name="Body" parent="Skeleton3D" index="2" unique_id=120321362]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
-[node name="Tail" parent="Skeleton3D" index="3" unique_id=1839677328]
+[node name="Tail" parent="Skeleton3D" index="3" unique_id=921634898]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
 [node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="4" unique_id=1457822581]
@@ -158,6 +157,6 @@ settings/0/joints/9/bone = 13
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=395880922]
+[node name="AnimationPlayer" parent="." index="1" unique_id=1807756718]
 libraries/AnnouncerAnimations = SubResource("AnimationLibrary_37plv")
 autoplay = &"AnnouncerAnimations/Idle"

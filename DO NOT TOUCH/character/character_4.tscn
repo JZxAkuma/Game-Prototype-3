@@ -31,8 +31,7 @@ shape = SubResource("CapsuleShape3D_f2w1j")
 
 [node name="hurtbox" type="Area3D" parent="." unique_id=2017165137]
 collision_layer = 2
-collision_mask = 0
-monitoring = false
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hurtbox" unique_id=1915791162]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -51,4 +50,5 @@ shape = SubResource("SphereShape3D_ssb5l")
 transform = Transform3D(-1.7954214e-08, 0.41074455, 0, -0.41074455, -1.7954214e-08, 0, 0, 0, 0.41074455, 0, 1.496873, -0.36455894)
 mesh = SubResource("CapsuleMesh_h7vri")
 
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
