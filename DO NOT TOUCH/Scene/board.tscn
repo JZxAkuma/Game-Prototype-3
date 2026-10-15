@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="5_od5fd"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
 [ext_resource type="Texture2D" uid="uid://btchgw75go1vt" path="res://DO NOT TOUCH/2D/Sprites/Spark.png" id="7_fne0o"]
+[ext_resource type="Script" uid="uid://dtyx8c36yhmd3" path="res://DO NOT TOUCH/Script/board ui.gd" id="9_adjs0"]
 [ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="9_df6mf"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="10_df6mf"]
 [ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="10_qoftb"]
 [ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="11_df6mf"]
 [ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="12_adjs0"]
@@ -432,6 +434,36 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=819980644]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_adjs0")
+
+[node name="Current turn" type="Label" parent="CanvasLayer/Control" unique_id=987211380]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_fonts/font = ExtResource("10_df6mf")
+theme_override_font_sizes/font_size = 40
+text = "asdfasdf"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control" unique_id=866804889]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Rocks" type="Node3D" parent="." unique_id=543364660]
 

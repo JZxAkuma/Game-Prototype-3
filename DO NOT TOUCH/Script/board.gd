@@ -217,7 +217,6 @@ func _run_game() -> void:
 			SceneManager.goto_scene(mg.mini_game_scene)
 			return
 
-
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
 	cam_target = tokens[p.slot]  

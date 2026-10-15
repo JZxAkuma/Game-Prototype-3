@@ -84,7 +84,7 @@ func _run() -> void:
 		c.set_mode(PlayerCharacter.Mode.LOCKED)
 	for p in GameState.players:
 		if p.slot == winner_slot:
-			p.coins += 5
+			GameState._add_medal(p,1)
 			chars[p.slot].play_anim(&"win")
 		else:
 			chars[p.slot].play_anim(&"lose")
