@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://d2x52fog3w5j8"]
+
+[ext_resource type="Texture2D" uid="uid://ckbgf1rnjmgd2" path="res://DO NOT TOUCH/2D/UI Assets/ButtonUnfocused.png" id="1_0l6kn"]
+
+[resource]
+texture = ExtResource("1_0l6kn")
+expand_margin_left = 10.0
+expand_margin_right = 10.0

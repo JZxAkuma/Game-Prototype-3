@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://bbkdka66su3l8"]
 
 [ext_resource type="Script" uid="uid://b5n4rmyhef1px" path="res://DO NOT TOUCH/Script/minigame_picker.gd" id="1_sn7kw"]
+[ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="2_7hcrc"]
+[ext_resource type="StyleBox" uid="uid://d2x52fog3w5j8" path="res://DO NOT TOUCH/BoxStyle/button style box normal.tres" id="2_wffeh"]
 
 [node name="Minigame_picker" type="CanvasLayer" unique_id=2007313731]
 script = ExtResource("1_sn7kw")
+normal_style = ExtResource("2_wffeh")
+lit_style = ExtResource("2_wffeh")
 
 [node name="Control" type="Control" parent="." unique_id=1216208299]
 layout_mode = 3
@@ -12,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_7hcrc")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=110404243]
 layout_mode = 1

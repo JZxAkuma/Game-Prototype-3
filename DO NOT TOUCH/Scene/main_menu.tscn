@@ -4,11 +4,12 @@
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_alnau"]
 [ext_resource type="Texture2D" uid="uid://ck58ns6rsfrun" path="res://DO NOT TOUCH/2D/UI Assets/Multiplayer Logo.png" id="2_cfy1k"]
 [ext_resource type="Texture2D" uid="uid://beqw7vp3b2ul5" path="res://DO NOT TOUCH/2D/UI Assets/BackdropViolet.png" id="2_uc67h"]
-[ext_resource type="Texture2D" uid="uid://ckbgf1rnjmgd2" path="res://DO NOT TOUCH/2D/UI Assets/ButtonUnfocused.png" id="3_bwy4f"]
 [ext_resource type="Shader" uid="uid://dkprk71000dq" path="res://DO NOT TOUCH/shader/2dAlphaScroller.gdshader" id="4_2kqvt"]
 [ext_resource type="Texture2D" uid="uid://bog8pw6t8qlgr" path="res://DO NOT TOUCH/2D/UI Assets/ButtonFocused.png" id="4_nv05k"]
 [ext_resource type="Texture2D" uid="uid://diaixtt72bqo7" path="res://DO NOT TOUCH/2D/UI Assets/CheckerScroller.png" id="5_122ny"]
 [ext_resource type="Script" uid="uid://pi3s2mfh2hku" path="res://DO NOT TOUCH/Script/texture_rect_zoom_looper.gd" id="5_bwy4f"]
+[ext_resource type="StyleBox" uid="uid://d2x52fog3w5j8" path="res://DO NOT TOUCH/BoxStyle/button style box normal.tres" id="8_7gvvm"]
+[ext_resource type="StyleBox" uid="uid://cbqwwkjc8e2gx" path="res://DO NOT TOUCH/BoxStyle/button style box hover.tres" id="10_ihpo4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xlo0w"]
 shader = ExtResource("4_2kqvt")
@@ -47,20 +48,10 @@ alpha_curve = SubResource("CurveTexture_uc67h")
 turbulence_enabled = true
 turbulence_noise_strength = 9.13
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mkgj"]
-texture = ExtResource("3_bwy4f")
-expand_margin_left = 10.0
-expand_margin_right = 10.0
-
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bwy4f"]
 texture = ExtResource("4_nv05k")
 texture_margin_left = 10.0
 texture_margin_right = 10.0
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disjo"]
-texture = ExtResource("4_nv05k")
-expand_margin_left = 15.0
-expand_margin_right = 15.0
 
 [node name="main menu" type="Node3D" unique_id=817745143]
 script = ExtResource("1_fd3gs")
@@ -162,9 +153,9 @@ theme_override_colors/font_pressed_color = Color(0.94457734, 0.506888, 0.2509356
 theme_override_colors/font_hover_color = Color(0.94509804, 0.5058824, 0.2509804, 1)
 theme_override_fonts/font = ExtResource("2_alnau")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_4mkgj")
+theme_override_styles/normal = ExtResource("8_7gvvm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bwy4f")
-theme_override_styles/hover = SubResource("StyleBoxTexture_disjo")
+theme_override_styles/hover = ExtResource("10_ihpo4")
 text = "Start"
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1824461164]
@@ -174,9 +165,9 @@ theme_override_colors/font_pressed_color = Color(0.94457734, 0.506888, 0.2509356
 theme_override_colors/font_hover_color = Color(0.94509804, 0.5058824, 0.2509804, 1)
 theme_override_fonts/font = ExtResource("2_alnau")
 theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxTexture_4mkgj")
+theme_override_styles/normal = ExtResource("8_7gvvm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bwy4f")
-theme_override_styles/hover = SubResource("StyleBoxTexture_disjo")
+theme_override_styles/hover = ExtResource("10_ihpo4")
 text = "To world"
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start" to="." method="_on_start_pressed"]

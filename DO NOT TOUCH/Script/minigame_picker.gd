@@ -10,6 +10,10 @@ signal finished
 
 var cards: Array[PanelContainer] = []
 
+@export var normal_style: StyleBox
+@export var lit_style: StyleBox
+
+
 
 func _play(list: Array, winner: MINI_GAME) -> void:
 	for mg in list:
@@ -44,4 +48,4 @@ func _play(list: Array, winner: MINI_GAME) -> void:
 	finished.emit()
 
 func _set_lit(card: Control, lit: bool) -> void:
-	card.modulate = Color.WHITE if lit else Color(0.5, 0.5, 0.5)
+	card.add_theme_stylebox_override("panel", lit_style if lit else normal_style)
