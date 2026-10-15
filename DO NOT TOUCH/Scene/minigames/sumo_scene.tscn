@@ -118,6 +118,14 @@ shader_parameter/alpha = 0.2350000111625
 material = SubResource("ShaderMaterial_qsjh6")
 size = Vector2(800, 500)
 
+[sub_resource type="Animation" id="Animation_ugtl2"]
+resource_name = "countdown"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qsjh6"]
+_data = {
+&"countdown": SubResource("Animation_ugtl2")
+}
+
 [node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui")]
 script = ExtResource("1_qmvo0")
 players_root = NodePath("players")
@@ -304,3 +312,6 @@ mesh = SubResource("PlaneMesh_gij0j")
 
 [node name="Map_limit" parent="." unique_id=1918000921 instance=ExtResource("7_qmvo0")]
 transform = Transform3D(120, 0, 0, 0, 1, 0, 0, 0, 120, 0, -8, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=782199951]
+libraries/ = SubResource("AnimationLibrary_qsjh6")

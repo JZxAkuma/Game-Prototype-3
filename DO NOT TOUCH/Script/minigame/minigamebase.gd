@@ -9,6 +9,7 @@ const board := preload("res://DO NOT TOUCH/Scene/board.tscn")
 @export var players_root : Node3D
 @export var spawns : Node3D
 @export var tutorial_ui: CanvasLayer
+@export var anim : AnimationPlayer
 
 @warning_ignore("unused_signal")
 signal round_over(winner_slot: int)
@@ -93,7 +94,7 @@ func _run() -> void:
 
 func _countdown() -> void:
 	await get_tree().create_timer(2.0).timeout
-
+	#anim.play(&"countdown")
 
 func _start_round(_practice: bool) -> void:
 	for c in chars.values():
