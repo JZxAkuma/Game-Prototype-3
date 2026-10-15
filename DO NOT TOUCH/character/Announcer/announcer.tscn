@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cpb6a3ecs8f8s" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert2_Metallic.png" id="3_kq4ao"]
 [ext_resource type="Texture2D" uid="uid://ck8kllx1bsb3" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert2_Roughness.png" id="4_eayrd"]
 [ext_resource type="Texture2D" uid="uid://it1xl1b601ea" path="res://DO NOT TOUCH/character/Announcer/Announcer_lambert3_BaseColor.png" id="5_kq4ao"]
+[ext_resource type="Script" uid="uid://rem75lpun648" path="res://DO NOT TOUCH/Script/blink_material_switcher.gd" id="7_xliaa"]
+[ext_resource type="Texture2D" uid="uid://coc45yxf2skst" path="res://DO NOT TOUCH/character/Announcer/Announcer_EyeClosed.png" id="8_37plv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vquj3"]
 albedo_texture = ExtResource("2_flf1h")
@@ -86,7 +88,7 @@ _data = {
 [node name="Announcer" unique_id=2109309627 instance=ExtResource("1_vquj3")]
 script = ExtResource("2_eayrd")
 
-[node name="Skeleton3D" parent="." index="0" unique_id=1503536730]
+[node name="Skeleton3D" parent="." index="0" unique_id=1538772355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013621688, 0)
 bones/0/scale = Vector3(1, 0.99999994, 1)
 bones/1/rotation = Quaternion(-1.1713007e-26, 0.0038120935, 2.382991e-26, 0.9999927)
@@ -104,16 +106,22 @@ bones/11/rotation = Quaternion(2.0679515e-25, -0.022170644, -1.1257047e-16, 0.99
 bones/12/position = Vector3(0.26244277, -5.907213e-17, 3.7296555e-16)
 bones/12/rotation = Quaternion(0.99971455, -1.1305173e-16, -0.02389581, 5.847564e-17)
 
-[node name="Foot" parent="Skeleton3D" index="0" unique_id=1274328315]
+[node name="Foot" parent="Skeleton3D" index="0" unique_id=1040581166]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
-[node name="Face" parent="Skeleton3D" index="1" unique_id=387636299]
+[node name="Face" parent="Skeleton3D" index="1" unique_id=361974447]
 surface_material_override/0 = SubResource("StandardMaterial3D_xliaa")
+script = ExtResource("7_xliaa")
+open_eye_texture = ExtResource("5_kq4ao")
+closed_eye_texture = ExtResource("8_37plv")
+blink_interval_min = 0.5
+blink_interval_max = 2.0
+blink_duration = 0.25
 
-[node name="Body" parent="Skeleton3D" index="2" unique_id=120321362]
+[node name="Body" parent="Skeleton3D" index="2" unique_id=769309801]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
-[node name="Tail" parent="Skeleton3D" index="3" unique_id=921634898]
+[node name="Tail" parent="Skeleton3D" index="3" unique_id=1839677328]
 surface_material_override/0 = SubResource("StandardMaterial3D_vquj3")
 
 [node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="Skeleton3D" index="4" unique_id=1457822581]
@@ -158,6 +166,6 @@ settings/0/joints/9/bone = 13
 settings/0/enable_all_child_collisions = true
 settings/0/exclude_collision_count = 0
 
-[node name="AnimationPlayer" parent="." index="1" unique_id=1807756718]
+[node name="AnimationPlayer" parent="." index="1" unique_id=395880922]
 libraries/AnnouncerAnimations = SubResource("AnimationLibrary_37plv")
 autoplay = &"AnnouncerAnimations/Idle"
