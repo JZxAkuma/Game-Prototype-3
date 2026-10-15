@@ -3,15 +3,37 @@
 [ext_resource type="Script" uid="uid://copldvyw0hglm" path="res://DO NOT TOUCH/Script/board.gd" id="1_2tmgi"]
 [ext_resource type="PackedScene" uid="uid://84fw0vhv4sm3" path="res://DO NOT TOUCH/Scene/board_space.tscn" id="2_bw800"]
 [ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="3_cal7y"]
+[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_ddiqi"]
+[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="4_2on7c"]
 [ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="4_4j4vu"]
+[ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fne0o"]
+shader = ExtResource("3_ddiqi")
+shader_parameter/sky_texture = ExtResource("4_2on7c")
+
+[sub_resource type="Sky" id="Sky_cal7y"]
+sky_material = SubResource("ShaderMaterial_fne0o")
 
 [sub_resource type="Environment" id="Environment_n5003"]
-background_mode = 1
-background_color = Color(0.60643816, 0.7359453, 1, 1)
+background_mode = 2
+background_color = Color(0.7258497, 0.7619212, 0.5828496, 1)
+background_energy_multiplier = 1.24
+sky = SubResource("Sky_cal7y")
+ambient_light_source = 2
+ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
+ambient_light_energy = 4.65
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.64
+tonemap_white = 1.68
+ssil_enabled = true
+ssil_intensity = 2.6
+sdfgi_bounce_feedback = 0.31
+sdfgi_energy = 0.2
 adjustment_enabled = true
-adjustment_brightness = 1.09
 adjustment_contrast = 1.015
-adjustment_saturation = 1.04
+adjustment_saturation = 1.12
 
 [sub_resource type="BoxMesh" id="BoxMesh_aygv5"]
 size = Vector3(129.30646, 1, 121.27396)
@@ -301,6 +323,13 @@ _data = {
 &"intro": SubResource("Animation_bw800")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddiqi"]
+shader = ExtResource("7_2on7c")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
+
 [node name="Board" type="Node3D" unique_id=2115529111]
 script = ExtResource("1_2tmgi")
 
@@ -360,4 +389,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9263721, 0.057990897, -0.3721177, 0, 0.9880737, 0.15398158, 0.37660924, -0.14264427, 0.9153239, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.92637205, 0.0579909, -0.3721177, 0, 0.9880737, 0.1539816, 0.3766092, -0.14264429, 0.91532385, 116.82978, 20.989372, 30.39455)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
+light_color = Color(0.9071141, 0.8886923, 1.92523e-06, 1)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 10.361
+spot_angle = 25.75
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=662706121]
+material = SubResource("ShaderMaterial_ddiqi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
