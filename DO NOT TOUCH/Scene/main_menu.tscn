@@ -17,6 +17,36 @@ shader_parameter/scroll_speed = Vector2(0.2, 0.1)
 shader_parameter/opacity = 0.2000000095
 shader_parameter/tint = Color(0.6205557, 0.45692313, 0.61961937, 1)
 
+[sub_resource type="Curve" id="Curve_7gvvm"]
+_data = [Vector2(0, 1), 0.0, 1.4, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_uc67h"]
+curve = SubResource("Curve_7gvvm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1w13i"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 5.0
+scale_max = 10.0
+alpha_curve = SubResource("CurveTexture_uc67h")
+turbulence_enabled = true
+turbulence_noise_strength = 9.13
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_uc67h"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(600, 1, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 5.0
+scale_max = 10.0
+color = Color(0.8647963, 0.78257346, 0.9133137, 0.74509805)
+alpha_curve = SubResource("CurveTexture_uc67h")
+turbulence_enabled = true
+turbulence_noise_strength = 9.13
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mkgj"]
 texture = ExtResource("3_bwy4f")
 expand_margin_left = 10.0
@@ -63,6 +93,18 @@ texture = ExtResource("5_122ny")
 stretch_mode = 1
 flip_h = true
 flip_v = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="CanvasLayer/Control" unique_id=1192077124]
+position = Vector2(580, 0)
+amount = 20
+lifetime = 20.0
+process_material = SubResource("ParticleProcessMaterial_1w13i")
+
+[node name="GPUParticles2D3" type="GPUParticles2D" parent="CanvasLayer/Control" unique_id=169536999]
+position = Vector2(580, 0)
+amount = 20
+lifetime = 20.0
+process_material = SubResource("ParticleProcessMaterial_uc67h")
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1371003075]
 layout_mode = 1
