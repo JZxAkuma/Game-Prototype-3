@@ -3,9 +3,19 @@
 [ext_resource type="Script" uid="uid://bub8c38w2knfa" path="res://DO NOT TOUCH/Script/main_menu.gd" id="1_fd3gs"]
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_alnau"]
 [ext_resource type="Texture2D" uid="uid://ck58ns6rsfrun" path="res://DO NOT TOUCH/2D/UI Assets/Multiplayer Logo.png" id="2_cfy1k"]
+[ext_resource type="Texture2D" uid="uid://beqw7vp3b2ul5" path="res://DO NOT TOUCH/2D/UI Assets/BackdropViolet.png" id="2_uc67h"]
 [ext_resource type="Texture2D" uid="uid://ckbgf1rnjmgd2" path="res://DO NOT TOUCH/2D/UI Assets/ButtonUnfocused.png" id="3_bwy4f"]
+[ext_resource type="Shader" uid="uid://dkprk71000dq" path="res://DO NOT TOUCH/shader/2dAlphaScroller.gdshader" id="4_2kqvt"]
 [ext_resource type="Texture2D" uid="uid://bog8pw6t8qlgr" path="res://DO NOT TOUCH/2D/UI Assets/ButtonFocused.png" id="4_nv05k"]
+[ext_resource type="Texture2D" uid="uid://diaixtt72bqo7" path="res://DO NOT TOUCH/2D/UI Assets/CheckerScroller.png" id="5_122ny"]
 [ext_resource type="Script" uid="uid://pi3s2mfh2hku" path="res://DO NOT TOUCH/Script/texture_rect_zoom_looper.gd" id="5_bwy4f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xlo0w"]
+shader = ExtResource("4_2kqvt")
+shader_parameter/scroll_texture = ExtResource("5_122ny")
+shader_parameter/scroll_speed = Vector2(0.2, 0.1)
+shader_parameter/opacity = 0.2000000095
+shader_parameter/tint = Color(0.6205557, 0.45692313, 0.61961937, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mkgj"]
 texture = ExtResource("3_bwy4f")
@@ -34,6 +44,25 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorChanger" type="TextureRect" parent="CanvasLayer/Control" unique_id=702908791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uc67h")
+
+[node name="ScrollingCheckers" type="TextureRect" parent="CanvasLayer/Control" unique_id=737478302]
+material = SubResource("ShaderMaterial_xlo0w")
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 1000.0
+texture = ExtResource("5_122ny")
+stretch_mode = 1
+flip_h = true
+flip_v = true
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1371003075]
 layout_mode = 1
