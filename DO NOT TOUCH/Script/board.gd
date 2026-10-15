@@ -293,4 +293,5 @@ func _play_cam_current() -> void:
 	$"droneshot pivot/intro_camera".current = false
 
 func _show_tokens() -> void:
+	$CanvasLayer/Control.show()
 	tokens_root.show()
