@@ -8,6 +8,8 @@ class_name Board
 
 @onready var announcer_actor: Node3D = $"commentator set/Announcer"
 
+@onready var dice: Node3D = $Dice
+
 @export var cam_follow_speed := 4.0
 @export var cam_offset := Vector3.ZERO
 var cam_target: Node3D
@@ -224,14 +226,23 @@ func _run_game() -> void:
 
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
-	cam_target = tokens[p.slot]  
+	cam_target = tokens[p.slot]
+
+	dice.global_position = tokens[p.slot].global_position + Vector3(0, 4.0, 0)
+	dice.start_spin()
+
 	var a := PlayerInput._act(p.slot, &"a")
 	while not Input.is_action_just_pressed(a):
 		await get_tree().process_frame
 		if not is_inside_tree():
 			return
-	var roll := randi_range(1,6)
-	print("P%d rolled %d" % [p.slot + 1, roll])
+
+	var roll := randi_range(1, 6)
+	dice.reveal(roll)
+	await get_tree().create_timer(0.6).timeout
+	if not is_inside_tree():
+		return
+	dice.hide()
 	
 	var landed := await _move_token(tokens[p.slot],spaces[p.space_index],roll)
 	if not is_inside_tree():

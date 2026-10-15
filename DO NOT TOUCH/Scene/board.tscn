@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="10_qoftb"]
 [ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="11_df6mf"]
 [ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="12_adjs0"]
+[ext_resource type="PackedScene" uid="uid://dc1nurgou1qfs" path="res://DO NOT TOUCH/Scene/dice.tscn" id="15_ede5q"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svf5d"]
 albedo_color = Color(0.73333335, 1, 1, 1)
@@ -417,7 +418,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.926372, 0.057990897, -0.37211764, 0, 0.9880737, 0.15398157, 0.3766092, -0.14264427, 0.91532373, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.92637193, 0.0579909, -0.3721176, 0, 0.9880737, 0.15398155, 0.3766092, -0.14264427, 0.9153237, 116.82978, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -608,3 +609,5 @@ transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556
 
 [node name="Rock9" parent="Rocks" unique_id=2007129425 instance=ExtResource("12_adjs0")]
 transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556e-07, 0, -7.838913, 58.99566, 11.724941, -57.579815)
+
+[node name="Dice" parent="." unique_id=976916757 instance=ExtResource("15_ede5q")]
