@@ -5,6 +5,7 @@
 [ext_resource type="Shader" uid="uid://dberejqb5uhhs" path="res://DO NOT TOUCH/shader/2dCanvasItemScroller.gdshader" id="2_7l12h"]
 [ext_resource type="Texture2D" uid="uid://diaixtt72bqo7" path="res://DO NOT TOUCH/2D/UI Assets/CheckerScroller.png" id="2_yg51k"]
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="5_2he8c"]
+[ext_resource type="Environment" uid="uid://cnjl0g054uj2h" path="res://DO NOT TOUCH/Environmental Assets/environment material/new_environment.tres" id="5_ey3gf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_phqq8"]
 shader = ExtResource("2_7l12h")
@@ -44,7 +45,6 @@ layout_mode = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="VBoxContainer/PanelContainer/SubViewportContainer" unique_id=591722861]
-own_world_3d = true
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(200, 300)
@@ -55,12 +55,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5251512, 0)
 mesh = SubResource("BoxMesh_aygv5")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="VBoxContainer/PanelContainer/SubViewportContainer/SubViewport" unique_id=296583441]
+transform = Transform3D(1, 0, 0, 0, -0.4203605, 0.90735716, 0, -0.90735716, -0.4203605, 0, 0, 0)
 
 [node name="ModelHolder" type="Node3D" parent="VBoxContainer/PanelContainer/SubViewportContainer/SubViewport" unique_id=2073082483]
 
 [node name="Camera3D" type="Camera3D" parent="VBoxContainer/PanelContainer/SubViewportContainer/SubViewport" unique_id=1981399761]
-transform = Transform3D(1, 0, 0, 0, 0.95824224, 0.2859577, 0, -0.2859577, 0.95824224, 0, 1.223506, 3.5939033)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.6687511, -1.837893)
 current = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="VBoxContainer/PanelContainer/SubViewportContainer/SubViewport" unique_id=95725386]
+environment = ExtResource("5_ey3gf")
 
 [node name="NameLabel" type="Label" parent="VBoxContainer" unique_id=1785106722]
 layout_mode = 2

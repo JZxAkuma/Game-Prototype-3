@@ -1,0 +1,31 @@
+[gd_resource type="Environment" format=3 uid="uid://cnjl0g054uj2h"]
+
+[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="1_1bwyn"]
+[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="2_hxxm3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fne0o"]
+shader = ExtResource("1_1bwyn")
+shader_parameter/sky_texture = ExtResource("2_hxxm3")
+
+[sub_resource type="Sky" id="Sky_cal7y"]
+sky_material = SubResource("ShaderMaterial_fne0o")
+
+[resource]
+background_mode = 2
+background_color = Color(0.7258497, 0.7619212, 0.5828496, 1)
+background_energy_multiplier = 1.24
+sky = SubResource("Sky_cal7y")
+ambient_light_source = 2
+ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
+ambient_light_energy = 4.65
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.64
+tonemap_white = 1.68
+ssil_enabled = true
+ssil_intensity = 2.6
+sdfgi_bounce_feedback = 0.31
+sdfgi_energy = 0.2
+adjustment_enabled = true
+adjustment_contrast = 1.015
+adjustment_saturation = 1.12

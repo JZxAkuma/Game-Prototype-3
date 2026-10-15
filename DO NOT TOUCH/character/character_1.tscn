@@ -1,25 +1,15 @@
 [gd_scene format=3 uid="uid://dskdy3yjm0eah"]
 
 [ext_resource type="Script" uid="uid://pnjk3kh738v" path="res://DO NOT TOUCH/Script/character.gd" id="1_f2w1j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3jrws"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_3jrws"]
-material = SubResource("StandardMaterial3D_3jrws")
+[ext_resource type="PackedScene" uid="uid://bqtkssvoxgagn" path="res://DO NOT TOUCH/character/MobyRig.fbx" id="2_f4xl6"]
+[ext_resource type="Material" uid="uid://d4h5uuaw4xk0q" path="res://DO NOT TOUCH/character/player 1 mat/player 1.tres" id="3_das0k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2w1j"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_aygv5"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_aygv5"]
-
 [node name="character1" type="CharacterBody3D" unique_id=1051749168]
 script = ExtResource("1_f2w1j")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1071589668]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_3jrws")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=524550549]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -44,9 +34,52 @@ monitorable = false
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=363358519]
 shape = SubResource("SphereShape3D_aygv5")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1989751997]
-transform = Transform3D(-1.7954214e-08, 0.41074455, 0, -0.41074455, -1.7954214e-08, 0, 0, 0, 0.41074455, 0, 1.496873, -0.36455894)
-mesh = SubResource("CapsuleMesh_aygv5")
+[node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_f4xl6")]
+transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)
+
+[node name="RightFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="0" unique_id=992855695]
+material_override = ExtResource("3_das0k")
+
+[node name="LeftFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="1" unique_id=1016559045]
+material_override = ExtResource("3_das0k")
+
+[node name="LeftHand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="2" unique_id=1253438380]
+material_override = ExtResource("3_das0k")
+
+[node name="Head2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="3" unique_id=425573788]
+material_override = ExtResource("3_das0k")
+
+[node name="RightAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="4" unique_id=1100822607]
+material_override = ExtResource("3_das0k")
+
+[node name="LeftAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="5" unique_id=2141502048]
+material_override = ExtResource("3_das0k")
+
+[node name="WizardHat" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="6" unique_id=2066353818]
+material_override = ExtResource("3_das0k")
+
+[node name="RightEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="7" unique_id=1868162648]
+material_override = ExtResource("3_das0k")
+
+[node name="LeftEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="8" unique_id=504196029]
+material_override = ExtResource("3_das0k")
+
+[node name="Cape" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="9" unique_id=685169491]
+material_override = ExtResource("3_das0k")
+
+[node name="Thorax" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="10" unique_id=276131945]
+material_override = ExtResource("3_das0k")
+
+[node name="Abdomen" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="11" unique_id=284767893]
+material_override = ExtResource("3_das0k")
+
+[node name="RightHand2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="12" unique_id=1939650959]
+material_override = ExtResource("3_das0k")
+
+[node name="Wand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="13" unique_id=187938637]
+material_override = ExtResource("3_das0k")
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+
+[editable path="MobyRig"]

@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://copldvyw0hglm" path="res://DO NOT TOUCH/Script/board.gd" id="1_2tmgi"]
 [ext_resource type="PackedScene" uid="uid://84fw0vhv4sm3" path="res://DO NOT TOUCH/Scene/board_space.tscn" id="2_bw800"]
 [ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="3_cal7y"]
-[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_ddiqi"]
-[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="4_2on7c"]
+[ext_resource type="Environment" uid="uid://cnjl0g054uj2h" path="res://DO NOT TOUCH/Environmental Assets/environment material/new_environment.tres" id="3_qoftb"]
 [ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="4_4j4vu"]
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="5_od5fd"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
@@ -13,33 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="10_qoftb"]
 [ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="11_df6mf"]
 [ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="12_adjs0"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fne0o"]
-shader = ExtResource("3_ddiqi")
-shader_parameter/sky_texture = ExtResource("4_2on7c")
-
-[sub_resource type="Sky" id="Sky_cal7y"]
-sky_material = SubResource("ShaderMaterial_fne0o")
-
-[sub_resource type="Environment" id="Environment_n5003"]
-background_mode = 2
-background_color = Color(0.7258497, 0.7619212, 0.5828496, 1)
-background_energy_multiplier = 1.24
-sky = SubResource("Sky_cal7y")
-ambient_light_source = 2
-ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
-ambient_light_energy = 4.65
-reflected_light_source = 1
-tonemap_mode = 3
-tonemap_exposure = 0.64
-tonemap_white = 1.68
-ssil_enabled = true
-ssil_intensity = 2.6
-sdfgi_bounce_feedback = 0.31
-sdfgi_energy = 0.2
-adjustment_enabled = true
-adjustment_contrast = 1.015
-adjustment_saturation = 1.12
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svf5d"]
 albedo_color = Color(0.73333335, 1, 1, 1)
@@ -393,7 +365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9349594, 0, -1.8681893)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.016563, 0, -4.45407)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
-environment = SubResource("Environment_n5003")
+environment = ExtResource("3_qoftb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=963444360]
 transform = Transform3D(1, 0, 0, 0, 0.6448396, 0.7643179, 0, -0.7643179, 0.6448396, 0, 0, 0)
