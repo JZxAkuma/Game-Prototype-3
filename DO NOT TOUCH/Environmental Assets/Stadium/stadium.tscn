@@ -1,17 +1,21 @@
 [gd_scene format=3 uid="uid://6o8ymmeglndg"]
 
 [ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="1_4rwjq"]
-[ext_resource type="Texture2D" uid="uid://ofg3jb3fmy8t" path="res://DO NOT TOUCH/2D/Sprites/Confetti.png" id="2_gi003"]
+[ext_resource type="Texture2D" uid="uid://bqi3fgpc2v3ro" path="res://DO NOT TOUCH/Environmental Assets/Stadium/crowdTexture/Crowds_lambert1_BaseColor.png" id="2_6ibn0"]
 [ext_resource type="Shader" uid="uid://dxgjyg4j02d66" path="res://DO NOT TOUCH/shader/WaterRipples.gdshader" id="3_6ibn0"]
 [ext_resource type="Texture2D" uid="uid://8fehxx1jikst" path="res://DO NOT TOUCH/2D/Sprites/ScrollerBanner.png" id="4_2pk63"]
+[ext_resource type="PackedScene" uid="uid://capaqt7uv3mqc" path="res://DO NOT TOUCH/Environmental Assets/Stadium/crowdTexture/Crowds.fbx" id="5_2pk63"]
+[ext_resource type="Script" uid="uid://dteo3rrnld5jy" path="res://DO NOT TOUCH/Script/meshinstance_textureflipper.gd" id="6_6t0jv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bwyn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlwaa"]
 transparency = 2
-alpha_scissor_threshold = 0.555
+alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
-albedo_texture = ExtResource("2_gi003")
-uv1_scale = Vector3(30, 30, 30)
-uv2_scale = Vector3(20, 20, 20)
+albedo_texture = ExtResource("2_6ibn0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxxm3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6t0jv"]
 render_priority = 0
@@ -22,13 +26,75 @@ shader_parameter/tiling = Vector2(0.3, 23.89)
 shader_parameter/scroll_speed = -0.05
 shader_parameter/emission_strength = 5.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kpa2a"]
+transparency = 4
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("2_6ibn0")
+
+[sub_resource type="Animation" id="Animation_2pk63"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BigCrowd:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.44117263, 2.5522518), Vector3(0, 1.6493597, 2.5522518), Vector3(0, 0.44117263, 2.5522518)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SmallCrowd:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.44117263, 2.5522518), Vector3(0, -1.7362194, 2.5522518), Vector3(0, 1.1476053, 2.5522518), Vector3(0, 0.44117263, 2.5522518)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t0jv"]
+_data = {
+&"loop": SubResource("Animation_2pk63")
+}
+
 [node name="Stadium" unique_id=1438777467 instance=ExtResource("1_4rwjq")]
 
-[node name="BigCrowd" parent="." index="1" unique_id=1793269809]
-surface_material_override/0 = SubResource("StandardMaterial3D_wlwaa")
+[node name="BigCrowd" parent="." index="1" unique_id=1014190240]
+transform = Transform3D(9.2233095, 0, 0, 0, 0.20500405, 0, 0, 0, 6.8778567, 0, -0.31704962, 2.5522518)
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_1bwyn")
 
-[node name="SmallCrowd" parent="." index="2" unique_id=877985386]
-surface_material_override/0 = SubResource("StandardMaterial3D_wlwaa")
+[node name="SmallCrowd" parent="." index="2" unique_id=668723288]
+transform = Transform3D(9.2233095, 0, 0, 0, 0.20500405, 0, 0, 0, 6.8778567, 0, -0.15663809, 2.5522518)
+visible = false
+material_override = SubResource("StandardMaterial3D_wlwaa")
+surface_material_override/0 = SubResource("StandardMaterial3D_hxxm3")
 
-[node name="pasted__Displayscreen" parent="Stage" parent_id_path=PackedInt32Array(2107625297) index="6" unique_id=579742541]
+[node name="pasted__Displayscreen" parent="Stage" parent_id_path=PackedInt32Array(1328424379) index="6" unique_id=1730673684]
 material_override = SubResource("ShaderMaterial_6t0jv")
+
+[node name="Crowds" parent="." index="15" unique_id=1427773217 instance=ExtResource("5_2pk63")]
+
+[node name="BigCrowd" parent="Crowds" index="0" unique_id=908235600]
+transform = Transform3D(9.2233095, 0, 0, 0, 0.15273169, 0, 0, 0, 6.8778567, 0, 1.3542464, 2.5522518)
+surface_material_override/0 = SubResource("StandardMaterial3D_kpa2a")
+script = ExtResource("6_6t0jv")
+flip_interval = 2.0
+
+[node name="SmallCrowd" parent="Crowds" index="1" unique_id=19626213]
+transform = Transform3D(9.2233095, 0, 0, 0, 0.15273169, 0, 0, 0, 6.8778567, 0, 0.4100995, 2.5522518)
+surface_material_override/0 = SubResource("StandardMaterial3D_kpa2a")
+script = ExtResource("6_6t0jv")
+
+[node name="AnimationPlayer" parent="Crowds" index="2" unique_id=1469601452]
+libraries/Crowd = SubResource("AnimationLibrary_6t0jv")
+autoplay = &"Crowd/loop"
+
+[editable path="Crowds"]
