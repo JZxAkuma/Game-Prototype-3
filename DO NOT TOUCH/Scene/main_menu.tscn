@@ -1,6 +1,18 @@
 [gd_scene format=3 uid="uid://c1fc32x3xifg5"]
 
 [ext_resource type="Script" uid="uid://bub8c38w2knfa" path="res://DO NOT TOUCH/Script/main_menu.gd" id="1_fd3gs"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_alnau"]
+[ext_resource type="Texture2D" uid="uid://ck58ns6rsfrun" path="res://DO NOT TOUCH/2D/UI Assets/Multiplayer Logo.png" id="2_cfy1k"]
+[ext_resource type="Texture2D" uid="uid://ckbgf1rnjmgd2" path="res://DO NOT TOUCH/2D/UI Assets/ButtonUnfocused.png" id="3_bwy4f"]
+[ext_resource type="Texture2D" uid="uid://bog8pw6t8qlgr" path="res://DO NOT TOUCH/2D/UI Assets/ButtonFocused.png" id="4_nv05k"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4mkgj"]
+texture = ExtResource("3_bwy4f")
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_disjo"]
+texture = ExtResource("4_nv05k")
 
 [node name="main menu" type="Node3D" unique_id=817745143]
 script = ExtResource("1_fd3gs")
@@ -22,20 +34,46 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -38.0
+offset_top = 176.0
+offset_right = 38.0
+offset_bottom = 242.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="start" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=529104064]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.6009967, 0.23037848, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.94457734, 0.506888, 0.25093564, 1)
+theme_override_fonts/font = ExtResource("2_alnau")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_4mkgj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_disjo")
 text = "Start"
 
 [node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer" unique_id=1824461164]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.6009967, 0.23037848, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.94457734, 0.506888, 0.25093564, 1)
+theme_override_fonts/font = ExtResource("2_alnau")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_4mkgj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_disjo")
 text = "To world"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1371003075]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 245.0
+offset_top = 15.0
+offset_right = -224.0
+offset_bottom = -118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cfy1k")
+expand_mode = 1
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
