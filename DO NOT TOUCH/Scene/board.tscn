@@ -324,12 +324,20 @@ _data = {
 &"intro": SubResource("Animation_bw800")
 }
 
+[sub_resource type="Curve" id="Curve_fne0o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9839573, 0), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fne0o"]
+curve = SubResource("Curve_fne0o")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2on7c"]
-emission_shape_scale = Vector3(50, 50, 50)
-emission_shape = 1
-emission_sphere_radius = 1.0
+emission_shape_scale = Vector3(35, 10, 20)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
 gravity = Vector3(0, 0, 0)
-scale_max = 3.0
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_fne0o")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2on7c"]
 transparency = 2
@@ -337,6 +345,8 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 albedo_texture = ExtResource("7_fne0o")
+billboard_mode = 1
+billboard_keep_scale = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_fne0o"]
 material = SubResource("StandardMaterial3D_2on7c")
@@ -419,7 +429,7 @@ spot_range = 10.361
 spot_angle = 25.75
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="commentator set" unique_id=94454391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.57033, 6.824849, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.85635, 6.824849, 0.7264662)
 process_material = SubResource("ParticleProcessMaterial_2on7c")
 draw_pass_1 = SubResource("QuadMesh_fne0o")
 
