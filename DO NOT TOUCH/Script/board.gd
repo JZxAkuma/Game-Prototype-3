@@ -188,7 +188,6 @@ func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardS
 	moving_token = null
 	return current
 
-
 func _run_game() -> void:
 	_play_cam_current()
 	if not GameState.intro_played:
@@ -196,8 +195,7 @@ func _run_game() -> void:
 		await _play_intro()
 		if not is_inside_tree():
 			return
-	
-	
+
 	_show_tokens()
 	var first := GameState.players[GameState.current_player]
 	play_camera_pivot.global_position = tokens[first.slot].global_position + cam_offset
