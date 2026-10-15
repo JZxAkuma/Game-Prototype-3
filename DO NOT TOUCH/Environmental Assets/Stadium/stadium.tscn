@@ -1,11 +1,34 @@
 [gd_scene format=3 uid="uid://6o8ymmeglndg"]
 
 [ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="1_4rwjq"]
+[ext_resource type="Texture2D" uid="uid://ofg3jb3fmy8t" path="res://DO NOT TOUCH/2D/Sprites/Confetti.png" id="2_gi003"]
+[ext_resource type="Shader" uid="uid://dxgjyg4j02d66" path="res://DO NOT TOUCH/shader/WaterRipples.gdshader" id="3_6ibn0"]
+[ext_resource type="Texture2D" uid="uid://8fehxx1jikst" path="res://DO NOT TOUCH/2D/Sprites/ScrollerBanner.png" id="4_2pk63"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlwaa"]
+transparency = 2
+alpha_scissor_threshold = 0.555
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("2_gi003")
+uv1_scale = Vector3(30, 30, 30)
+uv2_scale = Vector3(20, 20, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6t0jv"]
+render_priority = 0
+shader = ExtResource("3_6ibn0")
+shader_parameter/water_texture = ExtResource("4_2pk63")
+shader_parameter/emission_texture = ExtResource("4_2pk63")
+shader_parameter/tiling = Vector2(0.3, 23.89)
+shader_parameter/scroll_speed = 0.02
+shader_parameter/emission_strength = 5.0
 
 [node name="Stadium" unique_id=1438777467 instance=ExtResource("1_4rwjq")]
 
 [node name="BigCrowd" parent="." index="1" unique_id=1793269809]
-visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_wlwaa")
 
 [node name="SmallCrowd" parent="." index="2" unique_id=877985386]
-visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_wlwaa")
+
+[node name="pasted__Displayscreen" parent="Stage" parent_id_path=PackedInt32Array(2107625297) index="6" unique_id=579742541]
+material_override = SubResource("ShaderMaterial_6t0jv")
