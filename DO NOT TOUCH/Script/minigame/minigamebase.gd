@@ -93,8 +93,9 @@ func _run() -> void:
 		SceneManager.goto_scene(board)
 
 func _countdown() -> void:
-	await get_tree().create_timer(2.0).timeout
-	#anim.play(&"countdown")
+	#await get_tree().create_timer(2.0).timeout
+	anim.play(&"countdown")
+	await anim.animation_finished
 
 func _start_round(_practice: bool) -> void:
 	for c in chars.values():
