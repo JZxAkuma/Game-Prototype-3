@@ -388,6 +388,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
+current = true
 
 [node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
 
@@ -400,10 +401,9 @@ transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0,
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
-current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.92637205, 0.057990894, -0.37211758, 0, 0.9880737, 0.15398158, 0.37660915, -0.14264429, 0.9153238, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.92637205, 0.057990886, -0.37211758, 0, 0.9880737, 0.15398157, 0.37660915, -0.14264427, 0.9153238, 116.82978, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)

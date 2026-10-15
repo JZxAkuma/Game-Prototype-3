@@ -8,6 +8,10 @@ class_name Board
 
 @onready var announcer_actor: Node3D = $"commentator set/Announcer"
 
+@export var cam_follow_speed := 4.0
+@export var cam_offset := Vector3.ZERO
+var cam_target: Node3D
+var cam_follow_enabled := false
 
 var spaces: Array[BoardSpace] = []
 var tokens := {}
@@ -58,6 +62,13 @@ func _link_spaces() -> void:
 		#if s.locked:
 			#continue
 		#s.type = _weighted_pick(rng, weights)
+
+func _process(delta: float) -> void:
+	if not cam_follow_enabled or cam_target == null:
+		return
+	var goal := cam_target.global_position + cam_offset
+	var t := 1.0 - exp(-cam_follow_speed * delta)
+	play_camera_pivot.global_position = play_camera_pivot.global_position.lerp(goal, t)
 
 func _play_intro() -> void:
 	if not anim.has_animation(&"intro"):
@@ -158,6 +169,10 @@ func _run_game() -> void:
 		if not is_inside_tree():
 			return
 
+	var first := GameState.players[GameState.current_player]
+	play_camera_pivot.global_position = tokens[first.slot].global_position + cam_offset
+	cam_follow_enabled = true
+
 	while is_inside_tree():
 		await _play_turn(GameState.current_player)
 		if not is_inside_tree():
@@ -172,6 +187,7 @@ func _run_game() -> void:
 
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
+	cam_target = tokens[p.slot]  
 	var a := PlayerInput._act(p.slot, &"a")
 	while not Input.is_action_just_pressed(a):
 		await get_tree().process_frame
