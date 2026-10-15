@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="4_2on7c"]
 [ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="4_4j4vu"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
+[ext_resource type="Texture2D" uid="uid://btchgw75go1vt" path="res://DO NOT TOUCH/2D/Sprites/Spark.png" id="7_fne0o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fne0o"]
 shader = ExtResource("3_ddiqi")
@@ -323,6 +324,23 @@ _data = {
 &"intro": SubResource("Animation_bw800")
 }
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2on7c"]
+emission_shape_scale = Vector3(50, 50, 50)
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector3(0, 0, 0)
+scale_max = 3.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2on7c"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("7_fne0o")
+
+[sub_resource type="QuadMesh" id="QuadMesh_fne0o"]
+material = SubResource("StandardMaterial3D_2on7c")
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddiqi"]
 shader = ExtResource("7_2on7c")
 shader_parameter/color_steps = 30.000001045
@@ -389,15 +407,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.92637205, 0.0579909, -0.3721177, 0, 0.9880737, 0.1539816, 0.3766092, -0.14264429, 0.91532385, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.92637205, 0.057990897, -0.3721176, 0, 0.9880737, 0.1539816, 0.37660915, -0.1426443, 0.91532385, 116.82978, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
+visible = false
 light_color = Color(0.9071141, 0.8886923, 1.92523e-06, 1)
 light_energy = 16.0
 shadow_enabled = true
 spot_range = 10.361
 spot_angle = 25.75
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="commentator set" unique_id=94454391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.57033, 6.824849, 0)
+process_material = SubResource("ParticleProcessMaterial_2on7c")
+draw_pass_1 = SubResource("QuadMesh_fne0o")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
 
