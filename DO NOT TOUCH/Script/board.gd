@@ -158,13 +158,15 @@ func _weighted_pick(rng: RandomNumberGenerator,weights:Dictionary) -> BoardSpace
 
 func _spawn_characters() -> void:
 	for p in GameState.players:
-		_arrange_space(p.space_index, false)
 		var c : PlayerCharacter = GameState.character_scenes[p.character].instantiate()
 		tokens_root.add_child(c)
 		c.setup(p.slot)
 		c.set_mode(PlayerCharacter.Mode.LOCKED)
 		c.global_position = spaces[p.space_index].get_anchor_position()
 		tokens[p.slot] = c
+
+	for p in GameState.players:
+		_arrange_space(p.space_index, false)
 
 func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
 	moving_token = token
@@ -245,8 +247,12 @@ func _play_turn(player_index: int) -> void:
 func _occupants(space_index: int) -> Array:
 	var list := []
 	for p in GameState.players:
-		if p.space_index == space_index and tokens[p.slot] != moving_token:
-			list.append(p)
+		if p.space_index != space_index:
+			continue
+		var t = tokens.get(p.slot)
+		if t == null or t == moving_token:
+			continue
+		list.append(p)
 	return list
 
 func _slot_position(p, list: Array) -> Vector3:
