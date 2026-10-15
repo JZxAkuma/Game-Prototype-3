@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="4_swtc3"]
 [ext_resource type="PackedScene" uid="uid://dn4ner3n3nalv" path="res://Adha_Assets/Dice.fbx" id="5_swtc3"]
 [ext_resource type="PackedScene" uid="uid://cowr46dylkm4b" path="res://Adha_Assets/Tower_low.fbx" id="6_14phy"]
+[ext_resource type="PackedScene" uid="uid://33snidklavff" path="res://Adha_Assets/BushVar.fbx" id="7_l5xjc"]
 
 [sub_resource type="Environment" id="Environment_aygv5"]
 
@@ -37,7 +38,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 87.35405)
 [node name="Stadium" parent="." unique_id=1438777467 instance=ExtResource("4_swtc3")]
 
 [node name="Dice" parent="." unique_id=291068859 instance=ExtResource("5_swtc3")]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 73.94822, 64.17085, 79.5908)
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 70, 0, 30)
 
 [node name="Tower_low" parent="." unique_id=1672475490 instance=ExtResource("6_14phy")]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 104.03998, -7.7293396, -1.1382141)
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 70, 0, 0)
+
+[node name="BushVar" parent="." unique_id=443896053 instance=ExtResource("7_l5xjc")]
+transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 100, 0, 0)

@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cghqx7r4c8kq3"]
+
+[ext_resource type="Texture2D" uid="uid://csrk5xxi52hgj" path="res://Adha_Assets/Dice_Dice_BaseColor.png" id="1_ufeb2"]
+[ext_resource type="Texture2D" uid="uid://8gdw4cmujvqb" path="res://Adha_Assets/Dice_Dice_Normal.png" id="2_qnrra"]
+[ext_resource type="Texture2D" uid="uid://1tch5q5k5ws" path="res://Adha_Assets/Dice_Dice_Roughness.png" id="3_e2g4h"]
+
+[resource]
+albedo_texture = ExtResource("1_ufeb2")
+roughness_texture = ExtResource("3_e2g4h")
+normal_enabled = true
+normal_texture = ExtResource("2_qnrra")
