@@ -6,6 +6,44 @@
 [ext_resource type="Texture2D" uid="uid://8fehxx1jikst" path="res://DO NOT TOUCH/2D/Sprites/ScrollerBanner.png" id="4_2pk63"]
 [ext_resource type="PackedScene" uid="uid://capaqt7uv3mqc" path="res://DO NOT TOUCH/Environmental Assets/Stadium/crowdTexture/Crowds.fbx" id="5_2pk63"]
 [ext_resource type="Script" uid="uid://dteo3rrnld5jy" path="res://DO NOT TOUCH/Script/meshinstance_textureflipper.gd" id="6_6t0jv"]
+[ext_resource type="Texture2D" uid="uid://duf64tioygq20" path="res://DO NOT TOUCH/2D/Sprites/ParticleSprite.png" id="7_ljql0"]
+
+[sub_resource type="Animation" id="Animation_h4mcv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e5vj8"]
+resource_name = "SpeakerBop2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.05, 1.05, 1.05), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_43ee8"]
+_data = {
+&"RESET": SubResource("Animation_h4mcv"),
+&"SpeakerBop2": SubResource("Animation_e5vj8")
+}
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bwyn"]
 
@@ -16,6 +54,120 @@ alpha_antialiasing_mode = 0
 albedo_texture = ExtResource("2_6ibn0")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxxm3"]
+
+[sub_resource type="Animation" id="Animation_5aqhv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7p6ww"]
+resource_name = "SpeakerBop"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1.05, 1.05, 1.05), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h4mcv"]
+_data = {
+&"RESET": SubResource("Animation_5aqhv"),
+&"SpeakerBop": SubResource("Animation_7p6ww")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5aqhv"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_ljql0")
+
+[sub_resource type="Gradient" id="Gradient_agunv"]
+offsets = PackedFloat32Array(0, 0.580311, 1)
+colors = PackedColorArray(0.03763401, 0, 0.99773556, 1, 0.5733554, 0.69074625, 0.40419567, 0.419689, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_s3dmt"]
+gradient = SubResource("Gradient_agunv")
+
+[sub_resource type="Curve" id="Curve_7p6ww"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0xows"]
+curve = SubResource("Curve_7p6ww")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h4mcv"]
+direction = Vector3(0, -1, 0)
+spread = 0.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_0xows")
+color = Color(0.384855, 0.89475, 0.911714, 1)
+color_ramp = SubResource("GradientTexture1D_s3dmt")
+
+[sub_resource type="QuadMesh" id="QuadMesh_e5vj8"]
+size = Vector2(10, 3)
+orientation = 1
+
+[sub_resource type="Animation" id="Animation_ljql0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5aqhv"]
+_data = {
+&"RESET": SubResource("Animation_ljql0")
+}
+
+[sub_resource type="Animation" id="Animation_agunv"]
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.5717504, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p6ww"]
+_data = {
+&"Float": SubResource("Animation_agunv")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6t0jv"]
 render_priority = 0
@@ -66,6 +218,10 @@ _data = {
 
 [node name="Stadium" unique_id=1438777467 instance=ExtResource("1_4rwjq")]
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Speaker2" parent_id_path=PackedInt32Array(1494703408) index="0" unique_id=22241974]
+libraries/ = SubResource("AnimationLibrary_43ee8")
+autoplay = &"SpeakerBop2"
+
 [node name="BigCrowd" parent="." index="1" unique_id=1014190240]
 transform = Transform3D(9.2233095, 0, 0, 0, 0.20500405, 0, 0, 0, 6.8778567, 0, -0.31704962, 2.5522518)
 visible = false
@@ -76,6 +232,24 @@ transform = Transform3D(9.2233095, 0, 0, 0, 0.20500405, 0, 0, 0, 6.8778567, 0, -
 visible = false
 material_override = SubResource("StandardMaterial3D_wlwaa")
 surface_material_override/0 = SubResource("StandardMaterial3D_hxxm3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Speaker1" parent_id_path=PackedInt32Array(64918683) index="0" unique_id=138784522]
+libraries/ = SubResource("AnimationLibrary_h4mcv")
+autoplay = &"SpeakerBop"
+speed_scale = 1.5
+
+[node name="GPUParticles3D2" type="GPUParticles3D" parent="Monitor" parent_id_path=PackedInt32Array(1669313047) index="2" unique_id=1899386573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036221, 1.5263684, -15.753294)
+material_override = SubResource("StandardMaterial3D_5aqhv")
+amount = 3
+lifetime = 1.5
+process_material = SubResource("ParticleProcessMaterial_h4mcv")
+draw_pass_1 = SubResource("QuadMesh_e5vj8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Monitor" parent_id_path=PackedInt32Array(1669313047) index="3" unique_id=993906053]
+libraries/ = SubResource("AnimationLibrary_5aqhv")
+libraries/Monitor = SubResource("AnimationLibrary_7p6ww")
+autoplay = &"Monitor/Float"
 
 [node name="pasted__Displayscreen" parent="Stage" parent_id_path=PackedInt32Array(1328424379) index="6" unique_id=1730673684]
 material_override = SubResource("ShaderMaterial_6t0jv")
