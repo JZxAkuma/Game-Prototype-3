@@ -13,6 +13,9 @@ class_name Board
 var cam_target: Node3D
 var cam_follow_enabled := false
 
+@export var face_cam_speed := 8.0
+var moving_token: Node3D
+
 var spaces: Array[BoardSpace] = []
 var tokens := {}
 
@@ -64,6 +67,26 @@ func _link_spaces() -> void:
 		#s.type = _weighted_pick(rng, weights)
 
 func _process(delta: float) -> void:
+	_follow_cam(delta)
+	_face_tokens_to_camera(delta)
+
+func _face_tokens_to_camera(delta: float) -> void:
+	if not tokens_root.visible:
+		return
+	var cam := get_viewport().get_camera_3d()
+	if cam == null:
+		return
+	for token in tokens.values():
+		if token == moving_token:
+			continue
+		var dir: Vector3 = cam.global_position - token.global_position
+		dir.y = 0.0
+		if dir.length() < 0.01:
+			continue
+		var target_yaw := atan2(-dir.x, -dir.z)
+		token.rotation.y = lerp_angle(token.rotation.y, target_yaw, face_cam_speed * delta)
+
+func _follow_cam(delta:float) -> void:
 	if not cam_follow_enabled or cam_target == null:
 		return
 	var goal := cam_target.global_position + cam_offset
@@ -142,6 +165,7 @@ func _spawn_characters() -> void:
 		tokens[p.slot] = c
 
 func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
+	moving_token = token
 	var current := from
 	for i in steps:
 		
@@ -160,15 +184,21 @@ func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardS
 		await tw.finished
 		if not is_inside_tree():
 			return current
+
+	moving_token = null
 	return current
 
+
 func _run_game() -> void:
+	_play_cam_current()
 	if not GameState.intro_played:
 		GameState.intro_played = true
 		await _play_intro()
 		if not is_inside_tree():
 			return
-
+	
+	
+	_show_tokens()
 	var first := GameState.players[GameState.current_player]
 	play_camera_pivot.global_position = tokens[first.slot].global_position + cam_offset
 	cam_follow_enabled = true
@@ -223,3 +253,12 @@ func _announcer_idle() -> void:
 
 func _announcer_stop() -> void:
 	announcer_actor._anim_stop()
+
+func _play_cam_current() -> void:
+	$"commentator set/Commentator set wide".current = false
+	$"commentator set/commentator set cam".current = false
+	$"play camera pivot/play_camera".current = true
+	$"droneshot pivot/intro_camera".current = false
+
+func _show_tokens() -> void:
+	tokens_root.show()
