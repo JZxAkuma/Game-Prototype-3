@@ -10,3 +10,8 @@ func fade_in() -> void:
 func fade_out() -> void:
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
+
+func cam_trans() -> void:
+	animation_player.play("fade_in")
+	await animation_player.animation_finished
+	animation_player.play("fade_out")

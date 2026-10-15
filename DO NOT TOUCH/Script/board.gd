@@ -6,6 +6,16 @@ class_name Board
 @onready var anim: AnimationPlayer = $AnimationPlayer
 @onready var play_camera_pivot: Node3D = $"play camera pivot"
 
+@onready var announcer_actor: Node3D = $"commentator set/Announcer"
+
+@export var cam_follow_speed := 4.0
+@export var cam_offset := Vector3.ZERO
+var cam_target: Node3D
+var cam_follow_enabled := false
+
+@export var face_cam_speed := 8.0
+var moving_token: Node3D
+
 var spaces: Array[BoardSpace] = []
 var tokens := {}
 
@@ -18,6 +28,7 @@ const WEIGHTS := {
 	BoardSpace.Type.SHOP: 1.0,
 }
 
+@export var share_radius := 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -55,6 +66,55 @@ func _link_spaces() -> void:
 		#if s.locked:
 			#continue
 		#s.type = _weighted_pick(rng, weights)
+
+func _process(delta: float) -> void:
+	_follow_cam(delta)
+	_face_tokens_to_camera(delta)
+
+func _face_tokens_to_camera(delta: float) -> void:
+	if not tokens_root.visible:
+		return
+	var cam := get_viewport().get_camera_3d()
+	if cam == null:
+		return
+	for token in tokens.values():
+		if token == moving_token:
+			continue
+		var dir: Vector3 = cam.global_position - token.global_position
+		dir.y = 0.0
+		if dir.length() < 0.01:
+			continue
+		var target_yaw := atan2(-dir.x, -dir.z)
+		token.rotation.y = lerp_angle(token.rotation.y, target_yaw, face_cam_speed * delta)
+
+func _follow_cam(delta:float) -> void:
+	if not cam_follow_enabled or cam_target == null:
+		return
+	var goal := cam_target.global_position + cam_offset
+	var t := 1.0 - exp(-cam_follow_speed * delta)
+	play_camera_pivot.global_position = play_camera_pivot.global_position.lerp(goal, t)
+
+func _play_intro() -> void:
+	if not anim.has_animation(&"intro"):
+		return
+	anim.play(&"intro")
+
+	var skipping := false
+	while anim.is_playing() and anim.current_animation == &"intro":
+		if not skipping and _any_a_pressed():
+			skipping = true
+			anim.speed_scale = 50.0  
+		await get_tree().process_frame
+		if not is_inside_tree():
+			return
+
+	anim.speed_scale = 1.0
+
+func _any_a_pressed() -> bool:
+	for p in GameState.players:
+		if Input.is_action_just_pressed(PlayerInput._act(p.slot, &"a")):
+			return true
+	return false
 
 func randomize_types(rng_seed: int, weights: Dictionary) -> void:
 	var rng := RandomNumberGenerator.new()
@@ -105,7 +165,12 @@ func _spawn_characters() -> void:
 		c.global_position = spaces[p.space_index].get_anchor_position()
 		tokens[p.slot] = c
 
+	for p in GameState.players:
+		_arrange_space(p.space_index, false)
+
 func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
+	moving_token = token
+	_arrange_space(from.index)
 	var current := from
 	for i in steps:
 		
@@ -124,29 +189,38 @@ func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardS
 		await tw.finished
 		if not is_inside_tree():
 			return current
+
+	moving_token = null
 	return current
 
 func _run_game() -> void:
-	if not anim.has_animation("intro"):
-		return
-	anim.play("intro")
-	await anim.animation_finished
+	_play_cam_current()
+	if not GameState.intro_played:
+		GameState.intro_played = true
+		await _play_intro()
+		if not is_inside_tree():
+			return
+
+	_show_tokens()
+	var first := GameState.players[GameState.current_player]
+	play_camera_pivot.global_position = tokens[first.slot].global_position + cam_offset
+	cam_follow_enabled = true
 
 	while is_inside_tree():
 		await _play_turn(GameState.current_player)
 		if not is_inside_tree():
 			return
 		GameState._next_player()
-		
+
 		if GameState.current_player == 0:
-			#GameState.current_minigame = GameState.minigames.pick_random()
-			#SceneManager.goto_scene(GameState.current_minigame.mini_game_scene)
 			var mg := GameState.pick_minigame()
 			SceneManager.goto_scene(mg.mini_game_scene)
 			return
 
+
 func _play_turn(player_index: int) -> void:
 	var p := GameState.players[player_index]
+	cam_target = tokens[p.slot]  
 	var a := PlayerInput._act(p.slot, &"a")
 	while not Input.is_action_just_pressed(a):
 		await get_tree().process_frame
@@ -159,6 +233,8 @@ func _play_turn(player_index: int) -> void:
 	if not is_inside_tree():
 		return
 	p.space_index = landed.index
+	moving_token = null
+	_arrange_space(landed.index)
 
 	match landed.type:
 		BoardSpace.Type.GAIN:
@@ -168,6 +244,54 @@ func _play_turn(player_index: int) -> void:
 		_:
 			pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#pass
+func _occupants(space_index: int) -> Array:
+	var list := []
+	for p in GameState.players:
+		if p.space_index != space_index:
+			continue
+		var t = tokens.get(p.slot)
+		if t == null or t == moving_token:
+			continue
+		list.append(p)
+	return list
+
+func _slot_position(p, list: Array) -> Vector3:
+	var base := spaces[p.space_index].get_anchor_position()
+	if list.size() <= 1:
+		return base
+	var angle := TAU * list.find(p) / list.size()
+	return base + Vector3(cos(angle), 0.0, sin(angle)) * share_radius
+
+func _arrange_space(space_index: int, animate := true) -> void:
+	var list := _occupants(space_index)
+	for p in list:
+		var token: Node3D = tokens[p.slot]
+		var target := _slot_position(p, list)
+		if animate:
+			create_tween().tween_property(token, "global_position", target, 0.2)
+		else:
+			token.global_position = target
+
+func _transition_fade_in() -> void:
+	Transition.fade_in()
+
+func _transition_fade_out() -> void:
+	Transition.fade_out()
+
+func _cam_transition() -> void:
+	Transition.cam_trans()
+
+func _announcer_idle() -> void:
+	announcer_actor._play_idle()
+
+func _announcer_stop() -> void:
+	announcer_actor._anim_stop()
+
+func _play_cam_current() -> void:
+	$"commentator set/Commentator set wide".current = false
+	$"commentator set/commentator set cam".current = false
+	$"play camera pivot/play_camera".current = true
+	$"droneshot pivot/intro_camera".current = false
+
+func _show_tokens() -> void:
+	tokens_root.show()

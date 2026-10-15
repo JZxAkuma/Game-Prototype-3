@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cywisxck4cdmi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13yoj"]
+
+[node name="Map_limit" type="Area3D" unique_id=1918000921 groups=["map_limit"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1740306975]
+shape = SubResource("BoxShape3D_13yoj")

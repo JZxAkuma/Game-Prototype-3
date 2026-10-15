@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://ceevxio3iuub1"]
 
 [ext_resource type="Script" uid="uid://dmlougxbyftpj" path="res://Playground/character_body_3d.gd" id="1_sa1mh"]
+[ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="2_oa27c"]
+[ext_resource type="PackedScene" uid="uid://chyfs542o6gnu" path="res://DO NOT TOUCH/Environmental Assets/Rocks/Rocks.fbx" id="4_j11k6"]
+[ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="4_swtc3"]
 
 [sub_resource type="Environment" id="Environment_aygv5"]
 
@@ -22,3 +25,11 @@ transform = Transform3D(1, 0, 0, 0, 0.25881907, 0.9659258, 0, -0.9659258, 0.2588
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1304918559]
 size = Vector3(100, 1, 100)
+
+[node name="Announcer" parent="." unique_id=2109309627 instance=ExtResource("2_oa27c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.44553328, -11)
+
+[node name="Rocks" parent="." unique_id=1362986395 instance=ExtResource("4_j11k6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 87.35405)
+
+[node name="Stadium" parent="." unique_id=1438777467 instance=ExtResource("4_swtc3")]

@@ -2,19 +2,31 @@
 
 [ext_resource type="Script" uid="uid://copldvyw0hglm" path="res://DO NOT TOUCH/Script/board.gd" id="1_2tmgi"]
 [ext_resource type="PackedScene" uid="uid://84fw0vhv4sm3" path="res://DO NOT TOUCH/Scene/board_space.tscn" id="2_bw800"]
+[ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="3_cal7y"]
+[ext_resource type="Environment" uid="uid://cnjl0g054uj2h" path="res://DO NOT TOUCH/Environmental Assets/environment material/new_environment.tres" id="3_qoftb"]
+[ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="4_4j4vu"]
+[ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="5_od5fd"]
+[ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
+[ext_resource type="Texture2D" uid="uid://btchgw75go1vt" path="res://DO NOT TOUCH/2D/Sprites/Spark.png" id="7_fne0o"]
+[ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="9_df6mf"]
+[ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="10_qoftb"]
+[ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="11_df6mf"]
+[ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="12_adjs0"]
 
-[sub_resource type="Environment" id="Environment_n5003"]
-background_mode = 1
-background_color = Color(0.60643816, 0.7359453, 1, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svf5d"]
+albedo_color = Color(0.73333335, 1, 1, 1)
+albedo_texture = ExtResource("5_od5fd")
+uv1_scale = Vector3(50, 50, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_aygv5"]
+material = SubResource("StandardMaterial3D_svf5d")
 size = Vector3(129.30646, 1, 121.27396)
 
 [sub_resource type="Animation" id="Animation_2adw1"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("droneshot pivot/intro_camera:current")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -22,11 +34,11 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [true]
+"values": [false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("play camera pivot/play_camera:current")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -38,7 +50,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = true
+tracks/2/enabled = false
 tracks/2/path = NodePath("droneshot pivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -50,7 +62,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/imported = false
-tracks/3/enabled = true
+tracks/3/enabled = false
 tracks/3/path = NodePath("Tokens:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -60,10 +72,82 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = false
+tracks/4/path = NodePath("commentator set/Announcer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(125.83927, 0.6405933, -11.693258)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = false
+tracks/5/path = NodePath("commentator set/Announcer:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.0461141, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = false
+tracks/6/path = NodePath("commentator set/commentator set cam:current")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = false
+tracks/7/path = NodePath("commentator set/commentator set cam:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(123.18092, 3.2629128, -2.3858414)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = false
+tracks/8/path = NodePath("commentator set/Commentator set wide:current")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = false
+tracks/9/path = NodePath("commentator set/Commentator set wide:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(159.02277, 20.989372, 30.39455)]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
-length = 5.0
+length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -71,10 +155,10 @@ tracks/0/path = NodePath("droneshot pivot/intro_camera:current")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(2.2, 7, 15),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false]
+"values": [true, false, false]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -83,7 +167,7 @@ tracks/1/path = NodePath("play camera pivot/play_camera:current")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(2.2, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
@@ -95,7 +179,7 @@ tracks/2/path = NodePath("droneshot pivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(2.2, 7),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
@@ -107,10 +191,114 @@ tracks/3/path = NodePath("Tokens:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(2.2, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("commentator set/Announcer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2, 6.896203, 7, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(125.83927, 0.6405933, -11.693258), Vector3(121.971344, 0.6405933, -9.454518), Vector3(121.971344, 0.6405933, -9.454518), Vector3(137.53378, 0.6405933, -11.539198), Vector3(141.29025, 0.6405933, -11.658661)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("commentator set/Announcer:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2, 6.896203, 7, 7.8333335, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.0461141, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 1.6025877, 0), Vector3(0, 1.6025876, 0), Vector3(0, 0, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("commentator set/commentator set cam:current")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 2.2, 7, 8.5, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false]
+}
+tracks/7/type = "method"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath(".")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(1.7, 6.5, 14.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"values": [{
+"args": [],
+"method": &"_cam_transition"
+}, {
+"args": [],
+"method": &"_cam_transition"
+}, {
+"args": [],
+"method": &"_cam_transition"
+}]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("commentator set/commentator set cam:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 6.9, 7, 8.00574),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(123.18092, 3.2629128, -2.3858414), Vector3(123.18092, 3.2629128, -2.3858414), Vector3(141.19135, 3.2629128, -7.221176), Vector3(141.19135, 3.2629128, -4.606463)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("commentator set/Commentator set wide:current")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 8.5, 12, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("commentator set/Commentator set wide:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(8.5, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(116.82978, 20.989372, 30.39455), Vector3(159.02277, 20.989372, 30.39455)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("commentator set/Commentator set wide:rotation")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(8.5, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.15459667, -0.38613334, 0), Vector3(-0.15533431, 0.38571778, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
@@ -119,6 +307,40 @@ _data = {
 &"intro": SubResource("Animation_bw800")
 }
 
+[sub_resource type="Curve" id="Curve_fne0o"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9839573, 0), 1.4, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fne0o"]
+curve = SubResource("Curve_fne0o")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2on7c"]
+emission_shape_scale = Vector3(35, 10, 20)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
+scale_max = 5.0
+scale_curve = SubResource("CurveTexture_fne0o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2on7c"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("7_fne0o")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_fne0o"]
+material = SubResource("StandardMaterial3D_2on7c")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddiqi"]
+shader = ExtResource("7_2on7c")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
+
 [node name="Board" type="Node3D" unique_id=2115529111]
 script = ExtResource("1_2tmgi")
 
@@ -126,6 +348,7 @@ script = ExtResource("1_2tmgi")
 visible = false
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="BoardSpace" parent="Spaces" unique_id=1970094472 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4285283, 0, 0)
@@ -142,7 +365,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9349594, 0, -1.8681893)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.016563, 0, -4.45407)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
-environment = SubResource("Environment_n5003")
+environment = ExtResource("3_qoftb")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=963444360]
 transform = Transform3D(1, 0, 0, 0, 0.6448396, 0.7643179, 0, -0.7643179, 0.6448396, 0, 0, 0)
@@ -157,10 +380,186 @@ libraries/ = SubResource("AnimationLibrary_2adw1")
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
-transform = Transform3D(1, 0, 0, 0, 0.7844815, 0.62015224, 0, -0.62015224, 0.7844815, 0, 12.724283, 9.036865)
+transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
 current = true
 
 [node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2247868, 8.542557)
+
+[node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
+
+[node name="Stadium" parent="commentator set" unique_id=1279323677 instance=ExtResource("3_cal7y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
+visible = false
+
+[node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
+transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
+
+[node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
+current = true
+
+[node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
+transform = Transform3D(0.92637205, 0.057990886, -0.37211758, 0, 0.9880737, 0.15398157, 0.37660915, -0.14264427, 0.9153238, 116.82978, 20.989372, 30.39455)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
+visible = false
+light_color = Color(0.9071141, 0.8886923, 1.92523e-06, 1)
+light_energy = 16.0
+shadow_enabled = true
+spot_range = 10.361
+spot_angle = 25.75
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="commentator set" unique_id=94454391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.85635, 6.824849, 0.7264662)
+process_material = SubResource("ParticleProcessMaterial_2on7c")
+draw_pass_1 = SubResource("QuadMesh_fne0o")
+
+[node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=662706121]
+material = SubResource("ShaderMaterial_ddiqi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Rocks" type="Node3D" parent="." unique_id=543364660]
+
+[node name="Rock1" parent="Rocks" unique_id=1105717896 instance=ExtResource("10_qoftb")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 66.47734, 11.724941, 3.356597)
+
+[node name="Rock2" parent="Rocks" unique_id=49522365 instance=ExtResource("11_df6mf")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 66.07666, 11.724941, -14.625664)
+
+[node name="Rock30" parent="Rocks" unique_id=1198577174 instance=ExtResource("11_df6mf")]
+transform = Transform3D(9.148017, 0, 0, 0, 21.13918, 0, 0, 0, 11.60573, 66.07666, 11.724941, 37.233715)
+
+[node name="Rock3" parent="Rocks" unique_id=773750775 instance=ExtResource("12_adjs0")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 64.12755, 11.724941, 18.8314)
+
+[node name="Rock11" parent="Rocks" unique_id=1398333329 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 15.085196, 11.724941, -64.598)
+
+[node name="Rock12" parent="Rocks" unique_id=1283033281 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 33.06745, 11.724941, -64.99868)
+
+[node name="Rock40" parent="Rocks" unique_id=1820355940 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-1.909228e-07, 0, -5.1809893, 0, 14.278135, 0, 4.3678055, 0, -2.2646826e-07, 42.083668, -8.150309, -12.613248)
+
+[node name="Rock13" parent="Rocks" unique_id=934139423 instance=ExtResource("12_adjs0")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, -0.38960838, 11.724941, -66.94779)
+
+[node name="Rock14" parent="Rocks" unique_id=1111181317 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 15.085196, 11.724941, 63.805458)
+
+[node name="Rock29" parent="Rocks" unique_id=2134758451 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 46.564213, 11.724941, 63.805458)
+
+[node name="Rock31" parent="Rocks" unique_id=564084796 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 60.698547, 11.724941, 55.916466)
+
+[node name="Rock15" parent="Rocks" unique_id=1122611017 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, 33.06745, 11.724941, 63.404778)
+
+[node name="Rock16" parent="Rocks" unique_id=519212828 instance=ExtResource("12_adjs0")]
+transform = Transform3D(-2.7008775e-07, 0, -7.838912, 0, 14.278135, 0, 6.1788883, 0, -3.4264977e-07, -0.38960838, 11.724941, 61.455666)
+
+[node name="Rock4" parent="Rocks" unique_id=1925574815 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556e-07, 0, -7.838913, -68.689, 11.724941, 1.6849585)
+
+[node name="Rock5" parent="Rocks" unique_id=10331359 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-6.1788874, 0, 8.876204e-07, 0, 25.015886, 0, -5.4017556e-07, 0, -10.153194, -68.28832, 11.724941, 19.667221)
+
+[node name="Rock6" parent="Rocks" unique_id=17706022 instance=ExtResource("12_adjs0")]
+transform = Transform3D(-7.978168, 0, 8.557401e-07, 0, 20.5553, 0, -6.974737e-07, 0, -9.788527, -66.33921, 11.724941, -13.789845)
+
+[node name="Rock37" parent="Rocks" unique_id=734873091 instance=ExtResource("12_adjs0")]
+transform = Transform3D(-7.978168, 0, 8.557401e-07, 0, 20.5553, 0, -6.974737e-07, 0, -9.788527, 1.6507988, -2.9707375, -53.45556)
+
+[node name="Rock23" parent="Rocks" unique_id=233765779 instance=ExtResource("10_qoftb")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -32.261486, 11.724941, 61.1775)
+
+[node name="Rock41" parent="Rocks" unique_id=728877937 instance=ExtResource("10_qoftb")]
+transform = Transform3D(1.8716939e-06, 0, 17.876322, 0, 14.278135, 0, -14.273124, 0, 2.3441967e-06, -41.430515, 4.6549606, 44.23666)
+
+[node name="Rock34" parent="Rocks" unique_id=1013910556 instance=ExtResource("10_qoftb")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -13.499264, 7.4559116, 4.8390923)
+
+[node name="Rock36" parent="Rocks" unique_id=1397979858 instance=ExtResource("10_qoftb")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -13.499264, 7.4559116, 57.108658)
+
+[node name="Rock42" parent="Rocks" unique_id=1972131055 instance=ExtResource("10_qoftb")]
+transform = Transform3D(1.4797721e-06, 0, 11.372371, 0, 8.399942, 0, -11.284414, 0, 1.4913064e-06, 51.8827, 7.4559116, 48.044044)
+
+[node name="Rock24" parent="Rocks" unique_id=848500922 instance=ExtResource("11_df6mf")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -50.243755, 11.724941, 61.578182)
+
+[node name="Rock25" parent="Rocks" unique_id=888126537 instance=ExtResource("12_adjs0")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -16.786686, 11.724941, 63.527294)
+
+[node name="Rock26" parent="Rocks" unique_id=1740045215 instance=ExtResource("10_qoftb")]
+transform = Transform3D(6.1788883, 0, -1.370599e-06, 0, 14.278135, 0, 1.080351e-06, 0, 7.838912, -66.904144, 11.724941, 46.878353)
+
+[node name="Rock27" parent="Rocks" unique_id=616472751 instance=ExtResource("11_df6mf")]
+transform = Transform3D(6.1788883, 0, -1.370599e-06, 0, 14.278135, 0, 1.080351e-06, 0, 7.838912, -67.304825, 11.724941, 28.896084)
+
+[node name="Rock28" parent="Rocks" unique_id=77035515 instance=ExtResource("12_adjs0")]
+transform = Transform3D(10.074298, 0, -1.932085e-06, 0, 26.736162, 0, 1.7614459e-06, 0, 11.050238, -65.16618, 22.573265, 62.353157)
+
+[node name="Rock17" parent="Rocks" unique_id=236425292 instance=ExtResource("10_qoftb")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -32.066685, 11.724941, -64.33038)
+
+[node name="Rock18" parent="Rocks" unique_id=62166996 instance=ExtResource("11_df6mf")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -50.048954, 11.724941, -63.929707)
+
+[node name="Rock43" parent="Rocks" unique_id=294526133 instance=ExtResource("11_df6mf")]
+transform = Transform3D(8.102633e-07, 0, 7.838913, 0, 14.278135, 0, -6.1788883, 0, 1.0279493e-06, -59.783863, -0.60562134, -29.238365)
+
+[node name="Rock19" parent="Rocks" unique_id=1761079675 instance=ExtResource("12_adjs0")]
+transform = Transform3D(1.0837357e-06, 0, 10.10079, 0, 20.214485, 0, -8.264328, 0, 1.3245588e-06, -16.591885, 11.724941, -61.980595)
+
+[node name="Rock33" parent="Rocks" unique_id=1605069504 instance=ExtResource("12_adjs0")]
+transform = Transform3D(8.7353806e-07, 0, 7.7974277, 0, 12.562671, 0, -6.661407, 0, 1.0225092e-06, -10.88541, -4.591482, -8.331739)
+
+[node name="Rock35" parent="Rocks" unique_id=1999233477 instance=ExtResource("12_adjs0")]
+transform = Transform3D(2.5396588e-07, 0, 4.270152, 0, 6.224699, 0, -1.9366874, 0, 5.599628e-07, -3.9050915, -4.591482, 8.73064)
+
+[node name="Rock20" parent="Rocks" unique_id=85402643 instance=ExtResource("10_qoftb")]
+transform = Transform3D(6.1788883, 0, -1.370599e-06, 0, 14.278135, 0, 1.080351e-06, 0, 7.838912, -68.04141, 11.724941, -45.22093)
+
+[node name="Rock21" parent="Rocks" unique_id=1740191380 instance=ExtResource("11_df6mf")]
+transform = Transform3D(4.369133, 0, -5.5429487, 0, 14.278135, 0, 4.369135, 0, 5.542947, -65.743935, 11.724941, -61.8471)
+
+[node name="Rock22" parent="Rocks" unique_id=853462675 instance=ExtResource("12_adjs0")]
+transform = Transform3D(6.1788883, 0, -1.370599e-06, 0, 14.278135, 0, 1.080351e-06, 0, 7.838912, -70.3912, 11.724941, -29.746128)
+
+[node name="Rock7" parent="Rocks" unique_id=896363013 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-9.818148, 0, 1.0889293e-06, 0, 22.687716, 0, -8.583298e-07, 0, -12.4559, 64.0591, 11.724941, -42.10501)
+
+[node name="Rock39" parent="Rocks" unique_id=1472082493 instance=ExtResource("10_qoftb")]
+transform = Transform3D(-9.818148, 0, 1.0889293e-06, 0, 22.687716, 0, -8.583298e-07, 0, -12.4559, 59.242943, -6.0905876, -18.916878)
+
+[node name="Rock8" parent="Rocks" unique_id=1040468705 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556e-07, 0, -7.838913, 64.45978, 11.724941, -24.12275)
+
+[node name="Rock38" parent="Rocks" unique_id=1847232040 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-13.61479, 0, 1.4941661e-06, 0, 14.278135, 0, -1.1902429e-06, 0, -17.09127, 61.683716, -1.6439724, 3.2013493)
+
+[node name="Rock32" parent="Rocks" unique_id=398327525 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 4.422743, 0, -5.4017556e-07, 0, -7.838913, 0.14510536, 1.6856365, -1.9317245)
+
+[node name="Rock10" parent="Rocks" unique_id=1055867519 instance=ExtResource("11_df6mf")]
+transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556e-07, 0, -7.838913, 47.12941, 11.724941, -67.18679)
+
+[node name="Rock9" parent="Rocks" unique_id=2007129425 instance=ExtResource("12_adjs0")]
+transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556e-07, 0, -7.838913, 58.99566, 11.724941, -57.579815)
