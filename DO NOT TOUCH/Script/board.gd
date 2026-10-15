@@ -28,7 +28,7 @@ const WEIGHTS := {
 	BoardSpace.Type.SHOP: 1.0,
 }
 
-@export var share_radius := 0.35
+@export var share_radius := 0.7
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
