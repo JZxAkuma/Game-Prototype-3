@@ -87,7 +87,6 @@ func _on_hit_received(attacker: PlayerCharacter) -> void:
 		return
 	hit_cooldown = 0.4
 
-
 	var attacker_dashing := false
 	if attacker.state and attacker.state.get("dash_timer") != null:
 		attacker_dashing = attacker.state.dash_timer > 0.0

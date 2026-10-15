@@ -28,6 +28,7 @@ const WEIGHTS := {
 	BoardSpace.Type.SHOP: 1.0,
 }
 
+@export var share_radius := 0.35
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -157,6 +158,7 @@ func _weighted_pick(rng: RandomNumberGenerator,weights:Dictionary) -> BoardSpace
 
 func _spawn_characters() -> void:
 	for p in GameState.players:
+		_arrange_space(p.space_index, false)
 		var c : PlayerCharacter = GameState.character_scenes[p.character].instantiate()
 		tokens_root.add_child(c)
 		c.setup(p.slot)
@@ -166,6 +168,7 @@ func _spawn_characters() -> void:
 
 func _move_token(token: PlayerCharacter, from: BoardSpace, steps: int) -> BoardSpace:
 	moving_token = token
+	_arrange_space(from.index)
 	var current := from
 	for i in steps:
 		
@@ -228,6 +231,8 @@ func _play_turn(player_index: int) -> void:
 	if not is_inside_tree():
 		return
 	p.space_index = landed.index
+	moving_token = null
+	_arrange_space(landed.index)
 
 	match landed.type:
 		BoardSpace.Type.GAIN:
@@ -236,6 +241,30 @@ func _play_turn(player_index: int) -> void:
 			p.coins = max(0, p.coins - 3)
 		_:
 			pass
+
+func _occupants(space_index: int) -> Array:
+	var list := []
+	for p in GameState.players:
+		if p.space_index == space_index and tokens[p.slot] != moving_token:
+			list.append(p)
+	return list
+
+func _slot_position(p, list: Array) -> Vector3:
+	var base := spaces[p.space_index].get_anchor_position()
+	if list.size() <= 1:
+		return base
+	var angle := TAU * list.find(p) / list.size()
+	return base + Vector3(cos(angle), 0.0, sin(angle)) * share_radius
+
+func _arrange_space(space_index: int, animate := true) -> void:
+	var list := _occupants(space_index)
+	for p in list:
+		var token: Node3D = tokens[p.slot]
+		var target := _slot_position(p, list)
+		if animate:
+			create_tween().tween_property(token, "global_position", target, 0.2)
+		else:
+			token.global_position = target
 
 func _transition_fade_in() -> void:
 	Transition.fade_in()
