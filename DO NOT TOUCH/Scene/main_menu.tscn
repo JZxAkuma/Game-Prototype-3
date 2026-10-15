@@ -98,13 +98,32 @@ flip_v = true
 position = Vector2(580, 0)
 amount = 20
 lifetime = 20.0
+preprocess = 4.0
 process_material = SubResource("ParticleProcessMaterial_1w13i")
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="CanvasLayer/Control" unique_id=169536999]
 position = Vector2(580, 0)
 amount = 20
 lifetime = 20.0
+preprocess = 5.0
 process_material = SubResource("ParticleProcessMaterial_uc67h")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control" unique_id=972413663]
+modulate = Color(0.43529412, 0.1764706, 0.57254905, 0.85490197)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 238.0
+offset_top = 23.0
+offset_right = -231.0
+offset_bottom = -110.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_cfy1k")
+expand_mode = 1
+script = ExtResource("5_bwy4f")
+zoom_amount = 0.05
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control" unique_id=1371003075]
 layout_mode = 1
