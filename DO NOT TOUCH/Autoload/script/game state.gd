@@ -71,3 +71,9 @@ func _add_coins(p: PlayerData, amount: int) -> void:
 func _add_medal(p: PlayerData, amount: int) -> void:
 	p.medal = maxi(0, p.medal + amount)
 	data_changed.emit()
+
+func _get_all_minigames() -> Array[MINI_GAME]:
+	var list: Array[MINI_GAME] = []
+	for path in MINIGAME_PATHS:
+		list.append(load(path) as MINI_GAME)
+	return list

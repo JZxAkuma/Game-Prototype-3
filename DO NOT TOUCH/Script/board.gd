@@ -13,6 +13,8 @@ class_name Board
 var cam_target: Node3D
 var cam_follow_enabled := false
 
+const PICKER := preload("res://DO NOT TOUCH/Scene/minigame_picker.tscn")
+
 @export var face_cam_speed := 8.0
 var moving_token: Node3D
 
@@ -214,6 +216,9 @@ func _run_game() -> void:
 
 		if GameState.current_player == 0:
 			var mg := GameState.pick_minigame()
+			await _show_picker(mg)
+			if not is_inside_tree():
+				return
 			SceneManager.goto_scene(mg.mini_game_scene)
 			return
 
@@ -270,6 +275,13 @@ func _arrange_space(space_index: int, animate := true) -> void:
 			create_tween().tween_property(token, "global_position", target, 0.2)
 		else:
 			token.global_position = target
+
+func _show_picker(winner: MINI_GAME) -> void:
+	var picker := PICKER.instantiate()
+	add_child(picker)
+	picker._play(GameState._get_all_minigames(), winner)
+	await picker.finished
+	picker.queue_free()
 
 func _transition_fade_in() -> void:
 	Transition.fade_in()
