@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="5_od5fd"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
 [ext_resource type="Texture2D" uid="uid://btchgw75go1vt" path="res://DO NOT TOUCH/2D/Sprites/Spark.png" id="7_fne0o"]
+[ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="9_df6mf"]
 [ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="10_qoftb"]
 [ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="11_df6mf"]
 [ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="12_adjs0"]
@@ -420,6 +421,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5858593, 8.542557)
 
 [node name="Stadium" parent="commentator set" unique_id=1279323677 instance=ExtResource("3_cal7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
+visible = false
 
 [node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
 transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
@@ -429,7 +431,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.92637205, 0.057990897, -0.37211758, 0, 0.9880737, 0.1539816, 0.37660915, -0.1426443, 0.9153238, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.92637205, 0.057990894, -0.37211758, 0, 0.9880737, 0.15398158, 0.37660915, -0.14264429, 0.9153238, 116.82978, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -444,6 +446,9 @@ spot_angle = 25.75
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.85635, 6.824849, 0.7264662)
 process_material = SubResource("ParticleProcessMaterial_2on7c")
 draw_pass_1 = SubResource("QuadMesh_fne0o")
+
+[node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
 

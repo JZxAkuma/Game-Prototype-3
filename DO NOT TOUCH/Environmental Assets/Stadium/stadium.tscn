@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://6o8ymmeglndg"]
+
+[ext_resource type="PackedScene" uid="uid://bjp51k78eowan" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium.fbx" id="1_4rwjq"]
+
+[node name="Stadium" unique_id=1438777467 instance=ExtResource("1_4rwjq")]
+
+[node name="BigCrowd" parent="." index="1" unique_id=1793269809]
+visible = false
+
+[node name="SmallCrowd" parent="." index="2" unique_id=877985386]
+visible = false
