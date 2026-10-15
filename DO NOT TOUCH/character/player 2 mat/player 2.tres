@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://csdihd0bcukxa"]
 
-[ext_resource type="Texture2D" uid="uid://deint6koymks6" path="res://DO NOT TOUCH/character/MobyRig_0.png" id="1_20m67"]
+[ext_resource type="Texture2D" uid="uid://bl5ft04byas4" path="res://DO NOT TOUCH/character/MobyRig_colored.png" id="1_20m67"]
 
 [resource]
 cull_mode = 2

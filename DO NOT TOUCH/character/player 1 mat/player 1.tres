@@ -1,8 +1,8 @@
 [gd_resource type="StandardMaterial3D" format=3 uid="uid://d4h5uuaw4xk0q"]
 
-[ext_resource type="Texture2D" uid="uid://deint6koymks6" path="res://DO NOT TOUCH/character/MobyRig_0.png" id="1_r3o7m"]
+[ext_resource type="Texture2D" uid="uid://bl5ft04byas4" path="res://DO NOT TOUCH/character/MobyRig_colored.png" id="1_r3o7m"]
 
 [resource]
 cull_mode = 2
-albedo_color = Color(1, 0.4627451, 0.49411765, 1)
+albedo_color = Color(1, 0, 0, 1)
 albedo_texture = ExtResource("1_r3o7m")
