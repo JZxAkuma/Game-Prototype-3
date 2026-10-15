@@ -19,7 +19,7 @@ shader = ExtResource("3_6ibn0")
 shader_parameter/water_texture = ExtResource("4_2pk63")
 shader_parameter/emission_texture = ExtResource("4_2pk63")
 shader_parameter/tiling = Vector2(0.3, 23.89)
-shader_parameter/scroll_speed = 0.02
+shader_parameter/scroll_speed = -0.05
 shader_parameter/emission_strength = 5.0
 
 [node name="Stadium" unique_id=1438777467 instance=ExtResource("1_4rwjq")]

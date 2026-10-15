@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dub0lney04kdj"]
+
+[ext_resource type="Texture2D" uid="uid://d5uww4v78oc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/AssetPack3_standardSurface1_BaseColor.png" id="1_4fd4l"]
+
+[resource]
+albedo_texture = ExtResource("1_4fd4l")
