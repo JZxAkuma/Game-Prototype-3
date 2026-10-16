@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dn4ner3n3nalv" path="res://Adha_Assets/Dice.fbx" id="5_swtc3"]
 [ext_resource type="PackedScene" uid="uid://cowr46dylkm4b" path="res://Adha_Assets/Tower_low.fbx" id="6_14phy"]
 [ext_resource type="PackedScene" uid="uid://33snidklavff" path="res://Adha_Assets/BushVar.fbx" id="7_l5xjc"]
+[ext_resource type="PackedScene" uid="uid://i3y085y0sgn2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/AssetPack2.fbx" id="8_18gb4"]
 
 [sub_resource type="Environment" id="Environment_aygv5"]
 
@@ -45,3 +46,6 @@ transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 70, 0, 0)
 
 [node name="BushVar" parent="." unique_id=443896053 instance=ExtResource("7_l5xjc")]
 transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 100, 0, 0)
+
+[node name="AssetPack2" parent="." unique_id=1354650490 instance=ExtResource("8_18gb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.733795, 0, 259.6324)
