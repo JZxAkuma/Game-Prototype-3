@@ -176,6 +176,18 @@ tracks/11/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("Rocks2:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
@@ -339,10 +351,22 @@ tracks/12/path = NodePath("commentator set:visible")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
-"times": PackedFloat32Array(0, 2.2, 7.0000005),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 2.2, 7.0000005, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [true, false, true]
+"values": [true, false, true, false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Rocks2:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0, 2.2, 7, 15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
@@ -446,7 +470,6 @@ shadow_mesh = SubResource("ArrayMesh_lc5cv")
 script = ExtResource("1_2tmgi")
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
-visible = false
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
@@ -479,16 +502,17 @@ mesh = SubResource("BoxMesh_aygv5")
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
-current = true
 
 [node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2247868, 8.542557)
+current = true
 
 [node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
 visible = false
@@ -498,14 +522,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 visible = false
 
 [node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
-transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
+transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 141.29025, 0.6405933, -11.658661)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
-current = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.606463)
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9263718, 0.0579909, -0.3721176, 0, 0.9880737, 0.15398154, 0.37660915, -0.14264427, 0.9153237, 116.82978, 20.989372, 30.39455)
+transform = Transform3D(0.9265283, -0.05820581, 0.37169436, 0, 0.98795986, 0.15471034, -0.37622413, -0.14334361, 0.9153728, 159.02277, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -699,6 +722,7 @@ transform = Transform3D(-6.1788874, 0, 6.852995e-07, 0, 14.278135, 0, -5.4017556
 
 [node name="Rocks2" type="Node3D" parent="." unique_id=1514521478]
 transform = Transform3D(-8.216323e-08, 0, -1.7916842, 0, 1.7801657, 0, 1.8796756, 0, -7.8317e-08, 0, 0, 0)
+visible = false
 
 [node name="Rock1" parent="Rocks2" unique_id=1658327910 instance=ExtResource("10_qoftb")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 66.47734, 11.724941, 3.356597)
