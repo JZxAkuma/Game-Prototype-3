@@ -239,6 +239,8 @@ func _play_turn(player_index: int) -> void:
 
 	var roll := randi_range(1, 6)
 	dice.reveal(roll)
+	_hop(tokens[p.slot])
+	tokens[p.slot].play_anim(&"jump")
 	await get_tree().create_timer(0.6).timeout
 	if not is_inside_tree():
 		return
@@ -318,3 +320,13 @@ func _play_cam_current() -> void:
 func _show_tokens() -> void:
 	$CanvasLayer/Control.show()
 	tokens_root.show()
+
+func _hop(token: Node3D, height := 0.5, duration := 0.35) -> void:
+	var base_y := token.global_position.y
+	var tw := create_tween()
+	tw.tween_method(func(t: float) -> void:
+		var pos := token.global_position
+		pos.y = base_y + sin(t * PI) * height
+		token.global_position = pos
+	, 0.0, 1.0, duration)
+	await tw.finished
