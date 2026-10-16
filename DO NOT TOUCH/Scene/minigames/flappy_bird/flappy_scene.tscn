@@ -10,6 +10,11 @@ players_root = NodePath("players")
 spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")
 
+[node name="Game scene" type="Node3D" parent="." unique_id=1789420498]
+
+[node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=1426199083]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.208, 9.22102)
+
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 
 [node name="spawns" type="Node3D" parent="." unique_id=1286182102]
@@ -28,7 +33,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0
 
 [node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424 node_paths=PackedStringArray("play_cam")]
 script = ExtResource("2_2mow2")
-play_cam = NodePath("../Camera3D")
+play_cam = NodePath("")
 
 [node name="Control" type="Control" parent="Tutorial layer" unique_id=2033016388]
 layout_mode = 3
@@ -90,5 +95,3 @@ autowrap_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 alignment = 1
-
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1753842971]
