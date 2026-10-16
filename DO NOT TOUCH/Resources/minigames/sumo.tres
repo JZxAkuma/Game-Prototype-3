@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="MINI_GAME" format=3 uid="uid://dh2t44w5pkugq"]
 
 [ext_resource type="Script" uid="uid://bb4ov3h640ub1" path="res://DO NOT TOUCH/Script/minigame.gd" id="1_gd70j"]
-[ext_resource type="PackedScene" uid="uid://0egxmhr38hwu" path="res://DO NOT TOUCH/Scene/minigames/sumo_scene.tscn" id="1_i004l"]
+[ext_resource type="PackedScene" uid="uid://0egxmhr38hwu" path="res://DO NOT TOUCH/Scene/minigames/sumo/sumo_scene.tscn" id="1_i004l"]
 
 [resource]
 script = ExtResource("1_gd70j")

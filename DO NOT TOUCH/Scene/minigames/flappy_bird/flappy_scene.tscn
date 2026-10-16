@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://dailkysoenfv8"]
+
+[ext_resource type="Script" uid="uid://bg7lq0tpxc62x" path="res://DO NOT TOUCH/Scene/minigames/flappy_bird/minigame_flappy.gd" id="1_vygtr"]
+[ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_2mow2"]
+
+[node name="Flappy_scene" type="Node3D" unique_id=535647750 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui")]
+script = ExtResource("1_vygtr")
+play_mode = 5
+players_root = NodePath("players")
+spawns = NodePath("spawns")
+tutorial_ui = NodePath("Tutorial layer")
+
+[node name="players" type="Node3D" parent="." unique_id=1118147660]
+
+[node name="spawns" type="Node3D" parent="." unique_id=1286182102]
+
+[node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1426830225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+
+[node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=921795307]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9)
+
+[node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=1426212345]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=388128254]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 0)
+
+[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424 node_paths=PackedStringArray("play_cam")]
+script = ExtResource("2_2mow2")
+play_cam = NodePath("../Camera3D")
+
+[node name="Control" type="Control" parent="Tutorial layer" unique_id=2033016388]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Tutorial layer/Control" unique_id=1398082228]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control" unique_id=474064214]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1114251908]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1574139594]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1970576063]
+handle_input_locally = false
+size = Vector2i(640, 360)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1936540379]
+transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1076646798]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="title label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=280032669]
+layout_mode = 2
+text = "TEST"
+
+[node name="goal label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=372316571]
+layout_mode = 2
+text = "TEST"
+
+[node name="controls label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=379639032]
+layout_mode = 2
+text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
+autowrap_mode = 3
+
+[node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=2003437422]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1753842971]

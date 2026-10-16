@@ -5,7 +5,7 @@ enum State {tutorial, play, results}
 
 const board := preload("res://DO NOT TOUCH/Scene/board.tscn")
 
-@export var play_mode : PlayerCharacter.Mode = PlayerCharacter.Mode.SUMO
+@export var play_mode : PlayerCharacter.Mode 
 @export var players_root : Node3D
 @export var spawns : Node3D
 @export var tutorial_ui: CanvasLayer

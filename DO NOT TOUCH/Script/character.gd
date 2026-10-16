@@ -5,11 +5,12 @@ signal state_changed(character: PlayerCharacter, new_state: CharacterState)
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 
-enum Mode { LOCKED, BUTTON_MASH, TUG_OF_WAR, RHYTHM, SUMO }
+enum Mode { LOCKED, BUTTON_MASH, TUG_OF_WAR, RHYTHM, SUMO, FLAPPY }
 
 const states := {
 	Mode.LOCKED: preload("res://DO NOT TOUCH/Script/minigame/character state/state_locked.gd"),
 	Mode.SUMO: preload("res://DO NOT TOUCH/Script/minigame/character state/state_sumo.gd"),
+	Mode.FLAPPY : preload("res://DO NOT TOUCH/Script/minigame/character state/state_flappy.gd")
 }
 
 var slot := 0

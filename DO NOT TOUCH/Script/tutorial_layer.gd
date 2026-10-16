@@ -6,12 +6,18 @@ signal all_ready
 @onready var goal_label: Label = $"Control/VBoxContainer/HBoxContainer/VBoxContainer/goal label"
 @onready var controls_label: Label = $"Control/VBoxContainer/HBoxContainer/VBoxContainer/controls label"
 @onready var tutorial_card_container: HBoxContainer = $"Control/VBoxContainer/tutorial card container"
+@onready var camera_3d: Camera3D = $Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Camera3D
+
+
+@export var play_cam : Camera3D
+
 
 var ready_slots := {}
 var labels := {}
 var total := 0
 
 func _ready() -> void:
+	camera_3d.global_transform = play_cam.global_transform
 	set_process(false) 
 
 func _setup(data:MINI_GAME, players:Array) -> void:
