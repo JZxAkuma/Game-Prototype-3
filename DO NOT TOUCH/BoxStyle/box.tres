@@ -1,9 +1,13 @@
 [gd_resource type="Theme" format=3 uid="uid://ku3uha8ujhrr"]
 
+[ext_resource type="StyleBox" uid="uid://cbqwwkjc8e2gx" path="res://DO NOT TOUCH/BoxStyle/button style box hover.tres" id="1_ag3iv"]
 [ext_resource type="StyleBox" uid="uid://d2x52fog3w5j8" path="res://DO NOT TOUCH/BoxStyle/button style box normal.tres" id="1_cu5f2"]
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_t108y"]
 
 [resource]
 default_font = ExtResource("2_t108y")
 default_font_size = 32
+Button/font_sizes/font_size = 31
+Button/styles/hover = ExtResource("1_ag3iv")
+Button/styles/normal = ExtResource("1_cu5f2")
 PanelContainer/styles/panel = ExtResource("1_cu5f2")
