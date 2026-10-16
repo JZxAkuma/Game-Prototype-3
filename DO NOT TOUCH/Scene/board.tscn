@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dpd6lt6jxwpo2" path="res://DO NOT TOUCH/character/Announcer/announcer.tscn" id="4_4j4vu"]
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="5_od5fd"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="7_2on7c"]
-[ext_resource type="Texture2D" uid="uid://177pjecm4qqc" path="res://DO NOT TOUCH/2D/Sprites/Square.png" id="7_ede5q"]
+[ext_resource type="Texture2D" uid="uid://btchgw75go1vt" path="res://DO NOT TOUCH/2D/Sprites/Spark.png" id="7_fne0o"]
 [ext_resource type="Script" uid="uid://dtyx8c36yhmd3" path="res://DO NOT TOUCH/Script/board ui.gd" id="9_adjs0"]
 [ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="9_df6mf"]
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="10_df6mf"]
@@ -396,11 +396,11 @@ alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("7_ede5q")
+albedo_texture = ExtResource("7_fne0o")
 billboard_mode = 1
 billboard_keep_scale = true
 
-[sub_resource type="QuadMesh" id="QuadMesh_fne0o"]
+[sub_resource type="QuadMesh" id="QuadMesh_h6drl"]
 material = SubResource("StandardMaterial3D_2on7c")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ddiqi"]
@@ -426,6 +426,9 @@ scale_curve = SubResource("CurveTexture_fne0o")
 color_ramp = SubResource("GradientTexture1D_q23uw")
 turbulence_enabled = true
 turbulence_noise_strength = 6.82
+
+[sub_resource type="QuadMesh" id="QuadMesh_fne0o"]
+material = SubResource("StandardMaterial3D_2on7c")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asd3u"]
 resource_name = "lambert1"
@@ -542,7 +545,7 @@ spot_angle = 25.75
 [node name="GPUParticles3D" type="GPUParticles3D" parent="commentator set" unique_id=94454391]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.85635, 6.824849, 0.7264662)
 process_material = SubResource("ParticleProcessMaterial_2on7c")
-draw_pass_1 = SubResource("QuadMesh_fne0o")
+draw_pass_1 = SubResource("QuadMesh_h6drl")
 
 [node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
