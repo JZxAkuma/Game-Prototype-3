@@ -38,13 +38,13 @@ points = PackedVector3Array(-10, -76.269775, 0, -9.953015, -76.269775, -0.980814
 shader = ExtResource("3_kvsk5")
 shader_parameter/sky_texture = ExtResource("4_g11rf")
 
-[sub_resource type="Sky" id="Sky_cal7y"]
+[sub_resource type="Sky" id="Sky_a251r"]
 sky_material = SubResource("ShaderMaterial_fne0o")
 
 [sub_resource type="Environment" id="Environment_qmvo0"]
 background_mode = 2
 background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
-sky = SubResource("Sky_cal7y")
+sky = SubResource("Sky_a251r")
 ambient_light_source = 2
 ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
 ambient_light_energy = 4.0

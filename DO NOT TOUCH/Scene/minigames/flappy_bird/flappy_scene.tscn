@@ -2,10 +2,47 @@
 
 [ext_resource type="Script" uid="uid://bg7lq0tpxc62x" path="res://DO NOT TOUCH/Scene/minigames/flappy_bird/minigame_flappy.gd" id="1_vygtr"]
 [ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_2mow2"]
+[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="2_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="3_1nc1h"]
+[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="3_c8yw6"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="4_wwr53"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="5_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="6_c8yw6"]
+[ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="9_c8yw6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hjrpj"]
+shader = ExtResource("2_s7rr5")
+shader_parameter/sky_texture = ExtResource("3_c8yw6")
+
+[sub_resource type="Sky" id="Sky_cal7y"]
+sky_material = SubResource("ShaderMaterial_hjrpj")
+
+[sub_resource type="Environment" id="Environment_0nyub"]
+background_mode = 2
+background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
+sky = SubResource("Sky_cal7y")
+ambient_light_source = 2
+ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
+ambient_light_energy = 4.0
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.64
+tonemap_white = 1.68
+ssil_enabled = true
+ssil_intensity = 2.6
+sdfgi_bounce_feedback = 0.31
+sdfgi_energy = 0.2
+fog_mode = 1
+fog_light_color = Color(0.50833166, 0.8550044, 0.84298277, 1)
+fog_light_energy = 0.6
+fog_density = 0.28
+fog_aerial_perspective = 0.13
+fog_height = -52.96
+fog_height_density = 2.2069
+fog_depth_end = 1251.4
+adjustment_enabled = true
+adjustment_contrast = 1.12
+adjustment_saturation = 1.19
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -443,23 +480,30 @@ anim = NodePath("countdown layer/AnimationPlayer")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1386428, 7.1966047)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=2071509430]
+use_collision = true
 size = Vector3(18, 1, 1)
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=1533866362]
+environment = SubResource("Environment_0nyub")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=925675861]
+transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
 
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 
 [node name="spawns" type="Node3D" parent="." unique_id=1286182102]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1426830225]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5521765, 0.4995358, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2.5521765, 0.4995358, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=921795307]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1657734, 0.5237491, 0)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=1426212345]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.1434345, 0.5379046, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.1434345, 0.5379046, 0)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=388128254]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.624716, 0.5379045, 0)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.624716, 0.5379045, 0)
 
 [node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424 node_paths=PackedStringArray("play_cam")]
 script = ExtResource("2_2mow2")
@@ -606,3 +650,31 @@ expand_mode = 1
 [node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1991912628]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_hjrpj")
+
+[node name="Game layer" type="CanvasLayer" parent="." unique_id=1499299549]
+
+[node name="Control" type="Control" parent="Game layer" unique_id=920422853]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_c8yw6")
+
+[node name="Label" type="Label" parent="Game layer/Control" unique_id=567499551]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.21568628)
+theme_override_font_sizes/font_size = 220
+text = "Kote"
