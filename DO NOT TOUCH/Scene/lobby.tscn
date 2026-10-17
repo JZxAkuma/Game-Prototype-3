@@ -55,9 +55,12 @@ texture = ExtResource("9_nvl8b")
 
 [node name="ScrollingCheckers" type="TextureRect" parent="CanvasLayer/Control" unique_id=213737063]
 material = SubResource("ShaderMaterial_1w13i")
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 1000.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("9_vd01d")
 stretch_mode = 1
 

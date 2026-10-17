@@ -77,9 +77,12 @@ texture = ExtResource("2_uc67h")
 
 [node name="ScrollingCheckers" type="TextureRect" parent="CanvasLayer/Control" unique_id=737478302]
 material = SubResource("ShaderMaterial_xlo0w")
-layout_mode = 0
-offset_right = 1151.0
-offset_bottom = 1000.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("5_122ny")
 stretch_mode = 1
 flip_h = true
@@ -127,6 +130,7 @@ offset_right = -224.0
 offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.9991512, 1)
 texture = ExtResource("2_cfy1k")
 expand_mode = 1
 script = ExtResource("5_bwy4f")

@@ -15,6 +15,8 @@ const lean_return_speed := 0.0
 var motion := Vector3.ZERO
 var knockback := Vector3.ZERO
 
+var z_lock := 0.0
+
 const lean_sign := 1.0
 
 func _enter() -> void:
@@ -26,6 +28,9 @@ func _enter() -> void:
 
 func _physics_update(delta: float) -> void:
 	knockback = knockback.move_toward(Vector3.ZERO, knockback_decay * delta)
+	character.velocity = Vector3(motion.x + knockback.x, motion.y, 0.0)
+	character.move_and_slide()
+	character.global_position.z = z_lock 
 
 	var lean_input := Input.get_axis(
 		PlayerInput._act(character.slot, &"left"),
@@ -59,6 +64,7 @@ func _physics_update(delta: float) -> void:
 func _exit() -> void:
 	character.velocity = Vector3.ZERO
 	character.rotation.z = 0.0
+	character.axis_lock_linear_z = false
 
 
 func _on_hitbox_hit(victim: PlayerCharacter) -> void:
@@ -67,11 +73,13 @@ func _on_hitbox_hit(victim: PlayerCharacter) -> void:
 
 
 func _on_hit_received(attacker: PlayerCharacter) -> void:
-	var dir := character.global_position - attacker.global_position
-	dir.y = 0.0
-	if dir.length() < 0.01:
-		dir = -attacker.global_basis.z
-	knockback = dir.normalized() * hit_force
+	var dx := character.global_position.x - attacker.global_position.x
+	var dir_x := signf(dx)
+	if absf(dx) < 0.01:
+		dir_x = 1.0 if character.slot > attacker.slot else -1.0
+
+	motion.x = 0.0
+	knockback = Vector3(dir_x * hit_force, 0.0, 0.0)
 
 
 func _on_respawn() -> void:
