@@ -22,7 +22,7 @@ var obstacle = preload("res://DO NOT TOUCH/Scene/flappy_obstacle.tscn")
 @export var start_interval := 2.0
 @export var end_interval := 0.5
 
-@export var spawner_offset_y := 0.0
+@export var spawner_offset_y := 20.0
 
 var spawner_default_y := 0.0
 
