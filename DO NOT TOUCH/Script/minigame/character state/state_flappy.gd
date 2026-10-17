@@ -25,7 +25,6 @@ func _enter() -> void:
 	character.rotation.z = 0.0
 	motion = Vector3.ZERO
 
-
 func _physics_update(delta: float) -> void:
 	knockback = knockback.move_toward(Vector3.ZERO, knockback_decay * delta)
 	character.velocity = Vector3(motion.x + knockback.x, motion.y, 0.0)
@@ -60,17 +59,14 @@ func _physics_update(delta: float) -> void:
 	if character.is_on_ceiling() and motion.y > 0.0:
 		motion.y = 0.0
 
-
 func _exit() -> void:
 	character.velocity = Vector3.ZERO
 	character.rotation.z = 0.0
 	character.axis_lock_linear_z = false
 
-
 func _on_hitbox_hit(victim: PlayerCharacter) -> void:
 	if victim.state:
 		victim.state._on_hit_received(character)
-
 
 func _on_hit_received(attacker: PlayerCharacter) -> void:
 	var dx := character.global_position.x - attacker.global_position.x
@@ -80,7 +76,6 @@ func _on_hit_received(attacker: PlayerCharacter) -> void:
 
 	motion.x = 0.0
 	knockback = Vector3(dir_x * hit_force, 0.0, 0.0)
-
 
 func _on_respawn() -> void:
 	knockback = Vector3.ZERO

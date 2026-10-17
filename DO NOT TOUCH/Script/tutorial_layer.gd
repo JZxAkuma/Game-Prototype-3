@@ -39,6 +39,7 @@ func _is_everyone_ready() -> bool:
 	return total > 0 and ready_slots.size() >= total
 
 func _process(delta: float) -> void:
+	camera_3d.global_transform = play_cam.global_transform
 	for slot in labels:
 		if ready_slots.has(slot):
 			continue
