@@ -35,10 +35,6 @@ monitorable = false
 [node name="sumo hitbox" type="CollisionShape3D" parent="hitbox" unique_id=363358519]
 shape = SubResource("SphereShape3D_aygv5")
 
-[node name="flappy hitbox" type="CollisionShape3D" parent="hitbox" unique_id=1765716136]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_f2w1j")
-
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_f4xl6")]
 transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)
 
