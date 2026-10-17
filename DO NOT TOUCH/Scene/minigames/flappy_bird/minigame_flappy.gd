@@ -16,7 +16,6 @@ func _start_round(practice: bool) -> void:
 		return
 	_run_timer(round_id)
 
-
 func _run_timer(id: int) -> void:
 	var end_ms := Time.get_ticks_msec() + round_time * 1000
 	var left := round_time

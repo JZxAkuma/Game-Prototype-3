@@ -11,6 +11,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ssb5l"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tyagg"]
+radius = 0.57421875
+height = 2.1855469
+
 [node name="character4" type="CharacterBody3D" unique_id=1051749168]
 script = ExtResource("1_85yqc")
 
@@ -36,6 +40,10 @@ monitorable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=220824113]
 shape = SubResource("SphereShape3D_ssb5l")
+
+[node name="flappy hitbox" type="CollisionShape3D" parent="hitbox" unique_id=1685045218]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.046875, 1)
+shape = SubResource("CapsuleShape3D_tyagg")
 
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_h7vri")]
 transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)

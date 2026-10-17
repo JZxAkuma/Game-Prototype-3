@@ -4,6 +4,8 @@ class_name PlayerCharacter
 signal state_changed(character: PlayerCharacter, new_state: CharacterState)
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var sumo_hitbox: CollisionShape3D = $hitbox/CollisionShape3D
+@onready var flappy_hitbox: CollisionShape3D = $"hitbox/flappy hitbox"
 
 enum Mode { LOCKED, BUTTON_MASH, TUG_OF_WAR, RHYTHM, SUMO, FLAPPY }
 
@@ -56,3 +58,7 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	if state:
 		state._on_hurtbox_entered(area)
+
+func _apply_hitbox(m: Mode) -> void:
+	sumo_hitbox.set_deferred("disabled", m != Mode.SUMO)
+	flappy_hitbox.set_deferred("disabled", m != Mode.FLAPPY)
