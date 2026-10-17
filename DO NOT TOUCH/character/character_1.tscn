@@ -32,7 +32,7 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=363358519]
+[node name="sumo hitbox" type="CollisionShape3D" parent="hitbox" unique_id=363358519]
 shape = SubResource("SphereShape3D_aygv5")
 
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_f4xl6")]

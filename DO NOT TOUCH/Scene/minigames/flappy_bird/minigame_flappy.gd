@@ -1,7 +1,7 @@
 extends MiniGameBase
 
 @export var play_cam: Camera3D
-@export var round_time := 120
+@export var round_time := 50
 
 @onready var timer_label: Label = $"Game layer/Control/Label"
 
@@ -32,7 +32,6 @@ func _run_timer(id: int) -> void:
 
 	timer_label.hide()
 	_finish_round()
-
 
 func _finish_round() -> void:
 	var best := -1

@@ -481,7 +481,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1386428, 7.1966047)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=2071509430]
 use_collision = true
-size = Vector3(18, 1, 1)
+size = Vector3(1000, 1, 1)
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=1533866362]
 environment = SubResource("Environment_0nyub")
@@ -663,6 +663,7 @@ grow_vertical = 2
 theme = ExtResource("9_c8yw6")
 
 [node name="Label" type="Label" parent="Game layer/Control" unique_id=567499551]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
