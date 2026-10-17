@@ -81,3 +81,8 @@ func _on_respawn() -> void:
 	knockback = Vector3.ZERO
 	motion = Vector3.ZERO
 	character.rotation.z = 0.0
+
+func _on_bounce(impulse: Vector3) -> void:
+	motion.x = impulse.x
+	motion.y = impulse.y
+	knockback = Vector3.ZERO

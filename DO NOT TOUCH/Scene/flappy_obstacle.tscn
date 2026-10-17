@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://diinjfo7igm2j"]
+
+[ext_resource type="Script" uid="uid://clteiidsgk1g" path="res://DO NOT TOUCH/Script/flappy_obstacle.gd" id="1_20nk6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a4xb3"]
+radius = 0.48503652
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5003"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_aygv5"]
+material = SubResource("StandardMaterial3D_n5003")
+
+[node name="flappy obstacle" type="Area3D" unique_id=725498968]
+script = ExtResource("1_20nk6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=608733148]
+shape = SubResource("SphereShape3D_a4xb3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1793543871]
+mesh = SubResource("SphereMesh_aygv5")
