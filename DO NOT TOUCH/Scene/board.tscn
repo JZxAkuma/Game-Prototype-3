@@ -25,6 +25,9 @@
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="23_5wvne"]
 [ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="24_o02ct"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="25_lejsw"]
+[ext_resource type="Texture2D" uid="uid://cpyi2yfa3mhmu" path="res://DO NOT TOUCH/2D/UI Assets/brought_to_you_by.png" id="26_o02ct"]
+[ext_resource type="Texture2D" uid="uid://c3lgf3wnaykda" path="res://DO NOT TOUCH/2D/UI Assets/First_to_3.png" id="27_lejsw"]
+[ext_resource type="Texture2D" uid="uid://ck58ns6rsfrun" path="res://DO NOT TOUCH/2D/UI Assets/Multiplayer Logo.png" id="28_v28e5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svf5d"]
 albedo_color = Color(0.73333335, 1, 1, 1)
@@ -193,6 +196,102 @@ tracks/12/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("intro layer/Control/logo:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("intro layer/Control/logo:modulate")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("intro layer/Control/first to 3 medals:visible")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("intro layer/Control/first to 3 medals:modulate")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("intro layer/Control/brought 2 you:visible")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("intro layer/Control/brought 2 you:modulate")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("intro layer/Control/logo:offset_transform_scale")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.47, 0.47)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("intro layer/Control/brought 2 you:offset_transform_scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.47, 0.47)]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
@@ -228,7 +327,7 @@ tracks/2/path = NodePath("droneshot pivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.2, 7),
+"times": PackedFloat32Array(0, 15),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
@@ -372,6 +471,102 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [false, true, false, true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("intro layer/Control/logo:visible")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0, 2.2, 7.0000005),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("intro layer/Control/logo:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2.2, 2.7, 6.5, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("intro layer/Control/first to 3 medals:visible")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0, 11.500001, 14.966667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("intro layer/Control/first to 3 medals:modulate")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(0, 11.500001, 12.000001),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("intro layer/Control/brought 2 you:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0.19999999, 0.3, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("intro layer/Control/brought 2 you:modulate")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0.3, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/20/type = "value"
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/path = NodePath("intro layer/Control/logo:offset_transform_scale")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/keys = {
+"times": PackedFloat32Array(2.2, 2.7),
+"transitions": PackedFloat32Array(13, 0.1),
+"update": 0,
+"values": [Vector2(0.71, 0.71), Vector2(0.46, 0.46)]
+}
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("intro layer/Control/brought 2 you:offset_transform_scale")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0.3, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.47, 0.47), Vector2(0.35, 0.35)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
@@ -838,7 +1033,7 @@ mesh = SubResource("BoxMesh_aygv5")
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
+transform = Transform3D(0.94437647, 0, -0.3288663, 0, 1, 0, 0.3288663, 0, 0.94437647, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
@@ -848,7 +1043,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2247868, 8.542557)
-current = true
 
 [node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
 visible = false
@@ -862,9 +1056,10 @@ transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 141.29025, 0.64
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.606463)
+current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9265283, -0.05820582, 0.37169436, 0, 0.98795986, 0.15471037, -0.37622413, -0.14334364, 0.9153728, 159.02277, 20.989372, 30.39455)
+transform = Transform3D(0.9265283, -0.05820581, 0.37169436, 0, 0.98795986, 0.15471034, -0.37622413, -0.14334361, 0.9153728, 159.02277, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -1243,3 +1438,76 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.594122, 0, 45.236774)
 
 [node name="MobyHouse" parent="." unique_id=340681672 instance=ExtResource("17_q23uw")]
 transform = Transform3D(0.7144834, 0, -1.59582, 0, 1.7484645, 0, 1.59582, 0, 0.7144834, -1.913413, -0.060007095, 22.902428)
+
+[node name="intro layer" type="CanvasLayer" parent="." unique_id=292225276]
+
+[node name="Control" type="Control" parent="intro layer" unique_id=748296595]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="brought 2 you" type="TextureRect" parent="intro layer/Control" unique_id=2075824513]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.47, 0.47)
+texture = ExtResource("26_o02ct")
+stretch_mode = 4
+
+[node name="first to 3 medals" type="TextureRect" parent="intro layer/Control" unique_id=1666453405]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.405, 0.405)
+texture = ExtResource("27_lejsw")
+stretch_mode = 4
+
+[node name="logo" type="TextureRect" parent="intro layer/Control" unique_id=1508216819]
+visible = false
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.47, 0.47)
+texture = ExtResource("28_v28e5")
+stretch_mode = 4
