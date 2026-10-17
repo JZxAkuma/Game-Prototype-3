@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MINI_GAME" format=3 uid="uid://c530u0poxptdm"]
+
+[ext_resource type="Script" uid="uid://bb4ov3h640ub1" path="res://DO NOT TOUCH/Script/minigame.gd" id="1_1t2tb"]
+[ext_resource type="PackedScene" uid="uid://dailkysoenfv8" path="res://DO NOT TOUCH/Scene/minigames/flappy_bird/flappy_scene.tscn" id="1_aexqe"]
+
+[resource]
+script = ExtResource("1_1t2tb")
+mini_game_scene = ExtResource("1_aexqe")
+mini_game_name = "Highest in the room"
+goal = "Be the highest in the room when the timer ends"
+controls = "a = flap
+dpad left = lean left
+dpad right = lean right"
+metadata/_custom_type_script = "uid://bb4ov3h640ub1"

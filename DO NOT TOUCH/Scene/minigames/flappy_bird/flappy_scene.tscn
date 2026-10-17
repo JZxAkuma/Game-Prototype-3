@@ -428,36 +428,42 @@ _data = {
 &"countdown": SubResource("Animation_ugtl2")
 }
 
-[node name="Flappy_scene" type="Node3D" unique_id=535647750 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui")]
+[node name="Flappy_scene" type="Node3D" unique_id=535647750 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_vygtr")
+play_cam = NodePath("Game scene/Camera3D")
 play_mode = 5
 players_root = NodePath("players")
 spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")
+anim = NodePath("countdown layer/AnimationPlayer")
 
 [node name="Game scene" type="Node3D" parent="." unique_id=1789420498]
 
 [node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=1426199083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.208, 9.22102)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1386428, 7.1966047)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=2071509430]
+size = Vector3(18, 1, 1)
 
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 
 [node name="spawns" type="Node3D" parent="." unique_id=1286182102]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1426830225]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5521765, 0.4995358, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=921795307]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1657734, 0.5237491, 0)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=1426212345]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.1434345, 0.5379046, 0)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=388128254]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 0)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -6.624716, 0.5379045, 0)
 
-[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424]
+[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424 node_paths=PackedStringArray("play_cam")]
 script = ExtResource("2_2mow2")
+play_cam = NodePath("../Game scene/Camera3D")
 
 [node name="Control" type="Control" parent="Tutorial layer" unique_id=2033016388]
 layout_mode = 3

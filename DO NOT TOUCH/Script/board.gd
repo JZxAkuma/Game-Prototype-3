@@ -74,6 +74,18 @@ func _link_spaces() -> void:
 func _process(delta: float) -> void:
 	_follow_cam(delta)
 	_face_tokens_to_camera(delta)
+	
+	if Input.is_action_just_pressed("sumo"):
+		_debug_minigame("sumo")
+	elif Input.is_action_just_pressed("flappy"):
+		_debug_minigame("flappy")
+
+func _debug_minigame(id: String) -> void:
+	var mg := GameState.pick_minigame_by_id(id)
+	if mg == null:
+		push_warning("No minigame '%s' in GamesState" % id)
+		return
+	SceneManager.goto_scene(mg.mini_game_scene)
 
 func _face_tokens_to_camera(delta: float) -> void:
 	if not tokens_root.visible:

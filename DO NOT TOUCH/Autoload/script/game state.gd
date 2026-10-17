@@ -36,6 +36,8 @@ var current_minigame: MINI_GAME
 
 const MINIGAME_PATHS: Array[String] = [
 	"res://DO NOT TOUCH/Resources/minigames/sumo.tres",
+	"res://DO NOT TOUCH/Resources/minigames/flappy.tres"
+	
 ]
 
 func pick_minigame() -> MINI_GAME:
@@ -77,3 +79,10 @@ func _get_all_minigames() -> Array[MINI_GAME]:
 	for path in MINIGAME_PATHS:
 		list.append(load(path) as MINI_GAME)
 	return list
+
+func pick_minigame_by_id(id: String) -> MINI_GAME:
+	for path in MINIGAME_PATHS:
+		if path.get_file().get_basename() == id:
+			current_minigame = load(path) as MINI_GAME
+			return current_minigame
+	return null

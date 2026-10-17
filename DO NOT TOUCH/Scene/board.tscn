@@ -531,7 +531,7 @@ transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 141.29025, 0.64
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.606463)
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9265283, -0.05820581, 0.37169436, 0, 0.98795986, 0.15471034, -0.37622413, -0.14334361, 0.9153728, 159.02277, 20.989372, 30.39455)
+transform = Transform3D(0.9265283, -0.058205813, 0.37169436, 0, 0.98795986, 0.15471035, -0.37622413, -0.14334363, 0.9153728, 159.02277, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
