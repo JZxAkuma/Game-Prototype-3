@@ -7,7 +7,7 @@ extends MiniGameBase
 @export var follow_threshold := 3.0
 @export var gap_threshold := 4.0
 @export var zoom_per_unit := 1.0
-@export var max_pull_back := 15.0
+@export var max_pull_back := 20.0
 @export var cam_smooth := 3.0
 
 @onready var timer_label: Label = $"Game layer/Control/Label"
