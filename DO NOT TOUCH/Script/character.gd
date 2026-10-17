@@ -13,6 +13,10 @@ const states := {
 	Mode.FLAPPY : preload("res://DO NOT TOUCH/Script/minigame/character state/state_flappy.gd")
 }
 
+@onready var flappy_hitbox: CollisionShape3D = $"hitbox/flappy hitbox"
+@onready var sumo_hitbox: CollisionShape3D = $"hitbox/sumo hitbox"
+
+
 var slot := 0
 var mode := Mode.LOCKED
 var state: CharacterState
@@ -27,6 +31,7 @@ func set_mode(new_mode: Mode) -> void:
 	if state:
 		state._exit()
 	mode = new_mode
+	_apply_hitbox(new_mode)
 	state = states[new_mode].new()
 	state.character = self
 	state._enter()
@@ -56,3 +61,7 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	if state:
 		state._on_hurtbox_entered(area)
+
+func _apply_hitbox(m: Mode) -> void:
+	sumo_hitbox.set_deferred("disabled", m != Mode.SUMO)
+	flappy_hitbox.set_deferred("disabled", m != Mode.FLAPPY)
