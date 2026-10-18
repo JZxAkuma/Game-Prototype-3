@@ -77,8 +77,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2859335, 8.922113, 40.7955
 mesh = SubResource("CapsuleMesh_1w13i")
 surface_material_override/0 = SubResource("ShaderMaterial_18gb4")
 
-[node name="Blimp" parent="." unique_id=1634982108 instance=ExtResource("13_5s4v6")]
-transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 150, 140, 0)
+[node name="Blimp" parent="." unique_id=39217859 instance=ExtResource("13_5s4v6")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 80, 150, 0)
 
-[node name="HotAirBalloon" parent="." unique_id=1843910149 instance=ExtResource("14_thdh2")]
-transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, 40, 140, 0)
+[node name="HotAirBalloon" parent="." unique_id=1113536881 instance=ExtResource("14_thdh2")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -10, 160, 0)
