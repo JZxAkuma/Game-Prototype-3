@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtkssvoxgagn" path="res://DO NOT TOUCH/character/MobyRig.fbx" id="2_f4xl6"]
 [ext_resource type="Material" uid="uid://d4h5uuaw4xk0q" path="res://DO NOT TOUCH/character/player 1 mat/player 1.tres" id="3_das0k"]
 [ext_resource type="Material" uid="uid://dxy8dfl8m06nm" path="res://DO NOT TOUCH/character/base mat.tres" id="3_y2pjc"]
+[ext_resource type="Texture2D" uid="uid://b4l1pq2s7p0j4" path="res://DO NOT TOUCH/2D/Sprites/Cloud.png" id="5_y2pjc"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2w1j"]
 
@@ -12,6 +13,43 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_das0k"]
 radius = 0.57421875
 height = 2.1855469
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0188y"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+albedo_texture = ExtResource("5_y2pjc")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_1o0tp"]
+offsets = PackedFloat32Array(0, 0.580311, 1)
+colors = PackedColorArray(0.68307734, 0.6830774, 0.68307734, 1, 1, 1, 1, 0.419689, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_p7xh6"]
+gradient = SubResource("Gradient_1o0tp")
+
+[sub_resource type="Curve" id="Curve_eehoy"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_73fo5"]
+curve = SubResource("Curve_eehoy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_3v3pq"]
+emission_shape_scale = Vector3(0.01, 0.01, 0.01)
+direction = Vector3(0, 0, 0)
+spread = 18.653
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_73fo5")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_p7xh6")
+turbulence_enabled = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_vdtkg"]
 
 [node name="character1" type="CharacterBody3D" unique_id=1051749168]
 script = ExtResource("1_f2w1j")
@@ -46,47 +84,58 @@ shape = SubResource("CapsuleShape3D_das0k")
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_f4xl6")]
 transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)
 
-[node name="RightFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="0" unique_id=992855695]
+[node name="RightFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="0" unique_id=164936498]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="1" unique_id=1016559045]
+[node name="LeftFoot" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="1" unique_id=722216466]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftHand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="2" unique_id=1253438380]
+[node name="LeftHand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="2" unique_id=34233419]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Head2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="3" unique_id=425573788]
+[node name="Head2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="3" unique_id=2016405133]
 material_override = ExtResource("3_y2pjc")
 
-[node name="RightAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="4" unique_id=1100822607]
+[node name="RightAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="4" unique_id=49803528]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="5" unique_id=2141502048]
+[node name="LeftAntenna" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="5" unique_id=668720144]
 material_override = ExtResource("3_y2pjc")
 
-[node name="WizardHat" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="6" unique_id=2066353818]
+[node name="WizardHat" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="6" unique_id=294106849]
 material_override = ExtResource("3_das0k")
 
-[node name="RightEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="7" unique_id=1868162648]
+[node name="RightEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="7" unique_id=1545170516]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="8" unique_id=504196029]
+[node name="LeftEye" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="8" unique_id=74780457]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Cape" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="9" unique_id=685169491]
+[node name="Cape" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="9" unique_id=1510321226]
 material_override = ExtResource("3_das0k")
 
-[node name="Thorax" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="10" unique_id=276131945]
+[node name="Thorax" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="10" unique_id=1874273108]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Abdomen" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="11" unique_id=284767893]
+[node name="Abdomen" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="11" unique_id=88577104]
 material_override = ExtResource("3_y2pjc")
 
-[node name="RightHand2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="12" unique_id=1939650959]
+[node name="RightHand2" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="12" unique_id=137644131]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Wand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 976909899) index="13" unique_id=187938637]
+[node name="Wand" parent="MobyRig/Skeleton3D" parent_id_path=PackedInt32Array(1549967143, 120726100) index="13" unique_id=1413516684]
 material_override = ExtResource("3_y2pjc")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="MobyRig" unique_id=1664110879]
+transform = Transform3D(1, -8.742274e-08, 8.742279e-08, 8.7422784e-08, -4.371139e-08, -1, 8.742274e-08, 1, -4.3711385e-08, 5.645535e-06, 0.007889265, 0.0001754585)
+material_override = SubResource("StandardMaterial3D_0188y")
+amount = 5
+lifetime = 0.05
+speed_scale = 0.2
+explosiveness = 0.5
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_3v3pq")
+draw_pass_1 = SubResource("QuadMesh_vdtkg")
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="3_1nc1h"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="3_c8yw6"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="4_wwr53"]
+[ext_resource type="Texture2D" uid="uid://bnh0syx3mml5t" path="res://DO NOT TOUCH/2D/UI Assets/Arrows.png" id="5_r0dul"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="5_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="6_c8yw6"]
 [ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="9_c8yw6"]
@@ -43,6 +44,45 @@ fog_depth_end = 1251.4
 adjustment_enabled = true
 adjustment_contrast = 1.12
 adjustment_saturation = 1.19
+
+[sub_resource type="QuadMesh" id="QuadMesh_1w13i"]
+size = Vector2(3, 400)
+
+[sub_resource type="Shader" id="Shader_hjrpj"]
+code = "
+shader_type spatial;
+render_mode blend_mix,shadows_disabled;
+
+uniform sampler2D water_texture : source_color;
+uniform sampler2D emission_texture : source_color;
+
+uniform vec2 tiling = vec2(1.0, 1.0);
+uniform float scroll_speed = 0.05;
+uniform float emission_strength : hint_range(0.0, 5.0) = 1.0;
+
+void fragment() {
+    vec2 uv = UV * tiling;
+    uv.y += TIME * scroll_speed;
+
+    // Water texture
+    vec4 tex = texture(water_texture, uv);
+
+    ALBEDO = tex.rgb;
+    ALPHA = tex.a;
+
+    // Emission map
+    vec3 emission = texture(emission_texture, uv).rgb;
+    EMISSION = emission * emission_strength;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yoq7m"]
+render_priority = 0
+shader = SubResource("Shader_hjrpj")
+shader_parameter/water_texture = ExtResource("5_r0dul")
+shader_parameter/emission_texture = ExtResource("5_r0dul")
+shader_parameter/tiling = Vector2(1, 10)
+shader_parameter/scroll_speed = 0.5
+shader_parameter/emission_strength = 1.0
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -411,6 +451,16 @@ environment = SubResource("Environment_0nyub")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=925675861]
 transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Game scene" unique_id=952127571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.741849, 196.60196, 0)
+mesh = SubResource("QuadMesh_1w13i")
+surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Game scene" unique_id=5820101]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.326823, 196.60196, 0)
+mesh = SubResource("QuadMesh_1w13i")
+surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
 
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 
