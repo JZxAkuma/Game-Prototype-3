@@ -42,8 +42,8 @@ func _ready() -> void:
 	
 	_spawn_characters()
 	
-	if SceneManager.busy:
-		await SceneManager.scene_changed
+	#if SceneManager.busy:
+		#await SceneManager.scene_changed
 
 	_run_game()
 
