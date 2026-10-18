@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dsmkx52vl5as8"]
 
 [ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="1_joyeq"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_jvgf6"]
 
 [node name="Tutorial layer" type="CanvasLayer" unique_id=364946351 node_paths=PackedStringArray("play_cam")]
 script = ExtResource("1_joyeq")
-play_cam = NodePath("")
+play_cam = NodePath("Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport/Camera3D")
 
 [node name="Control" type="Control" parent="." unique_id=1071775178]
 layout_mode = 3
@@ -33,6 +34,8 @@ grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1596777545]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, 100)
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=2089762891]
 layout_mode = 2
@@ -48,22 +51,28 @@ transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.4634
 [node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=1691555161]
 layout_mode = 2
 size_flags_horizontal = 3
+offset_transform_enabled = true
 
 [node name="title label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1175872537]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_jvgf6")
+theme_override_font_sizes/font_size = 35
 text = "TEST"
+autowrap_mode = 3
 
 [node name="goal label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=352598737]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_jvgf6")
+theme_override_font_sizes/font_size = 35
 text = "TEST"
+autowrap_mode = 3
 
 [node name="controls label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1631388083]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_fonts/font = ExtResource("2_jvgf6")
+theme_override_font_sizes/font_size = 35
 text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
-autowrap_mode = 2
+autowrap_mode = 3
 
 [node name="tutorial card container" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=2119829261]
 layout_mode = 2
