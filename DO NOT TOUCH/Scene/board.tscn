@@ -1414,6 +1414,7 @@ mesh = SubResource("ArrayMesh_4qbmi")
 
 [node name="TallPath" parent="Decorations" unique_id=2114847789 instance=ExtResource("20_h6drl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.433, 0, 0, 0, 7.5190434, -10.353313, 17.166008, 34.917374)
+surface_material_override/0 = null
 
 [node name="bush" parent="." unique_id=1113126883 instance=ExtResource("21_e3sxt")]
 transform = Transform3D(0.6333535, 0, 2.7012894, 0, 2.5224633, 0, -2.2339718, 0, 0.76584244, 36.64108, -2.0548477, 27.164007)

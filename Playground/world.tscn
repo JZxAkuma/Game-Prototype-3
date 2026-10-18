@@ -8,8 +8,28 @@
 [ext_resource type="PackedScene" uid="uid://cowr46dylkm4b" path="res://Adha_Assets/Tower_low.fbx" id="6_14phy"]
 [ext_resource type="PackedScene" uid="uid://33snidklavff" path="res://Adha_Assets/BushVar.fbx" id="7_l5xjc"]
 [ext_resource type="PackedScene" uid="uid://i3y085y0sgn2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/AssetPack2.fbx" id="8_18gb4"]
+[ext_resource type="Shader" uid="uid://cuyf6an7t2d2c" path="res://DO NOT TOUCH/shader/BetaShader.gdshader" id="9_htyqe"]
+[ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="10_tg0fd"]
+[ext_resource type="Texture2D" uid="uid://bqoidkyaebqdc" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/TileMap_standardSurface1_Normal2.png" id="11_pig1i"]
+[ext_resource type="Texture2D" uid="uid://vsbu646lyntp" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/TileMap_standardSurface1_Normal.png" id="12_irx2x"]
 
 [sub_resource type="Environment" id="Environment_aygv5"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1w13i"]
+radius = 5.0
+height = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18gb4"]
+render_priority = 0
+shader = ExtResource("9_htyqe")
+shader_parameter/normal_frame_1 = ExtResource("11_pig1i")
+shader_parameter/normal_frame_2 = ExtResource("12_irx2x")
+shader_parameter/frames_per_second = 7.0
+shader_parameter/texture_scale = 0.10000000149012
+shader_parameter/normal_strength = 3.0
+shader_parameter/albedo_color = Color(0.3786862, 0.39170253, 0.2530701, 1)
+shader_parameter/albedo_texture = ExtResource("10_tg0fd")
+shader_parameter/use_albedo_texture = false
 
 [node name="World" type="Node3D" unique_id=1180877065]
 
@@ -49,3 +69,8 @@ transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 100, 0, 0)
 
 [node name="AssetPack2" parent="." unique_id=1354650490 instance=ExtResource("8_18gb4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.733795, 0, 259.6324)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1364475105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2859335, 8.922113, 40.795547)
+mesh = SubResource("CapsuleMesh_1w13i")
+surface_material_override/0 = SubResource("ShaderMaterial_18gb4")
