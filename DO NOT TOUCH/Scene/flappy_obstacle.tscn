@@ -1,15 +1,68 @@
 [gd_scene format=3 uid="uid://diinjfo7igm2j"]
 
 [ext_resource type="Script" uid="uid://clteiidsgk1g" path="res://DO NOT TOUCH/Script/flappy_obstacle.gd" id="1_20nk6"]
+[ext_resource type="Texture2D" uid="uid://177pjecm4qqc" path="res://DO NOT TOUCH/2D/Sprites/Square.png" id="2_5cp1s"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_a4xb3"]
 radius = 0.48503652
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n5003"]
 albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.5321875, 0.12896717, 0.044500552, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_aygv5"]
 material = SubResource("StandardMaterial3D_n5003")
+radius = 0.7
+height = 1.3
+
+[sub_resource type="SphereMesh" id="SphereMesh_1w13i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6jgps"]
+transparency = 1
+albedo_color = Color(0.6392157, 0.6392157, 0, 0.19215687)
+emission_enabled = true
+emission = Color(0.71108216, 0.4004583, 0.08903579, 1)
+emission_energy_multiplier = 2.95
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5cp1s"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_5cp1s")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_akyrw"]
+offsets = PackedFloat32Array(0, 0.580311, 0.8695652)
+colors = PackedColorArray(0.7160403, 0.7128152, 0, 1, 0.96862745, 0, 0.08235294, 0.6156863, 0, 0.8352941, 0.88235295, 0.6862745)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h30iv"]
+gradient = SubResource("Gradient_akyrw")
+
+[sub_resource type="Curve" id="Curve_o44b3"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_idfwh"]
+curve = SubResource("Curve_o44b3")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_4o0wv"]
+emission_shape = 1
+emission_sphere_radius = 0.5
+direction = Vector3(0, 5, 0)
+spread = 10.0
+initial_velocity_min = 6.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_idfwh")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_h30iv")
+
+[sub_resource type="QuadMesh" id="QuadMesh_j8vgy"]
+size = Vector2(2, 2)
 
 [node name="flappy obstacle" type="Area3D" unique_id=725498968]
 script = ExtResource("1_20nk6")
@@ -19,3 +72,17 @@ shape = SubResource("SphereShape3D_a4xb3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1793543871]
 mesh = SubResource("SphereMesh_aygv5")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=8825400]
+transform = Transform3D(1.6308208, 0, 0, 0, 1.5747173, 0, 0, 0, 1.5740069, 0, 0, 0)
+mesh = SubResource("SphereMesh_1w13i")
+surface_material_override/0 = SubResource("StandardMaterial3D_6jgps")
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1261965128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046672076, -0.26213455, 0.0076701343)
+material_override = SubResource("StandardMaterial3D_5cp1s")
+amount = 10
+lifetime = 0.5
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_4o0wv")
+draw_pass_1 = SubResource("QuadMesh_j8vgy")
