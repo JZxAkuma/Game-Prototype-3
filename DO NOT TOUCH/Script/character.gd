@@ -7,6 +7,9 @@ signal state_changed(character: PlayerCharacter, new_state: CharacterState)
 @onready var sumo_hitbox: CollisionShape3D = $hitbox/CollisionShape3D
 @onready var flappy_hitbox: CollisionShape3D = $"hitbox/flappy hitbox"
 
+var flap_part = preload("res://DO NOT TOUCH/Scene/flappy_fart.tscn")
+
+
 enum Mode { LOCKED, BUTTON_MASH, TUG_OF_WAR, RHYTHM, SUMO, FLAPPY }
 
 const states := {
@@ -23,6 +26,12 @@ var score := 0
 
 func setup(p_slot: int) -> void:
 	slot = p_slot
+
+func _flappy_emit() -> void:
+	var p = flap_part.instantiate()
+	get_parent().add_child(p)
+	p.global_transform = global_transform
+	
 
 
 func set_mode(new_mode: Mode) -> void:

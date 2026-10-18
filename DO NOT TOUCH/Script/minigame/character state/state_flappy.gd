@@ -1,7 +1,7 @@
 extends CharacterState
 
 const gravity := 25.0
-const flap_strength := 9.0
+const flap_strength := 4.0
 const max_fall_speed := 20.0
 const air_drag := 3.0
 
@@ -47,6 +47,7 @@ func _physics_update(delta: float) -> void:
 		var up := character.global_basis.y
 		motion.x = up.x * flap_strength
 		motion.y = up.y * flap_strength
+		character._flappy_emit()
 
 	motion.y = maxf(motion.y - gravity * delta, -max_fall_speed)
 	motion.x = move_toward(motion.x, 0.0, air_drag * delta)
