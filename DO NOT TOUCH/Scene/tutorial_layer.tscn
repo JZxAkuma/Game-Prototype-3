@@ -89,7 +89,7 @@ texture = ExtResource("5_gnh31")
 layout_mode = 0
 offset_left = 638.0
 offset_top = 883.0
-offset_right = 1438.0
+offset_right = 1475.0
 offset_bottom = 1283.0
 texture = ExtResource("5_gnh31")
 
@@ -157,7 +157,7 @@ layout_mode = 2
 size_flags_vertical = 3
 offset_transform_enabled = true
 offset_transform_position = Vector2(140, 110)
-offset_transform_scale = Vector2(1, 0.6)
+offset_transform_scale = Vector2(0.75, 0.5)
 alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Control" unique_id=2028341514]

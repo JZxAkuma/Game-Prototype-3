@@ -1,6 +1,15 @@
 [gd_scene format=3 uid="uid://cvgkewnfqy27k"]
 
 [ext_resource type="Script" uid="uid://en7kdjjxy227" path="res://DO NOT TOUCH/Script/ready_up_card.gd" id="1_qdw1f"]
+[ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="2_1wl3x"]
+[ext_resource type="Texture2D" uid="uid://bvpwwca0j15qr" path="res://DO NOT TOUCH/2D/UI Assets/GradientReadyUp.png" id="3_4lbvp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1wl3x"]
+texture = ExtResource("3_4lbvp")
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
 
 [node name="ready up card" type="PanelContainer" unique_id=343455328]
 offset_right = 40.0
@@ -9,3 +18,7 @@ script = ExtResource("1_qdw1f")
 
 [node name="Label" type="Label" parent="." unique_id=527225988]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.34420297, 0.06322421, 0.07672743, 1)
+theme_override_fonts/font = ExtResource("2_1wl3x")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxTexture_1wl3x")
