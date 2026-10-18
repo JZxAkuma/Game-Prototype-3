@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cvgkewnfqy27k"]
+
+[ext_resource type="Script" uid="uid://en7kdjjxy227" path="res://DO NOT TOUCH/Script/ready_up_card.gd" id="1_qdw1f"]
+
+[node name="ready up card" type="PanelContainer" unique_id=343455328]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_qdw1f")
+
+[node name="Label" type="Label" parent="." unique_id=527225988]
+layout_mode = 2

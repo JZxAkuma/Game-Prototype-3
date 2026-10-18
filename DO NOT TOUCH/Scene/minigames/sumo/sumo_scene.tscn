@@ -427,7 +427,7 @@ script = ExtResource("1_qmvo0")
 play_mode = 4
 players_root = NodePath("players")
 spawns = NodePath("spawns")
-tutorial_ui = NodePath("")
+tutorial_ui = NodePath("Tutorial layer")
 anim = NodePath("countdown layer/AnimationPlayer")
 
 [node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("2_a251r")]
