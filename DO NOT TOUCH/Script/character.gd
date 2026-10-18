@@ -15,7 +15,8 @@ enum Mode { LOCKED, BUTTON_MASH, TUG_OF_WAR, RHYTHM, SUMO, FLAPPY }
 const states := {
 	Mode.LOCKED: preload("res://DO NOT TOUCH/Script/minigame/character state/state_locked.gd"),
 	Mode.SUMO: preload("res://DO NOT TOUCH/Script/minigame/character state/state_sumo.gd"),
-	Mode.FLAPPY : preload("res://DO NOT TOUCH/Script/minigame/character state/state_flappy.gd")
+	Mode.FLAPPY : preload("res://DO NOT TOUCH/Script/minigame/character state/state_flappy.gd"),
+	Mode.BUTTON_MASH: preload("res://DO NOT TOUCH/Script/minigame/character state/state_mash.gd")
 }
 
 var slot := 0
