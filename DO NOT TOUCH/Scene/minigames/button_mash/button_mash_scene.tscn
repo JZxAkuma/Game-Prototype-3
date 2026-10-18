@@ -9,6 +9,40 @@
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="8_ciqc1"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="9_6h264"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
+shader = ExtResource("8_ciqc1")
+shader_parameter/sky_texture = ExtResource("9_6h264")
+
+[sub_resource type="Sky" id="Sky_a251r"]
+sky_material = SubResource("ShaderMaterial_m2ndw")
+
+[sub_resource type="Environment" id="Environment_xot51"]
+background_mode = 2
+background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
+sky = SubResource("Sky_a251r")
+ambient_light_source = 2
+ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
+ambient_light_energy = 4.0
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.64
+tonemap_white = 1.68
+ssil_enabled = true
+ssil_intensity = 2.6
+sdfgi_bounce_feedback = 0.31
+sdfgi_energy = 0.2
+fog_mode = 1
+fog_light_color = Color(0.50833166, 0.8550044, 0.84298277, 1)
+fog_light_energy = 0.6
+fog_density = 0.28
+fog_aerial_perspective = 0.13
+fog_height = -52.96
+fog_height_density = 2.2069
+fog_depth_end = 1251.4
+adjustment_enabled = true
+adjustment_contrast = 1.12
+adjustment_saturation = 1.19
+
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
 tracks/0/type = "value"
@@ -110,19 +144,19 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("countdown layer/3:offset_transform_scale")
+tracks/8/path = NodePath("Game scene/Camera3D:fov")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(1, 1)]
+"values": [75.0]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("countdown layer/2:offset_transform_scale")
+tracks/9/path = NodePath("countdown layer/3:offset_transform_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -134,7 +168,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("countdown layer/1:offset_transform_scale")
+tracks/10/path = NodePath("countdown layer/2:offset_transform_scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -146,10 +180,22 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("countdown layer/Go:offset_transform_scale")
+tracks/11/path = NodePath("countdown layer/1:offset_transform_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("countdown layer/Go:offset_transform_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -258,23 +304,23 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("countdown layer/3:offset_transform_scale")
+tracks/8/path = NodePath("Game scene/Camera3D:fov")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(13, 0.1),
+"times": PackedFloat32Array(0, 1, 2, 3.0000002, 4),
+"transitions": PackedFloat32Array(13, 13, 13, 13, 13),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+"values": [75.0, 70.0, 65.0, 60.0, 75.0]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("countdown layer/2:offset_transform_scale")
+tracks/9/path = NodePath("countdown layer/3:offset_transform_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
@@ -282,11 +328,11 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("countdown layer/1:offset_transform_scale")
+tracks/10/path = NodePath("countdown layer/2:offset_transform_scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(2, 3.0000002),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
@@ -294,55 +340,33 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("countdown layer/Go:offset_transform_scale")
+tracks/11/path = NodePath("countdown layer/1:offset_transform_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
+"times": PackedFloat32Array(2, 3.0000002),
+"transitions": PackedFloat32Array(13, 0.1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("countdown layer/Go:offset_transform_scale")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
 "times": PackedFloat32Array(3.0000002, 4),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a251r"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xot51"]
 _data = {
 &"RESET": SubResource("Animation_i1mr1"),
 &"countdown": SubResource("Animation_ugtl2")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
-shader = ExtResource("8_ciqc1")
-shader_parameter/sky_texture = ExtResource("9_6h264")
-
-[sub_resource type="Sky" id="Sky_a251r"]
-sky_material = SubResource("ShaderMaterial_m2ndw")
-
-[sub_resource type="Environment" id="Environment_xot51"]
-background_mode = 2
-background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
-sky = SubResource("Sky_a251r")
-ambient_light_source = 2
-ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
-ambient_light_energy = 4.0
-reflected_light_source = 1
-tonemap_mode = 3
-tonemap_exposure = 0.64
-tonemap_white = 1.68
-ssil_enabled = true
-ssil_intensity = 2.6
-sdfgi_bounce_feedback = 0.31
-sdfgi_energy = 0.2
-fog_mode = 1
-fog_light_color = Color(0.50833166, 0.8550044, 0.84298277, 1)
-fog_light_energy = 0.6
-fog_density = 0.28
-fog_aerial_perspective = 0.13
-fog_height = -52.96
-fog_height_density = 2.2069
-fog_depth_end = 1251.4
-adjustment_enabled = true
-adjustment_contrast = 1.12
-adjustment_saturation = 1.19
 
 [node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_0ogq5")
@@ -355,9 +379,54 @@ anim = NodePath("countdown layer/AnimationPlayer")
 [node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("2_m2ndw")]
 play_cam = NodePath("../Game scene/Camera3D")
 
-[node name="countdown layer" type="CanvasLayer" parent="." unique_id=202536949]
+[node name="players" type="Node3D" parent="." unique_id=528210095]
 
-[node name="3" type="TextureRect" parent="countdown layer" unique_id=1627370538]
+[node name="spawns" type="Node3D" parent="." unique_id=1171670973]
+
+[node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1129438426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, 0)
+
+[node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1638181900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=672791851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, 0)
+
+[node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=2145981091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, 0)
+
+[node name="Game scene" type="Node3D" parent="." unique_id=960113387]
+
+[node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=941025559]
+transform = Transform3D(-0.85715973, -0.32062572, 0.4030836, 0, 0.7826096, 0.62251294, -0.5150507, 0.533593, -0.67082137, 5.2783327, 7.3337975, -7.58403)
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=570758749]
+environment = SubResource("Environment_xot51")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=1673030964]
+transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=535218021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 1, 1000)
+
+[node name="pillar_lane" type="Node3D" parent="Game scene" unique_id=614246661]
+
+[node name="lane1" type="Marker3D" parent="Game scene/pillar_lane" unique_id=431126383]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 0, -4)
+
+[node name="lane2" type="Marker3D" parent="Game scene/pillar_lane" unique_id=1884452000]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -4)
+
+[node name="lane3" type="Marker3D" parent="Game scene/pillar_lane" unique_id=470655188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 0, -4)
+
+[node name="lane4" type="Marker3D" parent="Game scene/pillar_lane" unique_id=813548862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -4)
+
+[node name="countdown layer" type="CanvasLayer" parent="." unique_id=864123396]
+
+[node name="3" type="TextureRect" parent="countdown layer" unique_id=763582014]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -377,7 +446,7 @@ offset_transform_enabled = true
 texture = ExtResource("2_anxg6")
 stretch_mode = 4
 
-[node name="2" type="TextureRect" parent="countdown layer" unique_id=1686102281]
+[node name="2" type="TextureRect" parent="countdown layer" unique_id=96685759]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -398,7 +467,7 @@ offset_transform_enabled = true
 texture = ExtResource("3_qc7bq")
 stretch_mode = 4
 
-[node name="1" type="TextureRect" parent="countdown layer" unique_id=1673488319]
+[node name="1" type="TextureRect" parent="countdown layer" unique_id=652675729]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -419,7 +488,7 @@ offset_transform_enabled = true
 texture = ExtResource("4_yk74a")
 stretch_mode = 4
 
-[node name="Go" type="TextureRect" parent="countdown layer" unique_id=1148569772]
+[node name="Go" type="TextureRect" parent="countdown layer" unique_id=1426582549]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -439,37 +508,6 @@ offset_transform_enabled = true
 texture = ExtResource("5_pgo1g")
 stretch_mode = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=969265261]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1708937004]
 root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_a251r")
-
-[node name="players" type="Node3D" parent="." unique_id=528210095]
-
-[node name="spawns" type="Node3D" parent="." unique_id=1171670973]
-
-[node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1129438426]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1638181900]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
-
-[node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=672791851]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=2145981091]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
-
-[node name="Game scene" type="Node3D" parent="." unique_id=960113387]
-
-[node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=941025559]
-transform = Transform3D(0.49999994, -0.43301272, 0.75000006, 0, 0.8660254, 0.5, -0.86602545, -0.24999997, 0.43301263, 8.299038, 4.379299, 4.795866)
-
-[node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=570758749]
-environment = SubResource("Environment_xot51")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=1673030964]
-transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
-
-[node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=535218021]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
-size = Vector3(100, 1, 1000)
+libraries/ = SubResource("AnimationLibrary_xot51")

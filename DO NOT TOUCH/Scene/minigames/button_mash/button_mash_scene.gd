@@ -2,6 +2,8 @@ extends MiniGameBase
 
 const round_time := 10.0
 
+var dirt_pillar = preload("res://DO NOT TOUCH/Scene/earth_pillar.tscn")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	super()
