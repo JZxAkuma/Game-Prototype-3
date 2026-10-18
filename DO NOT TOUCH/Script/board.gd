@@ -74,11 +74,13 @@ func _link_spaces() -> void:
 func _process(delta: float) -> void:
 	_follow_cam(delta)
 	_face_tokens_to_camera(delta)
-	
+
 	if Input.is_action_just_pressed("sumo"):
 		_debug_minigame("sumo")
 	elif Input.is_action_just_pressed("flappy"):
 		_debug_minigame("flappy")
+	elif Input.is_action_just_pressed("button mash"):
+		_debug_minigame("button mash")
 
 func _debug_minigame(id: String) -> void:
 	var mg := GameState.pick_minigame_by_id(id)

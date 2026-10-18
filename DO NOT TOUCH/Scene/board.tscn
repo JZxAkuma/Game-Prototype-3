@@ -1033,7 +1033,7 @@ mesh = SubResource("BoxMesh_aygv5")
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
-transform = Transform3D(0.94437647, 0, -0.3288663, 0, 1, 0, 0.3288663, 0, 0.94437647, 0, 0, 0)
+transform = Transform3D(0.9443764, 0, -0.3288663, 0, 1, 0, 0.3288663, 0, 0.9443764, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
@@ -1059,7 +1059,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.6064
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9265283, -0.05820581, 0.37169436, 0, 0.98795986, 0.15471034, -0.37622413, -0.14334361, 0.9153728, 159.02277, 20.989372, 30.39455)
+transform = Transform3D(0.9265283, -0.058205813, 0.37169436, 0, 0.98795986, 0.15471035, -0.37622413, -0.14334363, 0.9153728, 159.02277, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)

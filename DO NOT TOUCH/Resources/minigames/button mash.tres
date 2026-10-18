@@ -1,7 +1,12 @@
 [gd_resource type="Resource" script_class="MINI_GAME" format=3 uid="uid://cl8slreem7t5"]
 
 [ext_resource type="Script" uid="uid://bb4ov3h640ub1" path="res://DO NOT TOUCH/Script/minigame.gd" id="1_lbpiv"]
+[ext_resource type="PackedScene" uid="uid://ccggb32hynvgy" path="res://DO NOT TOUCH/Scene/minigames/button_mash/button_mash_scene.tscn" id="1_n3rdk"]
 
 [resource]
 script = ExtResource("1_lbpiv")
+mini_game_scene = ExtResource("1_n3rdk")
+mini_game_name = "Wall"
+goal = "Build as much wall as possible before the timer ran out"
+controls = "a = build wall"
 metadata/_custom_type_script = "uid://bb4ov3h640ub1"

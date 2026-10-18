@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="3_qc7bq"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="4_yk74a"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="5_pgo1g"]
+[ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="8_ciqc1"]
+[ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="9_6h264"]
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -308,6 +310,40 @@ _data = {
 &"countdown": SubResource("Animation_ugtl2")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
+shader = ExtResource("8_ciqc1")
+shader_parameter/sky_texture = ExtResource("9_6h264")
+
+[sub_resource type="Sky" id="Sky_a251r"]
+sky_material = SubResource("ShaderMaterial_m2ndw")
+
+[sub_resource type="Environment" id="Environment_xot51"]
+background_mode = 2
+background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
+sky = SubResource("Sky_a251r")
+ambient_light_source = 2
+ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
+ambient_light_energy = 4.0
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 0.64
+tonemap_white = 1.68
+ssil_enabled = true
+ssil_intensity = 2.6
+sdfgi_bounce_feedback = 0.31
+sdfgi_energy = 0.2
+fog_mode = 1
+fog_light_color = Color(0.50833166, 0.8550044, 0.84298277, 1)
+fog_light_energy = 0.6
+fog_density = 0.28
+fog_aerial_perspective = 0.13
+fog_height = -52.96
+fog_height_density = 2.2069
+fog_depth_end = 1251.4
+adjustment_enabled = true
+adjustment_contrast = 1.12
+adjustment_saturation = 1.19
+
 [node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_0ogq5")
 play_mode = 1
@@ -318,7 +354,7 @@ anim = NodePath("countdown layer/AnimationPlayer")
 
 [node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=371981431 node_paths=PackedStringArray("play_cam")]
 script = ExtResource("1_hvlx4")
-play_cam = NodePath("")
+play_cam = NodePath("../Game scene/Camera3D")
 
 [node name="Control" type="Control" parent="Tutorial layer" unique_id=863140802]
 layout_mode = 3
@@ -477,13 +513,24 @@ libraries/ = SubResource("AnimationLibrary_a251r")
 [node name="spawns" type="Node3D" parent="." unique_id=1171670973]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1129438426]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 9)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1638181900]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -9)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=672791851]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, 0)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=2145981091]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 0)
+
+[node name="Game scene" type="Node3D" parent="." unique_id=960113387]
+
+[node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=941025559]
+transform = Transform3D(0.49999994, -0.43301272, 0.75000006, 0, 0.8660254, 0.5, -0.86602545, -0.24999997, 0.43301263, 8.299038, 4.379299, 4.795866)
+
+[node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=570758749]
+environment = SubResource("Environment_xot51")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=1673030964]
+transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=535218021]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(100, 1, 1000)
