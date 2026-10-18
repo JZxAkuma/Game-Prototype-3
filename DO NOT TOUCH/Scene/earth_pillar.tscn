@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://c1drf1qblpdnb"]
 
+[ext_resource type="Script" uid="uid://gm8bdnusx66s" path="res://DO NOT TOUCH/Script/earth_pillar.gd" id="1_4u283"]
 [ext_resource type="Texture2D" uid="uid://b4otfiyrp0ps5" path="res://DO NOT TOUCH/Environmental Assets/Rocks/Rocks_0.png" id="1_tll85"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eg8ou"]
@@ -44,6 +45,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dn22b")
 
 [node name="earth pillar" type="Node3D" unique_id=399288397]
+script = ExtResource("1_4u283")
 
 [node name="Rock4" type="MeshInstance3D" parent="." unique_id=744669511]
 transform = Transform3D(-2.45658e-08, 0, -1, 0, 1.818, 0, 0.562, 0, -4.371139e-08, 0, 1.5, 0)
