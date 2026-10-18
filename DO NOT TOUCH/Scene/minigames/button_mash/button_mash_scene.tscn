@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ccggb32hynvgy"]
 
 [ext_resource type="Script" uid="uid://bjsvm3o87n8ad" path="res://DO NOT TOUCH/Scene/minigames/button_mash/button_mash_scene.gd" id="1_0ogq5"]
-[ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="1_hvlx4"]
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="2_anxg6"]
+[ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="2_m2ndw"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="3_qc7bq"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="4_yk74a"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="5_pgo1g"]
@@ -352,73 +352,8 @@ spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")
 anim = NodePath("countdown layer/AnimationPlayer")
 
-[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=371981431 node_paths=PackedStringArray("play_cam")]
-script = ExtResource("1_hvlx4")
+[node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("2_m2ndw")]
 play_cam = NodePath("../Game scene/Camera3D")
-
-[node name="Control" type="Control" parent="Tutorial layer" unique_id=863140802]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Tutorial layer/Control" unique_id=1254458943]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control" unique_id=394956181]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1762301987]
-layout_mode = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1038716467]
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=176680657]
-handle_input_locally = false
-size = Vector2i(1280, 720)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1723845967]
-transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1690808969]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="title label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=735862391]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="goal label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1853717980]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="controls label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=690976007]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
-autowrap_mode = 3
-
-[node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1712438063]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=202536949]
 
@@ -513,12 +448,16 @@ libraries/ = SubResource("AnimationLibrary_a251r")
 [node name="spawns" type="Node3D" parent="." unique_id=1171670973]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=1129438426]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1638181900]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=672791851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=2145981091]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
 
 [node name="Game scene" type="Node3D" parent="." unique_id=960113387]
 

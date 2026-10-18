@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://0egxmhr38hwu"]
 
 [ext_resource type="Script" uid="uid://60kke3ncck1y" path="res://DO NOT TOUCH/Scene/minigames/sumo/minigame_sumo.gd" id="1_qmvo0"]
-[ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_xvggm"]
+[ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="2_a251r"]
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="3_ddogw"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_kvsk5"]
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="3_s825s"]
@@ -116,19 +116,19 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Game scene/Camera3D:fov")
+tracks/8/path = NodePath("countdown layer/3:offset_transform_scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [75.0]
+"values": [Vector2(1, 1)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("countdown layer/3:offset_transform_scale")
+tracks/9/path = NodePath("countdown layer/2:offset_transform_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
@@ -140,7 +140,7 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("countdown layer/2:offset_transform_scale")
+tracks/10/path = NodePath("countdown layer/1:offset_transform_scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
@@ -152,22 +152,10 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("countdown layer/1:offset_transform_scale")
+tracks/11/path = NodePath("countdown layer/Go:offset_transform_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(1, 1)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("countdown layer/Go:offset_transform_scale")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -276,23 +264,23 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("Game scene/Camera3D:fov")
+tracks/8/path = NodePath("countdown layer/3:offset_transform_scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(0, 1, 2, 3.0000002, 4),
-"transitions": PackedFloat32Array(13, 13, 13, 13, 13),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
-"values": [75.0, 70.0, 65.0, 60.0, 75.0]
+"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("countdown layer/3:offset_transform_scale")
+tracks/9/path = NodePath("countdown layer/2:offset_transform_scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(1, 2),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
@@ -300,11 +288,11 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("countdown layer/2:offset_transform_scale")
+tracks/10/path = NodePath("countdown layer/1:offset_transform_scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(1, 2),
+"times": PackedFloat32Array(2, 3.0000002),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
@@ -312,22 +300,10 @@ tracks/10/keys = {
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("countdown layer/1:offset_transform_scale")
+tracks/11/path = NodePath("countdown layer/Go:offset_transform_scale")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(2, 3.0000002),
-"transitions": PackedFloat32Array(13, 0.1),
-"update": 0,
-"values": [Vector2(1, 1), Vector2(0.5, 0.5)]
-}
-tracks/12/type = "value"
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/path = NodePath("countdown layer/Go:offset_transform_scale")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/keys = {
 "times": PackedFloat32Array(3.0000002, 4),
 "transitions": PackedFloat32Array(13, 0.1),
 "update": 0,
@@ -363,13 +339,13 @@ points = PackedVector3Array(-10, -76.269775, 0, -9.953015, -76.269775, -0.980814
 shader = ExtResource("3_kvsk5")
 shader_parameter/sky_texture = ExtResource("4_g11rf")
 
-[sub_resource type="Sky" id="Sky_a251r"]
+[sub_resource type="Sky" id="Sky_8qm3m"]
 sky_material = SubResource("ShaderMaterial_fne0o")
 
 [sub_resource type="Environment" id="Environment_qmvo0"]
 background_mode = 2
 background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
-sky = SubResource("Sky_a251r")
+sky = SubResource("Sky_8qm3m")
 ambient_light_source = 2
 ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
 ambient_light_energy = 4.0
@@ -451,76 +427,11 @@ script = ExtResource("1_qmvo0")
 play_mode = 4
 players_root = NodePath("players")
 spawns = NodePath("spawns")
-tutorial_ui = NodePath("Tutorial layer")
+tutorial_ui = NodePath("")
 anim = NodePath("countdown layer/AnimationPlayer")
 
-[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=371981431 node_paths=PackedStringArray("play_cam")]
-script = ExtResource("2_xvggm")
+[node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("2_a251r")]
 play_cam = NodePath("../Game scene/Camera3D")
-
-[node name="Control" type="Control" parent="Tutorial layer" unique_id=863140802]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Tutorial layer/Control" unique_id=1254458943]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control" unique_id=394956181]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1762301987]
-layout_mode = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1038716467]
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=176680657]
-handle_input_locally = false
-size = Vector2i(1280, 720)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1723845967]
-transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1690808969]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="title label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=735862391]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="goal label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1853717980]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="controls label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=690976007]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
-autowrap_mode = 3
-
-[node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1712438063]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=202536949]
 

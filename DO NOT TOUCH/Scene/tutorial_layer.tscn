@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dsmkx52vl5as8"]
+
+[ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="1_joyeq"]
+
+[node name="Tutorial layer" type="CanvasLayer" unique_id=364946351 node_paths=PackedStringArray("play_cam")]
+script = ExtResource("1_joyeq")
+play_cam = NodePath("")
+
+[node name="Control" type="Control" parent="." unique_id=1071775178]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=819809154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=1356650025]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1596777545]
+layout_mode = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=2089762891]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="Control/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=319351335]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=38674220]
+transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/HBoxContainer" unique_id=1691555161]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="title label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1175872537]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "TEST"
+
+[node name="goal label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=352598737]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "TEST"
+
+[node name="controls label" type="Label" parent="Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=1631388083]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
+autowrap_mode = 2
+
+[node name="tutorial card container" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=2119829261]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1

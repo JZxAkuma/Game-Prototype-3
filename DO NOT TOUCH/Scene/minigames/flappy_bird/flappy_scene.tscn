@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://dailkysoenfv8"]
 
 [ext_resource type="Script" uid="uid://bg7lq0tpxc62x" path="res://DO NOT TOUCH/Scene/minigames/flappy_bird/minigame_flappy.gd" id="1_vygtr"]
-[ext_resource type="Script" uid="uid://bx3kx57jxf8y6" path="res://DO NOT TOUCH/Script/tutorial_layer.gd" id="2_2mow2"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="2_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="3_1nc1h"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="3_c8yw6"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="4_wwr53"]
+[ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="5_hjrpj"]
 [ext_resource type="Texture2D" uid="uid://bnh0syx3mml5t" path="res://DO NOT TOUCH/2D/UI Assets/Arrows.png" id="5_r0dul"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="5_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="6_c8yw6"]
@@ -15,13 +15,13 @@
 shader = ExtResource("2_s7rr5")
 shader_parameter/sky_texture = ExtResource("3_c8yw6")
 
-[sub_resource type="Sky" id="Sky_cal7y"]
+[sub_resource type="Sky" id="Sky_hjrpj"]
 sky_material = SubResource("ShaderMaterial_hjrpj")
 
 [sub_resource type="Environment" id="Environment_0nyub"]
 background_mode = 2
 background_color = Color(0.872721, 0.8117197, 0.6275808, 1)
-sky = SubResource("Sky_cal7y")
+sky = SubResource("Sky_hjrpj")
 ambient_light_source = 2
 ambient_light_color = Color(0.60434884, 0.4994647, 0.3396008, 1)
 ambient_light_energy = 4.0
@@ -48,7 +48,7 @@ adjustment_saturation = 1.19
 [sub_resource type="QuadMesh" id="QuadMesh_1w13i"]
 size = Vector2(3, 400)
 
-[sub_resource type="Shader" id="Shader_hjrpj"]
+[sub_resource type="Shader" id="Shader_0nyub"]
 code = "
 shader_type spatial;
 render_mode blend_mix,shadows_disabled;
@@ -77,7 +77,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yoq7m"]
 render_priority = 0
-shader = SubResource("Shader_hjrpj")
+shader = SubResource("Shader_0nyub")
 shader_parameter/water_texture = ExtResource("5_r0dul")
 shader_parameter/emission_texture = ExtResource("5_r0dul")
 shader_parameter/tiling = Vector2(1, 10)
@@ -415,7 +415,7 @@ play_cam = NodePath("Game scene/Camera3D")
 play_mode = 5
 players_root = NodePath("players")
 spawns = NodePath("spawns")
-tutorial_ui = NodePath("Tutorial layer")
+tutorial_ui = NodePath("")
 anim = NodePath("countdown layer/AnimationPlayer")
 
 [node name="Game scene" type="Node3D" parent="." unique_id=1789420498]
@@ -478,73 +478,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.14
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=388128254]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.624716, 0.5379045, 0)
 
-[node name="Tutorial layer" type="CanvasLayer" parent="." unique_id=377442424 node_paths=PackedStringArray("play_cam")]
-script = ExtResource("2_2mow2")
+[node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("5_hjrpj")]
 play_cam = NodePath("../Game scene/Camera3D")
-
-[node name="Control" type="Control" parent="Tutorial layer" unique_id=2033016388]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="ColorRect" type="ColorRect" parent="Tutorial layer/Control" unique_id=1398082228]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control" unique_id=474064214]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=1114251908]
-layout_mode = 2
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1574139594]
-layout_mode = 2
-
-[node name="SubViewport" type="SubViewport" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer" unique_id=1970576063]
-handle_input_locally = false
-size = Vector2i(1280, 720)
-render_target_update_mode = 4
-
-[node name="Camera3D" type="Camera3D" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/SubViewportContainer/SubViewport" unique_id=1936540379]
-transform = Transform3D(1, 0, 0, 0, 0.46342772, 0.8861348, 0, -0.8861348, 0.46342772, 0, 11.208, 9.22102)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer" unique_id=1076646798]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="title label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=280032669]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="goal label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=372316571]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "TEST"
-
-[node name="controls label" type="Label" parent="Tutorial layer/Control/VBoxContainer/HBoxContainer/VBoxContainer" unique_id=379639032]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "a;lsdkfjal;sdkfjal;skdjfl;askdjfl;aksdjfl;askdjfl;aksdjfa;lskdjfal;skdfjasl;dkfjasl;dkfjal;sdkfjlsa;dkfjasdlk;fjasl;dkfjlasdkfj"
-autowrap_mode = 3
-
-[node name="tutorial card container" type="HBoxContainer" parent="Tutorial layer/Control/VBoxContainer" unique_id=2003437422]
-layout_mode = 2
-size_flags_vertical = 3
-alignment = 1
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=1560589044]
 
