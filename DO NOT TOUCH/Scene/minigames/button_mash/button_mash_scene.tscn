@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="5_pgo1g"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="8_ciqc1"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="9_6h264"]
+[ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="9_xot51"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
 shader = ExtResource("8_ciqc1")
@@ -368,8 +369,9 @@ _data = {
 &"countdown": SubResource("Animation_ugtl2")
 }
 
-[node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
+[node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_0ogq5")
+play_cam = NodePath("Game scene/Camera3D")
 play_mode = 1
 players_root = NodePath("players")
 spawns = NodePath("spawns")
@@ -511,3 +513,32 @@ stretch_mode = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1708937004]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_xot51")
+
+[node name="Game layer" type="CanvasLayer" parent="." unique_id=2146230703]
+
+[node name="Control" type="Control" parent="Game layer" unique_id=637326889]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("9_xot51")
+
+[node name="Label" type="Label" parent="Game layer/Control" unique_id=762403381]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.21568628)
+theme_override_font_sizes/font_size = 220
+text = "Kote"
