@@ -8,19 +8,20 @@ transparency = 2
 alpha_scissor_threshold = 0.5
 alpha_antialiasing_mode = 0
 shading_mode = 0
+vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_0em10")
 billboard_mode = 1
 billboard_keep_scale = true
 
 [sub_resource type="Gradient" id="Gradient_1o0tp"]
-offsets = PackedFloat32Array(0, 0.580311, 1)
-colors = PackedColorArray(0.68307734, 0.6830774, 0.68307734, 1, 1, 1, 1, 0.419689, 1, 1, 1, 0)
+offsets = PackedFloat32Array(0, 0.5341615, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.49354547, 0.49354553, 0.49354553, 0.419689, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_y2pjc"]
 gradient = SubResource("Gradient_1o0tp")
 
 [sub_resource type="Curve" id="Curve_eehoy"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.20320857, 0), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_0188y"]
