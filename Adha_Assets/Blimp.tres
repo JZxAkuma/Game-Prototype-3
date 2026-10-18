@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d5j2m18rw7ep"]
+
+[ext_resource type="Texture2D" uid="uid://b6iqim1cr3v6b" path="res://Adha_Assets/Blimp_MAT_Blimp_BaseColor.png" id="1_txl56"]
+[ext_resource type="Texture2D" uid="uid://beeedbsurs7f7" path="res://Adha_Assets/Blimp_MAT_Blimp_Normal.png" id="2_s8r1a"]
+[ext_resource type="Texture2D" uid="uid://blvctr1lrctt0" path="res://Adha_Assets/Blimp_MAT_Blimp_Roughness.png" id="3_0qogp"]
+
+[resource]
+albedo_texture = ExtResource("1_txl56")
+roughness_texture = ExtResource("3_0qogp")
+normal_enabled = true
+normal_texture = ExtResource("2_s8r1a")

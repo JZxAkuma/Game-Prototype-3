@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b8eyseoh61drw"]
+
+[ext_resource type="Texture2D" uid="uid://cuh768s1rckld" path="res://Adha_Assets/HotAirBalloon_MAT_HotAirBalloon_BaseColor.png" id="1_h253r"]
+[ext_resource type="Texture2D" uid="uid://dm3bs2oiqg3fg" path="res://Adha_Assets/HotAirBalloon_MAT_HotAirBalloon_Normal.png" id="2_j6tfa"]
+[ext_resource type="Texture2D" uid="uid://dxq8sx6rpnj72" path="res://Adha_Assets/HotAirBalloon_MAT_HotAirBalloon_Roughness.png" id="3_6v0r2"]
+
+[resource]
+albedo_texture = ExtResource("1_h253r")
+roughness_texture = ExtResource("3_6v0r2")
+normal_enabled = true
+normal_texture = ExtResource("2_j6tfa")

@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://i7e6504rx4fg"
+uid="uid://lp2nllo082aa"
 path="res://.godot/imported/HotAirBalloon.fbx-a37a394c4a98ae554404b49f16dccfde.scn"
 
 [deps]
@@ -39,7 +39,15 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"materials": {
+"MAT_HotAirBalloon": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://Adha_Assets/HotAirBalloon.tres",
+"use_external/path": "uid://b8eyseoh61drw"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1
