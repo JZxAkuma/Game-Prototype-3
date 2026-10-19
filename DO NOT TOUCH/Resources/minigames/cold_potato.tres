@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="MINI_GAME" format=3 uid="uid://c41520i705mf1"]
+
+[ext_resource type="Script" uid="uid://bb4ov3h640ub1" path="res://DO NOT TOUCH/Script/minigame.gd" id="1_5cblb"]
+[ext_resource type="PackedScene" uid="uid://cp56aabhdbglh" path="res://DO NOT TOUCH/Scene/minigames/Cold potato/coldpotato.tscn" id="1_16bsn"]
+
+[resource]
+script = ExtResource("1_5cblb")
+mini_game_scene = ExtResource("1_16bsn")
+mini_game_name = "Cold Potato"
+goal = "Hold the thing when timer ran out"
+controls = "dpad  = move
+a = jump
+b = dash"
+metadata/_custom_type_script = "uid://bb4ov3h640ub1"
