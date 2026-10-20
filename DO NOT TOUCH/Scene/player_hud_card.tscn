@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://2nw7jdu5g8gi" path="res://DO NOT TOUCH/2D/UI Assets/Blackrect.png" id="2_x0mu0"]
 [ext_resource type="FontFile" uid="uid://dw82nojk1o74s" path="res://DO NOT TOUCH/2D/UI Assets/PixelifySans-VariableFont_wght.ttf" id="3_2j5xd"]
 [ext_resource type="Texture2D" uid="uid://cqdobbhqmcopp" path="res://DO NOT TOUCH/2D/UI Assets/Mobux.png" id="4_ht2l3"]
+[ext_resource type="Texture2D" uid="uid://dq41844xwavt" path="res://DO NOT TOUCH/2D/UI Assets/Medal.png" id="5_7sykd"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ht2l3"]
 
@@ -23,18 +24,22 @@ expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1755262513]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, 5)
 
 [node name="name label" type="Label" parent="VBoxContainer" unique_id=448674939]
 layout_mode = 2
 offset_transform_position = Vector2(20, -60)
 theme_override_fonts/font = ExtResource("3_2j5xd")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 40
 text = "SAMPLENAME"
 horizontal_alignment = 3
 vertical_alignment = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=694505072]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, -10)
 
 [node name="Coin" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=1564841563]
 custom_minimum_size = Vector2(40, 40)
@@ -55,6 +60,16 @@ vertical_alignment = 3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=856719378]
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(20, -15)
+
+[node name="Coin" type="TextureRect" parent="VBoxContainer/HBoxContainer2" unique_id=1392767143]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_transform_position = Vector2(-200, 0)
+offset_transform_scale = Vector2(0.15, 0.3)
+texture = ExtResource("5_7sykd")
+expand_mode = 1
 
 [node name="medal label" type="Label" parent="VBoxContainer/HBoxContainer2" unique_id=1191303915]
 layout_mode = 2
