@@ -1063,7 +1063,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.6064
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9265283, -0.058205824, 0.37169436, 0, 0.98795986, 0.15471038, -0.37622413, -0.14334366, 0.9153728, 159.02277, 20.989372, 30.39455)
+transform = Transform3D(0.9265283, -0.05820583, 0.37169436, 0, 0.98795986, 0.1547104, -0.37622413, -0.14334367, 0.9153728, 159.02277, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -1450,6 +1450,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 offset_transform_enabled = true
+offset_transform_position = Vector2(200, 0)
 offset_transform_scale = Vector2(0.47, 0.47)
 texture = ExtResource("26_o02ct")
 stretch_mode = 4
@@ -1471,6 +1472,7 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 offset_transform_enabled = true
+offset_transform_position = Vector2(0, 200)
 offset_transform_scale = Vector2(0.405, 0.405)
 texture = ExtResource("27_lejsw")
 stretch_mode = 4
