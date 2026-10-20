@@ -38,10 +38,10 @@ collision_layer = 0
 collision_mask = 2
 monitorable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="hitbox" unique_id=854063175]
+[node name="sumo" type="CollisionShape3D" parent="hitbox" unique_id=854063175]
 shape = SubResource("SphereShape3D_06f8o")
 
-[node name="flappy hitbox" type="CollisionShape3D" parent="hitbox" unique_id=1144317676]
+[node name="flappy" type="CollisionShape3D" parent="hitbox" unique_id=1144317676]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.046875, 1)
 shape = SubResource("CapsuleShape3D_15nkw")
 
