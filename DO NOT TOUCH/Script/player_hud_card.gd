@@ -1,9 +1,9 @@
 class_name PlayerHudCard
 extends PanelContainer
 
-@onready var name_label: Label = $"HBoxContainer/name label"
-@onready var coins_label: Label = $"HBoxContainer/coins label"
-@onready var medals_label: Label = $"HBoxContainer/medal label"
+@onready var name_label: Label = $"VBoxContainer/name label"
+@onready var coins_label: Label = $"VBoxContainer/HBoxContainer/coins label"
+@onready var medals_label: Label = $"VBoxContainer/HBoxContainer2/medal label"
 
 var slot := 0
 
