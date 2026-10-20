@@ -8,7 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://2nw7jdu5g8gi" path="res://DO NOT TOUCH/2D/UI Assets/Blackrect.png" id="5_gnh31"]
 [ext_resource type="Texture2D" uid="uid://b7hy2l2pmua2x" path="res://DO NOT TOUCH/2D/UI Assets/Speechbub2.png" id="5_no0dl"]
 [ext_resource type="Texture2D" uid="uid://boneewjhi7178" path="res://DO NOT TOUCH/2D/UI Assets/tutorial.png" id="6_v7j6c"]
+[ext_resource type="Script" uid="uid://pi3s2mfh2hku" path="res://DO NOT TOUCH/Script/texture_rect_zoom_looper.gd" id="9_55ioi"]
 [ext_resource type="Texture2D" uid="uid://xvlc6mn10m3l" path="res://DO NOT TOUCH/2D/UI Assets/Announcer.png" id="9_v244c"]
+[ext_resource type="Script" uid="uid://bg37mdo6h3sn8" path="res://DO NOT TOUCH/Script/texture_rect_bounce.gd" id="10_bve0o"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_no0dl"]
 shader = ExtResource("3_v7j6c")
@@ -173,6 +175,9 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("6_v7j6c")
+script = ExtResource("9_55ioi")
+zoom_amount = 0.05
+interval = 2.0
 
 [node name="TextureRect4" type="TextureRect" parent="Control" unique_id=642464642]
 layout_mode = 0
@@ -183,6 +188,10 @@ offset_bottom = 1260.0
 offset_transform_enabled = true
 offset_transform_scale = Vector2(0.6, 0.6)
 texture = ExtResource("9_v244c")
+script = ExtResource("10_bve0o")
+bounce_height = 20.0
+squash_amount = 40.0
+stretch_amount = 40.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=1741108452]
 layout_mode = 0
