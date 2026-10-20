@@ -8,24 +8,6 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2w1j"]
 
-[sub_resource type="Animation" id="Animation_xhx3o"]
-resource_name = "P2Idle"
-loop_mode = 2
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MobyRig/Skeleton3D:LHand")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 6.066783e-05, 0.0066033388, 8.0867576e-19, 0.4, 1, 0.002010954, 0.0066033383, 5.63198e-17, 1, 1, 6.066783e-05, 0.0066033388, 8.0867576e-19)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("MobyRig/Skeleton3D:RHand")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 6.064659e-05, -0.00660334, -8.086759e-19, 0.4, 1, -0.0017015424, -0.0066033397, -5.63198e-17, 1, 1, 6.064659e-05, -0.00660334, -8.086759e-19)
-
 [sub_resource type="Animation" id="Animation_hnsrt"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -43,10 +25,28 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = PackedFloat32Array(0, 1, 6.064659e-05, -0.00660334, -8.086759e-19)
 
+[sub_resource type="Animation" id="Animation_xhx3o"]
+resource_name = "idle"
+loop_mode = 2
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MobyRig/Skeleton3D:LHand")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 6.066783e-05, 0.0066033388, 8.0867576e-19, 0.4, 1, 0.002010954, 0.0066033383, 5.63198e-17, 1, 1, 6.066783e-05, 0.0066033388, 8.0867576e-19)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MobyRig/Skeleton3D:RHand")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 6.064659e-05, -0.00660334, -8.086759e-19, 0.4, 1, -0.0017015424, -0.0066033397, -5.63198e-17, 1, 1, 6.064659e-05, -0.00660334, -8.086759e-19)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_n3hx2"]
 _data = {
-&"P2Idle": SubResource("Animation_xhx3o"),
-&"RESET": SubResource("Animation_hnsrt")
+&"RESET": SubResource("Animation_hnsrt"),
+&"idle": SubResource("Animation_xhx3o")
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qe32p"]
@@ -66,7 +66,6 @@ shape = SubResource("CapsuleShape3D_f2w1j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1418169042]
 libraries/ = SubResource("AnimationLibrary_n3hx2")
-autoplay = &"P2Idle"
 
 [node name="hurtbox" type="Area3D" parent="." unique_id=313711805]
 collision_layer = 2
@@ -92,50 +91,50 @@ shape = SubResource("CapsuleShape3D_hj8hb")
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_hj8hb")]
 transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)
 
-[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=1257007923]
+[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=976909899]
 bones/8/rotation = Quaternion(3.613944e-15, 0, 2.3509887e-38, 1)
 bones/9/rotation = Quaternion(3.613944e-15, 0, 2.3509887e-38, 1)
 
-[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=278522104]
+[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=992855695]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=1419682615]
+[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=1016559045]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=46482545]
+[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=1253438380]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=295668472]
+[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=425573788]
 material_override = ExtResource("3_hj8hb")
 
-[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1349066801]
+[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1100822607]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=2100007393]
+[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=2141502048]
 material_override = ExtResource("3_hj8hb")
 
-[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=805608226]
+[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=2066353818]
 material_override = ExtResource("3_xhx3o")
 
-[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=793146982]
+[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=1868162648]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=1682971566]
+[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=504196029]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=6925878]
+[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=685169491]
 material_override = ExtResource("3_xhx3o")
 
-[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=1193285997]
+[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=276131945]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=1447514748]
+[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=284767893]
 material_override = ExtResource("3_hj8hb")
 
-[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=1104904622]
+[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=1939650959]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=544762474]
+[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=187938637]
 material_override = ExtResource("3_hj8hb")
 
 [node name="SpringBoneSimulator3D2" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D" index="14" unique_id=2007604447]

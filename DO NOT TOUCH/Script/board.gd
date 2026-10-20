@@ -184,6 +184,7 @@ func _spawn_characters() -> void:
 		c.lock()
 		c.global_position = spaces[p.space_index].get_anchor_position()
 		tokens[p.slot] = c
+		tokens[p.slot].play_anim(&"idle")
 
 	for p in GameState.players:
 		_arrange_space(p.space_index, false)
