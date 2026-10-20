@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://18bmj8c1lki2"]
+
+[ext_resource type="PackedScene" uid="uid://bqtkssvoxgagn" path="res://DO NOT TOUCH/character/MobyRig.fbx" id="1_53ewh"]
+[ext_resource type="Material" uid="uid://dxy8dfl8m06nm" path="res://DO NOT TOUCH/character/base mat.tres" id="2_ilkok"]
+[ext_resource type="PackedScene" uid="uid://dyh6mt2721p02" path="res://DO NOT TOUCH/character/MobyTail.fbx" id="3_lptfr"]
+
+[node name="MobyRig" unique_id=1040474566 instance=ExtResource("1_53ewh")]
+
+[node name="Skeleton3D" parent="." index="1" unique_id=1117473767]
+bones/1/position = Vector3(0.003945153, -2.4157096e-19, -2.9583913e-35)
+bones/2/position = Vector3(0.0017299561, -1.05929266e-19, -1.2972593e-35)
+bones/3/position = Vector3(0.0067112925, -4.1094814e-19, 2.2962885e-19)
+bones/4/position = Vector3(0.003430573, -1.2741799e-18, 0)
+bones/7/position = Vector3(0.0063874074, 5.2041704e-18, -1.7347235e-18)
+bones/7/rotation = Quaternion(6.938894e-18, 2.7755576e-17, 1.3877788e-17, 1)
+bones/13/position = Vector3(0.003570924, -1.1724157e-24, -4.3368087e-19)
+bones/13/rotation = Quaternion(0, 1.7347235e-18, 1.92593e-34, 1)
+
+[node name="RightFoot" parent="Skeleton3D" index="0" unique_id=1044233644]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="LeftFoot" parent="Skeleton3D" index="1" unique_id=254785153]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="LeftHand" parent="Skeleton3D" index="2" unique_id=822612274]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="Head2" parent="Skeleton3D" index="3" unique_id=1208182395]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="RightAntenna" parent="Skeleton3D" index="4" unique_id=1099793871]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="LeftAntenna" parent="Skeleton3D" index="5" unique_id=827395223]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="WizardHat" parent="Skeleton3D" index="6" unique_id=2107369409]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="RightEye" parent="Skeleton3D" index="7" unique_id=1676989971]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="LeftEye" parent="Skeleton3D" index="8" unique_id=1214133797]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="Cape" parent="Skeleton3D" index="9" unique_id=595658386]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="Thorax" parent="Skeleton3D" index="10" unique_id=346189264]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="Abdomen" parent="Skeleton3D" index="11" unique_id=995992759]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="RightHand2" parent="Skeleton3D" index="12" unique_id=603725177]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="Wand" parent="Skeleton3D" index="13" unique_id=1730488097]
+surface_material_override/0 = ExtResource("2_ilkok")
+
+[node name="MobyTail" parent="Skeleton3D" index="14" unique_id=301680615 instance=ExtResource("3_lptfr")]
