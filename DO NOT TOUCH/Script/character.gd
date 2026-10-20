@@ -10,7 +10,15 @@ signal state_changed(character: PlayerCharacter, new_state: CharacterState)
 var flap_part = preload("res://DO NOT TOUCH/Scene/flappy_fart.tscn")
 
 
-enum Mode { LOCKED, BUTTON_MASH, SUMO, FLAPPY, COLD_POTATO }
+enum Mode {
+	LOCKED = 0,
+	BUTTON_MASH = 1,
+	TUG_OF_WAR = 2,
+	RHYTHM = 3,
+	SUMO = 4,
+	FLAPPY = 5,
+	COLD_POTATO = 6,
+}
 
 const states := {
 	Mode.LOCKED: preload("res://DO NOT TOUCH/Script/minigame/character state/state_locked.gd"),
