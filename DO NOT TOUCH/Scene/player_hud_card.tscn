@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://d206a1jdovmhx"]
+
+[ext_resource type="Script" uid="uid://d0lj677hxy443" path="res://DO NOT TOUCH/Script/player_hud_card.gd" id="1_e8v42"]
+
+[node name="PlayerHudCard" type="PanelContainer" unique_id=2129196906]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e8v42")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1830327356]
+layout_mode = 2
+
+[node name="name label" type="Label" parent="HBoxContainer" unique_id=448674939]
+layout_mode = 2
+
+[node name="coins label" type="Label" parent="HBoxContainer" unique_id=452769431]
+layout_mode = 2
+
+[node name="medal label" type="Label" parent="HBoxContainer" unique_id=1191303915]
+layout_mode = 2

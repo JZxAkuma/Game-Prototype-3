@@ -418,13 +418,21 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Camera3D" type="Camera3D" parent="Game scene" unique_id=1333039741]
-transform = Transform3D(1, 0, 0, 0, 0.46342766, 0.88613474, 0, -0.88613474, 0.46342766, 0, 11.208, 9.22102)
+transform = Transform3D(1, 0, 0, 0, 0.21828823, 0.9758844, 0, -0.9758844, 0.21828823, 0, 19.208, 7.2210197)
 
 [node name="WorldEnvironment2" type="WorldEnvironment" parent="Game scene" unique_id=396418247]
 environment = SubResource("Environment_qmvo0")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Game scene" unique_id=1776562918]
 transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0, 182, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Game scene" unique_id=488589128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+size = Vector3(30, 1, 30)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1963030864]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.75, 0)
+size = Vector3(1, 3.5, 30)
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=687339086]
 
