@@ -5,11 +5,11 @@ enum State {tutorial, play, results}
 
 const board := preload("res://DO NOT TOUCH/Scene/board.tscn")
 
-@export var play_mode : PlayerCharacter.Mode 
-@export var players_root : Node3D
-@export var spawns : Node3D
+@export var play_state: GDScript
+@export var players_root: Node3D
+@export var spawns: Node3D
 @export var tutorial_ui: CanvasLayer
-@export var anim : AnimationPlayer
+@export var anim: AnimationPlayer
 
 @warning_ignore("unused_signal")
 signal round_over(winner_slot: int)
@@ -50,7 +50,7 @@ func _respawn_one(c: PlayerCharacter) -> void:
 func _respawn_all() -> void:
 	for c in chars.values():
 		_respawn_one(c)
-		c.set_mode(PlayerCharacter.Mode.LOCKED)
+		c.lock()
 		c.play_anim(&"idle")
 
 
@@ -81,10 +81,10 @@ func _run() -> void:
 
 	state = State.results
 	for c in chars.values():
-		c.set_mode(PlayerCharacter.Mode.LOCKED)
+		c.lock()
 	for p in GameState.players:
 		if p.slot == winner_slot:
-			GameState._add_medal(p,1)
+			GameState._add_medal(p, 1)
 			chars[p.slot].play_anim(&"win")
 		else:
 			chars[p.slot].play_anim(&"lose")
@@ -92,11 +92,12 @@ func _run() -> void:
 	if is_inside_tree():
 		SceneManager.goto_scene(board)
 
+
 func _countdown() -> void:
-	#await get_tree().create_timer(2.0).timeout
 	anim.play(&"countdown")
 	await anim.animation_finished
 
+
 func _start_round(_practice: bool) -> void:
 	for c in chars.values():
-		c.set_mode(play_mode)
+		c.set_state(play_state)

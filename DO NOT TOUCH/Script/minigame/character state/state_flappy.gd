@@ -87,3 +87,5 @@ func _on_bounce(impulse: Vector3) -> void:
 	motion.x = impulse.x
 	motion.y = impulse.y
 	knockback = Vector3.ZERO
+
+func _hitbox() -> StringName: return &"flappy"

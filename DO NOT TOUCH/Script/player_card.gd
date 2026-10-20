@@ -11,4 +11,4 @@ func _setup(slot: int, data: CharacterData) -> void:
 	var c = data.scene.instantiate()
 	model_holder.add_child(c)
 	c.setup(slot)
-	c.set_mode(c.Mode.LOCKED)
+	c.lock()

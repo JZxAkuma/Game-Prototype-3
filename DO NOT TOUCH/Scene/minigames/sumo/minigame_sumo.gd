@@ -23,7 +23,7 @@ func _eliminate(c: PlayerCharacter) -> void:
 	if not alive.has(c.slot):
 		return
 	alive.erase(c.slot)
-	c.set_mode(PlayerCharacter.Mode.LOCKED)
+	c.lock()
 	c.hide()
 	c.process_mode = Node.PROCESS_MODE_DISABLED
 	if alive.size() == 1:

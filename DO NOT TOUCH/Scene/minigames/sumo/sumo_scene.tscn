@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://0egxmhr38hwu"]
 
 [ext_resource type="Script" uid="uid://60kke3ncck1y" path="res://DO NOT TOUCH/Scene/minigames/sumo/minigame_sumo.gd" id="1_qmvo0"]
+[ext_resource type="Script" uid="uid://dycrmj2beblrf" path="res://DO NOT TOUCH/Script/minigame/character state/state_sumo.gd" id="2_8qm3m"]
 [ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="2_a251r"]
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="3_ddogw"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="3_kvsk5"]
@@ -455,7 +456,7 @@ shader_parameter/contrast = 1.05
 
 [node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_qmvo0")
-play_mode = 4
+play_state = ExtResource("2_8qm3m")
 players_root = NodePath("players")
 spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")

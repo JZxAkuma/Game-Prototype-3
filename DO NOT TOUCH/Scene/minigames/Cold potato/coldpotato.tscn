@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cp56aabhdbglh"]
 
 [ext_resource type="Script" uid="uid://bitn2ryuid2sc" path="res://DO NOT TOUCH/Scene/minigames/Cold potato/coldpotato.gd" id="1_j8tx4"]
+[ext_resource type="Script" uid="uid://ddpyhifftxflq" path="res://DO NOT TOUCH/Script/minigame/character state/state_coldpotato.gd" id="2_4iobk"]
 [ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="2_e6ede"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="3_4iobk"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="4_ssjqo"]
@@ -378,6 +379,7 @@ _data = {
 
 [node name="coldpotato" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_j8tx4")
+play_state = ExtResource("2_4iobk")
 players_root = NodePath("players")
 spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")

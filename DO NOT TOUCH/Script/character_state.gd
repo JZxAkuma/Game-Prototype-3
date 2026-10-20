@@ -13,3 +13,5 @@ func _on_hit_received(_attacker: PlayerCharacter) -> void: pass
 func _on_hurtbox_entered(_area: Area3D) -> void: pass
 func _on_respawn() -> void: pass
 func _on_bounce(_impulse: Vector3) -> void: pass
+
+func _hitbox() -> StringName: return &""

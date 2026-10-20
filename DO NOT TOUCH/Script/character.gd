@@ -3,60 +3,48 @@ class_name PlayerCharacter
 
 signal state_changed(character: PlayerCharacter, new_state: CharacterState)
 
+const LOCKED_STATE := preload("res://DO NOT TOUCH/Script/minigame/character state/state_locked.gd")
+
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var sumo_hitbox: CollisionShape3D = $hitbox/CollisionShape3D
-@onready var flappy_hitbox: CollisionShape3D = $"hitbox/flappy hitbox"
+@onready var hitbox: Area3D = $hitbox
 
 var flap_part = preload("res://DO NOT TOUCH/Scene/flappy_fart.tscn")
 
-
-enum Mode {
-	LOCKED = 0,
-	BUTTON_MASH = 1,
-	TUG_OF_WAR = 2,
-	RHYTHM = 3,
-	SUMO = 4,
-	FLAPPY = 5,
-	COLD_POTATO = 6,
-}
-
-const states := {
-	Mode.LOCKED: preload("res://DO NOT TOUCH/Script/minigame/character state/state_locked.gd"),
-	Mode.SUMO: preload("res://DO NOT TOUCH/Script/minigame/character state/state_sumo.gd"),
-	Mode.FLAPPY : preload("res://DO NOT TOUCH/Script/minigame/character state/state_flappy.gd"),
-	Mode.BUTTON_MASH: preload("res://DO NOT TOUCH/Script/minigame/character state/state_mash.gd"),
-	Mode.COLD_POTATO: preload("res://DO NOT TOUCH/Script/minigame/character state/state_coldpotato.gd")
-}
-
 var slot := 0
-var mode := Mode.LOCKED
 var state: CharacterState
 var score := 0
-
 
 func setup(p_slot: int) -> void:
 	slot = p_slot
 
-func _flappy_emit() -> void:
-	var p = flap_part.instantiate()
-	get_parent().add_child(p)
-	p.global_transform = global_transform
-	
-
-
-func set_mode(new_mode: Mode) -> void:
+func set_state(script: GDScript) -> void:
 	if state:
 		state._exit()
-	mode = new_mode
-	state = states[new_mode].new()
+	state = script.new()
 	state.character = self
+	_apply_hitbox(state._hitbox())
 	state._enter()
 	state_changed.emit(self, state)
+
+
+func lock() -> void:
+	set_state(LOCKED_STATE)
+
+func _apply_hitbox(shape_name: StringName) -> void:
+	for s in hitbox.get_children():
+		if s is CollisionShape3D:
+			s.set_deferred("disabled", s.name != shape_name)
 
 
 func play_anim(anim_name: StringName) -> void:
 	if anim and anim.has_animation(anim_name):
 		anim.play(anim_name)
+
+
+func _flappy_emit() -> void:
+	var p = flap_part.instantiate()
+	get_parent().add_child(p)
+	p.global_transform = global_transform
 
 
 func _physics_process(delta: float) -> void:
@@ -74,10 +62,7 @@ func _on_hitbox_area_entered(area: Area3D) -> void:
 	if state and victim and victim != self:
 		state._on_hitbox_hit(victim)
 
+
 func _on_hurtbox_area_entered(area: Area3D) -> void:
 	if state:
 		state._on_hurtbox_entered(area)
-
-func _apply_hitbox(m: Mode) -> void:
-	sumo_hitbox.set_deferred("disabled", m != Mode.SUMO)
-	flappy_hitbox.set_deferred("disabled", m != Mode.FLAPPY)

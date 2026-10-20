@@ -181,7 +181,7 @@ func _spawn_characters() -> void:
 		var c : PlayerCharacter = GameState.character_scenes[p.character].instantiate()
 		tokens_root.add_child(c)
 		c.setup(p.slot)
-		c.set_mode(PlayerCharacter.Mode.LOCKED)
+		c.lock()
 		c.global_position = spaces[p.space_index].get_anchor_position()
 		tokens[p.slot] = c
 

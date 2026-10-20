@@ -111,3 +111,5 @@ func _on_respawn() -> void:
 	hit_cooldown = 0.0
 	dash_timer = 0.0
 	dash_cd = 0.0
+
+func _hitbox() -> StringName: return &"sumo"
