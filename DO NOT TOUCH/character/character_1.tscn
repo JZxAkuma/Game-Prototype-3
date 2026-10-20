@@ -155,10 +155,7 @@ settings/0/exclude_collision_count = 0
 
 [node name="MobyTail" parent="MobyRig/Skeleton3D" index="16" unique_id=301680615 instance=ExtResource("5_y2pjc")]
 
-[node name="Skeleton3D" parent="MobyRig/Skeleton3D/MobyTail" index="1" unique_id=491162557]
-modifier_callback_mode_process = 0
-
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D/MobyTail/Skeleton3D" index="2" unique_id=1862075527]
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D/MobyTail/Skeleton3D" parent_id_path=PackedInt32Array(301680615, 491162557) index="2" unique_id=1862075527]
 setting_count = 1
 settings/0/root_bone_name = "TailBase"
 settings/0/root_bone = 0
