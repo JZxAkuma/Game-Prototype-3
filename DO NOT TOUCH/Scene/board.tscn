@@ -676,6 +676,7 @@ shadow_mesh = SubResource("ArrayMesh_lc5cv")
 script = ExtResource("1_2tmgi")
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
+visible = false
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
@@ -1037,10 +1038,11 @@ metadata/_edit_lock_ = true
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
-transform = Transform3D(0.9443764, 0, -0.32886624, 0, 1, 0, 0.32886624, 0, 0.9443764, 0, 0, 0)
+transform = Transform3D(0.5934188, 0, 0.8048937, 0, 1, 0, -0.8048937, 0, 0.5934188, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
+current = true
 
 [node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
@@ -1056,14 +1058,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 visible = false
 
 [node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
-transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 141.29025, 0.6405933, -11.658661)
+transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 121.971344, 0.6405933, -9.454518)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 141.19135, 3.2629128, -4.606463)
-current = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
-transform = Transform3D(0.9265283, -0.05820583, 0.37169436, 0, 0.98795986, 0.1547104, -0.37622413, -0.14334367, 0.9153728, 159.02277, 20.989372, 30.39455)
+transform = Transform3D(0.9263718, 0.057990897, -0.3721176, 0, 0.9880737, 0.15398154, 0.37660912, -0.14264427, 0.9153237, 116.82978, 20.989372, 30.39455)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="commentator set" unique_id=836658084]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 141.36893, 10.049157, -9.662783)
@@ -1442,15 +1443,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -560.0
+offset_top = -400.0
+offset_right = 560.0
+offset_bottom = 400.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 offset_transform_enabled = true
-offset_transform_position = Vector2(200, 0)
 offset_transform_scale = Vector2(0.47, 0.47)
 texture = ExtResource("26_o02ct")
 stretch_mode = 4
