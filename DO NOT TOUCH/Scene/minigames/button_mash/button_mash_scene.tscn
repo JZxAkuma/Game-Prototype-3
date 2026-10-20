@@ -20,6 +20,10 @@
 [ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/palm_tree.tscn" id="17_ciqc1"]
 [ext_resource type="PackedScene" uid="uid://70nrv1owm8yw" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tall_path.tscn" id="18_6h264"]
 [ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_tower.tscn" id="19_8xk7l"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="21_8b4nw"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="22_507ge"]
+[ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="23_507ge"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="24_ql0ae"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
 shader = ExtResource("8_ciqc1")
@@ -734,3 +738,27 @@ transform = Transform3D(-1.3113416e-07, 0, 3, 0, 3, 0, -3, 0, -1.3113416e-07, 12
 
 [node name="Castle Tower10" parent="." unique_id=1630764170 instance=ExtResource("19_8xk7l")]
 transform = Transform3D(-1.3113416e-07, 0, -3, 0, 3, 0, 3, 0, -1.3113416e-07, -19.395008, 0, -122.38429)
+
+[node name="Mushroom2" parent="." unique_id=728593049 instance=ExtResource("15_k83sb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, -31.489918, 0, -33.040184)
+
+[node name="Mushroom3" parent="." unique_id=930084137 instance=ExtResource("15_k83sb")]
+transform = Transform3D(2.577239, 0, 1.5355257, 0, 3, 0, -1.5355257, 0, 2.577239, -31.489918, 0, -66.140594)
+
+[node name="Pine Tree Big" parent="." unique_id=716970919 instance=ExtResource("21_8b4nw")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32.155254, 0, -39.813732)
+
+[node name="Pine Tree Small" parent="." unique_id=425352341 instance=ExtResource("22_507ge")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.6632, 0, -51.584663)
+
+[node name="WaterTower" parent="." unique_id=1745167631 instance=ExtResource("23_507ge")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.14568, 0, -80.94432)
+
+[node name="Tulip" parent="." unique_id=208352800 instance=ExtResource("24_ql0ae")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, 0, -86.66916)
+
+[node name="Tulip3" parent="." unique_id=984865442 instance=ExtResource("24_ql0ae")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, 0, -25.457901)
+
+[node name="Tulip2" parent="." unique_id=2075800882 instance=ExtResource("24_ql0ae")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, -2.3690882, -90.32852)
