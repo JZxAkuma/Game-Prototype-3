@@ -47,7 +47,7 @@ shape = SubResource("CapsuleShape3D_das0k")
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_f4xl6")]
 transform = Transform3D(-76.49, 0, -1.1549669e-05, 0, 76.49, 0, 1.1549669e-05, 0, -76.49, 0, -0.3463223, 0)
 
-[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=1117473767]
+[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=976909899]
 bones/1/position = Vector3(0.003945153, -2.4157096e-19, -2.9583913e-35)
 bones/2/position = Vector3(0.0017299561, -1.05929266e-19, -1.2972593e-35)
 bones/3/position = Vector3(0.0067112925, -4.1094814e-19, 2.2962885e-19)
@@ -57,46 +57,46 @@ bones/7/rotation = Quaternion(6.938894e-18, 2.7755576e-17, 1.3877788e-17, 1)
 bones/13/position = Vector3(0.003570924, -1.1724157e-24, -4.3368087e-19)
 bones/13/rotation = Quaternion(0, 1.7347235e-18, 1.92593e-34, 1)
 
-[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=1044233644]
+[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=992855695]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=254785153]
+[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=1016559045]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=822612274]
+[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=1253438380]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=1208182395]
+[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=425573788]
 material_override = ExtResource("3_y2pjc")
 
-[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1099793871]
+[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1100822607]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=827395223]
+[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=2141502048]
 material_override = ExtResource("3_y2pjc")
 
-[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=2107369409]
+[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=2066353818]
 material_override = ExtResource("3_das0k")
 
-[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=1676989971]
+[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=1868162648]
 material_override = ExtResource("3_y2pjc")
 
-[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=1214133797]
+[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=504196029]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=595658386]
+[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=685169491]
 material_override = ExtResource("3_das0k")
 
-[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=346189264]
+[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=276131945]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=995992759]
+[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=284767893]
 material_override = ExtResource("3_y2pjc")
 
-[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=603725177]
+[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=1939650959]
 material_override = ExtResource("3_y2pjc")
 
-[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=1730488097]
+[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=187938637]
 material_override = ExtResource("3_y2pjc")
 
 [node name="SpringBoneSimulator3D2" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D" index="14" unique_id=495321857]
@@ -155,7 +155,10 @@ settings/0/exclude_collision_count = 0
 
 [node name="MobyTail" parent="MobyRig/Skeleton3D" index="16" unique_id=301680615 instance=ExtResource("5_y2pjc")]
 
-[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D/MobyTail/Skeleton3D" parent_id_path=PackedInt32Array(301680615, 43624878) index="2" unique_id=1862075527]
+[node name="Skeleton3D" parent="MobyRig/Skeleton3D/MobyTail" index="1" unique_id=491162557]
+modifier_callback_mode_process = 0
+
+[node name="SpringBoneSimulator3D" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D/MobyTail/Skeleton3D" index="2" unique_id=1862075527]
 setting_count = 1
 settings/0/root_bone_name = "TailBase"
 settings/0/root_bone = 0
