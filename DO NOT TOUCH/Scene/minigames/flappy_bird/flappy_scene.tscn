@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="4_wwr53"]
 [ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="5_0nyub"]
 [ext_resource type="PackedScene" uid="uid://dsmkx52vl5as8" path="res://DO NOT TOUCH/Scene/tutorial_layer.tscn" id="5_hjrpj"]
+[ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="5_pxhkt"]
 [ext_resource type="Texture2D" uid="uid://bnh0syx3mml5t" path="res://DO NOT TOUCH/2D/UI Assets/Arrows.png" id="5_r0dul"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="5_s7rr5"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="6_c8yw6"]
@@ -96,6 +97,13 @@ shader_parameter/emission_texture = ExtResource("5_r0dul")
 shader_parameter/tiling = Vector2(1, 10)
 shader_parameter/scroll_speed = 0.5
 shader_parameter/emission_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_msyd3"]
+shader = ExtResource("5_pxhkt")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -529,6 +537,18 @@ surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.326823, 196.60196, -0.32439423)
 mesh = SubResource("QuadMesh_1w13i")
 surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Game scene" unique_id=1417379253]
+
+[node name="ColorRect" type="ColorRect" parent="Game scene/CanvasLayer" unique_id=534083627]
+material = SubResource("ShaderMaterial_msyd3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 

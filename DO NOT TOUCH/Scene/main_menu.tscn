@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://pi3s2mfh2hku" path="res://DO NOT TOUCH/Script/texture_rect_zoom_looper.gd" id="5_bwy4f"]
 [ext_resource type="StyleBox" uid="uid://d2x52fog3w5j8" path="res://DO NOT TOUCH/BoxStyle/button style box normal.tres" id="8_7gvvm"]
 [ext_resource type="StyleBox" uid="uid://cbqwwkjc8e2gx" path="res://DO NOT TOUCH/BoxStyle/button style box hover.tres" id="10_ihpo4"]
+[ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="11_ihpo4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xlo0w"]
 shader = ExtResource("4_2kqvt")
@@ -52,6 +53,13 @@ turbulence_noise_strength = 9.13
 texture = ExtResource("4_nv05k")
 texture_margin_left = 10.0
 texture_margin_right = 10.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kqvt"]
+shader = ExtResource("11_ihpo4")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
 
 [node name="main menu" type="Node3D" unique_id=817745143]
 script = ExtResource("1_fd3gs")
@@ -173,6 +181,18 @@ theme_override_styles/normal = ExtResource("8_7gvvm")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_bwy4f")
 theme_override_styles/hover = ExtResource("10_ihpo4")
 text = "To world"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1648071622]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer2" unique_id=21883167]
+material = SubResource("ShaderMaterial_2kqvt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -24,6 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="22_507ge"]
 [ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="23_507ge"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="24_ql0ae"]
+[ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="25_dbwem"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
 shader = ExtResource("8_ciqc1")
@@ -387,6 +388,13 @@ _data = {
 &"RESET": SubResource("Animation_i1mr1"),
 &"countdown": SubResource("Animation_ugtl2")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evp56"]
+shader = ExtResource("25_dbwem")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
 
 [node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_0ogq5")
@@ -752,7 +760,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -32.155254, 0, -39.813732)
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -17.6632, 0, -51.584663)
 
 [node name="WaterTower" parent="." unique_id=1745167631 instance=ExtResource("23_507ge")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.14568, 0, -80.94432)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -29.14568, 0, -52.242462)
 
 [node name="Tulip" parent="." unique_id=208352800 instance=ExtResource("24_ql0ae")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, 0, -86.66916)
@@ -762,3 +770,15 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, 0, -25.457901)
 
 [node name="Tulip2" parent="." unique_id=2075800882 instance=ExtResource("24_ql0ae")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -19.673464, -2.3690882, -90.32852)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=110542730]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1025895369]
+material = SubResource("ShaderMaterial_evp56")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true

@@ -446,6 +446,13 @@ _data = {
 &"countdown": SubResource("Animation_ugtl2")
 }
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a251r"]
+shader = ExtResource("8_25a4l")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
+
 [node name="sumo_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_qmvo0")
 play_mode = 4
@@ -661,3 +668,15 @@ stretch_mode = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=2113993630]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_a251r")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1955199819]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1585711026]
+material = SubResource("ShaderMaterial_a251r")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
