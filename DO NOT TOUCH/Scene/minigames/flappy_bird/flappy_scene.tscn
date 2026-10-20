@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_house.tscn" id="14_ih1fk"]
 [ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/round_moby_house.tscn" id="15_5u0bj"]
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="16_pxhkt"]
+[ext_resource type="PackedScene" uid="uid://cae6qel7lo3go" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush_var_1.tscn" id="17_5u0bj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yoq7m"]
 albedo_color = Color(0.40180656, 0.46367687, 0.48139364, 1)
@@ -421,6 +422,56 @@ _data = {
 &"countdown": SubResource("Animation_ugtl2")
 }
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0bj"]
+albedo_color = Color(0.3827616, 0.18383667, 0.12357543, 1)
+emission_enabled = true
+emission = Color(0.714354, 0.33635667, 0.18637714, 1)
+emission_energy_multiplier = 1.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5u0bj"]
+load_path = "res://.godot/imported/Square.png-73fe5249aa06d91c0ab3ecd46e404e0e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxhkt"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_5u0bj")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_msyd3"]
+offsets = PackedFloat32Array(0, 0.580311, 1)
+colors = PackedColorArray(0.42534205, 0.4229048, 1.92523e-07, 1, 0.5260661, 0, 0.024797829, 0.5803922, 0.12455637, 0.1396296, 0.043449722, 0.6862745)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jkscd"]
+gradient = SubResource("Gradient_msyd3")
+
+[sub_resource type="Curve" id="Curve_f3k7g"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xnsvv"]
+curve = SubResource("Curve_f3k7g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rtsvf"]
+emission_shape = 1
+emission_sphere_radius = 20.25
+direction = Vector3(0, 5, 0)
+spread = 1.0
+initial_velocity_min = 6.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, 0, 0)
+scale_min = 10.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_xnsvv")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_jkscd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kurrj"]
+size = Vector2(2, 2)
+
 [node name="Flappy_scene" type="Node3D" unique_id=535647750 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_vygtr")
 play_cam = NodePath("Game scene/Camera3D")
@@ -668,6 +719,10 @@ transform = Transform3D(30, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -88.64528, 63.56816
 [node name="Rock15" parent="." unique_id=2105553981 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(48.219692, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -12.895058, 26.352226, -91.8264)
 
+[node name="Rock16" parent="." unique_id=436177244 instance=ExtResource("12_yoq7m")]
+transform = Transform3D(48.219692, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -12.895058, -95.52975, -38.9574)
+surface_material_override/0 = SubResource("StandardMaterial3D_5u0bj")
+
 [node name="Rock12" parent="." unique_id=211856797 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(30, 0, 0, 0, 69.323, 0, 0, 0, 38.06, 51.95144, 84.481476, -54.552605)
 
@@ -703,3 +758,16 @@ transform = Transform3D(5.073477, 0, 4.5667405, 0, 7.599442, 0, -4.6292844, 0, 5
 
 [node name="Mushroom3" parent="." unique_id=1313359490 instance=ExtResource("16_pxhkt")]
 transform = Transform3D(6.5458164, 0, -2.0510278, 0, 7.599442, 0, 2.0791183, 0, 6.457379, 22.296528, 96.8123, -5.4578876)
+
+[node name="BushVar1" parent="." unique_id=775423245 instance=ExtResource("17_5u0bj")]
+transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -20.883049, 17.459133, -1.5778236)
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1429618134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046672076, -4.1197023, -25.456944)
+material_override = SubResource("StandardMaterial3D_pxhkt")
+amount = 30
+lifetime = 10.0
+speed_scale = 2.0
+randomness = 0.3
+process_material = SubResource("ParticleProcessMaterial_rtsvf")
+draw_pass_1 = SubResource("QuadMesh_kurrj")
