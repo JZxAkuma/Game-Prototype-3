@@ -443,7 +443,7 @@ billboard_keep_scale = true
 
 [sub_resource type="Gradient" id="Gradient_msyd3"]
 offsets = PackedFloat32Array(0, 0.580311, 1)
-colors = PackedColorArray(0.42534205, 0.4229048, 1.92523e-07, 1, 0.5260661, 0, 0.024797829, 0.5803922, 0.12455637, 0.1396296, 0.043449722, 0.6862745)
+colors = PackedColorArray(0.6639075, 0.33799937, 0.08697235, 1, 0.5260661, 0, 0.024797829, 0.5803922, 0.6647036, 0.4930318, 0.12545645, 0.6862745)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jkscd"]
 gradient = SubResource("Gradient_msyd3")
@@ -456,15 +456,16 @@ point_count = 2
 curve = SubResource("Curve_f3k7g")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rtsvf"]
-emission_shape = 1
-emission_sphere_radius = 20.25
+emission_shape_scale = Vector3(2, 0.1, 2)
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 5)
 direction = Vector3(0, 5, 0)
-spread = 1.0
+spread = 0.0
 initial_velocity_min = 6.0
 initial_velocity_max = 7.0
 gravity = Vector3(0, 0, 0)
-scale_min = 10.0
-scale_max = 10.0
+scale_min = 4.0
+scale_max = 6.0
 scale_curve = SubResource("CurveTexture_xnsvv")
 color = Color(0.991164, 0.991164, 0.991164, 1)
 color_ramp = SubResource("GradientTexture1D_jkscd")
@@ -528,33 +529,6 @@ surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.326823, 196.60196, -0.32439423)
 mesh = SubResource("QuadMesh_1w13i")
 surface_material_override/0 = SubResource("ShaderMaterial_yoq7m")
-
-[node name="Rock1" parent="Game scene" unique_id=1105717896 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 22.41306, 34.56981, -4.2813797)
-
-[node name="Rock8" parent="Game scene" unique_id=449333688 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -18.309145, 115.768524, -4.2813797)
-
-[node name="Rock4" parent="Game scene" unique_id=1683223657 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -24.47691, 0.6126785, -2.8952332)
-
-[node name="Rock3" parent="Game scene" unique_id=70162068 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -26.944523, 70.255875, -4.2813797)
-
-[node name="Rock2" parent="Game scene" unique_id=36844262 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -19.461288, 10.057945, -4.2813797)
-
-[node name="Rock5" parent="Game scene" unique_id=211535138 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 20.62019, 66.18401, -2.8952332)
-
-[node name="Rock6" parent="Game scene" unique_id=1168720600 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 18.152576, 135.82721, -4.2813797)
-
-[node name="Rock9" parent="Game scene" unique_id=1710217893 instance=ExtResource("5_0nyub")]
-transform = Transform3D(20, 0, 0, 0, 43.947, 0, 0, 0, 30.011, -51.42904, 37.14026, -25.847187)
-
-[node name="Rock7" parent="Game scene" unique_id=1503180836 instance=ExtResource("5_0nyub")]
-transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 25.63581, 75.62928, -4.2813797)
 
 [node name="players" type="Node3D" parent="." unique_id=1118147660]
 
@@ -692,82 +666,114 @@ theme_override_colors/font_color = Color(1, 1, 1, 0.21568628)
 theme_override_font_sizes/font_size = 220
 text = "Kote"
 
-[node name="Rock2" parent="." unique_id=49522365 instance=ExtResource("12_yoq7m")]
-transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, -19.29753, 45.4659, -1.2564688)
+[node name="Decs" type="Node3D" parent="." unique_id=1901048776]
+transform = Transform3D(0.72900206, 0, 0, 0, 0.61244607, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="Rock3" parent="." unique_id=1934574416 instance=ExtResource("12_yoq7m")]
-transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 16.163046, 10.205368, -1.2564688)
+[node name="Rock2" parent="Decs" unique_id=49522365 instance=ExtResource("12_yoq7m")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278136, 0, 0, 0, 7.838913, -23.734697, 45.4659, -1.2564688)
 
-[node name="Rock4" parent="." unique_id=773750775 instance=ExtResource("13_21dyk")]
+[node name="Rock3" parent="Decs" unique_id=1934574416 instance=ExtResource("12_yoq7m")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278136, 0, 0, 0, 7.838913, 20.430946, 10.205368, -1.2564688)
+
+[node name="Rock4" parent="Decs" unique_id=773750775 instance=ExtResource("13_21dyk")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, -23.745447, 18.519691, -4.5603247)
 
-[node name="Rock6" parent="." unique_id=1105746370 instance=ExtResource("12_yoq7m")]
+[node name="Rock6" parent="Decs" unique_id=1105746370 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 25.79957, 111.03723, -1.2564688)
 
-[node name="Rock10" parent="." unique_id=1892131761 instance=ExtResource("12_yoq7m")]
+[node name="Rock10" parent="Decs" unique_id=1892131761 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(20, 0, 0, 0, 46.215, 0, 0, 0, 25.373, 45.04448, 18.492119, -21.928146)
 
-[node name="Rock13" parent="." unique_id=906981328 instance=ExtResource("12_yoq7m")]
+[node name="Rock13" parent="Decs" unique_id=906981328 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(3.6525867, 0, -24.946272, 0, 46.215, 0, 19.663635, 0, 4.6338534, 80.31905, 18.492119, -25.08107)
 
-[node name="Rock14" parent="." unique_id=804415401 instance=ExtResource("12_yoq7m")]
+[node name="Rock14" parent="Decs" unique_id=804415401 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(3.6525867, 0, -24.946272, 0, 46.215, 0, 19.663635, 0, 4.6338534, -138.67712, 18.492119, -25.08107)
 
-[node name="Rock11" parent="." unique_id=2116464391 instance=ExtResource("12_yoq7m")]
+[node name="Rock11" parent="Decs" unique_id=2116464391 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(30, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -88.64528, 63.56816, -31.227692)
 
-[node name="Rock15" parent="." unique_id=2105553981 instance=ExtResource("12_yoq7m")]
+[node name="Rock15" parent="Decs" unique_id=2105553981 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(48.219692, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -12.895058, 26.352226, -91.8264)
 
-[node name="Rock16" parent="." unique_id=436177244 instance=ExtResource("12_yoq7m")]
+[node name="Rock16" parent="Decs" unique_id=436177244 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(48.219692, 0, 0, 0, 69.323, 0, 0, 0, 38.06, -12.895058, -95.52975, -38.9574)
 surface_material_override/0 = SubResource("StandardMaterial3D_5u0bj")
 
-[node name="Rock12" parent="." unique_id=211856797 instance=ExtResource("12_yoq7m")]
+[node name="Rock12" parent="Decs" unique_id=211856797 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(30, 0, 0, 0, 69.323, 0, 0, 0, 38.06, 51.95144, 84.481476, -54.552605)
 
-[node name="Rock7" parent="." unique_id=1823204615 instance=ExtResource("13_21dyk")]
+[node name="Rock7" parent="Decs" unique_id=1823204615 instance=ExtResource("13_21dyk")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 21.351652, 84.09103, -4.5603247)
 
-[node name="Rock5" parent="." unique_id=469370348 instance=ExtResource("13_21dyk")]
-transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, 17.215887, 44.69485, -4.5603247)
+[node name="Rock5" parent="Decs" unique_id=469370348 instance=ExtResource("13_21dyk")]
+transform = Transform3D(6.1788883, 0, 0, 0, 14.278137, 0, 0, 0, 7.838913, 20.903051, 44.694855, -4.5603247)
 
-[node name="Rock8" parent="." unique_id=1218035628 instance=ExtResource("12_yoq7m")]
+[node name="Rock8" parent="Decs" unique_id=1218035628 instance=ExtResource("12_yoq7m")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, -24.559158, 91.40408, -1.2564688)
 
-[node name="Rock9" parent="." unique_id=650201925 instance=ExtResource("13_21dyk")]
+[node name="Rock9" parent="Decs" unique_id=650201925 instance=ExtResource("13_21dyk")]
 transform = Transform3D(6.1788883, 0, 0, 0, 14.278135, 0, 0, 0, 7.838913, -23.506317, 125.89357, -4.5603247)
 
-[node name="MobyHouse" parent="." unique_id=1518208793 instance=ExtResource("14_ih1fk")]
+[node name="MobyHouse" parent="Decs" unique_id=1518208793 instance=ExtResource("14_ih1fk")]
 transform = Transform3D(-1.7320509, 0, -0.99999994, 0, 2, 0, 0.99999994, 0, -1.7320509, 15.276749, 99.52731, 4.2692366)
 
-[node name="RoundMobyHouse" parent="." unique_id=44279593 instance=ExtResource("15_5u0bj")]
-transform = Transform3D(-0.5176381, 0, -1.9318516, 0, 2, 0, 1.9318516, 0, -0.5176381, -17.600069, 60.451195, 2.8102484)
+[node name="RoundMobyHouse" parent="Decs" unique_id=44279593 instance=ExtResource("15_5u0bj")]
+transform = Transform3D(-0.51763815, 0, -1.9318516, 0, 2, 0, 1.9318516, 0, -0.5176381, -20.809326, 60.4512, 2.8102484)
 
-[node name="MobyHouse2" parent="." unique_id=42916867 instance=ExtResource("14_ih1fk")]
+[node name="MobyHouse2" parent="Decs" unique_id=42916867 instance=ExtResource("14_ih1fk")]
 transform = Transform3D(-0.5176381, 0, -1.9318516, 0, 2, 0, 1.9318516, 0, -0.5176381, -3.082745, 111.995056, -59.571217)
 
-[node name="MobyHouse3" parent="." unique_id=899511681 instance=ExtResource("14_ih1fk")]
+[node name="MobyHouse3" parent="Decs" unique_id=899511681 instance=ExtResource("14_ih1fk")]
 transform = Transform3D(2.598076, 0, -1.5, 0, 2.9999998, 0, 1.5, 0, 2.598076, -22.810024, 111.49744, -66.60477)
 
-[node name="Mushroom" parent="." unique_id=630747311 instance=ExtResource("16_pxhkt")]
+[node name="Mushroom" parent="Decs" unique_id=630747311 instance=ExtResource("16_pxhkt")]
 transform = Transform3D(-5.0000005, 0, 8.660254, 0, 10, 0, -8.660254, 0, -5.0000005, -2.1246138, 108.63344, -102.92737)
 
-[node name="Mushroom2" parent="." unique_id=1055763355 instance=ExtResource("16_pxhkt")]
+[node name="Mushroom2" parent="Decs" unique_id=1055763355 instance=ExtResource("16_pxhkt")]
 transform = Transform3D(5.073477, 0, 4.5667405, 0, 7.599442, 0, -4.6292844, 0, 5.004931, -65.108696, 134.24069, -15.328623)
 
-[node name="Mushroom3" parent="." unique_id=1313359490 instance=ExtResource("16_pxhkt")]
-transform = Transform3D(6.5458164, 0, -2.0510278, 0, 7.599442, 0, 2.0791183, 0, 6.457379, 22.296528, 96.8123, -5.4578876)
+[node name="Mushroom3" parent="Decs" unique_id=1313359490 instance=ExtResource("16_pxhkt")]
+transform = Transform3D(-5.073478, 0, -4.56674, 0, 7.5994434, 0, 4.629285, 0, -5.004933, 58.95159, 164.27237, -26.05108)
 
-[node name="BushVar1" parent="." unique_id=775423245 instance=ExtResource("17_5u0bj")]
-transform = Transform3D(500, 0, 0, 0, 500, 0, 0, 0, 500, -20.883049, 17.459133, -1.5778236)
+[node name="BushVar1" parent="Decs" unique_id=775423245 instance=ExtResource("17_5u0bj")]
+transform = Transform3D(500.00003, 0, 0, 0, 500, 0, 0, 0, 500, -22.854513, 17.459133, -1.5778236)
+
+[node name="Rock1" parent="Decs" unique_id=1105717896 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 22.41306, 34.56981, -4.2813797)
+
+[node name="Rock17" parent="Decs" unique_id=449333688 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.2240624, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -22.394094, 115.768524, -4.2813797)
+
+[node name="Rock18" parent="Decs" unique_id=1683223657 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -24.47691, 0.6126785, -2.8952332)
+
+[node name="Rock19" parent="Decs" unique_id=70162068 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -26.944523, 70.255875, -4.2813797)
+
+[node name="Rock20" parent="Decs" unique_id=36844262 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.2240624, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, -21.892857, 10.057945, -4.2813797)
+
+[node name="Rock21" parent="Decs" unique_id=211535138 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 20.62019, 66.18401, -2.8952332)
+
+[node name="Rock22" parent="Decs" unique_id=1168720600 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.2240624, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 20.19053, 135.82722, -4.2813797)
+
+[node name="Rock23" parent="Decs" unique_id=1710217893 instance=ExtResource("5_0nyub")]
+transform = Transform3D(20, 0, 0, 0, 43.947, 0, 0, 0, 30.011, -51.42904, 37.14026, -25.847187)
+
+[node name="Rock24" parent="Decs" unique_id=1503180836 instance=ExtResource("5_0nyub")]
+transform = Transform3D(5.224062, 0, 0, 0, 11.479231, 0, 0, 0, 7.838913, 25.63581, 75.62928, -4.2813797)
 
 [node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=1429618134]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046672076, -4.1197023, -25.456944)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0046672076, -1.8597744, -17.300034)
 material_override = SubResource("StandardMaterial3D_pxhkt")
-amount = 30
-lifetime = 10.0
-speed_scale = 2.0
+amount = 50
+lifetime = 3.0
+preprocess = 3.0
 randomness = 0.3
+visibility_aabb = AABB(0, 0, 0, 8, 8, 8)
+local_coords = true
 process_material = SubResource("ParticleProcessMaterial_rtsvf")
 draw_pass_1 = SubResource("QuadMesh_kurrj")
