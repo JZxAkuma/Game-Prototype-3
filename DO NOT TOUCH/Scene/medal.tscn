@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://chmbyh7o8amg6"]
+
+[ext_resource type="Script" uid="uid://dgjrf5uin5gp2" path="res://DO NOT TOUCH/Script/medal.gd" id="1_tjd52"]
+[ext_resource type="Texture2D" uid="uid://dq41844xwavt" path="res://DO NOT TOUCH/2D/UI Assets/Medal.png" id="2_uy08u"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_aygv5"]
+
+[node name="medal" type="Area3D" unique_id=1145536009]
+script = ExtResource("1_tjd52")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1205606346]
+shape = SubResource("SphereShape3D_aygv5")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1724247099]
+transform = Transform3D(0.31725222, 0, 0, 0, 0.31725222, 0, 0, 0, 0.31725222, 0, 0, 0)
+layers = 2
+billboard = 1
+texture = ExtResource("2_uy08u")
