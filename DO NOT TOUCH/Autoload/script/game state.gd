@@ -38,7 +38,8 @@ const MINIGAME_PATHS: Array[String] = [
 	"res://DO NOT TOUCH/Resources/minigames/sumo.tres",
 	"res://DO NOT TOUCH/Resources/minigames/flappy.tres",
 	"res://DO NOT TOUCH/Resources/minigames/button mash.tres",
-	"res://DO NOT TOUCH/Resources/minigames/cold_potato.tres"
+	"res://DO NOT TOUCH/Resources/minigames/cold_potato.tres",
+	"res://DO NOT TOUCH/Resources/minigames/dodgeball.tres"
 ]
 
 func pick_minigame() -> MINI_GAME:

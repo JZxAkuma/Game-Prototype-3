@@ -83,6 +83,8 @@ func _process(delta: float) -> void:
 		_debug_minigame("button mash")
 	elif Input.is_action_just_pressed("cold potato"):
 		_debug_minigame("cold_potato")
+	elif Input.is_action_just_pressed("dodgeball"):
+		_debug_minigame("dodgeball")
 
 func _debug_minigame(id: String) -> void:
 	var mg := GameState.pick_minigame_by_id(id)

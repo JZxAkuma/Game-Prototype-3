@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="MINI_GAME" format=3 uid="uid://c0wsehtrf23m0"]
+
+[ext_resource type="Script" uid="uid://bb4ov3h640ub1" path="res://DO NOT TOUCH/Script/minigame.gd" id="1_oqmud"]
+[ext_resource type="PackedScene" uid="uid://vodr0t0mtm28" path="res://DO NOT TOUCH/Scene/minigames/dodgeball/fireball_mania.tscn" id="1_u78yy"]
+
+[resource]
+script = ExtResource("1_oqmud")
+mini_game_scene = ExtResource("1_u78yy")
+mini_game_name = "Fireball Mania"
+goal = "just dodgeball honestly"
+controls = "dpad = move
+a = throw fireball"
+metadata/_custom_type_script = "uid://bb4ov3h640ub1"

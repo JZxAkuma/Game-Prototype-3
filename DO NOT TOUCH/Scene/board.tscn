@@ -1059,7 +1059,7 @@ draw_pass_1 = SubResource("QuadMesh_h6drl")
 [node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 
-[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 460997007) index="1" unique_id=2031837018]
+[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 1224007554) index="1" unique_id=1715134122]
 transform = Transform3D(8.769306, 2.4411364e-08, -7.66637e-07, 7.666371e-07, -0.27923346, 0, -7.666371e-07, -2.1341093e-15, -8.769305, 0, 11.054444, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]

@@ -11,6 +11,8 @@ const board := preload("res://DO NOT TOUCH/Scene/board.tscn")
 @export var tutorial_ui: CanvasLayer
 @export var anim: AnimationPlayer
 
+var extra_winners: Array = [] 
+
 @warning_ignore("unused_signal")
 signal round_over(winner_slot: int)
 
@@ -95,7 +97,7 @@ func _run() -> void:
 	for c in chars.values():
 		c.lock()
 	for p in GameState.players:
-		if p.slot == winner_slot:
+		if p.slot == winner_slot or extra_winners.has(p.slot):
 			GameState._add_medal(p, 1)
 			chars[p.slot].play_anim(&"win")
 		else:
@@ -108,6 +110,7 @@ func _run() -> void:
 func _countdown() -> void:
 	anim.play(&"countdown")
 	await anim.animation_finished
+
 
 
 func _start_round(_practice: bool) -> void:
