@@ -299,6 +299,18 @@ tracks/20/keys = {
 "update": 0,
 "values": [Vector2(0.47, 0.47)]
 }
+tracks/21/type = "value"
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/path = NodePath("commentator set/Stadium2/Stage/pasted__polySurface4:rotation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, -3.1415927)]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
@@ -575,6 +587,18 @@ tracks/21/keys = {
 "update": 0,
 "values": [Vector2(0.47, 0.47), Vector2(0.35, 0.35)]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("commentator set/Stadium2/Stage/pasted__polySurface4:rotation")
+tracks/22/interp = 2
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0, 6.9, 6.91, 11.166667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, -3.1415927), Vector3(0, 3.1415927, -3.1415927), Vector3(0, 3.1415927, -3.1415927), Vector3(0, 0, -3.1415927)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
 _data = {
@@ -745,7 +769,6 @@ _data = {
 script = ExtResource("1_2tmgi")
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
-visible = false
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
@@ -1107,17 +1130,17 @@ metadata/_edit_lock_ = true
 libraries/ = SubResource("AnimationLibrary_2adw1")
 
 [node name="droneshot pivot" type="Node3D" parent="." unique_id=473306894]
-transform = Transform3D(0.5934188, 0, 0.8048937, 0, 1, 0, -0.8048937, 0, 0.5934188, 0, 0, 0)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
-current = true
 
 [node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.934677, 0, 38.71825)
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2247868, 8.542557)
+current = true
 
 [node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
 visible = false
@@ -1127,10 +1150,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 visible = false
 
 [node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
-transform = Transform3D(1.35, 0, 0, 0, 1.3499999, 0, 0, 0, 1.35, 121.971344, 0.6405933, -9.454518)
+transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
+current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
 transform = Transform3D(0.9263718, 0.057990897, -0.3721176, 0, 0.9880737, 0.15398154, 0.37660912, -0.14264427, 0.9153237, 116.82978, 20.989372, 30.39455)
@@ -1151,6 +1175,9 @@ draw_pass_1 = SubResource("QuadMesh_h6drl")
 
 [node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
+
+[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 1328424379) index="1" unique_id=1432801005]
+transform = Transform3D(8.769306, 2.4411364e-08, -7.66637e-07, 7.666371e-07, -0.27923346, 0, -7.666371e-07, -2.1341093e-15, -8.769305, 0, 11.054444, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
 
@@ -1625,3 +1652,6 @@ script = null
 [node name="AnimationPlayer" type="AnimationPlayer" parent="BlimpPivot" unique_id=534488848]
 libraries/ = SubResource("AnimationLibrary_hpos0")
 speed_scale = 0.5
+
+[editable path="commentator set/Stadium2"]
+[editable path="commentator set/Stadium2/Crowds"]
