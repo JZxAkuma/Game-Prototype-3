@@ -774,44 +774,226 @@ script = ExtResource("1_2tmgi")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.934677, 0, 26.21825)
 
 [node name="BoardSpace" parent="Spaces" unique_id=1970094472 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.672821, 0, -0.017448425)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0969849, 0, 1.4847374)
 
 [node name="BoardSpace2" parent="Spaces" unique_id=1183317858 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55503845, 0, -1.2486687)
-metadata/_edit_lock_ = true
 
 [node name="BoardSpace3" parent="Spaces" unique_id=1118659147 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.66059685, 0, -3.7211952)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99180794, 0, -3.9715576)
 
 [node name="BoardSpace4" parent="Spaces" unique_id=1141837413 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87639046, 0, -6.1749916)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90119743, 0, -7.176449)
 
 [node name="BoardSpace5" parent="Spaces" unique_id=2110703701 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3624115, 0, -8.597937)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.066122, 0, -10.425596)
 
 [node name="BoardSpace6" parent="Spaces" unique_id=62102786 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.88188934, 0, -11.039347)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14460182, 0, -13.442844)
 
 [node name="BoardSpace7" parent="Spaces" unique_id=284206542 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3189697, 0, -13.430338)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7681656, 0, -16.409676)
 
 [node name="BoardSpace8" parent="Spaces" unique_id=1374790977 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.222519, 0, -15.771559)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.347702, 0, -19.126442)
 
 [node name="BoardSpace9" parent="Spaces" unique_id=899527661 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.299923, 0, -18.055065)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3013783, 0, -21.585203)
 
 [node name="BoardSpace10" parent="Spaces" unique_id=70739930 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.529293, 0, -20.257452)
-metadata/_edit_lock_ = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.155203, 0, -24.588757)
+
+[node name="BoardSpace11" parent="Spaces" unique_id=1796807479 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6489315, 0, -27.702312)
+
+[node name="BoardSpace12" parent="Spaces" unique_id=1320308037 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8010502, 0, -30.284286)
+
+[node name="BoardSpace13" parent="Spaces" unique_id=1576061232 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39626884, 0, -32.385303)
+
+[node name="BoardSpace14" parent="Spaces" unique_id=367843890 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.185707, 0, -34.005363)
+
+[node name="BoardSpace15" parent="Spaces" unique_id=1417878082 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9195614, 0, -35.625427)
+
+[node name="BoardSpace16" parent="Spaces" unique_id=1778276338 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.400282, 0, -37.62519)
+
+[node name="BoardSpace17" parent="Spaces" unique_id=1258091803 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57724, 0, -40.055283)
+
+[node name="BoardSpace18" parent="Spaces" unique_id=658167501 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57724, 0, -40.055283)
+
+[node name="BoardSpace19" parent="Spaces" unique_id=824876255 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.412586, 0, -43.11821)
+
+[node name="BoardSpace20" parent="Spaces" unique_id=1994753913 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.972681, 0, -46.326927)
+
+[node name="BoardSpace21" parent="Spaces" unique_id=1720866777 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.678843, 0, -49.302757)
+
+[node name="BoardSpace22" parent="Spaces" unique_id=1157568198 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4016895, 0, -51.52816)
+
+[node name="BoardSpace23" parent="Spaces" unique_id=1141150849 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9175224, 0, -53.546547)
+
+[node name="BoardSpace24" parent="Spaces" unique_id=576800084 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91581726, 0, -54.89214)
+
+[node name="BoardSpace25" parent="Spaces" unique_id=103385051 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.189396, 0, -55.74607)
+
+[node name="BoardSpace26" parent="Spaces" unique_id=1054509418 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.372238, 0, -55.720196)
+
+[node name="BoardSpace27" parent="Spaces" unique_id=1098995818 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.372238, 0, -55.720196)
+
+[node name="BoardSpace28" parent="Spaces" unique_id=1437148174 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.376614, 0, -54.76881)
+
+[node name="BoardSpace29" parent="Spaces" unique_id=1248662843 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.330918, 0, -53.642174)
+
+[node name="BoardSpace30" parent="Spaces" unique_id=2117778518 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.107548, 0, -52.157253)
+
+[node name="BoardSpace31" parent="Spaces" unique_id=1340736014 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.23728, 0, -51.753555)
+
+[node name="BoardSpace32" parent="Spaces" unique_id=1347870119 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.316246, 0, -52.41137)
+
+[node name="BoardSpace33" parent="Spaces" unique_id=875142343 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.395214, 0, -53.243786)
+
+[node name="BoardSpace34" parent="Spaces" unique_id=1457716462 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.444258, 0, -54.1009)
+
+[node name="BoardSpace35" parent="Spaces" unique_id=1514266284 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.679316, 0, -54.35299)
+
+[node name="BoardSpace36" parent="Spaces" unique_id=1114389240 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.521713, 0, -55.64952)
+
+[node name="BoardSpace37" parent="Spaces" unique_id=508033007 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.89556, 0, -57.685867)
+
+[node name="BoardSpace38" parent="Spaces" unique_id=115070362 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.244747, 0, -59.72276)
+
+[node name="BoardSpace39" parent="Spaces" unique_id=38668194 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.84218, 0, -61.43524)
+
+[node name="BoardSpace40" parent="Spaces" unique_id=656252605 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.949394, 0, -61.533882)
+
+[node name="BoardSpace41" parent="Spaces" unique_id=1141115764 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.007286, 0, -60.818733)
+
+[node name="BoardSpace42" parent="Spaces" unique_id=321397960 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.719933, 0, -59.265125)
+
+[node name="BoardSpace43" parent="Spaces" unique_id=1282609620 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.24888, 0, -56.57714)
+
+[node name="BoardSpace44" parent="Spaces" unique_id=1910569485 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.854313, 0, -53.469925)
+
+[node name="BoardSpace45" parent="Spaces" unique_id=172174379 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.16382, 0, -50.41203)
+
+[node name="BoardSpace46" parent="Spaces" unique_id=367451597 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.807495, 0, -47.60074)
+
+[node name="BoardSpace47" parent="Spaces" unique_id=1597353377 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.978203, 0, -45.1129)
+
+[node name="BoardSpace48" parent="Spaces" unique_id=1787177831 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.02697, 0, -42.16164)
+
+[node name="BoardSpace49" parent="Spaces" unique_id=2083504539 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.441612, 0, -39.11282)
+
+[node name="BoardSpace50" parent="Spaces" unique_id=790795327 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.63675, 0, -36.25912)
+
+[node name="BoardSpace51" parent="Spaces" unique_id=137800764 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.807495, 0, -33.356644)
+
+[node name="BoardSpace52" parent="Spaces" unique_id=1951295868 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.27093, 0, -30.64929)
+
+[node name="BoardSpace53" parent="Spaces" unique_id=78689207 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.100212, 0, -27.67364)
+
+[node name="BoardSpace54" parent="Spaces" unique_id=2074243441 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.270947, 0, -24.576036)
+
+[node name="BoardSpace55" parent="Spaces" unique_id=946542235 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.173386, 0, -21.454042)
+
+[node name="BoardSpace56" parent="Spaces" unique_id=1503871309 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.953857, 0, -18.575954)
+
+[node name="BoardSpace57" parent="Spaces" unique_id=1672981772 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.22213, 0, -16.014942)
+
+[node name="BoardSpace58" parent="Spaces" unique_id=942533917 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.856255, 0, -13.234417)
+
+[node name="BoardSpace59" parent="Spaces" unique_id=1725494008 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.636715, 0, -11.039264)
+
+[node name="BoardSpace60" parent="Spaces" unique_id=69832228 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.70986, 0, -8.575813)
+
+[node name="BoardSpace61" parent="Spaces" unique_id=1362072222 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.831787, 0, -6.0635834)
+
+[node name="BoardSpace62" parent="Spaces" unique_id=1532249814 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.78298, 0, -3.6976986)
+
+[node name="BoardSpace63" parent="Spaces" unique_id=1891240517 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.734177, 0, -1.3805943)
+
+[node name="BoardSpace64" parent="Spaces" unique_id=1039393251 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.246338, 0, 0.42431068)
+
+[node name="BoardSpace65" parent="Spaces" unique_id=890524274 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.612156, 0, 2.1072617)
+
+[node name="BoardSpace66" parent="Spaces" unique_id=844442774 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.685286, 0, 3.107277)
+
+[node name="BoardSpace67" parent="Spaces" unique_id=201011289 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.148664, 0, 4.8633995)
+
+[node name="BoardSpace68" parent="Spaces" unique_id=2062464382 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.221792, 0, 5.887806)
+
+[node name="BoardSpace69" parent="Spaces" unique_id=2016784763 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.148579, 0, 6.3268356)
+
+[node name="BoardSpace70" parent="Spaces" unique_id=2129853301 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.050976, 0, 6.5707436)
+
+[node name="BoardSpace71" parent="Spaces" unique_id=901476920 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.977762, 0, 6.546356)
+
+[node name="BoardSpace72" parent="Spaces" unique_id=1279870519 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.880157, 0, 6.156109)
+
+[node name="BoardSpace73" parent="Spaces" unique_id=25683483 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8557262, 0, 5.5463448)
+
+[node name="BoardSpace74" parent="Spaces" unique_id=1691029452 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67165, 0, -7.866108)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
 environment = ExtResource("3_qoftb")
@@ -1250,7 +1432,7 @@ transform = Transform3D(-22.525398, -5.8683142e-08, -8.60779e-14, 0, -2.9341571e
 mesh = SubResource("ArrayMesh_4qbmi")
 
 [node name="TallPath" parent="Decorations" unique_id=2114847789 instance=ExtResource("20_h6drl")]
-transform = Transform3D(0.3, 0, 0, 0, 0.25980002, 0, 0, 0, 4.5114264, -1.6401787, 11.254631, -29.63974)
+transform = Transform3D(0.34205744, 0, 0, 0, 0.29622176, 0, 0, 0, 5.14389, -5.0826473, 12.060783, -30.197868)
 material_override = ExtResource("21_l8lyr")
 surface_material_override/0 = null
 
@@ -1338,7 +1520,7 @@ transform = Transform3D(1.1118814, 0, 0.70853794, 0, 1.3184484, 0, -0.70853794, 
 transform = Transform3D(0.91783255, 0, 0.39696783, 0, 1, 0, -0.39696783, 0, 0.91783255, 21.367933, -0.47746062, 31.096292)
 
 [node name="Pine Tree Small2" parent="." unique_id=455062269 instance=ExtResource("23_5wvne")]
-transform = Transform3D(1.2191737, 0, -1.2207487, 0, 1.725286, 0, 1.2207487, 0, 1.2191737, 18.498493, 0, 12.76919)
+transform = Transform3D(1.2191737, 0, -1.2207487, 0, 1.725286, 0, 1.2207487, 0, 1.2191737, 14.425495, 0, 12.260065)
 
 [node name="Pine Tree Small3" parent="." unique_id=449362884 instance=ExtResource("23_5wvne")]
 transform = Transform3D(0.9033963, 0, -0.9936402, 0, 1.3429244, 0, 0.9936402, 0, 0.9033963, 14.472788, -0.60800076, 25.650734)
