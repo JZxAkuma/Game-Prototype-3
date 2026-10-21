@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="7_5t2ue"]
 [ext_resource type="PackedScene" uid="uid://chmbyh7o8amg6" path="res://DO NOT TOUCH/Scene/medal.tscn" id="7_ssjqo"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="8_62cjo"]
+[ext_resource type="Material" uid="uid://gjqx0g8unwlh" path="res://DO NOT TOUCH/material/haxegonal thingy.tres" id="8_p2dn0"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="9_57ue3"]
 [ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="11_4iobk"]
 
@@ -460,21 +461,25 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CSGCylinder3D" type="CSGCylinder3D" parent="Game scene" unique_id=1143971640]
-transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, -9.053148, 0, -8.659578)
+transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, -9.053, -1.4, -8.66)
 use_collision = true
+material = ExtResource("8_p2dn0")
 
 [node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Game scene" unique_id=2021336108]
 transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, -4.6125355, -0.02019717, 5.4607906)
 use_collision = true
 height = 2.0288086
+material = ExtResource("8_p2dn0")
 
 [node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Game scene" unique_id=1116679408]
 transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, 5.3654385, 0, -5.572793)
 use_collision = true
+material = ExtResource("8_p2dn0")
 
 [node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Game scene" unique_id=1547028025]
 transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, 7.7581053, 0, 7.6076765)
 use_collision = true
+material = ExtResource("8_p2dn0")
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=687339086]
 

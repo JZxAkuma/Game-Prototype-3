@@ -26,6 +26,18 @@ func _ready() -> void:
 		await SceneManager.scene_changed
 	_run()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if not OS.is_debug_build():
+		return
+	if event.is_action_pressed(&"ui_accept") and not event.is_echo():
+		_skip_minigame()
+
+
+func _skip_minigame() -> void:
+	if SceneManager.busy or state == State.results:
+		return
+	state = State.results
+	SceneManager.goto_scene(board)
 
 func _spawn_characters() -> void:
 	for i in GameState.players.size():
