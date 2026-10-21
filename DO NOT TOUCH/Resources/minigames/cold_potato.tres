@@ -7,8 +7,7 @@
 script = ExtResource("1_5cblb")
 mini_game_scene = ExtResource("1_16bsn")
 mini_game_name = "Cold Potato"
-goal = "Hold the thing when timer ran out"
+goal = "Be the one holding the medal when the timer ends"
 controls = "dpad  = move
-a = jump
-b = dash"
+a = dash"
 metadata/_custom_type_script = "uid://bb4ov3h640ub1"

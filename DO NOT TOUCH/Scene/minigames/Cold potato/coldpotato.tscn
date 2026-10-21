@@ -459,6 +459,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84504676, 0)
 collision_layer = 2
 collision_mask = 2
 
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Game scene" unique_id=1143971640]
+transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, -9.053148, 0, -8.659578)
+use_collision = true
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Game scene" unique_id=2021336108]
+transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, -4.6125355, -0.02019717, 5.4607906)
+use_collision = true
+height = 2.0288086
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Game scene" unique_id=1116679408]
+transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, 5.3654385, 0, -5.572793)
+use_collision = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Game scene" unique_id=1547028025]
+transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, 7.7581053, 0, 7.6076765)
+use_collision = true
+
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=687339086]
 
 [node name="3" type="TextureRect" parent="countdown layer" unique_id=2118840533]
