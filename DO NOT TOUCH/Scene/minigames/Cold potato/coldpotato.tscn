@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="5_p2dn0"]
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="6_qtk26"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="7_5t2ue"]
+[ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="7_qtk26"]
 [ext_resource type="PackedScene" uid="uid://chmbyh7o8amg6" path="res://DO NOT TOUCH/Scene/medal.tscn" id="7_ssjqo"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="8_62cjo"]
 [ext_resource type="Material" uid="uid://gjqx0g8unwlh" path="res://DO NOT TOUCH/material/haxegonal thingy.tres" id="8_p2dn0"]
@@ -54,6 +55,13 @@ fog_depth_end = 1251.4
 adjustment_enabled = true
 adjustment_contrast = 1.12
 adjustment_saturation = 1.19
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ekou"]
+albedo_texture = ExtResource("7_qtk26")
+uv1_scale = Vector3(10, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5met"]
+albedo_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -434,26 +442,31 @@ transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(30, 1, 30)
+material = SubResource("StandardMaterial3D_7ekou")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1963030864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.75, 0)
 use_collision = true
 size = Vector3(1, 3.5, 30)
+material = SubResource("StandardMaterial3D_t5met")
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Game scene" unique_id=1446363976]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5, 0.75, 0)
 use_collision = true
 size = Vector3(1, 3.5, 30)
+material = SubResource("StandardMaterial3D_t5met")
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Game scene" unique_id=1775750935]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.75, -15.5)
 use_collision = true
 size = Vector3(1, 3.5, 30)
+material = SubResource("StandardMaterial3D_t5met")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Game scene" unique_id=1111675188]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0.75, 15.5)
 use_collision = true
 size = Vector3(1, 3.5, 30)
+material = SubResource("StandardMaterial3D_t5met")
 
 [node name="medal" parent="Game scene" unique_id=1145536009 instance=ExtResource("7_ssjqo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.84504676, 0)
