@@ -780,7 +780,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0969849, 0, 1.4847374)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55503845, 0, -1.2486687)
 
 [node name="BoardSpace3" parent="Spaces" unique_id=1118659147 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.99180794, 0, -3.9715576)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7054901, 0, -4.0669956)
 
 [node name="BoardSpace4" parent="Spaces" unique_id=1141837413 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90119743, 0, -7.176449)
@@ -993,7 +993,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.880157, 0, 6.156109)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8557262, 0, 5.5463448)
 
 [node name="BoardSpace74" parent="Spaces" unique_id=1691029452 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.67165, 0, -7.866108)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7714329, 0, 4.009018)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
 environment = ExtResource("3_qoftb")
