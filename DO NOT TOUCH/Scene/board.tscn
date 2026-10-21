@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://cclolr710f26v" path="res://DO NOT TOUCH/Environmental Assets/Stadium/Stadium_0.png" id="19_h6drl"]
 [ext_resource type="PackedScene" uid="uid://70nrv1owm8yw" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tall_path.tscn" id="20_h6drl"]
 [ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush.tscn" id="21_e3sxt"]
+[ext_resource type="Material" uid="uid://ce33pb8ov1iaj" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/Assets2.tres" id="21_l8lyr"]
 [ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/rock.tscn" id="22_517a7"]
 [ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="23_5wvne"]
 [ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="24_o02ct"]
@@ -31,6 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/flat_shroom.tscn" id="29_368j8"]
 [ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/wood_fences.tscn" id="30_l8lyr"]
 [ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_tower.tscn" id="31_nwemw"]
+[ext_resource type="Script" uid="uid://0pmmr67mc05t" path="res://DO NOT TOUCH/Script/autoplay_animation.gd" id="33_hpos0"]
+[ext_resource type="PackedScene" uid="uid://0iefg5o2dp7p" path="res://DO NOT TOUCH/Environmental Assets/blimp.tscn" id="33_nwemw"]
+[ext_resource type="PackedScene" uid="uid://dh6b5tac8gbqq" path="res://DO NOT TOUCH/Scene/flappy_fart.tscn" id="34_p6ilu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_svf5d"]
 albedo_color = Color(0.73333335, 1, 1, 1)
@@ -671,6 +675,71 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lc5cv")
+
+[sub_resource type="Gradient" id="Gradient_p6ilu"]
+offsets = PackedFloat32Array(0, 0.5341615, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.49354547, 0.49354553, 0.49354553, 0.419689, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hpos0"]
+gradient = SubResource("Gradient_p6ilu")
+
+[sub_resource type="Curve" id="Curve_do1m1"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.20320857, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_f6qny"]
+curve = SubResource("Curve_do1m1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_77xxn"]
+spread = 15.0
+initial_velocity_min = 0.5
+initial_velocity_max = 1.5
+gravity = Vector3(0, 0, 0)
+scale_min = 8.0
+scale_max = 10.0
+scale_curve = SubResource("CurveTexture_f6qny")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_hpos0")
+
+[sub_resource type="QuadMesh" id="QuadMesh_p6ilu"]
+
+[sub_resource type="Animation" id="Animation_nwemw"]
+resource_name = "BlimpSpin"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 6.2831855, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_p6ilu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hpos0"]
+_data = {
+&"BlimpSpin": SubResource("Animation_nwemw"),
+&"RESET": SubResource("Animation_p6ilu")
+}
 
 [node name="Board" type="Node3D" unique_id=2115529111]
 script = ExtResource("1_2tmgi")
@@ -1422,6 +1491,7 @@ mesh = SubResource("ArrayMesh_4qbmi")
 
 [node name="TallPath" parent="Decorations" unique_id=2114847789 instance=ExtResource("20_h6drl")]
 transform = Transform3D(0.5, 0, 0, 0, 0.433, 0, 0, 0, 7.5190434, -10.353313, 17.166008, 34.917374)
+material_override = ExtResource("21_l8lyr")
 surface_material_override/0 = null
 
 [node name="intro layer" type="CanvasLayer" parent="." unique_id=292225276]
@@ -1502,7 +1572,7 @@ stretch_mode = 4
 transform = Transform3D(0.6333535, 0, 2.7012894, 0, 2.5224633, 0, -2.2339718, 0, 0.76584244, 36.64108, -2.0548477, 27.164007)
 
 [node name="Rock" parent="." unique_id=567206759 instance=ExtResource("22_517a7")]
-transform = Transform3D(1.1118814, 0, 0.70853794, 0, 1.3184484, 0, -0.70853794, 0, 1.1118814, 17.909538, 0, 18.181757)
+transform = Transform3D(1.1118814, 0, 0.70853794, 0, 1.3184484, 0, -0.70853794, 0, 1.1118814, 16.070976, 0, 18.181757)
 
 [node name="Pine Tree Small" parent="." unique_id=425352341 instance=ExtResource("23_5wvne")]
 transform = Transform3D(0.91783255, 0, 0.39696783, 0, 1, 0, -0.39696783, 0, 0.91783255, 21.367933, -0.47746062, 31.096292)
@@ -1514,7 +1584,7 @@ transform = Transform3D(1.2191737, 0, -1.2207487, 0, 1.725286, 0, 1.2207487, 0, 
 transform = Transform3D(0.9033963, 0, -0.9936402, 0, 1.3429244, 0, 0.9936402, 0, 0.9033963, 14.472788, -0.60800076, 25.650734)
 
 [node name="Pine Tree Big" parent="." unique_id=716970919 instance=ExtResource("24_o02ct")]
-transform = Transform3D(2.3364127, -0.13660814, 0.5258658, 0.13628961, 2.394822, 0.016588511, -0.52594846, 0.013720648, 2.3403442, 21.389687, -0.56896067, -2.1202984)
+transform = Transform3D(2.3364127, -0.13660814, 0.5258658, 0.13628961, 2.394822, 0.016588511, -0.52594846, 0.013720648, 2.3403442, 23.331654, -0.56896067, -2.1202984)
 
 [node name="Tulip" parent="." unique_id=208352800 instance=ExtResource("25_lejsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.594122, 0, 45.236774)
@@ -1530,3 +1600,28 @@ transform = Transform3D(0.6973796, 0, -0.716702, 0, 1, 0, 0.716702, 0, 0.6973796
 
 [node name="Castle Tower" parent="." unique_id=1286349847 instance=ExtResource("31_nwemw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.454542, -1.9073486e-06, -18.310534)
+
+[node name="BlimpPivot" type="Node3D" parent="." unique_id=279201556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 36.990307, 0)
+script = ExtResource("33_hpos0")
+animation_name = &"BlimpSpin"
+
+[node name="Blimp" parent="BlimpPivot" unique_id=1695711462 instance=ExtResource("33_nwemw")]
+transform = Transform3D(-100, 0, 8.742278e-06, 0, 100, 0, -8.742278e-06, 0, -100, -2.3217163, 22.366325, 56.627552)
+
+[node name="flappy_fart" parent="BlimpPivot/Blimp" unique_id=948862103 instance=ExtResource("34_p6ilu")]
+transform = Transform3D(1, -5.9604645e-08, 8.742279e-08, 8.7422784e-08, -4.371139e-08, -1, 5.9604645e-08, 1, -4.3711385e-08, 0.12300001, -0.00880146, 0.011949539)
+emitting = true
+amount = 40
+one_shot = false
+preprocess = 2.0
+speed_scale = 0.1
+explosiveness = 0.0
+randomness = 0.0
+process_material = SubResource("ParticleProcessMaterial_77xxn")
+draw_pass_1 = SubResource("QuadMesh_p6ilu")
+script = null
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BlimpPivot" unique_id=534488848]
+libraries/ = SubResource("AnimationLibrary_hpos0")
+speed_scale = 0.5
