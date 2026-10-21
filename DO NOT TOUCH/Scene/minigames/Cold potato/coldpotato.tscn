@@ -13,7 +13,19 @@
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="8_62cjo"]
 [ext_resource type="Material" uid="uid://gjqx0g8unwlh" path="res://DO NOT TOUCH/material/haxegonal thingy.tres" id="8_p2dn0"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="9_57ue3"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush.tscn" id="10_5t2ue"]
 [ext_resource type="Theme" uid="uid://ku3uha8ujhrr" path="res://DO NOT TOUCH/BoxStyle/box.tres" id="11_4iobk"]
+[ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_tower.tscn" id="11_62cjo"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="12_jegxa"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_house.tscn" id="13_6y38p"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="14_8u7qs"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="15_0nail"]
+[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/rock.tscn" id="16_pcyrn"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/palm_tree.tscn" id="17_wc46f"]
+[ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="18_6fynh"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="19_5kxoj"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_wall.tscn" id="25_01564"]
+[ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/flat_shroom.tscn" id="26_2wucq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ugtl2"]
 shader = ExtResource("3_4iobk")
@@ -59,6 +71,10 @@ adjustment_saturation = 1.19
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7ekou"]
 albedo_texture = ExtResource("7_qtk26")
 uv1_scale = Vector3(10, 10, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qtk26"]
+albedo_texture = ExtResource("7_qtk26")
+uv1_scale = Vector3(25, 10, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t5met"]
 albedo_color = Color(0.47007585, 0.47007585, 0.47007585, 1)
@@ -444,6 +460,30 @@ use_collision = true
 size = Vector3(30, 1, 30)
 material = SubResource("StandardMaterial3D_7ekou")
 
+[node name="CSGBox3D8" type="CSGBox3D" parent="Game scene" unique_id=601060469]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09825897, 1.6999145, 30.428171)
+use_collision = true
+size = Vector3(30.370132, 1, 30)
+material = SubResource("StandardMaterial3D_7ekou")
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="Game scene" unique_id=1567154971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09825897, 1.6999145, -30.341902)
+use_collision = true
+size = Vector3(30.370132, 1, 30)
+material = SubResource("StandardMaterial3D_7ekou")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="Game scene" unique_id=1709285791]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.472021, 1.6719303, -4.8814697)
+use_collision = true
+size = Vector3(30.622314, 1, 78.434814)
+material = SubResource("StandardMaterial3D_qtk26")
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Game scene" unique_id=2044590480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.145777, 1.6719303, -4.8814697)
+use_collision = true
+size = Vector3(30.17041, 1, 78.434814)
+material = SubResource("StandardMaterial3D_qtk26")
+
 [node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1963030864]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.5, 0.75, 0)
 use_collision = true
@@ -493,6 +533,51 @@ material = ExtResource("8_p2dn0")
 transform = Transform3D(5.690706, 0, 0, 0, 1.4021628, 0, 0, 0, 5.690706, 7.7581053, 0, 7.6076765)
 use_collision = true
 material = ExtResource("8_p2dn0")
+
+[node name="bush" parent="Game scene" unique_id=1113126883 instance=ExtResource("10_5t2ue")]
+transform = Transform3D(0.7694187, 0, 1.8460755, 0, 2, 0, -1.8460755, 0, 0.7694187, 16.296034, 0.81710434, 4.5547104)
+
+[node name="bush2" parent="Game scene" unique_id=636004017 instance=ExtResource("10_5t2ue")]
+transform = Transform3D(-0.91479003, 0, -2.8571243, 0, 3, 0, 2.8571243, 0, -0.91479003, -12.772251, 0.23572063, -13.708303)
+
+[node name="Castle Tower" parent="Game scene" unique_id=1286349847 instance=ExtResource("11_62cjo")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -17.367115, 2.1719303, -7.0599604)
+
+[node name="Mushroom" parent="Game scene" unique_id=630747311 instance=ExtResource("12_jegxa")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 16.459091, -0.036365032, -7.4447536)
+
+[node name="MobyHouse" parent="Game scene" unique_id=1518208793 instance=ExtResource("13_6y38p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.347591, 2.4350016, -0.6954069)
+
+[node name="Pine Tree Big" parent="Game scene" unique_id=716970919 instance=ExtResource("14_8u7qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.829102, 2.1785233, -1.0710907)
+
+[node name="Pine Tree Big2" parent="Game scene" unique_id=1557524059 instance=ExtResource("14_8u7qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.557827, 2.1785214, 8.527061)
+
+[node name="Pine Tree Small" parent="Game scene" unique_id=425352341 instance=ExtResource("15_0nail")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.210526, 2.1726482, 4.854706)
+
+[node name="Rock" parent="Game scene" unique_id=567206759 instance=ExtResource("16_pcyrn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.892128, 2.1719303, 5.0297413)
+
+[node name="palm tree" parent="Game scene" unique_id=83494430 instance=ExtResource("17_wc46f")]
+transform = Transform3D(-0.86602545, 0, -0.5, 0, 1, 0, 0.5, 0, -0.86602545, 17.209507, 2.1851802, 8.110635)
+
+[node name="Pine Tree Big3" parent="Game scene" unique_id=1868451134 instance=ExtResource("14_8u7qs")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 15.298336, 2.5857346, 15.153993)
+
+[node name="Pine Tree Small2" parent="Game scene" unique_id=84379384 instance=ExtResource("15_0nail")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.693218, 2.500714, 11.170901)
+
+[node name="Pine Tree Big4" parent="Game scene" unique_id=2116086665 instance=ExtResource("14_8u7qs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.872723, 2.1785212, -9.820126)
+
+[node name="WaterTower" parent="Game scene" unique_id=1745167631 instance=ExtResource("18_6fynh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.960325, 2.3587894, 0.9440813)
+
+[node name="Tulip" parent="Game scene" unique_id=208352800 instance=ExtResource("19_5kxoj")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 16.365604, 2.1719303, 1.3103647)
 
 [node name="countdown layer" type="CanvasLayer" parent="." unique_id=687339086]
 
@@ -610,3 +695,12 @@ grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 0.21568628)
 theme_override_font_sizes/font_size = 220
 text = "Kote"
+
+[node name="castle wall" parent="." unique_id=1265150768 instance=ExtResource("25_01564")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -15.087931, 2.3630714, -4.837474)
+
+[node name="castle wall2" parent="." unique_id=563561296 instance=ExtResource("25_01564")]
+transform = Transform3D(-6.556708e-08, 0, -1.5, 0, 1.5, 0, 1.5, 0, -6.556708e-08, -15.087931, 2.3630714, 10.148337)
+
+[node name="FlatShroom" parent="." unique_id=1064026191 instance=ExtResource("26_2wucq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.400324, 2.3746784, -2.968216)
