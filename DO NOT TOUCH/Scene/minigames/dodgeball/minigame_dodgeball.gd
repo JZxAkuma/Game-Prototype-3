@@ -49,7 +49,6 @@ func _reset_balls() -> void:
 		b.pick_requested.connect(_on_pick_requested)
 		balls.append(b)
 
-
 func _on_pick_requested(b: DodgeBall, c: PlayerCharacter) -> void:
 	if state == State.results or b.holder != null:
 		return
@@ -57,7 +56,6 @@ func _on_pick_requested(b: DodgeBall, c: PlayerCharacter) -> void:
 		return
 	b.holder = c
 	held[c.slot] = b
-
 
 func _on_threw(c: PlayerCharacter, dir: Vector3) -> void:
 	if state == State.results or not held.has(c.slot):

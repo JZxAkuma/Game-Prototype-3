@@ -569,13 +569,13 @@ shape = SubResource("BoxShape3D_aygv5")
 [node name="spawns" type="Node3D" parent="." unique_id=1192618945]
 
 [node name="Marker3D" type="Marker3D" parent="spawns" unique_id=2006632386]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5548496, 0, 3.9204855)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10, 0, 4)
 
 [node name="Marker3D2" type="Marker3D" parent="spawns" unique_id=1510651619]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 9.033038, 0, -7.8442116)
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 10, 0, -4)
 
 [node name="Marker3D3" type="Marker3D" parent="spawns" unique_id=1185860475]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -9, 0, -6.326168)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10, 0, -4)
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=829532762]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9, 0, 3.9816532)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 0, 4)
