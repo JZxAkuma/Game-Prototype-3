@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtkssvoxgagn" path="res://DO NOT TOUCH/character/MobyRig.fbx" id="2_hj8hb"]
 [ext_resource type="Material" uid="uid://dxy8dfl8m06nm" path="res://DO NOT TOUCH/character/base mat.tres" id="3_hj8hb"]
 [ext_resource type="Material" uid="uid://csdihd0bcukxa" path="res://DO NOT TOUCH/character/player 2 mat/player 2.tres" id="3_xhx3o"]
+[ext_resource type="PackedScene" uid="uid://dkys4ixpki2q" path="res://DO NOT TOUCH/character/propeller_hat.tscn" id="4_hnsrt"]
 [ext_resource type="PackedScene" uid="uid://dyh6mt2721p02" path="res://DO NOT TOUCH/character/MobyTail.fbx" id="5_xhx3o"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_f2w1j"]
@@ -91,50 +92,54 @@ shape = SubResource("CapsuleShape3D_hj8hb")
 [node name="MobyRig" parent="." unique_id=1549967143 instance=ExtResource("2_hj8hb")]
 transform = Transform3D(-76.49, 0, -6.686968e-06, 0, 76.49, 0, 6.686968e-06, 0, -76.49, 0, -0.3463223, 0)
 
-[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=976909899]
+[node name="Skeleton3D" parent="MobyRig" index="1" unique_id=1257007923]
 bones/8/rotation = Quaternion(3.613944e-15, 0, 2.3509887e-38, 1)
 bones/9/rotation = Quaternion(3.613944e-15, 0, 2.3509887e-38, 1)
 
-[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=992855695]
+[node name="RightFoot" parent="MobyRig/Skeleton3D" index="0" unique_id=278522104]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=1016559045]
+[node name="LeftFoot" parent="MobyRig/Skeleton3D" index="1" unique_id=1419682615]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=1253438380]
+[node name="LeftHand" parent="MobyRig/Skeleton3D" index="2" unique_id=46482545]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=425573788]
+[node name="Head2" parent="MobyRig/Skeleton3D" index="3" unique_id=295668472]
 material_override = ExtResource("3_hj8hb")
 
-[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1100822607]
+[node name="PropellerHat" parent="MobyRig/Skeleton3D/Head2" index="0" unique_id=228300469 instance=ExtResource("4_hnsrt")]
+transform = Transform3D(0.005, 0, 1.3877788e-16, 0, 0.005, 0, -1.3877788e-16, 0, 0.005, 0, 0.026194721, 0)
+
+[node name="RightAntenna" parent="MobyRig/Skeleton3D" index="4" unique_id=1349066801]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=2141502048]
+[node name="LeftAntenna" parent="MobyRig/Skeleton3D" index="5" unique_id=2100007393]
 material_override = ExtResource("3_hj8hb")
 
-[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=2066353818]
+[node name="WizardHat" parent="MobyRig/Skeleton3D" index="6" unique_id=805608226]
+visible = false
 material_override = ExtResource("3_xhx3o")
 
-[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=1868162648]
+[node name="RightEye" parent="MobyRig/Skeleton3D" index="7" unique_id=793146982]
 material_override = ExtResource("3_hj8hb")
 
-[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=504196029]
+[node name="LeftEye" parent="MobyRig/Skeleton3D" index="8" unique_id=1682971566]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=685169491]
+[node name="Cape" parent="MobyRig/Skeleton3D" index="9" unique_id=6925878]
 material_override = ExtResource("3_xhx3o")
 
-[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=276131945]
+[node name="Thorax" parent="MobyRig/Skeleton3D" index="10" unique_id=1193285997]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=284767893]
+[node name="Abdomen" parent="MobyRig/Skeleton3D" index="11" unique_id=1447514748]
 material_override = ExtResource("3_hj8hb")
 
-[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=1939650959]
+[node name="RightHand2" parent="MobyRig/Skeleton3D" index="12" unique_id=1104904622]
 material_override = ExtResource("3_hj8hb")
 
-[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=187938637]
+[node name="Wand" parent="MobyRig/Skeleton3D" index="13" unique_id=544762474]
 material_override = ExtResource("3_hj8hb")
 
 [node name="SpringBoneSimulator3D2" type="SpringBoneSimulator3D" parent="MobyRig/Skeleton3D" index="14" unique_id=2007604447]

@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://vsbu646lyntp" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/TileMap_standardSurface1_Normal.png" id="12_irx2x"]
 [ext_resource type="PackedScene" uid="uid://it2vatk1lr7j" path="res://Adha_Assets/Blimp.fbx" id="13_5s4v6"]
 [ext_resource type="PackedScene" uid="uid://lp2nllo082aa" path="res://Adha_Assets/HotAirBalloon.fbx" id="14_thdh2"]
+[ext_resource type="PackedScene" uid="uid://7uw6fu6yre6c" path="res://DO NOT TOUCH/character/MobyHats.fbx" id="15_thdh2"]
 
 [sub_resource type="Environment" id="Environment_aygv5"]
 
@@ -271,3 +272,8 @@ mesh = SubResource("ArrayMesh_4q2pe")
 [node name="Rock4" type="MeshInstance3D" parent="." unique_id=689219237]
 transform = Transform3D(3.1808918, 0, 0, 0, 10.280257, 0, 0, 0, 5.644017, 28.442059, 6.710827, 133.43259)
 mesh = SubResource("ArrayMesh_ndw0w")
+
+[node name="MobyHats" parent="." unique_id=2033808810 instance=ExtResource("15_thdh2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.416906, 0, 72.03636)
+
+[editable path="MobyHats"]
