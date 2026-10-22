@@ -772,225 +772,303 @@ script = ExtResource("1_2tmgi")
 
 [node name="Spaces" type="Node3D" parent="." unique_id=1659851710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.934677, 0, 26.21825)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace" parent="Spaces" unique_id=1970094472 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0969849, 0, 1.4847374)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace2" parent="Spaces" unique_id=1183317858 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55503845, 0, -1.2486687)
+metadata/_edit_lock_ = true
+
+[node name="BoardSpace3" parent="Spaces" unique_id=631823693 instance=ExtResource("2_bw800")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6519718, 0, -4.109461)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace4" parent="Spaces" unique_id=1141837413 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.90119743, 0, -7.176449)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace5" parent="Spaces" unique_id=2110703701 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.066122, 0, -10.425596)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace6" parent="Spaces" unique_id=62102786 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14460182, 0, -13.442844)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace7" parent="Spaces" unique_id=284206542 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7681656, 0, -16.409676)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace8" parent="Spaces" unique_id=1374790977 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.347702, 0, -19.126442)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace9" parent="Spaces" unique_id=899527661 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3013783, 0, -21.585203)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace10" parent="Spaces" unique_id=70739930 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.155203, 0, -24.588757)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace11" parent="Spaces" unique_id=1796807479 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6489315, 0, -27.702312)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace12" parent="Spaces" unique_id=1320308037 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8010502, 0, -30.284286)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace13" parent="Spaces" unique_id=1576061232 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39626884, 0, -32.385303)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace14" parent="Spaces" unique_id=367843890 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.185707, 0, -34.005363)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace15" parent="Spaces" unique_id=1417878082 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9195614, 0, -35.625427)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace16" parent="Spaces" unique_id=1778276338 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.400282, 0, -37.62519)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace17" parent="Spaces" unique_id=1258091803 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57724, 0, -40.055283)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace18" parent="Spaces" unique_id=658167501 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.57724, 0, -40.055283)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2417755, 0, -42.733013)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace19" parent="Spaces" unique_id=824876255 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.412586, 0, -43.11821)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.860008, 0, -45.771816)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace20" parent="Spaces" unique_id=1994753913 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.972681, 0, -46.326927)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.202988, 0, -48.787544)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace21" parent="Spaces" unique_id=1720866777 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.678843, 0, -49.302757)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.040697, 0, -50.96729)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace22" parent="Spaces" unique_id=1157568198 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4016895, 0, -51.52816)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6670494, 0, -52.95146)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace23" parent="Spaces" unique_id=1141150849 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9175224, 0, -53.546547)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0727577, 0, -54.45617)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace24" parent="Spaces" unique_id=576800084 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91581726, 0, -54.89214)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2072144, 0, -55.314735)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace25" parent="Spaces" unique_id=103385051 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.189396, 0, -55.74607)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7683125, 0, -55.524017)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace26" parent="Spaces" unique_id=1054509418 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.372238, 0, -55.720196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6591663, 0, -54.81079)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace27" parent="Spaces" unique_id=1098995818 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.372238, 0, -55.720196)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9862213, 0, -52.928818)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace28" parent="Spaces" unique_id=1437148174 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.376614, 0, -54.76881)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.372111, 0, -51.062237)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace29" parent="Spaces" unique_id=1248662843 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.330918, 0, -53.642174)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.307052, 0, -50.18137)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace30" parent="Spaces" unique_id=2117778518 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.107548, 0, -52.157253)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.353598, 0, -49.941322)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace31" parent="Spaces" unique_id=1340736014 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.23728, 0, -51.753555)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.287935, 0, -50.712875)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace32" parent="Spaces" unique_id=1347870119 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.316246, 0, -52.41137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.19875, 0, -51.431793)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace33" parent="Spaces" unique_id=875142343 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.395214, 0, -53.243786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.114136, 0, -52.267784)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace34" parent="Spaces" unique_id=1457716462 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.444258, 0, -54.1009)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.986248, 0, -53.224007)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace35" parent="Spaces" unique_id=1514266284 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.679316, 0, -54.35299)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.840858, 0, -54.255943)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace36" parent="Spaces" unique_id=1114389240 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.521713, 0, -55.64952)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace37" parent="Spaces" unique_id=508033007 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.89556, 0, -57.685867)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace38" parent="Spaces" unique_id=115070362 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.244747, 0, -59.72276)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace39" parent="Spaces" unique_id=38668194 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.84218, 0, -61.43524)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace40" parent="Spaces" unique_id=656252605 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.949394, 0, -61.533882)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace41" parent="Spaces" unique_id=1141115764 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.007286, 0, -60.818733)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace42" parent="Spaces" unique_id=321397960 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.719933, 0, -59.265125)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace43" parent="Spaces" unique_id=1282609620 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.24888, 0, -56.57714)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace44" parent="Spaces" unique_id=1910569485 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.854313, 0, -53.469925)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace45" parent="Spaces" unique_id=172174379 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.16382, 0, -50.41203)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace46" parent="Spaces" unique_id=367451597 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.807495, 0, -47.60074)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace47" parent="Spaces" unique_id=1597353377 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.978203, 0, -45.1129)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace48" parent="Spaces" unique_id=1787177831 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.02697, 0, -42.16164)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace49" parent="Spaces" unique_id=2083504539 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.441612, 0, -39.11282)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace50" parent="Spaces" unique_id=790795327 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.63675, 0, -36.25912)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace51" parent="Spaces" unique_id=137800764 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.807495, 0, -33.356644)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace52" parent="Spaces" unique_id=1951295868 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.27093, 0, -30.64929)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace53" parent="Spaces" unique_id=78689207 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.100212, 0, -27.67364)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace54" parent="Spaces" unique_id=2074243441 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.270947, 0, -24.576036)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace55" parent="Spaces" unique_id=946542235 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.173386, 0, -21.454042)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace56" parent="Spaces" unique_id=1503871309 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.953857, 0, -18.575954)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace57" parent="Spaces" unique_id=1672981772 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.22213, 0, -16.014942)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace58" parent="Spaces" unique_id=942533917 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.856255, 0, -13.234417)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace59" parent="Spaces" unique_id=1725494008 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.636715, 0, -11.039264)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace60" parent="Spaces" unique_id=69832228 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.70986, 0, -8.575813)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace61" parent="Spaces" unique_id=1362072222 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.831787, 0, -6.0635834)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace62" parent="Spaces" unique_id=1532249814 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37.78298, 0, -3.6976986)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace63" parent="Spaces" unique_id=1891240517 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.734177, 0, -1.3805943)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace64" parent="Spaces" unique_id=1039393251 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.246338, 0, 0.42431068)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace65" parent="Spaces" unique_id=890524274 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.612156, 0, 2.1072617)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace66" parent="Spaces" unique_id=844442774 instance=ExtResource("2_bw800")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.685286, 0, 3.107277)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.930616, 0, 3.6503735)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace67" parent="Spaces" unique_id=201011289 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.148664, 0, 4.8633995)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace68" parent="Spaces" unique_id=2062464382 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.221792, 0, 5.887806)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace69" parent="Spaces" unique_id=2016784763 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.148579, 0, 6.3268356)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace70" parent="Spaces" unique_id=2129853301 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.050976, 0, 6.5707436)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace71" parent="Spaces" unique_id=901476920 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.977762, 0, 6.546356)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace72" parent="Spaces" unique_id=1279870519 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.880157, 0, 6.156109)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace73" parent="Spaces" unique_id=25683483 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8557262, 0, 5.5463448)
+metadata/_edit_lock_ = true
 
 [node name="BoardSpace74" parent="Spaces" unique_id=1691029452 instance=ExtResource("2_bw800")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7714329, 0, 4.009018)
+metadata/_edit_lock_ = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1071959609]
 environment = ExtResource("3_qoftb")
@@ -1056,7 +1134,7 @@ draw_pass_1 = SubResource("QuadMesh_h6drl")
 [node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 
-[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 1224007554) index="1" unique_id=1715134122]
+[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 460997007) index="1" unique_id=2031837018]
 transform = Transform3D(8.769306, 2.4411364e-08, -7.66637e-07, 7.666371e-07, -0.27923346, 0, -7.666371e-07, -2.1341093e-15, -8.769305, 0, 11.054444, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
@@ -1508,22 +1586,22 @@ texture = ExtResource("28_v28e5")
 stretch_mode = 4
 
 [node name="bush" parent="." unique_id=1113126883 instance=ExtResource("21_e3sxt")]
-transform = Transform3D(0.6333535, 0, 2.7012894, 0, 2.5224633, 0, -2.2339718, 0, 0.76584244, 24.141079, -2.0548477, 14.664007)
+transform = Transform3D(0.6333535, 0, 2.7012894, 0, 2.5224633, 0, -2.2339718, 0, 0.76584244, 18.923088, -2.0548477, 3.8801422)
 
 [node name="Rock" parent="." unique_id=567206759 instance=ExtResource("22_517a7")]
-transform = Transform3D(1.1118814, 0, 0.70853794, 0, 1.3184484, 0, -0.70853794, 0, 1.1118814, 16.070976, 0, 18.181757)
+transform = Transform3D(1.1118814, 0, 0.70853794, 0, 1.3184484, 0, -0.70853794, 0, 1.1118814, 18.071209, 0, 13.572521)
 
 [node name="Pine Tree Small" parent="." unique_id=425352341 instance=ExtResource("23_5wvne")]
-transform = Transform3D(0.91783255, 0, 0.39696783, 0, 1, 0, -0.39696783, 0, 0.91783255, 21.367933, -0.47746062, 31.096292)
+transform = Transform3D(0.91783255, 0, 0.39696783, 0, 1, 0, -0.39696783, 0, 0.91783255, 24.404047, -0.47746062, 8.049408)
 
 [node name="Pine Tree Small2" parent="." unique_id=455062269 instance=ExtResource("23_5wvne")]
-transform = Transform3D(1.2191737, 0, -1.2207487, 0, 1.725286, 0, 1.2207487, 0, 1.2191737, 14.425495, 0, 12.260065)
+transform = Transform3D(1.2191737, 0, -1.2207487, 0, 1.725286, 0, 1.2207487, 0, 1.2191737, 27.251232, 0, 13.827472)
 
 [node name="Pine Tree Small3" parent="." unique_id=449362884 instance=ExtResource("23_5wvne")]
 transform = Transform3D(0.9033963, 0, -0.9936402, 0, 1.3429244, 0, 0.9936402, 0, 0.9033963, 14.472788, -0.60800076, 25.650734)
 
 [node name="Pine Tree Big" parent="." unique_id=716970919 instance=ExtResource("24_o02ct")]
-transform = Transform3D(2.3364127, -0.13660814, 0.5258658, 0.13628961, 2.394822, 0.016588511, -0.52594846, 0.013720648, 2.3403442, 23.331654, -0.56896067, -2.1202984)
+transform = Transform3D(2.3364127, -0.13660814, 0.5258658, 0.13628961, 2.394822, 0.016588511, -0.52594846, 0.013720648, 2.3403442, 32.289215, -0.56896067, -5.3380637)
 
 [node name="Tulip" parent="." unique_id=208352800 instance=ExtResource("25_lejsw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.594122, 0, 45.236774)
