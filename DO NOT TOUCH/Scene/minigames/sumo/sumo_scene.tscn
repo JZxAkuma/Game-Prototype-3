@@ -15,6 +15,10 @@
 [ext_resource type="PackedScene" uid="uid://cywisxck4cdmi" path="res://DO NOT TOUCH/Scene/map_limit.tscn" id="7_qmvo0"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="8_25a4l"]
 [ext_resource type="Texture2D" uid="uid://ddemyymwr3xcy" path="res://DO NOT TOUCH/2D/Sprites/Clouds2.png" id="8_ugtl2"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="11_6lsm2"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/round_moby_house.tscn" id="12_uh4un"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush.tscn" id="18_duamp"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/palm_tree.tscn" id="19_2qiyb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ugtl2"]
 shader = ExtResource("8_25a4l")
@@ -572,12 +576,18 @@ transform = Transform3D(0.548343, 0, -0.8362535, 0, 1.7501113, 0, 0.8362535, 0, 
 visible = false
 
 [node name="Cloudscroller" type="MeshInstance3D" parent="Game scene" unique_id=1601845497]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.573277, -50.30132)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0743103, -40.573284, -50.30151)
 mesh = SubResource("PlaneMesh_1w13i")
 
 [node name="Cloudscroller2" type="MeshInstance3D" parent="Game scene" unique_id=1088654497]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.2374808, 0, -147.00012, -50.30132)
 mesh = SubResource("PlaneMesh_gij0j")
+
+[node name="Mushroom" parent="Game scene" unique_id=630747311 instance=ExtResource("11_6lsm2")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -64.46968, -30.56466, -59.110695)
+
+[node name="RoundMobyHouse" parent="Game scene" unique_id=44279593 instance=ExtResource("12_uh4un")]
+transform = Transform3D(-3, 0, -3.5762787e-07, 0, 3, 0, 3.5762787e-07, 0, -3, 136.40268, -80.982285, -39.532967)
 
 [node name="Map_limit" parent="." unique_id=1918000921 instance=ExtResource("7_qmvo0")]
 transform = Transform3D(120, 0, 0, 0, 1, 0, 0, 0, 120, 0, -8, 0)
@@ -681,3 +691,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="bush" parent="." unique_id=1113126883 instance=ExtResource("18_duamp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.864048, -27.59017, -56.369286)
+
+[node name="bush2" parent="." unique_id=1473660337 instance=ExtResource("18_duamp")]
+transform = Transform3D(-1.7299318, 0, -2.4509866, 0, 3, 0, 2.4509866, 0, -1.7299318, -57.501778, -31.79424, -49.537575)
+
+[node name="bush5" parent="." unique_id=1942760107 instance=ExtResource("18_duamp")]
+transform = Transform3D(-1.4337955, 3.5717607, -1.0893857, 1.0414586, 1.5031134, 3.55753, 3.586028, 0.99155486, -1.4687492, -51.201378, -46.245644, -53.233803)
+
+[node name="bush3" parent="." unique_id=1608853875 instance=ExtResource("18_duamp")]
+transform = Transform3D(-1.7299317, 0, -2.4509866, 2.429452, -0.39680934, -1.7147323, -0.32419145, -2.9736412, 0.22881767, -54.95067, -31.79424, -46.442844)
+
+[node name="bush4" parent="." unique_id=1216938929 instance=ExtResource("18_duamp")]
+transform = Transform3D(-1.7299317, 0, -2.4509866, 2.429452, -0.39680934, -1.7147323, -0.32419145, -2.9736412, 0.22881767, -51.260666, -34.22618, -45.802917)
+
+[node name="palm tree" parent="." unique_id=83494430 instance=ExtResource("19_2qiyb")]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 129.39542, -81.99158, -36.364265)
