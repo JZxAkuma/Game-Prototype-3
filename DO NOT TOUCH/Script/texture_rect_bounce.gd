@@ -19,5 +19,3 @@ func _process(delta: float) -> void:
 	var cycle: float = (sin(elapsed_time * bounce_speed) + 1.0) * 0.5
 	position = original_position
 	position.y -= cycle * bounce_height
-	var horizontal_scale: float = 1.0 - (1.0 - cycle) * squash_amount
-	var vertical_scale: float = 1.0 + cycle * stretch_amount

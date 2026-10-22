@@ -5,7 +5,6 @@
 [sub_resource type="SphereMesh" id="SphereMesh_aygv5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_n5003"]
-radius = 0.54696673
 
 [node name="dodgeball ball" type="Area3D" unique_id=2100620601]
 collision_layer = 8
