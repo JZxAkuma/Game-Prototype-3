@@ -1,3 +1,19 @@
 [gd_scene format=3 uid="uid://c4752eevqg5oj"]
 
+[ext_resource type="Script" uid="uid://bjgwo6bpijsx" path="res://DO NOT TOUCH/Script/dodgeball_ball.gd" id="1_mv31b"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_aygv5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n5003"]
+radius = 0.54696673
+
 [node name="dodgeball ball" type="Area3D" unique_id=2100620601]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_mv31b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1050627329]
+mesh = SubResource("SphereMesh_aygv5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1463809028]
+shape = SubResource("SphereShape3D_n5003")
