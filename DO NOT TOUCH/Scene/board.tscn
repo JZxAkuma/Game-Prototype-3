@@ -313,6 +313,54 @@ tracks/21/keys = {
 "update": 0,
 "values": [Vector3(0, 3.1415927, -3.1415927)]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("commentator set/Stadium2/Stage/pasted__pCube1:visible")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("commentator set/podium:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("commentator set/commentator set cam:rotation")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1840552, 0.50872535, 0)]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("CanvasLayer:visible")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_bw800"]
 resource_name = "intro"
@@ -601,12 +649,254 @@ tracks/22/keys = {
 "update": 0,
 "values": [Vector3(0, 3.1415927, -3.1415927), Vector3(0, 3.1415927, -3.1415927), Vector3(0, 3.1415927, -3.1415927), Vector3(0, 0, -3.1415927)]
 }
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("commentator set/podium:visible")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("commentator set/Stadium2/Stage/pasted__pCube1:visible")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/25/type = "value"
+tracks/25/imported = false
+tracks/25/enabled = true
+tracks/25/path = NodePath("commentator set/commentator set cam:rotation")
+tracks/25/interp = 1
+tracks/25/loop_wrap = true
+tracks/25/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.18777691, 0.0041391556, 0.0017523572)]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("CanvasLayer:visible")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/27/type = "value"
+tracks/27/imported = false
+tracks/27/enabled = true
+tracks/27/path = NodePath("intro layer:visible")
+tracks/27/interp = 1
+tracks/27/loop_wrap = true
+tracks/27/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_f6qny"]
+resource_name = "winner"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("commentator set/Stadium2/Stage/pasted__polySurface4:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-8.102611e-16, 0.08785535, 3.1415925)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("commentator set/Stadium2/Stage/pasted__pCube1:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("commentator set:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("commentator set/podium:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("commentator set/Announcer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(146.34494, -0.070213795, -6.0067863)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Rocks2:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("commentator set/commentator set cam:current")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("commentator set/commentator set cam:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2, 2.0333335, 4, 4.033334, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 9.513661),
+"update": 0,
+"values": [Vector3(114.95247, 23.83608, 32.483547), Vector3(165.4991, 23.552921, 33.370434), Vector3(133.58632, 0.4752407, 1.3452339), Vector3(143.47894, 0.4752407, 1.3452339), Vector3(138.87746, 2.8507, -0.20080376), Vector3(138.87746, 2.8507, 8.045721)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("commentator set/commentator set cam:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 2, 2.0333335, 4, 4.033334, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 0.08246928),
+"update": 0,
+"values": [Vector3(-0.23641582, -0.5428354, 0), Vector3(-0.1840552, 0.50872535, 0), Vector3(0.41808316, -0.5646535, 0), Vector3(0.41808313, 0.60870904, 0), Vector3(0.22609611, -0.0017863895, 0), Vector3(0.22609612, -0.0017864108, 0)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("commentator set/Commentator set wide:current")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("play camera pivot/play_camera:current")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("droneshot pivot/intro_camera:current")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("intro layer:visible")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CanvasLayer:visible")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
 _data = {
 &"RESET": SubResource("Animation_2adw1"),
-&"intro": SubResource("Animation_bw800")
+&"intro": SubResource("Animation_bw800"),
+&"winner": SubResource("Animation_f6qny")
 }
+
+[sub_resource type="BoxMesh" id="BoxMesh_n5003"]
+size = Vector3(1.5895996, 2.3125, 1.8552246)
+
+[sub_resource type="BoxMesh" id="BoxMesh_f6qny"]
+size = Vector3(1.5895996, 1.4879761, 1.8552246)
+
+[sub_resource type="BoxMesh" id="BoxMesh_77xxn"]
+size = Vector3(1.5895996, 1.0407715, 1.8552246)
 
 [sub_resource type="Curve" id="Curve_fne0o"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.9839573, 0), 1.4, 0.0, 0, 0]
@@ -767,8 +1057,11 @@ _data = {
 &"RESET": SubResource("Animation_p6ilu")
 }
 
-[node name="Board" type="Node3D" unique_id=2115529111]
+[node name="Board" type="Node3D" unique_id=2115529111 node_paths=PackedStringArray("p1_marker", "p2_marker", "p3_marker")]
 script = ExtResource("1_2tmgi")
+p1_marker = NodePath("commentator set/podium/Marker3D")
+p2_marker = NodePath("commentator set/podium/Marker3D2")
+p3_marker = NodePath("commentator set/podium/Marker3D3")
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
 
@@ -1099,11 +1392,34 @@ metadata/_edit_lock_ = true
 
 [node name="play_camera" type="Camera3D" parent="play camera pivot" unique_id=563864645]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2247868, 8.542557)
-current = true
 metadata/_edit_lock_ = true
 
 [node name="commentator set" type="Node3D" parent="." unique_id=2043097393]
 visible = false
+
+[node name="podium" type="Node3D" parent="commentator set" unique_id=1384939453]
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="commentator set/podium" unique_id=391231462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.98207, 1.766189, -7.264983)
+mesh = SubResource("BoxMesh_n5003")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="commentator set/podium" unique_id=1339688387]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 137.40952, 1.353927, -7.264983)
+mesh = SubResource("BoxMesh_f6qny")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="commentator set/podium" unique_id=1017511364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 140.57146, 1.1303247, -7.264983)
+mesh = SubResource("BoxMesh_77xxn")
+
+[node name="Marker3D" type="Marker3D" parent="commentator set/podium" unique_id=1184942159]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 139.04185, 2.8935401, -7.0938425)
+
+[node name="Marker3D2" type="Marker3D" parent="commentator set/podium" unique_id=392372707]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 137.48347, 2.1075814, -7.0938425)
+
+[node name="Marker3D3" type="Marker3D" parent="commentator set/podium" unique_id=1711530808]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 140.52815, 1.6547611, -7.0938425)
 
 [node name="Stadium" parent="commentator set" unique_id=1279323677 instance=ExtResource("3_cal7y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
@@ -1113,7 +1429,7 @@ visible = false
 transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.18092, 3.2629128, -2.3858414)
+transform = Transform3D(0.87336606, -0.089141436, 0.47883764, 0, 0.9831096, 0.18301775, -0.4870644, -0.1598415, 0.8586145, 123.18092, 3.2629128, -2.3858414)
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
@@ -1136,8 +1452,8 @@ draw_pass_1 = SubResource("QuadMesh_h6drl")
 [node name="Stadium2" parent="commentator set" unique_id=1438777467 instance=ExtResource("9_df6mf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 
-[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 460997007) index="1" unique_id=2031837018]
-transform = Transform3D(8.769306, 2.4411364e-08, -7.66637e-07, 7.666371e-07, -0.27923346, 0, -7.666371e-07, -2.1341093e-15, -8.769305, 0, 11.054444, 0)
+[node name="pasted__polySurface4" parent="commentator set/Stadium2/Stage" parent_id_path=PackedInt32Array(1438777467, 1224007554) index="1" unique_id=1715134122]
+transform = Transform3D(8.769307, 2.4411367e-08, -7.666371e-07, 7.666372e-07, -0.2792335, 0, -7.666372e-07, -2.1341095e-15, -8.769306, 0, 11.054444, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428149040]
 

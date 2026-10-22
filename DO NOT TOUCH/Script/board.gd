@@ -18,6 +18,14 @@ var cam_follow_enabled := false
 const PICKER := preload("res://DO NOT TOUCH/Scene/minigame_picker.tscn")
 
 @export var face_cam_speed := 8.0
+
+@export var p1_marker : Marker3D
+@export var p2_marker : Marker3D
+@export var p3_marker : Marker3D
+
+const WIN_MEDALS := 3
+var ending := false
+
 var moving_token: Node3D
 
 var spaces: Array[BoardSpace] = []
@@ -94,7 +102,7 @@ func _debug_minigame(id: String) -> void:
 	SceneManager.goto_scene(mg.mini_game_scene)
 
 func _face_tokens_to_camera(delta: float) -> void:
-	if not tokens_root.visible:
+	if ending or not tokens_root.visible:
 		return
 	var cam := get_viewport().get_camera_3d()
 	if cam == null:
@@ -225,13 +233,18 @@ func _run_game() -> void:
 			return
 
 	_show_tokens()
+
+	if _someone_won():
+		await _play_ending()
+		return
+
 	var first := GameState.players[GameState.current_player]
 	play_camera_pivot.global_position = tokens[first.slot].global_position + cam_offset
 	cam_follow_enabled = true
 
-	while is_inside_tree():
+	while is_inside_tree() and not ending:
 		await _play_turn(GameState.current_player)
-		if not is_inside_tree():
+		if not is_inside_tree() or ending:
 			return
 		GameState._next_player()
 
@@ -253,7 +266,7 @@ func _play_turn(player_index: int) -> void:
 	var a := PlayerInput._act(p.slot, &"a")
 	while not Input.is_action_just_pressed(a):
 		await get_tree().process_frame
-		if not is_inside_tree():
+		if not is_inside_tree() or ending:
 			return
 
 	var roll := randi_range(1, 6)
@@ -349,3 +362,61 @@ func _hop(token: Node3D, height := 0.5, duration := 0.35) -> void:
 		token.global_position = pos
 	, 0.0, 1.0, duration)
 	await tw.finished
+
+func _someone_won() -> bool:
+	for p in GameState.players:
+		if p.medal >= WIN_MEDALS:
+			return true
+	return false
+
+func _podium_groups() -> Array:
+	var sorted := GameState.players.duplicate()
+	sorted.sort_custom(func(a, b): return a.medal > b.medal)
+	var groups := []
+	for p in sorted:
+		if groups.is_empty() or groups.back()[0].medal != p.medal:
+			groups.append([p])
+		else:
+			groups.back().append(p)
+	return groups
+
+
+func _play_ending() -> void:
+	if ending:
+		return
+	ending = true
+	cam_follow_enabled = false
+	dice.hide()
+	_show_tokens()
+	
+	var markers: Array = [p1_marker, p2_marker, p3_marker]
+	var groups := _podium_groups()
+	for g in groups.size():
+		var list: Array = groups[g]
+		for p in list:
+			var t: PlayerCharacter = tokens[p.slot]
+			if g >= markers.size():
+				t.hide()
+				continue
+			var m: Marker3D = markers[g]
+			var pos := m.global_position
+			if list.size() > 1:   # tie: share the marker
+				var angle := TAU * list.find(p) / list.size()
+				pos += Vector3(cos(angle), 0.0, sin(angle)) * share_radius
+			t.global_position = pos
+			t.global_rotation = m.global_rotation
+			t.play_anim(&"win" if g == 0 else &"lose")
+
+	if anim.has_animation(&"winner"):
+		Transition.cam_trans()
+		anim.play(&"winner")
+		await anim.animation_finished
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not OS.is_debug_build() or ending:
+		return
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_T:
+		for i in mini(3, GameState.players.size()):
+			GameState.players[i].medal = 3 - i
+		GameState.data_changed.emit()
+		_play_ending()
