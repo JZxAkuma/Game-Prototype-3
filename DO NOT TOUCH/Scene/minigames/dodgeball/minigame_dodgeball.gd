@@ -3,14 +3,14 @@ extends MiniGameBase
 const BALL := preload("res://DO NOT TOUCH/Scene/dodgeball_ball.tscn")
 
 @export var split_on_x := true
-@export var half_size := 10.0
+@export var half_size := 100.0
 @export var middle_gap := 0.5
 @export var throw_speed := 18.0
 @export var ball_spawns: Array[Marker3D]
 
 var alive: Array = []
 var balls: Array[DodgeBall] = []
-var held := {}   # slot -> DodgeBall
+var held := {}
 
 
 func _ready() -> void:

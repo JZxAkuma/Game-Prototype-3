@@ -12,6 +12,7 @@ var axis := -1
 var lo := 0.0
 var hi := 0.0
 
+func _hitbox() -> StringName: return &"flappy"
 
 func set_bounds(p_axis: int, p_lo: float, p_hi: float) -> void:
 	axis = p_axis

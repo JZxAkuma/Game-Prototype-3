@@ -377,6 +377,9 @@ adjustment_enabled = true
 adjustment_contrast = 1.12
 adjustment_saturation = 1.19
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_aygv5"]
+size = Vector3(1, 3, 17.5)
+
 [node name="fireball mania" type="Node3D" unique_id=2024038673 node_paths=PackedStringArray("ball_spawns", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_yb5gj")
 ball_spawns = [NodePath("Game scene/ballspawnpoint"), NodePath("Game scene/ballspawnpoint2")]
@@ -504,22 +507,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(28.12, 1, 18.245)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1267845513]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1267845513 groups=["wall"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.31, 2.5, 0)
 use_collision = true
 size = Vector3(0.5, 5, 18.245)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Game scene" unique_id=1395931182]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Game scene" unique_id=1395931182 groups=["wall"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.19, 2, 0)
 use_collision = true
 size = Vector3(0.5, 4, 18.245)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Game scene" unique_id=1766784656]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Game scene" unique_id=1766784656 groups=["wall"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.06749916, 2, 9)
 use_collision = true
 size = Vector3(0.5, 4, 29)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Game scene" unique_id=1928780878]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Game scene" unique_id=1928780878 groups=["wall"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.06749916, 2, -9)
 use_collision = true
 flip_faces = true
@@ -530,6 +533,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 0.5, -0.5)
 
 [node name="ballspawnpoint2" type="Marker3D" parent="Game scene" unique_id=65377671]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, 0)
+
+[node name="Area3D" type="StaticBody3D" parent="Game scene" unique_id=776036789]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.31, 2.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Game scene/Area3D" unique_id=1506372576]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.25)
+shape = SubResource("BoxShape3D_aygv5")
 
 [node name="players" type="Node3D" parent="." unique_id=625730582]
 

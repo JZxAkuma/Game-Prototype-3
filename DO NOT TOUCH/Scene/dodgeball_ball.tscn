@@ -8,7 +8,7 @@
 radius = 0.54696673
 
 [node name="dodgeball ball" type="Area3D" unique_id=2100620601]
-collision_layer = 3
+collision_layer = 8
 collision_mask = 3
 script = ExtResource("1_mv31b")
 
