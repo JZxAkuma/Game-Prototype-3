@@ -1,7 +1,7 @@
 extends MiniGameBase
 
 @export var play_cam: Camera3D
-@export var round_time := 30
+@export var round_time := 15
 
 @export_group("Camera")
 @export var follow_threshold := 3.0

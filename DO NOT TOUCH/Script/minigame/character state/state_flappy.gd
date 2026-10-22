@@ -1,6 +1,6 @@
 extends CharacterState
 
-const gravity := 25.0
+const gravity := 10.0
 const flap_strength := 4.0
 const max_fall_speed := 20.0
 const air_drag := 3.0
