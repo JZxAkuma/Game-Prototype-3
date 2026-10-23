@@ -29,8 +29,17 @@ func _play(list: Array, winner: MINI_GAME) -> void:
 		_set_lit(card, false)
 
 	var n := cards.size()
-	var winner_index := list.find(winner)
-	var total_steps := n * laps + winner_index
+	if n == 0:
+		finished.emit()
+		return
+
+	var winner_index := 0
+	for i in list.size():
+		if list[i] == winner or list[i].resource_path == winner.resource_path:
+			winner_index = i
+			break
+
+	var total_steps := maxi(n * laps + winner_index, 1)
 	var current := -1
 
 	for step in total_steps + 1:
@@ -47,5 +56,10 @@ func _play(list: Array, winner: MINI_GAME) -> void:
 	await get_tree().create_timer(1.0).timeout
 	finished.emit()
 
+
 func _set_lit(card: Control, lit: bool) -> void:
-	card.add_theme_stylebox_override("panel", lit_style if lit else normal_style)
+	var s := lit_style if lit else normal_style
+	if s:
+		card.add_theme_stylebox_override("panel", s)
+	else:
+		card.modulate = Color.WHITE if lit else Color(0.5, 0.5, 0.5) 
