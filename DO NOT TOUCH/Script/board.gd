@@ -389,6 +389,11 @@ func _play_ending() -> void:
 	dice.hide()
 	_show_tokens()
 	
+	if SceneManager.busy:
+		await SceneManager.scene_changed
+		if not is_inside_tree():
+			return
+	
 	var markers: Array = [p1_marker, p2_marker, p3_marker]
 	var groups := _podium_groups()
 	for g in groups.size():
@@ -400,7 +405,7 @@ func _play_ending() -> void:
 				continue
 			var m: Marker3D = markers[g]
 			var pos := m.global_position
-			if list.size() > 1:   # tie: share the marker
+			if list.size() > 1:
 				var angle := TAU * list.find(p) / list.size()
 				pos += Vector3(cos(angle), 0.0, sin(angle)) * share_radius
 			t.global_position = pos

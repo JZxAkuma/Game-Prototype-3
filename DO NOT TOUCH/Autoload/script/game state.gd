@@ -14,6 +14,9 @@ var board_seed := 0
 var space_types: Array[int] = []
 var turn := 0
 
+var _bag: Array[String] = []
+var _last_path := ""
+
 var current_player := 0
 
 var intro_played := false
@@ -43,7 +46,10 @@ const MINIGAME_PATHS: Array[String] = [
 ]
 
 func pick_minigame() -> MINI_GAME:
-	var path: String = MINIGAME_PATHS.pick_random()
+	if _bag.is_empty():
+		_refill_bag()
+	var path: String = _bag.pop_back()
+	_last_path = path
 	current_minigame = load(path) as MINI_GAME
 	return current_minigame
 
@@ -60,6 +66,8 @@ func _new_game(slots: Array[int]) -> void:
 	turn = 0
 	current_player = 0
 	intro_played = false
+	_bag.clear()
+	_last_path = ""
 
 func _next_player() -> void:
 	current_player += 1
@@ -88,3 +96,12 @@ func pick_minigame_by_id(id: String) -> MINI_GAME:
 			current_minigame = load(path) as MINI_GAME
 			return current_minigame
 	return null
+
+func _refill_bag() -> void:
+	_bag.assign(MINIGAME_PATHS)
+	_bag.shuffle()
+	if _bag.size() > 1 and _bag.back() == _last_path:
+		var swap_i := randi() % (_bag.size() - 1)
+		var tmp = _bag[swap_i]
+		_bag[swap_i] = _bag.back()
+		_bag[_bag.size() - 1] = tmp
