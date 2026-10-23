@@ -1429,7 +1429,7 @@ visible = false
 transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
-transform = Transform3D(0.87336606, -0.089141436, 0.47883764, 0, 0.9831096, 0.18301775, -0.4870644, -0.1598415, 0.8586145, 123.18092, 3.2629128, -2.3858414)
+transform = Transform3D(0.87336606, -0.08914143, 0.4788376, 0, 0.98310953, 0.18301775, -0.4870644, -0.15984148, 0.85861444, 123.18092, 3.2629128, -2.3858414)
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]

@@ -1,5 +1,11 @@
 [gd_scene format=3 uid="uid://cpjbsqgpru6vs"]
 
+[ext_resource type="Script" uid="uid://dbguse34supxi" path="res://DO NOT TOUCH/Scene/music.gd" id="1_4dxqw"]
+[ext_resource type="AudioStream" uid="uid://ceck3jphkvwix" path="res://music/Game_Prototype_3_BG_HolyMoby(1).wav" id="1_4lxmc"]
+
 [node name="Music" type="Node" unique_id=1209173629]
+script = ExtResource("1_4dxqw")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1737594884]
+stream = ExtResource("1_4lxmc")
+volume_db = -0.638

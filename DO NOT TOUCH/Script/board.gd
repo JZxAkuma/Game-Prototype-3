@@ -47,7 +47,7 @@ func _ready() -> void:
 	_collect_spaces()
 	_link_spaces()
 	randomize_types(GameState.board_seed,WEIGHTS)
-	
+	Music._play()
 	_spawn_characters()
 	
 	#if SceneManager.busy:
