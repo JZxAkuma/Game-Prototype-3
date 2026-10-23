@@ -10,6 +10,19 @@
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="8_5ge1r"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="9_h15ei"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="10_6t4lc"]
+[ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="11_78cdv"]
+[ext_resource type="Texture2D" uid="uid://6ghaht07uqgw" path="res://DO NOT TOUCH/2D/Sprites/Court.png" id="11_mhahw"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_house.tscn" id="13_vavtv"]
+[ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/flat_shroom.tscn" id="14_vbwy5"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="15_8y8fy"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="16_4k4u2"]
+[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/rock.tscn" id="17_403e6"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/round_moby_house.tscn" id="18_gyt4q"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="19_403e6"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="19_argrc"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush.tscn" id="20_gyt4q"]
+[ext_resource type="PackedScene" uid="uid://cae6qel7lo3go" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush_var_1.tscn" id="21_argrc"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/palm_tree.tscn" id="23_eop75"]
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -377,6 +390,14 @@ adjustment_enabled = true
 adjustment_contrast = 1.12
 adjustment_saturation = 1.19
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_78cdv"]
+albedo_texture = ExtResource("11_mhahw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ph0g7"]
+albedo_color = Color(0.52981746, 0.78776306, 0.6003519, 1)
+albedo_texture = ExtResource("11_78cdv")
+uv1_scale = Vector3(10, 3, 1)
+
 [node name="fireball mania" type="Node3D" unique_id=2024038673 node_paths=PackedStringArray("ball_spawns", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_yb5gj")
 ball_spawns = [NodePath("Game scene/ballspawnpoint"), NodePath("Game scene/ballspawnpoint7"), NodePath("Game scene/ballspawnpoint8"), NodePath("Game scene/ballspawnpoint9"), NodePath("Game scene/ballspawnpoint2"), NodePath("Game scene/ballspawnpoint3"), NodePath("Game scene/ballspawnpoint10"), NodePath("Game scene/ballspawnpoint11"), NodePath("Game scene/ballspawnpoint12"), NodePath("Game scene/ballspawnpoint4")]
@@ -503,24 +524,29 @@ transform = Transform3D(1, 0, 0, 0, -5.9604645e-08, 1, 0, -1, -5.9604645e-08, 0,
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
 use_collision = true
 size = Vector3(28.12, 1, 18.245)
+material = SubResource("StandardMaterial3D_78cdv")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="Game scene" unique_id=1267845513 groups=["wall"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.560001, 2.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.636417, 2.001892, -0.66511583)
+material_override = SubResource("StandardMaterial3D_ph0g7")
 use_collision = true
-size = Vector3(7, 5, 18.245)
+size = Vector3(19.152832, 4.003784, 33.74887)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Game scene" unique_id=1395931182 groups=["wall"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.439999, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.70831, 2, -0.5045409)
+material_override = SubResource("StandardMaterial3D_ph0g7")
 use_collision = true
-size = Vector3(7, 4, 18.245)
+size = Vector3(19.536621, 4, 33.44713)
 
 [node name="CSGBox3D4" type="CSGBox3D" parent="Game scene" unique_id=1766784656 groups=["wall"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.06749931, 2, 12.5)
+material_override = SubResource("StandardMaterial3D_ph0g7")
 use_collision = true
 size = Vector3(7.5, 4, 29)
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Game scene" unique_id=1928780878 groups=["wall"]]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.06749899, 2, -13)
+material_override = SubResource("StandardMaterial3D_ph0g7")
 use_collision = true
 size = Vector3(8.5, 4, 29)
 
@@ -554,6 +580,87 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 3)
 [node name="ballspawnpoint4" type="Marker3D" parent="Game scene" unique_id=1392958037]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.5, 6)
 
+[node name="MobyHouse" parent="Game scene" unique_id=1518208793 instance=ExtResource("13_vavtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.303615, 4.266856, -0.79534817)
+
+[node name="FlatShroom" parent="Game scene" unique_id=1064026191 instance=ExtResource("14_vbwy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.458515, 4.2027497, -2.2609196)
+
+[node name="Pine Tree Big" parent="Game scene" unique_id=716970919 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.625704, 4.006592, 2.2661095)
+
+[node name="Pine Tree Small" parent="Game scene" unique_id=425352341 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.021639, 4.000716, 5.2400885)
+
+[node name="Pine Tree Big2" parent="Game scene" unique_id=1499716476 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.950823, 4.010375, 2.3098555)
+
+[node name="Pine Tree Small2" parent="Game scene" unique_id=1552307305 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.730755, 4.0045013, -5.1304607)
+
+[node name="Rock" parent="Game scene" unique_id=567206759 instance=ExtResource("17_403e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.357471, 4, -0.36978722)
+
+[node name="RoundMobyHouse" parent="Game scene" unique_id=44279593 instance=ExtResource("18_gyt4q")]
+transform = Transform3D(-0.50000006, 0, -0.8660254, 0, 1, 0, 0.8660254, 0, -0.50000006, -13.237121, 5.022546, -9.746981)
+
+[node name="Pine Tree Big3" parent="Game scene" unique_id=799862470 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.241651, 4.006591, -10.586998)
+
+[node name="Pine Tree Small3" parent="Game scene" unique_id=203303153 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -3.7083302, 4.000716, -9.8451805)
+
+[node name="Pine Tree Big4" parent="Game scene" unique_id=2015500240 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0274874, 4.006591, -11.157198)
+
+[node name="Mushroom" parent="Game scene" unique_id=630747311 instance=ExtResource("19_403e6")]
+transform = Transform3D(-0.8287213, 0, -0.55966157, 0, 1, 0, 0.55966157, 0, -0.8287213, 4.436086, 3.924955, 10.380429)
+
+[node name="FlatShroom2" parent="Game scene" unique_id=2016246477 instance=ExtResource("14_vbwy5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6894835, 4.202748, 10.154286)
+
+[node name="Pine Tree Small4" parent="Game scene" unique_id=2000748235 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.58789897, 4.000716, 13.296867)
+
+[node name="Pine Tree Big5" parent="Game scene" unique_id=1392925018 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.718523, 4.006592, 10.382629)
+
+[node name="Pine Tree Small5" parent="Game scene" unique_id=1007246863 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9347134, 4.000716, 13.239468)
+
+[node name="bush" parent="Game scene" unique_id=1113126883 instance=ExtResource("20_gyt4q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.602427, 4.0165997, 7.337269)
+
+[node name="BushVar1" parent="Game scene" unique_id=775423245 instance=ExtResource("21_argrc")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 11.961322, 4.0028486, 9.996351)
+
+[node name="BushVar2" parent="Game scene" unique_id=1976747848 instance=ExtResource("21_argrc")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 4.1421533, 4.0028496, -11.051997)
+
+[node name="bush2" parent="Game scene" unique_id=1970589066 instance=ExtResource("20_gyt4q")]
+transform = Transform3D(0.74346906, 0, -0.6687703, 0, 1, 0, 0.6687703, 0, 0.74346906, 8.10255, 4.0166016, -11.785473)
+
+[node name="BushVar3" parent="Game scene" unique_id=1744987782 instance=ExtResource("21_argrc")]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, -15.842711, 4.0066347, 7.302734)
+
+[node name="BushVar4" parent="Game scene" unique_id=1437163555 instance=ExtResource("21_argrc")]
+transform = Transform3D(200, 0, 0, 0, 200, 0, 0, 0, 200, 14.655061, 4.0028486, -8.938255)
+
+[node name="BushVar5" parent="Game scene" unique_id=1299870605 instance=ExtResource("21_argrc")]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 18.774376, 4.0028486, -5.2250786)
+
+[node name="Pine Tree Big6" parent="Game scene" unique_id=1411649144 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 10.628964, 4.006591, -11.625786)
+
+[node name="Pine Tree Big7" parent="Game scene" unique_id=278415844 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -17.555962, 4.006591, -13.989094)
+
+[node name="Pine Tree Big8" parent="Game scene" unique_id=929054759 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -19.36543, 4.006591, 7.22456)
+
+[node name="Pine Tree Big9" parent="Game scene" unique_id=1772671949 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 18.640078, 4.006591, 7.22456)
+
 [node name="players" type="Node3D" parent="." unique_id=625730582]
 
 [node name="spawns" type="Node3D" parent="." unique_id=1192618945]
@@ -569,3 +676,24 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -10,
 
 [node name="Marker3D4" type="Marker3D" parent="spawns" unique_id=829532762]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10, 0, 4)
+
+[node name="Rock" parent="." unique_id=1210975655 instance=ExtResource("17_403e6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.699757, 4.003784, 3.5086446)
+
+[node name="Tulip" parent="." unique_id=208352800 instance=ExtResource("19_argrc")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 14.375647, 4.000001, -1.267827)
+
+[node name="palm tree" parent="." unique_id=83494430 instance=ExtResource("23_eop75")]
+transform = Transform3D(-0.8660255, 0, -0.49999982, 0, 1, 0, 0.49999982, 0, -0.8660255, 16.280704, 4, -6)
+
+[node name="Pine Tree Big" parent="." unique_id=1806683987 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.648779, 4.0065928, 9.75617)
+
+[node name="Pine Tree Small" parent="." unique_id=1547448489 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.896725, 4.000716, 12.6177025)
+
+[node name="Pine Tree Big2" parent="." unique_id=1157734591 instance=ExtResource("15_8y8fy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.28288, 4.006591, 10.396228)
+
+[node name="Pine Tree Small2" parent="." unique_id=578343200 instance=ExtResource("16_4k4u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.695704, 4.0044985, -9.047078)
