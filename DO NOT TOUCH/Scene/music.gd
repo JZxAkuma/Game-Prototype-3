@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 	pass
 
 func _play() -> void:
-	$AudioStreamPlayer.play()
+	if !$AudioStreamPlayer.playing:
+		$AudioStreamPlayer.play()
