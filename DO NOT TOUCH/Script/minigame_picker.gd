@@ -39,13 +39,19 @@ func _play(list: Array, winner: MINI_GAME) -> void:
 	if not is_inside_tree():
 		return
 
-	step = card_size.x + gap
+	await get_tree().process_frame
+	await get_tree().process_frame
+	if not is_inside_tree():
+		return
+
 	center = window.size.x * 0.5
 	box.position.y = (window.size.y - card_size.y) * 0.5
 
-	var start_x := center - card_size.x * 0.5
-	var target_card := (repeats - 2) * n + winner_index
-	var end_x := center - (target_card * step + card_size.x * 0.5)
+	var first: Control = cards[0]
+	var start_x := center - (first.position.x + first.size.x * 0.5)
+
+	var target: Control = cards[(repeats - 2) * n + winner_index]
+	var end_x := center - (target.position.x + target.size.x * 0.5)
 
 	box.position.x = start_x
 	_light(start_x)
@@ -57,6 +63,7 @@ func _play(list: Array, winner: MINI_GAME) -> void:
 	if not is_inside_tree():
 		return
 
+	_light(end_x)
 	await get_tree().create_timer(1.0).timeout
 	finished.emit()
 
@@ -67,7 +74,15 @@ func _scroll(x: float) -> void:
 
 
 func _light(x: float) -> void:
-	var idx := clampi(roundi((center - x - card_size.x * 0.5) / step), 0, cards.size() - 1)
+	var mx := center - x
+	var idx := 0
+	var best := INF
+	for i in cards.size():
+		var c: Control = cards[i]
+		var d := absf(c.position.x + c.size.x * 0.5 - mx)
+		if d < best:
+			best = d
+			idx = i
 	if idx == lit_index:
 		return
 	if lit_index >= 0:
