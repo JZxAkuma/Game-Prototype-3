@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cjauehfqijgl0"
+path="res://.godot/imported/Game_Prototype_3_VC_GameStart_1.wav-e3805cd320ce78e2d3f9e33e8d5cb889.sample"
+
+[deps]
+
+source_file="res://Voicelines/Game Start/Game_Prototype_3_VC_GameStart_1.wav"
+dest_files=["res://.godot/imported/Game_Prototype_3_VC_GameStart_1.wav-e3805cd320ce78e2d3f9e33e8d5cb889.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
