@@ -14,6 +14,9 @@ class_name Board
 @export var cam_offset := Vector3.ZERO
 var cam_target: Node3D
 var cam_follow_enabled := false
+@export var audio_stream_player: AudioStreamPlayer
+@export var audio_stream_player_2: AudioStreamPlayer
+@export var audio_stream_player_3: AudioStreamPlayer
 
 const PICKER := preload("res://DO NOT TOUCH/Scene/minigame_picker.tscn")
 
@@ -425,3 +428,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			GameState.players[i].medal = 3 - i
 		GameState.data_changed.emit()
 		_play_ending()
+
+func _play_random_intro() -> void:
+	var rand = randi_range(1,3)
+	if rand == 1:
+		audio_stream_player.play()
+	elif rand == 2:
+		audio_stream_player_2.play()
+	elif rand == 3:
+		audio_stream_player_3.play()

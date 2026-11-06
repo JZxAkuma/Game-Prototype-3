@@ -6,10 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://dy2fyap6ohcqn" path="res://DO NOT TOUCH/2D/UI Assets/3.png" id="4_mhahw"]
 [ext_resource type="Texture2D" uid="uid://cq6ekl48c2skp" path="res://DO NOT TOUCH/2D/UI Assets/2.png" id="5_csanj"]
 [ext_resource type="Texture2D" uid="uid://b6fe8u31gibph" path="res://DO NOT TOUCH/2D/UI Assets/1.png" id="6_indth"]
+[ext_resource type="AudioStream" uid="uid://bg3r0ae7ufcmq" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_1.wav" id="7_fjnvh"]
 [ext_resource type="Texture2D" uid="uid://cr30sryc5sssp" path="res://DO NOT TOUCH/2D/UI Assets/Go.png" id="7_ngc8o"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="8_5ge1r"]
+[ext_resource type="AudioStream" uid="uid://dq2vko8dac6lx" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_2.wav" id="8_afusg"]
+[ext_resource type="AudioStream" uid="uid://xpc48nx07e4e" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_3.wav" id="9_av5on"]
 [ext_resource type="Shader" uid="uid://c1alju3yplb4m" path="res://DO NOT TOUCH/shader/SkyScroller.gdshader" id="9_h15ei"]
 [ext_resource type="Texture2D" uid="uid://cols7mqcx0dji" path="res://DO NOT TOUCH/Environmental Assets/Sky Scroller/Skybox.png" id="10_6t4lc"]
+[ext_resource type="AudioStream" uid="uid://dqf06xtxsjvax" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_Go.wav" id="10_u6ssa"]
 [ext_resource type="Texture2D" uid="uid://dd8q8q4uo5tio" path="res://DO NOT TOUCH/Environmental Assets/TiledTextures/GrassTiles.png" id="11_78cdv"]
 [ext_resource type="Texture2D" uid="uid://6ghaht07uqgw" path="res://DO NOT TOUCH/2D/Sprites/Court.png" id="11_mhahw"]
 [ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_house.tscn" id="13_vavtv"]
@@ -182,6 +186,54 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ugtl2"]
 resource_name = "countdown"
@@ -342,8 +394,56 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(3.0000002),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vavtv"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_07gxe"]
 _data = {
 &"RESET": SubResource("Animation_i1mr1"),
 &"countdown": SubResource("Animation_ugtl2")
@@ -407,12 +507,9 @@ spawns = NodePath("spawns")
 tutorial_ui = NodePath("Tutorial layer")
 anim = NodePath("countdown layer/AnimationPlayer")
 
-[node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("3_78cdv")]
-play_cam = NodePath("../Game scene/Camera3D")
+[node name="countdown layer" type="CanvasLayer" parent="." unique_id=1767866226]
 
-[node name="countdown layer" type="CanvasLayer" parent="." unique_id=1135933290]
-
-[node name="3" type="TextureRect" parent="countdown layer" unique_id=1580776886]
+[node name="3" type="TextureRect" parent="countdown layer" unique_id=523770788]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -432,7 +529,7 @@ offset_transform_enabled = true
 texture = ExtResource("4_mhahw")
 stretch_mode = 4
 
-[node name="2" type="TextureRect" parent="countdown layer" unique_id=249904945]
+[node name="2" type="TextureRect" parent="countdown layer" unique_id=2124381688]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -453,7 +550,7 @@ offset_transform_enabled = true
 texture = ExtResource("5_csanj")
 stretch_mode = 4
 
-[node name="1" type="TextureRect" parent="countdown layer" unique_id=83163003]
+[node name="1" type="TextureRect" parent="countdown layer" unique_id=1950304655]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -474,7 +571,7 @@ offset_transform_enabled = true
 texture = ExtResource("6_indth")
 stretch_mode = 4
 
-[node name="Go" type="TextureRect" parent="countdown layer" unique_id=692513344]
+[node name="Go" type="TextureRect" parent="countdown layer" unique_id=2105953137]
 visible = false
 modulate = Color(1, 1, 1, 0)
 anchors_preset = 8
@@ -494,9 +591,24 @@ offset_transform_enabled = true
 texture = ExtResource("7_ngc8o")
 stretch_mode = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=2128206602]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=835310486]
 root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_vavtv")
+libraries/ = SubResource("AnimationLibrary_07gxe")
+
+[node name="count 1" type="AudioStreamPlayer" parent="countdown layer" unique_id=1978844136]
+stream = ExtResource("7_fjnvh")
+
+[node name="count 2" type="AudioStreamPlayer" parent="countdown layer" unique_id=548129684]
+stream = ExtResource("8_afusg")
+
+[node name="count 3" type="AudioStreamPlayer" parent="countdown layer" unique_id=2118085892]
+stream = ExtResource("9_av5on")
+
+[node name="Go2" type="AudioStreamPlayer" parent="countdown layer" unique_id=1537161358]
+stream = ExtResource("10_u6ssa")
+
+[node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("3_78cdv")]
+play_cam = NodePath("../Game scene/Camera3D")
 
 [node name="Game scene" type="Node3D" parent="." unique_id=1982300510]
 

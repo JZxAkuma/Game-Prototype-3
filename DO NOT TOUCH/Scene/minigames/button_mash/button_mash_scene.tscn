@@ -26,6 +26,10 @@
 [ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="23_507ge"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="24_ql0ae"]
 [ext_resource type="Shader" uid="uid://eabv1f4ayvqs" path="res://DO NOT TOUCH/shader/Dithering.gdshader" id="25_dbwem"]
+[ext_resource type="AudioStream" uid="uid://bg3r0ae7ufcmq" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_1.wav" id="27_kq3ej"]
+[ext_resource type="AudioStream" uid="uid://dq2vko8dac6lx" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_2.wav" id="28_1i52i"]
+[ext_resource type="AudioStream" uid="uid://xpc48nx07e4e" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_3.wav" id="29_3mr7w"]
+[ext_resource type="AudioStream" uid="uid://dqf06xtxsjvax" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_Go.wav" id="30_k0xjk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m2ndw"]
 shader = ExtResource("8_ciqc1")
@@ -64,6 +68,13 @@ adjustment_saturation = 1.19
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqe53"]
 albedo_texture = ExtResource("5_h5ri7")
 uv1_scale = Vector3(200, 20, 10)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evp56"]
+shader = ExtResource("25_dbwem")
+shader_parameter/color_steps = 30.000001045
+shader_parameter/grain_strength = 0.030000001425
+shader_parameter/saturation = 1.05
+shader_parameter/contrast = 1.05
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -222,6 +233,54 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ugtl2"]
@@ -383,19 +442,60 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(3.0000002),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_xot51"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqc8a"]
 _data = {
 &"RESET": SubResource("Animation_i1mr1"),
 &"countdown": SubResource("Animation_ugtl2")
 }
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_evp56"]
-shader = ExtResource("25_dbwem")
-shader_parameter/color_steps = 30.000001045
-shader_parameter/grain_strength = 0.030000001425
-shader_parameter/saturation = 1.05
-shader_parameter/contrast = 1.05
 
 [node name="button_mash_scene" type="Node3D" unique_id=99076843 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_0ogq5")
@@ -457,94 +557,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 0, -4)
 
 [node name="MobyHouse" parent="Game scene" unique_id=1518208793 instance=ExtResource("6_ciqc1")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.381685, 0.07458353, 7.8183403)
-
-[node name="countdown layer" type="CanvasLayer" parent="." unique_id=864123396]
-
-[node name="3" type="TextureRect" parent="countdown layer" unique_id=763582014]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-offset_transform_enabled = true
-texture = ExtResource("2_anxg6")
-stretch_mode = 4
-
-[node name="2" type="TextureRect" parent="countdown layer" unique_id=96685759]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-offset_transform_enabled = true
-texture = ExtResource("3_qc7bq")
-stretch_mode = 4
-
-[node name="1" type="TextureRect" parent="countdown layer" unique_id=652675729]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-offset_transform_enabled = true
-texture = ExtResource("4_yk74a")
-stretch_mode = 4
-
-[node name="Go" type="TextureRect" parent="countdown layer" unique_id=1426582549]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-offset_transform_enabled = true
-texture = ExtResource("5_pgo1g")
-stretch_mode = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1708937004]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_xot51")
 
 [node name="Game layer" type="CanvasLayer" parent="." unique_id=2146230703]
 
@@ -783,3 +795,103 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="countdown layer" type="CanvasLayer" parent="." unique_id=1166667019]
+
+[node name="3" type="TextureRect" parent="countdown layer" unique_id=323148121]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+offset_transform_enabled = true
+texture = ExtResource("2_anxg6")
+stretch_mode = 4
+
+[node name="2" type="TextureRect" parent="countdown layer" unique_id=922384263]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture = ExtResource("3_qc7bq")
+stretch_mode = 4
+
+[node name="1" type="TextureRect" parent="countdown layer" unique_id=1713252930]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+texture = ExtResource("4_yk74a")
+stretch_mode = 4
+
+[node name="Go" type="TextureRect" parent="countdown layer" unique_id=1579937055]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+offset_transform_enabled = true
+texture = ExtResource("5_pgo1g")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1337644812]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_oqc8a")
+
+[node name="count 1" type="AudioStreamPlayer" parent="countdown layer" unique_id=389628413]
+stream = ExtResource("27_kq3ej")
+
+[node name="count 2" type="AudioStreamPlayer" parent="countdown layer" unique_id=1745416688]
+stream = ExtResource("28_1i52i")
+
+[node name="count 3" type="AudioStreamPlayer" parent="countdown layer" unique_id=1042612293]
+stream = ExtResource("29_3mr7w")
+
+[node name="Go2" type="AudioStreamPlayer" parent="countdown layer" unique_id=951830258]
+stream = ExtResource("30_k0xjk")

@@ -19,6 +19,10 @@
 [ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/round_moby_house.tscn" id="15_5u0bj"]
 [ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="16_pxhkt"]
 [ext_resource type="PackedScene" uid="uid://cae6qel7lo3go" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush_var_1.tscn" id="17_5u0bj"]
+[ext_resource type="AudioStream" uid="uid://bg3r0ae7ufcmq" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_1.wav" id="20_rtsvf"]
+[ext_resource type="AudioStream" uid="uid://dq2vko8dac6lx" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_2.wav" id="21_kurrj"]
+[ext_resource type="AudioStream" uid="uid://xpc48nx07e4e" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_3.wav" id="22_jhu0v"]
+[ext_resource type="AudioStream" uid="uid://dqf06xtxsjvax" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_Go.wav" id="23_rp5ef"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yoq7m"]
 albedo_color = Color(0.40180656, 0.46367687, 0.48139364, 1)
@@ -105,6 +109,57 @@ shader_parameter/color_steps = 30.000001045
 shader_parameter/grain_strength = 0.030000001425
 shader_parameter/saturation = 1.05
 shader_parameter/contrast = 1.05
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0bj"]
+albedo_color = Color(0.3827616, 0.18383667, 0.12357543, 1)
+emission_enabled = true
+emission = Color(0.714354, 0.33635667, 0.18637714, 1)
+emission_energy_multiplier = 1.1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5u0bj"]
+load_path = "res://.godot/imported/Square.png-73fe5249aa06d91c0ab3ecd46e404e0e.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxhkt"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("CompressedTexture2D_5u0bj")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="Gradient" id="Gradient_msyd3"]
+offsets = PackedFloat32Array(0, 0.580311, 1)
+colors = PackedColorArray(0.6639075, 0.33799937, 0.08697235, 1, 0.5260661, 0, 0.024797829, 0.5803922, 0.6647036, 0.4930318, 0.12545645, 0.6862745)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jkscd"]
+gradient = SubResource("Gradient_msyd3")
+
+[sub_resource type="Curve" id="Curve_f3k7g"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_xnsvv"]
+curve = SubResource("Curve_f3k7g")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rtsvf"]
+emission_shape_scale = Vector3(2, 0.1, 2)
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 5)
+direction = Vector3(0, 5, 0)
+spread = 0.0
+initial_velocity_min = 6.0
+initial_velocity_max = 7.0
+gravity = Vector3(0, 0, 0)
+scale_min = 4.0
+scale_max = 6.0
+scale_curve = SubResource("CurveTexture_xnsvv")
+color = Color(0.991164, 0.991164, 0.991164, 1)
+color_ramp = SubResource("GradientTexture1D_jkscd")
+
+[sub_resource type="QuadMesh" id="QuadMesh_kurrj"]
+size = Vector2(2, 2)
 
 [sub_resource type="Animation" id="Animation_i1mr1"]
 length = 0.001
@@ -263,6 +318,54 @@ tracks/12/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_ugtl2"]
@@ -424,63 +527,60 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(3.0000002),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjrpj"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tlmlm"]
 _data = {
 &"RESET": SubResource("Animation_i1mr1"),
 &"countdown": SubResource("Animation_ugtl2")
 }
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5u0bj"]
-albedo_color = Color(0.3827616, 0.18383667, 0.12357543, 1)
-emission_enabled = true
-emission = Color(0.714354, 0.33635667, 0.18637714, 1)
-emission_energy_multiplier = 1.1
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5u0bj"]
-load_path = "res://.godot/imported/Square.png-73fe5249aa06d91c0ab3ecd46e404e0e.s3tc.ctex"
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pxhkt"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-shading_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = SubResource("CompressedTexture2D_5u0bj")
-billboard_mode = 1
-billboard_keep_scale = true
-
-[sub_resource type="Gradient" id="Gradient_msyd3"]
-offsets = PackedFloat32Array(0, 0.580311, 1)
-colors = PackedColorArray(0.6639075, 0.33799937, 0.08697235, 1, 0.5260661, 0, 0.024797829, 0.5803922, 0.6647036, 0.4930318, 0.12545645, 0.6862745)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jkscd"]
-gradient = SubResource("Gradient_msyd3")
-
-[sub_resource type="Curve" id="Curve_f3k7g"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_xnsvv"]
-curve = SubResource("Curve_f3k7g")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_rtsvf"]
-emission_shape_scale = Vector3(2, 0.1, 2)
-emission_shape = 3
-emission_box_extents = Vector3(5, 5, 5)
-direction = Vector3(0, 5, 0)
-spread = 0.0
-initial_velocity_min = 6.0
-initial_velocity_max = 7.0
-gravity = Vector3(0, 0, 0)
-scale_min = 4.0
-scale_max = 6.0
-scale_curve = SubResource("CurveTexture_xnsvv")
-color = Color(0.991164, 0.991164, 0.991164, 1)
-color_ramp = SubResource("GradientTexture1D_jkscd")
-
-[sub_resource type="QuadMesh" id="QuadMesh_kurrj"]
-size = Vector2(2, 2)
 
 [node name="Flappy_scene" type="Node3D" unique_id=535647750 node_paths=PackedStringArray("play_cam", "players_root", "spawns", "tutorial_ui", "anim")]
 script = ExtResource("1_vygtr")
@@ -569,94 +669,6 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -6.6
 
 [node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("5_hjrpj")]
 play_cam = NodePath("../Game scene/Camera3D")
-
-[node name="countdown layer" type="CanvasLayer" parent="." unique_id=1560589044]
-
-[node name="3" type="TextureRect" parent="countdown layer" unique_id=755857129]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-offset_transform_enabled = true
-texture = ExtResource("3_1nc1h")
-stretch_mode = 4
-
-[node name="2" type="TextureRect" parent="countdown layer" unique_id=123352196]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-size_flags_vertical = 4
-offset_transform_enabled = true
-texture = ExtResource("4_wwr53")
-stretch_mode = 4
-
-[node name="1" type="TextureRect" parent="countdown layer" unique_id=1231586543]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-offset_transform_enabled = true
-texture = ExtResource("5_s7rr5")
-stretch_mode = 4
-
-[node name="Go" type="TextureRect" parent="countdown layer" unique_id=1291700896]
-visible = false
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -300.0
-offset_top = -300.0
-offset_right = 300.0
-offset_bottom = 300.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-offset_transform_enabled = true
-texture = ExtResource("6_c8yw6")
-stretch_mode = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=1991912628]
-root_node = NodePath("../..")
-libraries/ = SubResource("AnimationLibrary_hjrpj")
 
 [node name="Game layer" type="CanvasLayer" parent="." unique_id=1499299549]
 
@@ -798,3 +810,103 @@ visibility_aabb = AABB(0, 0, 0, 8, 8, 8)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_rtsvf")
 draw_pass_1 = SubResource("QuadMesh_kurrj")
+
+[node name="countdown layer" type="CanvasLayer" parent="." unique_id=1823385722]
+
+[node name="3" type="TextureRect" parent="countdown layer" unique_id=1298341419]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+offset_transform_enabled = true
+texture = ExtResource("3_1nc1h")
+stretch_mode = 4
+
+[node name="2" type="TextureRect" parent="countdown layer" unique_id=937577788]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture = ExtResource("4_wwr53")
+stretch_mode = 4
+
+[node name="1" type="TextureRect" parent="countdown layer" unique_id=1070145899]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+offset_transform_enabled = true
+texture = ExtResource("5_s7rr5")
+stretch_mode = 4
+
+[node name="Go" type="TextureRect" parent="countdown layer" unique_id=79357717]
+visible = false
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+offset_transform_enabled = true
+texture = ExtResource("6_c8yw6")
+stretch_mode = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=314550326]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_tlmlm")
+
+[node name="count 1" type="AudioStreamPlayer" parent="countdown layer" unique_id=1615653006]
+stream = ExtResource("20_rtsvf")
+
+[node name="count 2" type="AudioStreamPlayer" parent="countdown layer" unique_id=887803843]
+stream = ExtResource("21_kurrj")
+
+[node name="count 3" type="AudioStreamPlayer" parent="countdown layer" unique_id=1800338329]
+stream = ExtResource("22_jhu0v")
+
+[node name="Go2" type="AudioStreamPlayer" parent="countdown layer" unique_id=481847311]
+stream = ExtResource("23_rp5ef")

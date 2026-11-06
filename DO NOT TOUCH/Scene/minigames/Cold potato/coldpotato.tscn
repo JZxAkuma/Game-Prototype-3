@@ -26,7 +26,11 @@
 [ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="18_6fynh"]
 [ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="19_5kxoj"]
 [ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_wall.tscn" id="25_01564"]
+[ext_resource type="AudioStream" uid="uid://bg3r0ae7ufcmq" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_1.wav" id="25_wc46f"]
 [ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/flat_shroom.tscn" id="26_2wucq"]
+[ext_resource type="AudioStream" uid="uid://dq2vko8dac6lx" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_2.wav" id="26_6fynh"]
+[ext_resource type="AudioStream" uid="uid://xpc48nx07e4e" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_3.wav" id="27_5kxoj"]
+[ext_resource type="AudioStream" uid="uid://dqf06xtxsjvax" path="res://Voicelines/Minigame/Game_Prototype_3_VC_Minigame_Go.wav" id="28_01564"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ugtl2"]
 shader = ExtResource("3_4iobk")
@@ -238,6 +242,54 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_ugtl2"]
 resource_name = "countdown"
@@ -398,6 +450,54 @@ tracks/12/keys = {
 "update": 0,
 "values": [Vector2(1, 1), Vector2(0.5, 0.5)]
 }
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("countdown layer/count 3:playing")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("countdown layer/count 2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("countdown layer/count 1:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("countdown layer/Go2:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(3.0000002),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_a251r"]
 _data = {
@@ -415,6 +515,7 @@ tutorial_ui = NodePath("Tutorial layer")
 anim = NodePath("countdown layer/AnimationPlayer")
 
 [node name="Tutorial layer" parent="." unique_id=364946351 node_paths=PackedStringArray("play_cam") instance=ExtResource("2_e6ede")]
+visible = false
 play_cam = NodePath("../Game scene/Camera3D")
 
 [node name="players" type="Node3D" parent="." unique_id=528210095]
@@ -671,6 +772,18 @@ stretch_mode = 4
 [node name="AnimationPlayer" type="AnimationPlayer" parent="countdown layer" unique_id=2113993630]
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_a251r")
+
+[node name="count 1" type="AudioStreamPlayer" parent="countdown layer" unique_id=894857201]
+stream = ExtResource("25_wc46f")
+
+[node name="count 2" type="AudioStreamPlayer" parent="countdown layer" unique_id=1634119880]
+stream = ExtResource("26_6fynh")
+
+[node name="count 3" type="AudioStreamPlayer" parent="countdown layer" unique_id=1658055211]
+stream = ExtResource("27_5kxoj")
+
+[node name="Go2" type="AudioStreamPlayer" parent="countdown layer" unique_id=773453893]
+stream = ExtResource("28_01564")
 
 [node name="Game layer" type="CanvasLayer" parent="." unique_id=313079608]
 
