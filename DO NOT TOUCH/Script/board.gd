@@ -15,8 +15,6 @@ class_name Board
 var cam_target: Node3D
 var cam_follow_enabled := false
 @export var audio_stream_player: AudioStreamPlayer
-@export var audio_stream_player_2: AudioStreamPlayer
-@export var audio_stream_player_3: AudioStreamPlayer
 
 const PICKER := preload("res://DO NOT TOUCH/Scene/minigame_picker.tscn")
 
@@ -25,6 +23,9 @@ const PICKER := preload("res://DO NOT TOUCH/Scene/minigame_picker.tscn")
 @export var p1_marker : Marker3D
 @export var p2_marker : Marker3D
 @export var p3_marker : Marker3D
+
+@export var intro_sounds: Array[AudioStream]
+@export var winner_sounds: Array[AudioStream]
 
 const WIN_MEDALS := 3
 var ending := false
@@ -430,10 +431,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		_play_ending()
 
 func _play_random_intro() -> void:
-	var rand = randi_range(1,3)
-	if rand == 1:
-		audio_stream_player.play()
-	elif rand == 2:
-		audio_stream_player_2.play()
-	elif rand == 3:
-		audio_stream_player_3.play()
+	audio_stream_player.stream = intro_sounds.pick_random()
+	audio_stream_player.play()
+
+func _play_random_winner() -> void:
+	audio_stream_player.stream = winner_sounds.pick_random()
+	audio_stream_player.play()

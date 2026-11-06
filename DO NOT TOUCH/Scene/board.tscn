@@ -40,6 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://cjauehfqijgl0" path="res://Voicelines/Game Start/Game_Prototype_3_VC_GameStart_1.wav" id="38_f6cdy"]
 [ext_resource type="AudioStream" uid="uid://ckwp0ulc1cb31" path="res://Voicelines/Game Start/Game_Prototype_3_VC_GameStart_2.wav" id="39_b48xb"]
 [ext_resource type="AudioStream" uid="uid://d0gt4j8qrxnrf" path="res://Voicelines/Game Start/Game_Prototype_3_VC_GameStart_3.wav" id="40_qissg"]
+[ext_resource type="AudioStream" uid="uid://bunt6gm43f2cm" path="res://Voicelines/Game End/Game_Prototype_3_VC_GameEnd_1.wav" id="41_b48xb"]
 [ext_resource type="AudioStream" uid="uid://85pviuspndve" path="res://Voicelines/Game End/Game_Prototype_3_VC_GameEnd_2.wav" id="41_usngo"]
 [ext_resource type="AudioStream" uid="uid://mnx57ik6v05s" path="res://Voicelines/Game End/Game_Prototype_3_VC_GameEnd_3.wav" id="42_3p728"]
 [ext_resource type="AudioStream" uid="uid://bxlbo1qi5dtya" path="res://Voicelines/Game End/Game_Prototype_3_VC_GameEnd_4.wav" id="43_i5diq"]
@@ -367,6 +368,18 @@ tracks/25/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/26/type = "value"
+tracks/26/imported = false
+tracks/26/enabled = true
+tracks/26/path = NodePath("intro audios/AudioStreamPlayer2:playing")
+tracks/26/interp = 1
+tracks/26/loop_wrap = true
+tracks/26/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_bw800"]
@@ -733,7 +746,7 @@ tracks/28/keys = {
 
 [sub_resource type="Animation" id="Animation_f6qny"]
 resource_name = "winner"
-length = 5.0
+length = 7.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -901,6 +914,32 @@ tracks/13/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("intro audios/AudioStreamPlayer2:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "method"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath(".")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(6.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_play_random_winner"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2adw1"]
@@ -1078,14 +1117,14 @@ _data = {
 &"RESET": SubResource("Animation_p6ilu")
 }
 
-[node name="Board" type="Node3D" unique_id=2115529111 node_paths=PackedStringArray("audio_stream_player", "audio_stream_player_2", "audio_stream_player_3", "p1_marker", "p2_marker", "p3_marker")]
+[node name="Board" type="Node3D" unique_id=2115529111 node_paths=PackedStringArray("audio_stream_player", "p1_marker", "p2_marker", "p3_marker")]
 script = ExtResource("1_2tmgi")
 audio_stream_player = NodePath("intro audios/AudioStreamPlayer")
-audio_stream_player_2 = NodePath("intro audios/AudioStreamPlayer2")
-audio_stream_player_3 = NodePath("intro audios/AudioStreamPlayer3")
 p1_marker = NodePath("commentator set/podium/Marker3D")
 p2_marker = NodePath("commentator set/podium/Marker3D2")
 p3_marker = NodePath("commentator set/podium/Marker3D3")
+intro_sounds = Array[AudioStream]([ExtResource("38_f6cdy"), ExtResource("39_b48xb"), ExtResource("40_qissg")])
+winner_sounds = Array[AudioStream]([ExtResource("41_usngo"), ExtResource("42_3p728"), ExtResource("43_i5diq"), ExtResource("44_flarh")])
 
 [node name="Tokens" type="Node3D" parent="." unique_id=1121871840]
 visible = false
@@ -1409,7 +1448,6 @@ transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, 0, 0.9999998, 0, 0, 0)
 
 [node name="intro_camera" type="Camera3D" parent="droneshot pivot" unique_id=442427399]
 transform = Transform3D(1, 0, 0, 0, 0.9051988, 0.4249882, 0, -0.4249882, 0.9051988, 0, 27.227812, 45.007355)
-current = true
 metadata/_edit_lock_ = true
 
 [node name="play camera pivot" type="Node3D" parent="." unique_id=1905329247]
@@ -1452,10 +1490,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 138.82378, 0, 0)
 visible = false
 
 [node name="Announcer" parent="commentator set" unique_id=2109309627 instance=ExtResource("4_4j4vu")]
-transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 125.83927, 0.6405933, -11.693258)
+transform = Transform3D(0.6762663, 0, -1.1684023, 0, 1.3499999, 0, 1.1684023, 0, 0.6762663, 146.34494, -0.070213795, -6.0067863)
 
 [node name="commentator set cam" type="Camera3D" parent="commentator set" unique_id=944560902]
-transform = Transform3D(0.87336606, -0.08914143, 0.47883758, 0, 0.9831095, 0.18301773, -0.4870644, -0.15984148, 0.8586144, 123.18092, 3.2629128, -2.3858414)
+transform = Transform3D(0.87336606, -0.08914143, 0.47883758, 0, 0.9831095, 0.18301773, -0.4870644, -0.15984148, 0.8586144, 138.87746, 2.8507, 3.4959142)
 current = true
 
 [node name="Commentator set wide" type="Camera3D" parent="commentator set" unique_id=1671591333]
@@ -1855,6 +1893,7 @@ material_override = ExtResource("21_l8lyr")
 surface_material_override/0 = null
 
 [node name="intro layer" type="CanvasLayer" parent="." unique_id=292225276]
+visible = false
 
 [node name="Control" type="Control" parent="intro layer" unique_id=748296595]
 layout_mode = 3
@@ -2253,33 +2292,10 @@ transform = Transform3D(-0.6946411, 0, 0.7193565, 0, 1, 0, -0.7193565, 0, -0.694
 [node name="intro audios" type="Node" parent="." unique_id=1485271075]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="intro audios" unique_id=342104833]
-stream = ExtResource("38_f6cdy")
 bus = &"sfx"
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="intro audios" unique_id=2146005923]
-stream = ExtResource("39_b48xb")
-bus = &"sfx"
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="intro audios" unique_id=1781618024]
-stream = ExtResource("40_qissg")
-bus = &"sfx"
-
-[node name="game_end_rand" type="Node" parent="." unique_id=1936711219]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="game_end_rand" unique_id=354925590]
-stream = ExtResource("41_usngo")
-bus = &"sfx"
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="game_end_rand" unique_id=53497907]
-stream = ExtResource("42_3p728")
-bus = &"sfx"
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="game_end_rand" unique_id=876187595]
-stream = ExtResource("43_i5diq")
-bus = &"sfx"
-
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="game_end_rand" unique_id=1919775894]
-stream = ExtResource("44_flarh")
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="intro audios" unique_id=459972266]
+stream = ExtResource("41_b48xb")
 bus = &"sfx"
 
 [editable path="commentator set/Stadium2"]
