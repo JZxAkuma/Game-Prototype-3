@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://8cvxfknip43a"]
+
+[ext_resource type="Script" uid="uid://de4skf7k43uua" path="res://precache.gd" id="1_lc2l4"]
+[ext_resource type="PackedScene" uid="uid://dskdy3yjm0eah" path="res://DO NOT TOUCH/character/character_1.tscn" id="2_7uls5"]
+[ext_resource type="PackedScene" uid="uid://hsmpguford56" path="res://DO NOT TOUCH/character/character_2.tscn" id="3_p2end"]
+[ext_resource type="PackedScene" uid="uid://cgjc3cw3hqogk" path="res://DO NOT TOUCH/character/character_3.tscn" id="4_bsefj"]
+[ext_resource type="PackedScene" uid="uid://djc2f3nf7vobu" path="res://DO NOT TOUCH/character/character_4.tscn" id="5_8dfqp"]
+[ext_resource type="PackedScene" uid="uid://ddjykeeqw75hd" path="res://DO NOT TOUCH/character/bottle_hat.tscn" id="6_vsw8u"]
+[ext_resource type="PackedScene" uid="uid://7ew5weyv3kxb" path="res://DO NOT TOUCH/character/flower_hat.tscn" id="7_grn67"]
+[ext_resource type="PackedScene" uid="uid://18bmj8c1lki2" path="res://DO NOT TOUCH/character/moby_rig.tscn" id="8_oilvq"]
+[ext_resource type="PackedScene" uid="uid://5sdoa0bx4cu6" path="res://DO NOT TOUCH/character/moby_tail_Fix.tscn" id="9_uq18t"]
+[ext_resource type="PackedScene" uid="uid://dkys4ixpki2q" path="res://DO NOT TOUCH/character/propeller_hat.tscn" id="10_ffmne"]
+[ext_resource type="PackedScene" uid="uid://bdkerhb0b85q2" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush.tscn" id="12_ikohv"]
+[ext_resource type="PackedScene" uid="uid://cae6qel7lo3go" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/bush_var_1.tscn" id="13_44x53"]
+[ext_resource type="PackedScene" uid="uid://gcthslii3g5a" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_tower.tscn" id="14_mb0nl"]
+[ext_resource type="PackedScene" uid="uid://l45nsc3pipaj" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/castle_wall.tscn" id="15_yoyec"]
+[ext_resource type="PackedScene" uid="uid://clnnxo4nuolkh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/flat_shroom.tscn" id="16_impbh"]
+[ext_resource type="PackedScene" uid="uid://bxvjo2y018838" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_house.tscn" id="17_yrd14"]
+[ext_resource type="PackedScene" uid="uid://cjpdnm3o6nrrm" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/moby_prop.tscn" id="18_c6paa"]
+[ext_resource type="PackedScene" uid="uid://bui78i54bg7k4" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/mushroom.tscn" id="19_qadxl"]
+[ext_resource type="PackedScene" uid="uid://1v3yumh8vrod" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/palm_tree.tscn" id="20_etnw4"]
+[ext_resource type="PackedScene" uid="uid://goasctnx4yg3" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_big.tscn" id="21_tm50m"]
+[ext_resource type="PackedScene" uid="uid://cctneuw004bw7" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/pine_tree_small.tscn" id="22_ojygn"]
+[ext_resource type="PackedScene" uid="uid://dp15gxl53fdn6" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/power_platform.tscn" id="23_q0jk1"]
+[ext_resource type="PackedScene" uid="uid://v245p8f6nnsr" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/rock.tscn" id="24_7mbss"]
+[ext_resource type="PackedScene" uid="uid://cfi57rfl0n3hh" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/round_moby_house.tscn" id="25_8h1bu"]
+[ext_resource type="PackedScene" uid="uid://70nrv1owm8yw" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tall_path.tscn" id="26_6auqq"]
+[ext_resource type="PackedScene" uid="uid://bvsuboh5lviut" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/tulip.tscn" id="27_jgfrd"]
+[ext_resource type="PackedScene" uid="uid://bkqhrej0ky8xc" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/water_tower.tscn" id="28_uvmbm"]
+[ext_resource type="PackedScene" uid="uid://btv50087nq4jk" path="res://DO NOT TOUCH/Environmental Assets/Moby MOE Assets/wood_fences.tscn" id="29_oofj4"]
+[ext_resource type="PackedScene" uid="uid://cxxi2ufdru7t5" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountains.tscn" id="30_qr6lb"]
+[ext_resource type="PackedScene" uid="uid://bkhaw55tjgsej" path="res://DO NOT TOUCH/Environmental Assets/Mountains/distant_mountainsDark.tscn" id="31_j7sw0"]
+[ext_resource type="PackedScene" uid="uid://31l0vdf672g1" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_1.tscn" id="32_sw2ag"]
+[ext_resource type="PackedScene" uid="uid://b00rsygiqx502" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_2.tscn" id="33_ajrbi"]
+[ext_resource type="PackedScene" uid="uid://b5fbd8sldrukk" path="res://DO NOT TOUCH/Environmental Assets/Rocks/rock_3.tscn" id="34_exisy"]
+[ext_resource type="PackedScene" uid="uid://0iefg5o2dp7p" path="res://DO NOT TOUCH/Environmental Assets/blimp.tscn" id="35_pk7c8"]
+[ext_resource type="PackedScene" uid="uid://cfxhc7rgruxau" path="res://DO NOT TOUCH/Environmental Assets/hot_air_balloon.tscn" id="36_v2a3o"]
+[ext_resource type="PackedScene" uid="uid://6o8ymmeglndg" path="res://DO NOT TOUCH/Environmental Assets/Stadium/stadium.tscn" id="37_qplcl"]
+
+[node name="precache" type="Node3D" unique_id=1479827638]
+script = ExtResource("1_lc2l4")
+scenes_to_render = Array[PackedScene]([ExtResource("2_7uls5"), ExtResource("3_p2end"), ExtResource("4_bsefj"), ExtResource("5_8dfqp"), ExtResource("6_vsw8u"), ExtResource("2_7uls5"), ExtResource("3_p2end"), ExtResource("4_bsefj"), ExtResource("5_8dfqp"), ExtResource("7_grn67"), ExtResource("8_oilvq"), ExtResource("9_uq18t"), ExtResource("10_ffmne"), ExtResource("12_ikohv"), ExtResource("13_44x53"), ExtResource("14_mb0nl"), ExtResource("15_yoyec"), ExtResource("16_impbh"), ExtResource("17_yrd14"), ExtResource("18_c6paa"), ExtResource("19_qadxl"), ExtResource("20_etnw4"), ExtResource("21_tm50m"), ExtResource("22_ojygn"), ExtResource("23_q0jk1"), ExtResource("24_7mbss"), ExtResource("25_8h1bu"), ExtResource("26_6auqq"), ExtResource("27_jgfrd"), ExtResource("28_uvmbm"), ExtResource("29_oofj4"), ExtResource("30_qr6lb"), ExtResource("31_j7sw0"), ExtResource("32_sw2ag"), ExtResource("33_ajrbi"), ExtResource("34_exisy"), ExtResource("35_pk7c8"), ExtResource("36_v2a3o"), ExtResource("37_qplcl")])
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1409986493]
+transform = Transform3D(1, 0, 0, 0, -0.18764806, 0.9822363, 0, -0.9822363, -0.18764806, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=672480343]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1800392651]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1696654003]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
